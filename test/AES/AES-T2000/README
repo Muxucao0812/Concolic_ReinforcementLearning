@@ -1,0 +1,7 @@
+branch selection:
+	un flattened modules
+	simulate 1 million cycles, find out the branches that can not be covered
+	select the closest one from the flattern.v
+
+Note:
+	branch 178704 can not be covered in UNROLL_CYCLE: the block is triggered by (posedge Tj_Trig or COUNTER[127]). The branch is (Tj_Trig == 1'b0), so the only way to activate is COUNTER[127] == 1. COUNTER is incremented by 1 each clock cycle, so it takes 2^128 clocks to find it.

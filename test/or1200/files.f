@@ -1,0 +1,14 @@
+./src/soc_registers.v
+./src/soc_top.v
+./src/soc_adv_dbg.v
+./src/soc_defines.v
+./src/soc_boot.v
+./src/soc_system.v
+./src/soc_mem_bank_3.v
+./src/soc_mem_bank_2.v
+./src/amf_sld_virtual_jtag.v
+./src/soc_peripherals.v
+./src/soc_mem_bank_1.v
+./src/soc_gpio.v
+./src/soc_ram.v
+./src/altera_virtual_jtag.v

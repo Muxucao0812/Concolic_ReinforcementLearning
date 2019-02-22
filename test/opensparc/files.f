@@ -1,0 +1,9 @@
+./src/spc_mb1_ctl.v
+./src/spc.v
+./src/spc_mb0_ctl.v
+./src/dmo_dp.v
+./src/spc_rep1_dp.v
+./src/spc_msf0_dp.v
+./src/spc_msf1_dp.v
+./src/spc_mb2_ctl.v
+./src/spc_lb_ctl.v

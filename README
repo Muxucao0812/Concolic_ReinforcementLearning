@@ -1,0 +1,33 @@
+Conquest: Directed concolic testing framework.
+
+Pre-requisites:
+1. 	Install Icarus Verilog v11. Add <install_dir>/bin to $PATH.
+	Icarus verilog is used for simulating verilog source. Also, it's target API is used by conquest.
+
+2.	Install yices from http://yices.csl.sri.com/
+	Add <install_dir>/bin to $PATH.
+	Yices is used for constraint solving by conquest.
+	
+3.	Install DesignPlayer from http://www.edautils.com/DesignPlayer/Documents/html/designplayer.html
+	Add <install_dir>/<release_date>/bin to $PATH.
+	Among the DesignPlayer unitilies, flattenverilog is used to flatten the hierarchy of the design.
+	This step is optional if the design consists of only one module (like ITC'99 benchmarks).
+
+Compiling conquest:
+	Change the IVERILOG_DIR in the src/Makefile so that it points to the installation directory of Icarus Verilog.
+	Run 'make' from the top dir.
+	It will compile a target file (actaully a dll) for Icarus verilog and copy it to the lib/ivl folder of Icarus verilog.
+
+Running conquest:
+	Conquest is actually a target file for Icarus verilog. The actual command is shown in Makefiles.
+	You need to provide files.f (a list of verilog source files) and Makefile.inc (conquest parameters).
+	The parameters are:
+		IS_FLATTENED: true means source consists of multiple modules. Hiererchy is flattened in such cases and the new source is written in flattened.v.
+		TOP_MODULE: name of top module
+		CLK_NAME: name of the clock signal
+		RESET_NAME: name of the reset signal
+		RESET_EDGE: 1 if reset is positive edge triggered. 0 if negetive edge triggered.
+		UNROLL_CYC: unroll cycle amount
+		OBJ_SRC: list of verilog source files. Used by flattenverilog.
+	After setting the parameter, simply run 'make' from the example's dir.
+	After run is finished, if an input is found, data.mem will have the solution input, and conquest_tb.v will be the testbench.	

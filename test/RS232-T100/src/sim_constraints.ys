@@ -1,0 +1,43 @@
+(include "defines.ys")
+
+;------------------------------------------------CLK 1-----------------------------------------------
+(assert (= (bv-and (bv-and (bv-and (bv-and (bv-and (bv-and (bv-and (bv-and (bv-and (bv-extract 0 0 iRECEIVER_rec_dataH_0) (bv-extract 1 1 iRECEIVER_rec_dataH_0)) (bv-extract 2 2 iRECEIVER_rec_dataH_0)) (bv-extract 3 3 iRECEIVER_rec_dataH_0)) (bv-extract 4 4 iRECEIVER_rec_dataH_0)) (bv-extract 5 5 iRECEIVER_rec_dataH_0)) (bv-extract 6 6 iRECEIVER_rec_dataH_0)) (bv-extract 7 7 iRECEIVER_rec_dataH_0)) (bv-and (bv-and (bv-and (bv-and (bv-and (bv-and (bv-and (bv-not (bv-extract 0 0 iRECEIVER_bitCell_cntrH_0)) (bv-extract 1 1 iRECEIVER_bitCell_cntrH_0)) (bv-extract 2 2 iRECEIVER_bitCell_cntrH_0)) (bv-extract 3 3 iRECEIVER_bitCell_cntrH_0)) (bv-extract 0 0 iRECEIVER_recd_bitCntrH_0)) (bv-extract 1 1 iRECEIVER_recd_bitCntrH_0)) (bv-not (bv-extract 2 2 iRECEIVER_recd_bitCntrH_0))) (bv-not (bv-extract 3 3 iRECEIVER_recd_bitCntrH_0)))) (bv-and (bv-and (bv-extract 0 0 iRECEIVER_state_0) (bv-extract 1 1 iRECEIVER_state_0)) (bv-not (bv-extract 2 2 iRECEIVER_state_0))))   0b0)) ;100 BR
+(assert (= iRECEIVER_rec_readyH_1   iRECEIVER_rec_readyH_temp_0)) ;102 BL
+(assert (= iRECEIVER_next_state_1   iRECEIVER_state_0)) ;135 BL
+(assert (= iRECEIVER_cntr_resetH_1   0b1)) ;136 BL
+(assert (= iRECEIVER_shiftH_1   0b0)) ;137 BL
+(assert (= iRECEIVER_countH_1   0b0)) ;138 BL
+(assert (= iRECEIVER_rstCountH_1   0b0)) ;139 BL
+(assert (= iRECEIVER_rec_readyInH_1   0b0)) ;140 BL
+(assert (= rec_readyH_1   iRECEIVER_rec_readyH_1)) ;2 BL
+(assert (= iXMIT_next_state_1   iXMIT_state_0)) ;49 BL
+(assert (= iXMIT_load_shiftRegH_1   0b0)) ;50 BL
+(assert (= iXMIT_countEnaH_1   0b0)) ;51 BL
+(assert (= iXMIT_shiftEnaH_1   0b0)) ;52 BL
+(assert (= iXMIT_rst_bitCountH_1   0b0)) ;53 BL
+(assert (= iXMIT_ena_bitCountH_1   0b0)) ;54 BL
+(assert (= iXMIT_xmitDataSelH_1   0b01)) ;55 BL
+(assert (= iXMIT_xmit_doneInH_1   0b0)) ;56 BL
+(assert (= iXMIT_state_0   0b000)) ;57 CS
+(assert (= xmitH_1   0b0)) ;59 BR
+(assert (= iXMIT_next_state_2   0b000)) ;62 BL
+(assert (= iXMIT_rst_bitCountH_2   0b1)) ;63 BL
+(assert (= iXMIT_xmit_doneInH_2   0b1)) ;64 BL
+(assert (= uart_XMIT_dataH_1   iXMIT_uart_xmitH_0)) ;0 BL
+(assert (= iXMIT_xmitDataSelH_1   0b01)) ;15 CS
+(assert (= iXMIT_uart_xmitH_1   0b1)) ;16 BL
+(assert (= xmit_doneH_1   iXMIT_xmit_doneH_0)) ;1 BL
+(assert (= uart_XMIT_dataH_2   iXMIT_uart_xmitH_1)) ;0 BL
+(assert (= iXMIT_xmitDataSelH_1   0b01)) ;15 CS
+(assert (= iXMIT_uart_xmitH_2   0b1)) ;16 BL
+(assert (= iXMIT_next_state_3   iXMIT_state_0)) ;49 BL
+(assert (= iXMIT_load_shiftRegH_2   0b0)) ;50 BL
+(assert (= iXMIT_countEnaH_2   0b0)) ;51 BL
+(assert (= iXMIT_shiftEnaH_2   0b0)) ;52 BL
+(assert (= iXMIT_rst_bitCountH_3   0b0)) ;53 BL
+(assert (= iXMIT_ena_bitCountH_2   0b0)) ;54 BL
+(assert (= iXMIT_xmitDataSelH_2   0b01)) ;55 BL
+(assert (= iXMIT_xmit_doneInH_3   0b0)) ;56 BL
+(assert (= iXMIT_state_0   0b000)) ;57 CS
+
+(check)
