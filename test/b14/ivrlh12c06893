@@ -3,7 +3,7 @@ flag:clk=clock
 flag:reset=reset
 flag:reset_edge=1
 flag:unroll=1000
-flag:step=10
+flag:step=20
 flag:random_sim=3
 basedir:/usr/local/lib/ivl
 module:/usr/local/lib/ivl/system.vpi

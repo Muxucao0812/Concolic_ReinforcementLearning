@@ -1,6 +1,7 @@
 #include "globals.h"
 #include "concolic.h"
 #include "data_mem.h"
+#include "state.h"
 #include <cstdlib>
 #include <cstring>
 #include <string>
@@ -91,6 +92,7 @@ void extract_parameters(ivl_design_t design){
     }
     g_step = atoi(step_size);
     
+    g_sim_clk = atoi(step_size);
     //extract unroll cycles
     const char* unroll_cyc = ivl_design_flag(design, "unroll");
 	if(unroll_cyc == NULL){
@@ -228,7 +230,7 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "\n%*c// Generated internal use signals\n", 4, ' ');
         fprintf(f_tb, "%*creg  [31:0] _conc_pc;\n", 4, ' ');
         fprintf(f_tb, "%*creg  [%u:0] _conc_opcode;\n", 4, ' ', g_data.get_width() - 1);
-        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_step-1);
+        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_sim_clk);
 
         //Dump clk toggle
         fprintf(f_tb, "\n%*c// Generated clock pulse\n", 4, ' ');
@@ -250,6 +252,7 @@ void generate_tb(ivl_scope_t root){
 		}
         fprintf(f_tb, "%*c_conc_pc = _conc_pc + 32'b1;\n", 8, ' ');
         fprintf(f_tb, "%*c$strobe(\";_C %%d\", _conc_pc);\n", 8, ' ');
+        fprintf(f_tb, "%*c$strobe(\";_Input %%b\", _conc_opcode);\n", 8, ' ');
         fprintf(f_tb, "%*cend\n", 4, ' ');
 
         //Dump initial block

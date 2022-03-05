@@ -299,7 +299,7 @@ void emit_module_variables_display(){
 void emit_root(ivl_scope_t root) {
     //check if hierarchy is flattened 
 	assert(ivl_scope_childs(root) == 0);
-    
+
 	// Output module declaration
 	emit_scope_file_line(root);
 	fprintf(g_out, "module %s", ivl_scope_basename(root));

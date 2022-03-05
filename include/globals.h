@@ -5,7 +5,8 @@
 #include "data_mem.h"
 #include <cstdio>
 #include <ctime>
-
+using namespace std;
+#include <unordered_map> 
 
 //mannualy select
 extern bool             user_select_branch;
@@ -59,3 +60,10 @@ extern const bool		enable_sim_copy;
 //Utility functions 
 extern void error(const char *fmt, ...);
 extern void info(const char *fmt, ...);
+
+
+//Qlearn parameters
+extern double epsilon_qlearn ; // 探索率
+extern double alpha_qlearn ; // 学习率
+extern double gamma_qlearn ; // 折扣因子
+extern std::unordered_map<std::string, std::vector<double>> q_table; //q_table

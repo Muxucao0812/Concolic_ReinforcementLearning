@@ -138,60 +138,6 @@ module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
                 speaker <= #1 1'b0; $display(";A 52");		//(assert (= speaker    0b0)) ;52
             end
         end
-        // Displaying module variables
-        begin
-            $display(";R address = %b", address);
-            $display(";R count = %b", count);
-            $display(";R count2 = %b", count2);
-            $display(";R counter = %b", counter);
-            $display(";R data_in = %b", data_in);
-            $display(";R data_out = %b", data_out);
-            $display(";R gamma = %b", gamma);
-            $display(";R ind = %b", ind);
-            $display(";R max = %b", max);
-            $display(";R memory[0] = %b", memory[0]);
-            $display(";R memory[1] = %b", memory[1]);
-            $display(";R memory[2] = %b", memory[2]);
-            $display(";R memory[3] = %b", memory[3]);
-            $display(";R memory[4] = %b", memory[4]);
-            $display(";R memory[5] = %b", memory[5]);
-            $display(";R memory[6] = %b", memory[6]);
-            $display(";R memory[7] = %b", memory[7]);
-            $display(";R memory[8] = %b", memory[8]);
-            $display(";R memory[9] = %b", memory[9]);
-            $display(";R memory[10] = %b", memory[10]);
-            $display(";R memory[11] = %b", memory[11]);
-            $display(";R memory[12] = %b", memory[12]);
-            $display(";R memory[13] = %b", memory[13]);
-            $display(";R memory[14] = %b", memory[14]);
-            $display(";R memory[15] = %b", memory[15]);
-            $display(";R memory[16] = %b", memory[16]);
-            $display(";R memory[17] = %b", memory[17]);
-            $display(";R memory[18] = %b", memory[18]);
-            $display(";R memory[19] = %b", memory[19]);
-            $display(";R memory[20] = %b", memory[20]);
-            $display(";R memory[21] = %b", memory[21]);
-            $display(";R memory[22] = %b", memory[22]);
-            $display(";R memory[23] = %b", memory[23]);
-            $display(";R memory[24] = %b", memory[24]);
-            $display(";R memory[25] = %b", memory[25]);
-            $display(";R memory[26] = %b", memory[26]);
-            $display(";R memory[27] = %b", memory[27]);
-            $display(";R memory[28] = %b", memory[28]);
-            $display(";R memory[29] = %b", memory[29]);
-            $display(";R memory[30] = %b", memory[30]);
-            $display(";R memory[31] = %b", memory[31]);
-            $display(";R nl = %b", nl);
-            $display(";R nloss = %b", nloss);
-            $display(";R num = %b", num);
-            $display(";R play = %b", play);
-            $display(";R s = %b", s);
-            $display(";R scan = %b", scan);
-            $display(";R sound = %b", sound);
-            $display(";R speaker = %b", speaker);
-            $display(";R timebase = %b", timebase);
-            $display(";R wr = %b", wr);
-        end
     end
 
     // Following code segment is generated from /home/meng/Code/concolic-testing/test/b12/src/b12.v:167
@@ -210,60 +156,6 @@ module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
                 count = (count + 2'b01); $display(";A 60");		//(assert (= count    (bv-add count  0b01))) ;60
             end
             num <= #1 count; $display(";A 61");		//(assert (= num    count )) ;61
-        end
-        // Displaying module variables
-        begin
-            $display(";R address = %b", address);
-            $display(";R count = %b", count);
-            $display(";R count2 = %b", count2);
-            $display(";R counter = %b", counter);
-            $display(";R data_in = %b", data_in);
-            $display(";R data_out = %b", data_out);
-            $display(";R gamma = %b", gamma);
-            $display(";R ind = %b", ind);
-            $display(";R max = %b", max);
-            $display(";R memory[0] = %b", memory[0]);
-            $display(";R memory[1] = %b", memory[1]);
-            $display(";R memory[2] = %b", memory[2]);
-            $display(";R memory[3] = %b", memory[3]);
-            $display(";R memory[4] = %b", memory[4]);
-            $display(";R memory[5] = %b", memory[5]);
-            $display(";R memory[6] = %b", memory[6]);
-            $display(";R memory[7] = %b", memory[7]);
-            $display(";R memory[8] = %b", memory[8]);
-            $display(";R memory[9] = %b", memory[9]);
-            $display(";R memory[10] = %b", memory[10]);
-            $display(";R memory[11] = %b", memory[11]);
-            $display(";R memory[12] = %b", memory[12]);
-            $display(";R memory[13] = %b", memory[13]);
-            $display(";R memory[14] = %b", memory[14]);
-            $display(";R memory[15] = %b", memory[15]);
-            $display(";R memory[16] = %b", memory[16]);
-            $display(";R memory[17] = %b", memory[17]);
-            $display(";R memory[18] = %b", memory[18]);
-            $display(";R memory[19] = %b", memory[19]);
-            $display(";R memory[20] = %b", memory[20]);
-            $display(";R memory[21] = %b", memory[21]);
-            $display(";R memory[22] = %b", memory[22]);
-            $display(";R memory[23] = %b", memory[23]);
-            $display(";R memory[24] = %b", memory[24]);
-            $display(";R memory[25] = %b", memory[25]);
-            $display(";R memory[26] = %b", memory[26]);
-            $display(";R memory[27] = %b", memory[27]);
-            $display(";R memory[28] = %b", memory[28]);
-            $display(";R memory[29] = %b", memory[29]);
-            $display(";R memory[30] = %b", memory[30]);
-            $display(";R memory[31] = %b", memory[31]);
-            $display(";R nl = %b", nl);
-            $display(";R nloss = %b", nloss);
-            $display(";R num = %b", num);
-            $display(";R play = %b", play);
-            $display(";R s = %b", s);
-            $display(";R scan = %b", scan);
-            $display(";R sound = %b", sound);
-            $display(";R speaker = %b", speaker);
-            $display(";R timebase = %b", timebase);
-            $display(";R wr = %b", wr);
         end
     end
 
@@ -313,60 +205,6 @@ module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
             else begin
                 $display(";A 99");		//(assert (= wr    0b0)) ;99
             end
-        end
-        // Displaying module variables
-        begin
-            $display(";R address = %b", address);
-            $display(";R count = %b", count);
-            $display(";R count2 = %b", count2);
-            $display(";R counter = %b", counter);
-            $display(";R data_in = %b", data_in);
-            $display(";R data_out = %b", data_out);
-            $display(";R gamma = %b", gamma);
-            $display(";R ind = %b", ind);
-            $display(";R max = %b", max);
-            $display(";R memory[0] = %b", memory[0]);
-            $display(";R memory[1] = %b", memory[1]);
-            $display(";R memory[2] = %b", memory[2]);
-            $display(";R memory[3] = %b", memory[3]);
-            $display(";R memory[4] = %b", memory[4]);
-            $display(";R memory[5] = %b", memory[5]);
-            $display(";R memory[6] = %b", memory[6]);
-            $display(";R memory[7] = %b", memory[7]);
-            $display(";R memory[8] = %b", memory[8]);
-            $display(";R memory[9] = %b", memory[9]);
-            $display(";R memory[10] = %b", memory[10]);
-            $display(";R memory[11] = %b", memory[11]);
-            $display(";R memory[12] = %b", memory[12]);
-            $display(";R memory[13] = %b", memory[13]);
-            $display(";R memory[14] = %b", memory[14]);
-            $display(";R memory[15] = %b", memory[15]);
-            $display(";R memory[16] = %b", memory[16]);
-            $display(";R memory[17] = %b", memory[17]);
-            $display(";R memory[18] = %b", memory[18]);
-            $display(";R memory[19] = %b", memory[19]);
-            $display(";R memory[20] = %b", memory[20]);
-            $display(";R memory[21] = %b", memory[21]);
-            $display(";R memory[22] = %b", memory[22]);
-            $display(";R memory[23] = %b", memory[23]);
-            $display(";R memory[24] = %b", memory[24]);
-            $display(";R memory[25] = %b", memory[25]);
-            $display(";R memory[26] = %b", memory[26]);
-            $display(";R memory[27] = %b", memory[27]);
-            $display(";R memory[28] = %b", memory[28]);
-            $display(";R memory[29] = %b", memory[29]);
-            $display(";R memory[30] = %b", memory[30]);
-            $display(";R memory[31] = %b", memory[31]);
-            $display(";R nl = %b", nl);
-            $display(";R nloss = %b", nloss);
-            $display(";R num = %b", num);
-            $display(";R play = %b", play);
-            $display(";R s = %b", s);
-            $display(";R scan = %b", scan);
-            $display(";R sound = %b", sound);
-            $display(";R speaker = %b", speaker);
-            $display(";R timebase = %b", timebase);
-            $display(";R wr = %b", wr);
         end
     end
 
@@ -808,60 +646,6 @@ module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
                         gamma = 5'b00001; $display(";A 348");		//(assert (= gamma    0b00001)) ;348
                     end
             endcase
-        end
-        // Displaying module variables
-        begin
-            $display(";R address = %b", address);
-            $display(";R count = %b", count);
-            $display(";R count2 = %b", count2);
-            $display(";R counter = %b", counter);
-            $display(";R data_in = %b", data_in);
-            $display(";R data_out = %b", data_out);
-            $display(";R gamma = %b", gamma);
-            $display(";R ind = %b", ind);
-            $display(";R max = %b", max);
-            $display(";R memory[0] = %b", memory[0]);
-            $display(";R memory[1] = %b", memory[1]);
-            $display(";R memory[2] = %b", memory[2]);
-            $display(";R memory[3] = %b", memory[3]);
-            $display(";R memory[4] = %b", memory[4]);
-            $display(";R memory[5] = %b", memory[5]);
-            $display(";R memory[6] = %b", memory[6]);
-            $display(";R memory[7] = %b", memory[7]);
-            $display(";R memory[8] = %b", memory[8]);
-            $display(";R memory[9] = %b", memory[9]);
-            $display(";R memory[10] = %b", memory[10]);
-            $display(";R memory[11] = %b", memory[11]);
-            $display(";R memory[12] = %b", memory[12]);
-            $display(";R memory[13] = %b", memory[13]);
-            $display(";R memory[14] = %b", memory[14]);
-            $display(";R memory[15] = %b", memory[15]);
-            $display(";R memory[16] = %b", memory[16]);
-            $display(";R memory[17] = %b", memory[17]);
-            $display(";R memory[18] = %b", memory[18]);
-            $display(";R memory[19] = %b", memory[19]);
-            $display(";R memory[20] = %b", memory[20]);
-            $display(";R memory[21] = %b", memory[21]);
-            $display(";R memory[22] = %b", memory[22]);
-            $display(";R memory[23] = %b", memory[23]);
-            $display(";R memory[24] = %b", memory[24]);
-            $display(";R memory[25] = %b", memory[25]);
-            $display(";R memory[26] = %b", memory[26]);
-            $display(";R memory[27] = %b", memory[27]);
-            $display(";R memory[28] = %b", memory[28]);
-            $display(";R memory[29] = %b", memory[29]);
-            $display(";R memory[30] = %b", memory[30]);
-            $display(";R memory[31] = %b", memory[31]);
-            $display(";R nl = %b", nl);
-            $display(";R nloss = %b", nloss);
-            $display(";R num = %b", num);
-            $display(";R play = %b", play);
-            $display(";R s = %b", s);
-            $display(";R scan = %b", scan);
-            $display(";R sound = %b", sound);
-            $display(";R speaker = %b", speaker);
-            $display(";R timebase = %b", timebase);
-            $display(";R wr = %b", wr);
         end
     end
 

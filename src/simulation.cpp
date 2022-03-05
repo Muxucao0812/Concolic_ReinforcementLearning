@@ -1,6 +1,7 @@
 #include "concolic.h"
 #include "globals.h"
 #include "smt_lib.h"
+#include "state.h"
 #include <iostream>
 #include <cstdio>
 #include <cstring>
@@ -17,6 +18,19 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <sys/stat.h>
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <string>
+#include <algorithm> 
+#include <random>
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <unordered_map>
+#include <string>
 
 using namespace std;
 
@@ -48,6 +62,129 @@ static SMTBranch* selected_branch;
 static uint selected_clock;
 
 static void check_satisfiability();
+
+// 选择动作 best_ation
+// std::string chooseAction(const State& state, const std::unordered_map<std::string, std::vector<double>>& q_table, double epsilon, const std::vector<std::string>& actions) {
+//     std::string stateKey = state.toString();
+
+//     // ε-贪婪策略
+//     std::random_device rd;
+//     std::mt19937 gen(rd());
+//     std::uniform_real_distribution<> dis(0, 1);
+//     if (dis(gen) < epsilon) {
+//         std::uniform_int_distribution<> actionDis(0, actions.size() - 1);
+//         std::cout << "Chosen Action: " << actions[actionDis(gen)] << " - Reason: Exploration (random choice)" << std::endl;
+//         return actions[actionDis(gen)]; // 探索
+//     } else {
+//         auto it = std::find_if(q_table.begin(), q_table.end(), [&](const auto& pair) {
+//             return pair.first == stateKey;
+//         });
+//         if (it != q_table.end()) {
+//             auto maxIt = std::max_element(it->second.begin(), it->second.end());
+//             std::cout << "Chosen Action: " << actions[std::distance(it->second.begin(), maxIt)] << " - Reason: Exploitation (best current option)" << std::endl;
+//             return actions[std::distance(it->second.begin(), maxIt)]; // 利用
+//         }
+//         return actions[0]; // 默认动作
+//     }
+// }
+
+// 修改chooseAction函数，返回一个动作列表
+std::vector<unsigned int> chooseActions(const State& state, const std::unordered_map<std::string, std::vector<double>>& q_table, double epsilon, const std::vector<unsigned int>& actions) {
+    std::string stateKey = state.toString();
+    std::vector<unsigned int> actionList;
+    // ε-贪婪策略
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis(0, 1);
+    if (dis(gen) < epsilon) {
+        // 以随机顺序返回动作列表作为探索
+        actionList = actions;
+        std::shuffle(actionList.begin(), actionList.end(), gen);
+        std::cout << "Action List: Exploration (random order)" << std::endl;
+    } else {
+        // 根据Q值排序返回动作列表
+        auto it = q_table.find(stateKey);
+        if (it != q_table.end()) {
+            // 创建一个包含动作索引和对应Q值的向量
+            std::vector<std::pair<size_t, double>> indexedQValues;
+            for (size_t i = 0; i < it->second.size(); ++i) {
+                indexedQValues.emplace_back(i, it->second[i]);
+            }
+            // 根据Q值降序排序
+            std::sort(indexedQValues.begin(), indexedQValues.end(), [](const auto& a, const auto& b) {
+                return a.second > b.second;
+            });
+            // 填充动作列表，按Q值排序
+            for (const auto& iq : indexedQValues) {
+                actionList.push_back(actions[iq.first]);
+            }
+            std::cout << "Action List: Exploitation (sorted by Q values)" << std::endl;
+        } else {
+            // 如果状态不在Q表中，返回默认动作列表
+            actionList = actions;
+        }
+    }
+    return actionList;
+}
+
+
+
+
+// 更新Q值，action代表被选择动作的索引
+void updateQValue(std::unordered_map<std::string, std::vector<double>>& q_table, const State& prevState, const State& newState, const br_cnst_t* branch, double reward, double alpha, double gamma, size_t actionSize) {
+    unsigned int actionIndex = branch->br->id;
+	unsigned int clk = branch->cnst->clock;
+	std::string prevStateKey = prevState.toString();
+    std::string newStateKey = newState.toString();
+	std::cout << "Choose branch: " << actionIndex << "  Clock: "<< clk << std::endl;
+    if (q_table.find(prevStateKey) == q_table.end()) {
+        q_table[prevStateKey] = std::vector<double>(actionSize, 0.0);
+    }
+    if (q_table.find(newStateKey) == q_table.end()) {
+        q_table[newStateKey] = std::vector<double>(actionSize, 0.0);
+    }
+
+    auto maxIt = std::max_element(q_table[newStateKey].begin(), q_table[newStateKey].end());
+    double maxQValueNewState = *maxIt;
+
+    q_table[prevStateKey][actionIndex] += alpha * (reward + gamma * maxQValueNewState - q_table[prevStateKey][actionIndex]);
+}
+
+
+
+double calculateReward(bool foundNewNode) {
+    double reward = 0.0;
+    // 如果发现了新的节点，给予奖励
+    if (foundNewNode) {
+        reward = 1.0; 
+    }
+	else{
+		reward = - 0.1;
+	}
+
+    return reward;
+}
+
+
+void sortBranches(std::vector<br_cnst_t*>& branches, const std::vector<unsigned int>& action_list) {
+    // 首先，创建一个动作ID到排序索引的映射
+    std::unordered_map<unsigned int, size_t> action_order;
+    for (size_t i = 0; i < action_list.size(); ++i) {
+        action_order[action_list[i]] = i;
+    }
+
+    // 使用自定义的比较函数进行排序
+    std::sort(branches.begin(), branches.end(),
+              [&action_order](const br_cnst_t* a, const br_cnst_t* b) -> bool {
+                  // 获取两个分支的动作ID
+                  unsigned int actionA = a->br->id;
+                  unsigned int actionB = b->br->id;
+
+                  // 比较它们在action_list中的位置
+                  return action_order[actionA] < action_order[actionB];
+              });
+}
+
 
 void writeLastFContentToFile(const std::string& inputFileName, FILE* outputFile) {
     std::ifstream inputFile(inputFileName);
@@ -143,7 +280,7 @@ static void update_vvp(uint target_cycles = g_step) {
         } else if (_line.find(pattern_str2) != std::string::npos) {
             std::string target_str = std::to_string(g_unroll * 10);
             int pos_start = _line.find(target_str);
-            _line = _line.substr(0, pos_start) + std::to_string((target_cycles) * 10) + _line.substr(pos_start + target_str.length());
+            _line = _line.substr(0, pos_start) + std::to_string(g_unroll * 10) + _line.substr(pos_start + target_str.length());
         }
         // 不需要额外的else分支，因为_line已经包含了未修改的内容
     }
@@ -258,7 +395,8 @@ static void build_stack(uint sim_clk=g_step) {
 		fscanf(f_test, "%s%u", tag, &val);
 		if(strcmp(tag, ";_C") == 0){
 			clock = val;
-			if(clock == g_sim_clk )	break;
+			if(clock == g_sim_clk+1)	
+				break;
 			constraints_stack.push_back(create_clock(clock));
             SMTSigCore::set_input_version(clock);
             SMTSigCore::commit_versions(clock);
@@ -487,14 +625,33 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	//get the branches between begin and end
 	get_available_branches(branches, begin_clk+1, end_clk);
 
+
+	//get branch unique index
+	std::vector<unsigned int> actions;
+	for(int i = 0;i < branches.size();++i){
+		actions.push_back(branches[i]->br->id);
+	}
+	//choose mutated branch
+	State currentState("model.log");//初始状态
+	std::vector<unsigned int> action_list = chooseActions(currentState, q_table, epsilon_qlearn, actions);//action_list = 选择branch index
+	sortBranches(branches,action_list);
+
 	// //sort by distance
-	// sort(branches.begin(), branches.end(), compare_dist);
+	//sort(branches.begin(), branches.end(), compare_dist);
 	//sort by probability
-	sort(branches.begin(), branches.end(), compare_prob);
+	//sort(branches.begin(), branches.end(), compare_prob);
+    
 
 	if(!user_select_branch){
 		for(auto it:branches){
+			if (it->cnst == nullptr) {
+				std::cerr << "Error: Constraint pointer is null." << std::endl;
+				continue; // Skip this iteration
+       		 }
 			uint clock = it->cnst->clock;
+
+			// yices_print_error(stdout);
+
 			//reset context
 			yices_reset_context(yices_context);
 			//insert initial assertion to zero for registers
@@ -541,6 +698,9 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 				g_sim_clk = clock;
 				simulate_build_stack();
 				// Xiangchen: Adjust the probability
+				State newState("model.log"); // 获得新状态
+        		double reward = calculateReward(g_is_new_block); // 计算奖励
+        		updateQValue(q_table, currentState, newState,it, reward, alpha_qlearn, gamma_qlearn,1);//更新Q表
 				if(g_is_new_block){
 					SMTBranch::increase_probability(selected_branch);
 				}else{
@@ -692,7 +852,8 @@ static SMTPath* concolic_iteration(SMTPath *curr_path) {
 	explore_one_step(curr_path);
 
 	if(find_next_cfg(curr_path, init_path->data.get_clk(), curr_path->data.get_clk())){
-        next_path = new SMTPath(g_data_step);
+        simulate_build_stack();
+		next_path = new SMTPath(g_data_step);
     }
 	return next_path;
 }
@@ -805,6 +966,7 @@ void multi_coverage() {
 			}
 			SMTBasicBlock::target_list.pop_front();
 			SMTBasicBlock::target_list.push_back(target);
+			SMTBasicBlock::print_cover_result();
 			target->dump_distances();
 		}
 	}
@@ -863,9 +1025,7 @@ void end_concolic(){
     // SMTAssign::print_coverage(report);
     // report.close();
     
-	// print uncovered targets to file
-	uint uncovered_target_count = SMTBasicBlock::target_list.size();
-	SMTBasicBlock::print_cover_result();
+
 	
 	printf("\nCovered branch number: %d, Uncovered branch number: %d, Coverage rate: %.2f%%\n", SMTBranch::covered_branch_count,SMTBranch::total_branch_count-SMTBranch::covered_branch_count, ((float)(SMTBranch::covered_branch_count) / SMTBranch::total_branch_count) * 100.0);
 

@@ -24,7 +24,7 @@ module conquest_tb();
     // Generated internal use signals
     reg  [31:0] _conc_pc;
     reg  [5:0] _conc_opcode;
-    reg  [5:0] _conc_ram[0:9];
+    reg  [5:0] _conc_ram[0:5];
 
 
     // Generated clock pulse
@@ -40,6 +40,7 @@ module conquest_tb();
         start <= #5 _conc_opcode[0];
         _conc_pc = _conc_pc + 32'b1;
         $strobe(";_C %d", _conc_pc);
+        $strobe(";_Input %b", _conc_opcode);
     end
 
     // Generated initial block
@@ -51,7 +52,7 @@ module conquest_tb();
         #2 clock = 1'b1;
         reset = 1'b1;
         #5 reset = 1'b0;
-        #50000 $finish;
+        #10000 $finish;
     end
 
 endmodule

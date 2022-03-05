@@ -24,7 +24,7 @@ clean:
 
 
 %.o: %.cpp	$(HEADERS)
-	@g++ -Wall -ggdb3 -std=c++11 -c $< -o $@ -I../include/ -I$(IVERILOG_INC) -I$(IVERILOG_DIR) -fpic
+	@g++ -Wall -ggdb3 -std=c++14 -c $< -o $@ -I../include/ -I$(IVERILOG_INC) -I$(IVERILOG_DIR) -fpic
 	@echo "Compiling $<..."
 
 $(TARGET): $(OBJECTS)
