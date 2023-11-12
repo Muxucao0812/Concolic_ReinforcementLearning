@@ -3,7 +3,7 @@
 PROJ=conquestMulti
 
 # Change this directory to verilog
-IVERILOG_DIR = /home/yangdi/tools/verilog-10.0
+IVERILOG_DIR = /usr/local
 IVERILOG_LIB = $(IVERILOG_DIR)/lib/ivl
 IVERILOG_INC = $(IVERILOG_DIR)/include/iverilog
 
@@ -35,4 +35,3 @@ $(TARGET): $(OBJECTS)
 $(CONFIG_TARGET): $(CONFIG_FILE)
 	@cp -f $(CONFIG_FILE) -t $(IVERILOG_LIB)
 	@echo "Copying config file..."
-

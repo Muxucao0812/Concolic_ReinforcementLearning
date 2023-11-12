@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "config.h"
+
 #include "concolic.h"
 #include "smt_lib.h"
 

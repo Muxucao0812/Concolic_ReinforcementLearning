@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "config.h"
+
 #include "concolic.h"
 
 void emit_event(ivl_scope_t scope, ivl_statement_t stmt) {

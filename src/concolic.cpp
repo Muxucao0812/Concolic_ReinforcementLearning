@@ -114,6 +114,8 @@ void generate_tb(ivl_scope_t root){
 
     //prepare reset edge
     const char *reset_edge_inactive;
+
+
     if(strcmp(g_reset_edge_active,"1") == 0){
         g_reset_edge_active = "1'b1";
         reset_edge_inactive = "1'b0";
