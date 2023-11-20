@@ -1,5 +1,4 @@
 #Makefile for iverilog target
-
 PROJ=conquestMulti
 
 # Change this directory to verilog

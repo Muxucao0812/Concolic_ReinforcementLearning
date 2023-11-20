@@ -2,7 +2,7 @@
 #include <cassert>
 #include "data_mem.h"
 #include "globals.h"
-
+#include <iostream>
 using namespace std;
 
 CTDataMem::CTDataMem(){

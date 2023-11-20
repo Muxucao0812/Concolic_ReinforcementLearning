@@ -16,6 +16,7 @@ extern const char*      g_output_file;
 extern const char*      g_tb_file;
 extern const char*		g_data_mem;
 extern const char*		g_data_mem_raw;
+extern const char*		g_data_state;
 extern CTDataMem		g_data;
 extern clock_t          start_time;
 
@@ -32,6 +33,7 @@ extern uint		g_target_limit;
 #define conc_flush(X) 
 extern const bool		enable_error_check;
 extern const bool		enable_obs_padding;
+extern const bool		enable_yices_debug;
 extern const bool		enable_sim_copy;
 
 //Utility functions 

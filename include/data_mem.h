@@ -44,4 +44,5 @@ private:
     std::vector<std::string> data;			 //structure for holding data    
     uint width;
     uint unroll;
+
 };

@@ -3,6 +3,23 @@
 #include "concolic.h"
 #include "smt_lib.h"
 
+
+
+
+char* _left(const char* s, int n) {
+   
+    char* p = new char[n+1];
+    int i = 0;
+    while (s[i] != '\0' && i < n) {
+        p[i] = s[i];
+        i++;
+    }
+    p[i] = '\0';
+ 
+
+    return p;
+}
+
 static SMTBinary* emit_expr_binary(ivl_scope_t scope, ivl_expr_t expr) {
 	ivl_expr_t oper1 = ivl_expr_oper1(expr);
 	ivl_expr_t oper2 = ivl_expr_oper2(expr);
@@ -12,6 +29,9 @@ static SMTBinary* emit_expr_binary(ivl_scope_t scope, ivl_expr_t expr) {
 	
 	SMTExpr* tmp_expr1 = NULL;
 	SMTExpr* tmp_expr2 = NULL;
+
+	SMTSignal* tmp_sig = NULL;
+
 	smt_binary->set_opcode_from_expr(expr);
 	const char *oper = "<invalid>";
 	
@@ -87,7 +107,23 @@ static SMTBinary* emit_expr_binary(ivl_scope_t scope, ivl_expr_t expr) {
 		case '/':
 			tmp_expr1 = emit_expr(scope, oper1);
 			fprintf(g_out, " %s ", oper);
-			tmp_expr2 = emit_expr(scope, oper2);
+			tmp_sig = dynamic_cast<SMTSignal*>(tmp_expr1);
+			if(tmp_sig && (ivl_expr_parameter(oper2)||ivl_expr_type(oper2)==IVL_EX_NUMBER)){
+				if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)>0)//oper2's width is larger than oper1's width
+					tmp_expr2 = emit_number(
+						_left(ivl_expr_bits(oper2),(int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)),
+						tmp_sig->parent->width, 
+						ivl_expr_signed(oper1));
+				else if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)==0)
+					tmp_expr2 = emit_number(
+						ivl_expr_bits(oper2),
+						tmp_sig->parent->width, 
+						ivl_expr_signed(oper1));
+				else
+					tmp_expr2 = emit_expr(scope, oper2);
+			}else{
+				tmp_expr2 = emit_expr(scope, oper2);
+			}
 			break;
 		case '&':
 		case '|':
@@ -127,10 +163,25 @@ static SMTBinary* emit_expr_binary(ivl_scope_t scope, ivl_expr_t expr) {
 			fprintf(g_out, ")");
 			break;
 		case 'p':
-			error("TODO: opcode **");
-            tmp_expr1 = emit_expr(scope, oper1);
-            fprintf(g_out, " ** ");
-            tmp_expr2 = emit_expr(scope, oper2);
+			tmp_expr1 = emit_expr(scope, oper1);
+			fprintf(g_out, " %s ", oper);
+			tmp_sig = dynamic_cast<SMTSignal*>(tmp_expr1);
+			if(tmp_sig && (ivl_expr_parameter(oper2)||ivl_expr_type(oper2)==IVL_EX_NUMBER)){
+				if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)>0)//oper2's width is larger than oper1's width
+					tmp_expr2 = emit_number(
+						_left(ivl_expr_bits(oper2),(int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)),
+						tmp_sig->parent->width, 
+						ivl_expr_signed(oper1));
+				else if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)==0)
+					tmp_expr2 = emit_number(
+						ivl_expr_bits(oper2),
+						tmp_sig->parent->width, 
+						ivl_expr_signed(oper1));
+				else
+					tmp_expr2 = emit_expr(scope, oper2);
+			}else{
+				tmp_expr2 = emit_expr(scope, oper2);
+			}
 			break;
 			/* Convert the Verilog-A min() or max() functions. */
 		case 'm':

@@ -62,12 +62,12 @@ void add_to_rval(set<SMTSigCore*> &assign_set, SMTExpr* expr){
 
 void smt_yices_assert(context_t *ctx, term_t term, SMTAssign* assign){
 	yices_assert_formula(ctx, term);
-	/*if(enable_yices_debug){
+	if(enable_yices_debug){
 		if(assign){
 			//printf(";%s", assign->print(SMT_CLK_CURR).c_str());
 			yices_pp_term(stdout, term, 0xFFFFFF, 1, 0);
 		}
-	}*/
+	}
 }
 
 //static uint level = 0;
@@ -380,6 +380,10 @@ SMTBinary::SMTBinary() : SMTExpr(SMT_EXPR_BINARY) {
 
 void SMTBinary::set_opcode(char ivl_code) {
 	switch (ivl_code) {
+		case '/':
+			opcode = "bv-div";
+			func = yices_bvsdiv;
+			break;
 		case '+':
 			opcode = "bv-add";
 			func = yices_bvadd;
@@ -393,8 +397,8 @@ void SMTBinary::set_opcode(char ivl_code) {
 			func = yices_bvmul;
 			break;
 		case 'p':
-            error("TODO: bvpower");
 			opcode = "bv-pow";
+			// func = yices_bvpower;
 			break;
         case 'n':
 			opcode = "bv-comp";				//converted from bool to bitvector
@@ -1248,10 +1252,10 @@ SMTSigCore* SMTSigCore::get_parent(ivl_signal_t sig) {
 }
 
 void SMTSigCore::clear_all_versions() {
-    for(auto it:reg_list){
-        it->curr_version = 0;
-        it->next_version = 0;
-    }
+	for(auto it:reg_list){
+		it->curr_version = 0;
+		it->next_version = 0;
+	}
     for(auto it:input_list){
         it->curr_version = 0;
         it->next_version = 0;

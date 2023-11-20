@@ -18,6 +18,7 @@ ivl_design_t	g_design = 0;
 const char*     g_output_file = "conquest_dut.v";
 const char*     g_tb_file = "conquest_tb.v";
 const char*		g_data_mem = "data.mem";
+const char*		g_data_state = "data.state";
 CTDataMem		g_data;
 clock_t         start_time;
 

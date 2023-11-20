@@ -198,6 +198,8 @@ static SMTBlockingAssign* emit_assign_and_opt_opcode(ivl_scope_t scope, ivl_stat
 	switch (opcode) {
 		case 0: opcode_str = "";
 			break;
+		case 'p': opcode_str = "**";
+			break;
 		case '+': opcode_str = "+";
 			break;
 		case '-': opcode_str = "-";

@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // b11 Test
         {
             "name": "concolic-b11",
             "type": "cppdbg",
@@ -46,6 +47,61 @@
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
             "stopAtEntry": true,
             "cwd": "/home/meng/Code/concolic-testing/test/b11",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+        // grammer Test
+        {
+            "name": "concolic-grammerTest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/bin/iverilog",
+            "args":["/home/meng/Code/concolic-testing/test/grammerTest/src/grammerTest.v","-v",
+                "-o /home/meng/Code/concolic-testing/test/grammerTest/conquest_dut.v",
+                "-t","conquestMulti",
+                "-ptb=/home/meng/Code/concolic-testing/test/grammerTest/conquest_tb.v",
+                "-pclk=clk",
+                "-preset=reset",
+                "-preset_edge=1",
+                "-punroll=1000",
+                "-prandom_sim=3"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/grammerTest",
+            "environment": [
+                {
+                    "name": "TGT",
+                    "value": "/usr/local/lib/ivl"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],   
+        },
+        {
+            "name": "debug-grammerTest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/lib/ivl/ivl",
+            "args": ["/home/meng/Code/concolic-testing/test/grammerTest/temp.mid",
+            "-C","/home/meng/Code/concolic-testing/test/grammerTest/ivrlh1a5d110d",
+            "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/grammerTest",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",

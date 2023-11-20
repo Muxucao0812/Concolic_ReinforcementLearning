@@ -21,7 +21,7 @@ using namespace std;
 const bool		enable_error_check = false;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
-//const bool		enable_yices_debug = false;
+const bool		enable_yices_debug = true;
 const uint      iteration_limit = 10;
 const uint      total_limit = 1000;
 unordered_map<SMTBasicBlock*, uint> iter_count;
@@ -93,7 +93,7 @@ static constraint_t* create_constraint(uint clock, SMTAssign* assign){
 	cnst->clock = clock;
 	cnst->obj = assign;
 	cnst->index = constraints_stack.size();
-    cnst->yices_term = assign->update_term();
+    cnst->yices_term = assign->update_term();//是assign错了
     if(cnst->yices_term <= 0){
         yices_print_error(stdout);
         error("Term evaluation failed at assign id: %u", assign->id);
@@ -112,18 +112,52 @@ static constraint_t* create_constraint(uint clock, SMTAssign* assign){
     return cnst;
 }
 
+static void write_first_clock(char* file_name){
+	FILE* f_test = fopen(file_name, "r");
+	if(f_test == NULL){
+		perror("Error opening file!");
+		return;
+	}
+	// Get the size of file
+	fseek(f_test, 0, SEEK_END);
+	long f_size = ftell(f_test);
+	fseek(f_test, 0, SEEK_SET);
+
+	// Read the content to buffer
+	char* buffer = (char*)malloc(f_size + 1);
+	fread(buffer, f_size, 1, f_test);
+	buffer[f_size] = '\0';
+	fclose(f_test);
+
+	// Write the first clock and the rest
+	f_test = fopen(file_name, "w");
+	if (f_test == NULL) {
+    	perror("Error opening file");
+    	free(buffer);
+    	return;
+	}
+	fprintf(f_test, ";_C%11u\n", 0);
+	fprintf(f_test, "%s", buffer);
+	free(buffer);
+	fclose(f_test);
+}
+
 static void build_stack() {
 	FILE* f_test = NULL;
 	if(enable_sim_copy){
 		f_test = fopen(sim_file_name, "r");
+		// write_first_clock(sim_file_name);
 	} else{
 		f_test = fopen("sim.log", "r");
+		write_first_clock("sim.log");
 	}
 	assert(f_test);
 	uint clock = 0;
     g_hash_value = 0;
 	char tag[16];
 	uint val;
+	
+
 	
 	//constraints_stack.push_back(create_clock(0));
 	while(true){
