@@ -1,40 +1,65 @@
 `line 1 "/home/meng/Code/concolic-testing/test/grammerTest/src/grammerTest.v" 0
 module grammerTest(
-    input clk, 
-    input reset, 
-    input in, 
-    output reg [7:0] out
+    input   clk, 
+    input   reset, 
+    input   [31:0] in, 
+    output  reg [31:0] out,
+    input   sig_display
 );
 
-reg [7:0] cnt;
+  reg [31:0] myArray [0:3]; // 4-element array of 8-bit elements
+  reg [1:0]  addr;
+  reg [31:0] temp;
+  reg [7:0] cnt;
 
-always @(posedge clk or posedge reset) begin
-    if (reset) begin
-        cnt <= 8'b0;
-    end
-    else if (in == 1'b0) begin
-        cnt <= cnt + 8'b1;
-    end
+always @(posedge clk or negedge reset) begin
+  if (reset == 1'b1) begin
+    addr <= 2'b0;
+    temp <= 32'b0;
+    cnt <= 8'b0;
+  end
+  else begin
+    addr <= addr + 1'b1;
+    temp <= in;
+    cnt <= cnt + 1'b1;
+  end
 end
 
-always @(posedge clk or posedge reset)
-begin
-    if (reset)
-    begin
-        out <= 8'b0; //在复位时，输出为0
-    end
-    else
-    begin
-        if (cnt < 8'b0000_0100) begin
-            out <= 8'b0; //如果输入是0，则输出错误码
-        end
-        else if (cnt <= 8'b0001_0000) begin
-            out <= cnt ** 2; //否则，输出输入除以3的余数
-        end
-        else begin
-            out <= cnt / 2; 
-        end
-    end
+always @(posedge clk) begin
+  if (cnt == 8'b0) begin
+    case (addr)
+      2'b00: myArray[0] <= temp;
+      2'b01: myArray[1] <= temp;
+      2'b10: myArray[2] <= temp;
+      2'b11: myArray[3] <= temp;
+  endcase
+  end
+  else if (cnt < 8'b1000_0000) begin
+    case (addr)
+      2'b00: myArray[0] <= temp/2;
+      2'b01: myArray[1] <= temp/2;
+      2'b10: myArray[2] <= temp/2;
+      2'b11: myArray[3] <= temp/2;
+  endcase
+  end
+  else if (cnt < 8'b1100_0000) begin
+    case (addr)
+      2'b00: myArray[0] <= temp>>2;
+      2'b01: myArray[1] <= temp>>2;
+      2'b10: myArray[2] <= temp>>2;
+      2'b11: myArray[3] <= temp>>2;
+      endcase
+  end
+  else begin
+    case (addr)
+      2'b00: myArray[0] <= 32'b0;
+      2'b01: myArray[1] <= 32'b0;
+      2'b10: myArray[2] <= 32'b0;
+      2'b11: myArray[3] <= 32'b0;
+    endcase
+  end
+  out <= myArray[addr];
 end
+
 
 endmodule

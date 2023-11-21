@@ -31,18 +31,18 @@ module grammerTest(clk, reset, in, out, __obs);
             out <= #1 8'h00; $display(";A 8");		//(assert (= out    0h00)) ;8
         end
         else begin
-            if ((cnt < 8'h04)) begin
-                $display(";A 9");		//(assert (= (bool-to-bv (bv-lt cnt  0h04))   0b1)) ;9
+            if ((cnt > 8'h10)) begin
+                $display(";A 9");		//(assert (= (bool-to-bv (bv-gt cnt  0h10))   0b1)) ;9
                 out <= #1 8'h00; $display(";A 11");		//(assert (= out    0h00)) ;11
             end
             else begin
-                $display(";A 10");		//(assert (= (bool-to-bv (bv-lt cnt  0h04))   0b0)) ;10
-                if ((cnt <= 8'h10)) begin
-                    $display(";A 12");		//(assert (= (bool-to-bv (bv-le cnt  0h10))   0b1)) ;12
+                $display(";A 10");		//(assert (= (bool-to-bv (bv-gt cnt  0h10))   0b0)) ;10
+                if ((cnt <= 8'h04)) begin
+                    $display(";A 12");		//(assert (= (bool-to-bv (bv-le cnt  0h04))   0b1)) ;12
                     out <= #1 (cnt ** 8'h02); $display(";A 14");		//(assert (= out    (bv-pow cnt  0h02))) ;14
                 end
                 else begin
-                    $display(";A 13");		//(assert (= (bool-to-bv (bv-le cnt  0h10))   0b0)) ;13
+                    $display(";A 13");		//(assert (= (bool-to-bv (bv-le cnt  0h04))   0b0)) ;13
                     out <= #1 (cnt / 8'h02); $display(";A 15");		//(assert (= out    (bv-div cnt  0h02))) ;15
                 end
             end
