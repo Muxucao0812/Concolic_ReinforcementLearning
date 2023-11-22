@@ -64,12 +64,14 @@ typedef enum{
 	SMT_EXPR_TERNARY,		// Ternary node
 	SMT_EXPR_NUMBER,		// Number node, for constants. Leaf node.
 	SMT_EXPR_SIGNAL,		// Signal node, for nets. Leaf Node.
-	SMT_EXPR_STRING			// String, mostly from display type statements
+	SMT_EXPR_STRING,			// String, mostly from display type statements
+	SMT_EXPR_ARRAY
 }SMTExprType;
 
 typedef enum{
 	CNST_CLK,
 	CNST_ASSIGN,
+	CNST_ASSIGN_NON_BLOCKING,
 	CNST_BRANCH
 }constraint_type_t;
 
@@ -267,6 +269,29 @@ public:
 	SMTExpr* get_expanded() override;
 };
 
+//-----------------------------SMT Array----------------------------------------
+class SMTArray: public SMTExpr{
+public:
+	SMTSigCore* parent;
+	int width; //! array width
+	int index_width; //! array index width
+
+	SMTExpr* _index;
+	
+	bool is_index_term;
+	SMTSigCore* index_term;
+	int array_index;
+	std::string array_index_str;
+	
+	SMTArray();
+	SMTExpr* get_expanded() override;
+	void print(std::stringstream& ss) override;
+	void update_index_term();
+	term_t eval_term(SMTClkType clk) override;
+	term_t update_term();
+};
+
+
 //-----------------------------SMT Cust-----------------------------------------
 class SMTCust : public SMTExpr{
 private:
@@ -372,16 +397,17 @@ private:
     static std::vector<SMTSigCore*> input_list;		//same as input list
     char *zeros;
 	std::vector<uint> version_at_clock;
-	std::vector<uint> term_stack;
 	bool was_in_queue;
-	type_t bv_type;
 	term_t init_term;
     
 public:
+	std::vector<uint> term_stack;
+	type_t bv_type;
 	uint curr_version;
     uint next_version;
     std::string name;
     int width;
+	int index_width;
     bool is_dep;
 	bool is_state_variable;
 	SMTAssign* cont_assign;

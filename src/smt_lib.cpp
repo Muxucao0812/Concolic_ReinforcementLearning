@@ -218,6 +218,36 @@ SMTExpr* SMTConcat::get_expanded() {
 	return expr;
 }
 
+//-----------------------------SMT Array---------------------------------------
+SMTArray::SMTArray() : SMTExpr(SMT_EXPR_ARRAY){
+	is_index_term = false;
+}
+term_t SMTArray::eval_term(SMTClkType clk) {
+	yices_term = parent->get_term(clk);
+	if(is_index_term){
+		return yices_application1(yices_term, index_term->get_term(SMT_CLK_CURR));
+	}else{
+		return yices_application1(yices_term, yices_bvconst_uint64(this->parent->index_width, array_index));
+	}
+	
+	return yices_term;
+}
+term_t SMTArray::update_term() {
+	this->parent->next_version++;
+	term_t new_term = yices_new_uninterpreted_term(this->parent->bv_type);
+	yices_set_term_name(new_term, (this->parent->name + string("_") + to_string(this->parent->next_version)).c_str());
+	yices_term = new_term;
+	this->parent->term_stack.push_back(new_term);
+	return yices_term;
+}
+void SMTArray::print(std::stringstream& ss) {
+	if(is_index_term){
+		ss << "( " << parent->name << " " << array_index_str << " )";
+	}else{
+		ss << parent->name << " " << array_index << " ";
+	}
+}
+
 
 //-----------------------------SMT Cust-----------------------------------------
 SMTCust::SMTCust(std::string _operand) : SMTExpr(SMT_EXPR_CUSTOM){

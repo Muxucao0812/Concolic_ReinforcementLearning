@@ -97,6 +97,78 @@ void emit_scaled_expr(ivl_scope_t scope, ivl_expr_t expr, int msb, int lsb, SMTS
 	tmp_sig->msb = value;
 }
 
+
+void emit_scaled_expr(ivl_scope_t scope, ivl_expr_t expr, int msb, int lsb, SMTArray** array) {
+	int64_t value = 0;
+	if (msb >= lsb) {
+		if (ivl_expr_type(expr) == IVL_EX_NUMBER) {
+			int rtype;
+			value = get_in_range_int64_from_number(expr, &rtype,
+					"value");
+			if (rtype < 0) fprintf(g_out, "1'bx");
+			if (rtype) return;
+			value += lsb;
+			// fprintf(g_out, "%" PRId64, value);
+			//ivl_signal_t sig = ivl_expr_signal(expr);
+			//(*array)->parent = SMTSigCore::get_parent(sig);
+			(*array)->array_index = value;
+			string bit_str(ivl_expr_bits(expr));
+			int num_zeros = (*array)->parent->index_width - bit_str.size();
+			for(int i = 0;i < num_zeros;++i){
+				bit_str += "0";
+			}
+			//DANGEROUS: ARRAY INDEX IS ALWAYS UNSIGNED
+			(*array)->_index = emit_number(bit_str.c_str(), (*array)->parent->index_width, 0);
+		} /*else if (lsb == 0) {
+			// If the LSB is zero then there is no scale.
+			emit_expr(scope, expr, 0, 0, 0, 1);
+		} else {
+			if (is_scaled_expr(expr, msb, lsb)) {
+				emit_expr(scope, ivl_expr_oper1(expr), 0, 0, 0, 1);
+			}
+		}
+		*/
+		else if(ivl_expr_type(expr) == IVL_EX_SELECT){
+			ivl_expr_t expr1 = ivl_expr_oper1(expr);
+			const char* expr_name = ivl_expr_name(expr1);
+			(*array)->is_index_term = true;
+			ivl_signal_t sig = ivl_expr_signal(expr1);
+			(*array)->index_term = SMTSigCore::get_parent(sig);
+			(*array)->array_index_str = expr_name;
+			// fprintf(g_out,"%s", expr_name);
+
+			(*array)->_index = emit_expr_select(scope,expr);
+			
+			//ziyue: Array Problem
+			//error("Invalid expression for signal select");
+		}
+		//alif: made non number expressions invalid
+		else{
+			(*array)->_index = emit_expr_binary(scope,expr);
+			info("Invalid expression for signal select");
+		}
+	} else {
+		if (ivl_expr_type(expr) == IVL_EX_NUMBER) {
+			int rtype;
+			value = get_in_range_int64_from_number(expr, &rtype,
+					"value");
+			if (rtype < 0) fprintf(g_out, "1'bx");
+			if (rtype) return;
+			value = (int64_t) lsb - value;
+			fprintf(g_out, "%" PRId64, value);
+		} /*else {
+			if (is_scaled_expr(expr, msb, lsb)) {
+				emit_expr(scope, ivl_expr_oper2(expr), 0, 0, 0, 1);
+			}
+		}*/
+		//alif: made non number expressions invalid
+		else{
+			error("Invalid expression for signal select");
+		}
+	}
+}
+
+
 static SMTSignal* find_signal_in_nexus(ivl_scope_t scope, ivl_nexus_t nex) {
 	ivl_signal_t use_sig = 0;
 	unsigned is_driver = 0;

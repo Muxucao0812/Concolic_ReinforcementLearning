@@ -20,7 +20,7 @@ char* _left(const char* s, int n) {
     return p;
 }
 
-static SMTBinary* emit_expr_binary(ivl_scope_t scope, ivl_expr_t expr) {
+SMTBinary* emit_expr_binary(ivl_scope_t scope, ivl_expr_t expr) {
 	ivl_expr_t oper1 = ivl_expr_oper1(expr);
 	ivl_expr_t oper2 = ivl_expr_oper2(expr);
 	
@@ -239,7 +239,7 @@ static SMTConcat* emit_expr_concat(ivl_scope_t scope, ivl_expr_t expr) {
  * reference then emit the appropriate parameter name instead of the
  * numeric value unless this is the actual parameter definition.
  */
-static SMTNumber* emit_expr_number(ivl_expr_t expr) {
+SMTNumber* emit_expr_number(ivl_expr_t expr) {
 	return emit_number(ivl_expr_bits(expr), ivl_expr_width(expr), ivl_expr_signed(expr));
 }
 
@@ -264,7 +264,7 @@ static SMTExpr* emit_select_name(ivl_scope_t scope, ivl_expr_t expr) {
 	}
 }
 
-static SMTExpr* emit_expr_select(ivl_scope_t scope, ivl_expr_t expr) {
+SMTExpr* emit_expr_select(ivl_scope_t scope, ivl_expr_t expr) {
 	ivl_expr_t sel_expr = ivl_expr_oper2(expr);
 	ivl_expr_t sig_expr = ivl_expr_oper1(expr);
 	ivl_select_type_t sel_type = ivl_expr_sel_type(expr);
@@ -352,19 +352,21 @@ static SMTExpr* emit_expr_select(ivl_scope_t scope, ivl_expr_t expr) {
     }
 }
 
-static SMTSignal* emit_expr_signal(ivl_scope_t scope, ivl_expr_t expr) {
+static SMTSignal* emit_expr_signal(ivl_scope_t scope, ivl_expr_t expr, SMTArray** array) {
 	ivl_signal_t sig = ivl_expr_signal(expr);
     SMTSignal* smt_signal = new SMTSignal(sig);
 	emit_scope_call_path(scope, ivl_signal_scope(sig));
 	emit_id(ivl_signal_basename(sig));
-	
 	if (ivl_signal_dimensions(sig)) {
 		info("Signal dimension not zero");
 		int lsb = ivl_signal_array_base(sig);
 		int msb = lsb + ivl_signal_array_count(sig);
 		fprintf(g_out, "[");
-		emit_scaled_expr(scope, ivl_expr_oper1(expr), msb, lsb, smt_signal);
+		(*array)->parent = SMTSigCore::get_parent(sig);
+		emit_scaled_expr(scope, ivl_expr_oper1(expr), msb, lsb, array);
 		fprintf(g_out, "]");
+	}else{
+		*array = NULL;
 	}
 	return smt_signal;
 }
@@ -452,8 +454,11 @@ static SMTExpr* emit_expr_string(ivl_expr_t expr){
 
 SMTExpr* emit_expr(ivl_scope_t scope, ivl_expr_t expr) {
 	/* Emit the expression. */
+	SMTArray* array = new SMTArray();
+	SMTSignal* tmp_sig = new SMTSignal();
 	switch (ivl_expr_type(expr)) {
-		//case IVL_EX_ARRAY:
+		case IVL_EX_ARRAY:
+			break;
 		//	emit_expr_array(scope, expr, wid);
 		//	break;
 		case IVL_EX_BINARY:		//done
@@ -465,7 +470,9 @@ SMTExpr* emit_expr(ivl_scope_t scope, ivl_expr_t expr) {
 		case IVL_EX_SELECT:
 			return emit_expr_select(scope, expr);
 		case IVL_EX_SIGNAL:		//done
-			return emit_expr_signal(scope, expr);
+			printf("Since IVL_EX_ARRAY cannot work properly, we use IVL_EX_SIGNAL to emit array\n");
+			tmp_sig = emit_expr_signal(scope, expr, &array);
+			return bool(!array)?(SMTExpr*)tmp_sig:(SMTExpr*)array; 
 		case IVL_EX_TERNARY:	//done
 			return emit_expr_ternary(scope, expr);
 		case IVL_EX_UNARY:		//done

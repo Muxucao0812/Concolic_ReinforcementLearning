@@ -19,6 +19,8 @@ typedef unsigned uint;
 class SMTSignal;
 class SMTExpr;
 class SMTSigCore;
+class SMTArray;
+class SMTBinary;
 class SMTAssign;
 class SMTProcess;
 struct constraint_t;
@@ -41,6 +43,8 @@ extern SMTProcess* emit_process(ivl_scope_t scope, ivl_process_t proc);
 void emit_stmt(ivl_scope_t scope, ivl_statement_t stmt);
 extern void emit_scaled_expr(ivl_scope_t scope, ivl_expr_t expr,
 		int msb, int lsb, SMTSignal* smt_sig);
+extern void emit_scaled_expr(ivl_scope_t scope, ivl_expr_t expr,
+		int msb, int lsb, SMTArray** smt_arr);
 extern void emit_scaled_range(ivl_scope_t scope, ivl_expr_t expr,
 		unsigned width, int msb, int lsb, SMTSignal* smt_sig);
 extern void emit_scope_path(ivl_scope_t scope, ivl_scope_t call_scope);
@@ -53,6 +57,11 @@ extern SMTExpr* emit_nexus_as_ca(ivl_scope_t scope, ivl_nexus_t nex, uint allow_
 extern void emit_nexus_port_driver_as_ca(ivl_scope_t scope, ivl_nexus_t nex);
 extern SMTNumber* emit_const_nexus(ivl_scope_t scope, ivl_net_const_t const_net);
 extern void emit_signal_net_const_as_ca(ivl_scope_t scope, ivl_signal_t sig);
+
+extern SMTBinary* emit_expr_binary(ivl_scope_t scope, ivl_expr_t expr);
+extern SMTNumber* emit_expr_number(ivl_expr_t expr);
+extern SMTExpr* emit_expr_select(ivl_scope_t scope, ivl_expr_t expr);
+
 
 extern void emit_id(const char *id);
 extern SMTNumber* emit_number(const char *bits, unsigned nbits, bool is_signed);

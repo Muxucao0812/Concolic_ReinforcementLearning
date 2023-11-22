@@ -79,16 +79,14 @@ static void emit_stmt_lval_name(ivl_scope_t scope, ivl_lval_t lval,
 	emit_id(ivl_signal_basename(sig));
 	
 	if (array_idx) {
-		error("Currently arrays are not supported");
-		/*int msb, lsb;
+		int msb, lsb;
 		assert(ivl_signal_dimensions(sig));
 		fprintf(g_out, "[");
-		// For an array the LSB/MSB order is not important. They are
-		// always accessed from base counting up.
 		lsb = ivl_signal_array_base(sig);
 		msb = lsb + ivl_signal_array_count(sig) - 1;
-		emit_scaled_expr(scope, array_idx, msb, lsb);
-		fprintf(g_out, "]");*/
+		SMTSignal* tmp_sig = new SMTSignal(sig);
+		emit_scaled_expr(scope, array_idx, msb, lsb, tmp_sig);
+		fprintf(g_out, "]");
 	}
 }
 
