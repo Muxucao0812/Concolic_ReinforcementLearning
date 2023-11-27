@@ -44,3 +44,9 @@ jobs:
       run: |
           cd src
           sudo make
+
+    # Step to run concolic
+    - name: run concolic
+      run: |
+          cd test/b11
+          make
