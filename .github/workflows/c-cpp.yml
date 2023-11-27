@@ -15,11 +15,21 @@ jobs:
     - uses: actions/checkout@v3
     - name: Fetch dependencies
       env:
-             DEBIAN_FRONTEND: noninteractive
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+          DEBIAN_FRONTEND: noninteractive
+      run: |
+          sudo add-apt-repository ppa:sri-csl/formal-methods
+          sudo apt-get update
+          sudo apt-get install build-essential gcc gdb g++ make yices2-dev autoconf
+
+    - name: Get iverilog
+      run: |
+          git clone https://github.com/steveicarus/iverilog.git
+          cd iverilog
+          sh autoconf.sh
+          ./configure
+          make -j$(nproc)
+          sudo make install
+    - name: compile concolic
+      run: |
+          cd src
+          make
