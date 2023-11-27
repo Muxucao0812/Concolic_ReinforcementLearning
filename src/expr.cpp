@@ -470,7 +470,7 @@ SMTExpr* emit_expr(ivl_scope_t scope, ivl_expr_t expr) {
 		case IVL_EX_SELECT:
 			return emit_expr_select(scope, expr);
 		case IVL_EX_SIGNAL:		//done
-			printf("Since IVL_EX_ARRAY cannot work properly, we use IVL_EX_SIGNAL to emit array\n");
+			// printf("Since IVL_EX_ARRAY cannot work properly, we use IVL_EX_SIGNAL to emit array\n");
 			tmp_sig = emit_expr_signal(scope, expr, &array);
 			return bool(!array)?(SMTExpr*)tmp_sig:(SMTExpr*)array; 
 		case IVL_EX_TERNARY:	//done

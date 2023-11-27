@@ -90,6 +90,29 @@ static void emit_stmt_lval_name(ivl_scope_t scope, ivl_lval_t lval,
 	}
 }
 
+
+static void emit_stmt_lval_name(ivl_scope_t scope, ivl_lval_t lval,
+		ivl_signal_t sig, SMTArray **array) {
+	ivl_expr_t array_idx = ivl_lval_idx(lval);
+	emit_scope_call_path(scope, ivl_signal_scope(sig));
+	emit_id(ivl_signal_basename(sig));
+	
+	if (array_idx) {
+		//error("Currently arrays are not supported");
+		int msb, lsb;
+		assert(ivl_signal_dimensions(sig));
+		fprintf(g_out, "[");
+		// For an array the LSB/MSB order is not important. They are
+		// always accessed from base counting up.
+		lsb = ivl_signal_array_base(sig);
+		msb = lsb + ivl_signal_array_count(sig) - 1;
+		//SMTSignal* tmp_sig = new SMTSignal(sig);
+		(*array)->parent = SMTSigCore::get_parent(sig);
+		emit_scaled_expr(scope, array_idx, msb, lsb, array);
+		fprintf(g_out, "]");
+	}
+}
+
 static SMTSignal* emit_stmt_lval_piece(ivl_scope_t scope, ivl_lval_t lval) {
 	ivl_signal_t sig = ivl_lval_sig(lval);
 	ivl_expr_t sel_expr;
@@ -154,7 +177,86 @@ static SMTSignal* emit_stmt_lval_piece(ivl_scope_t scope, ivl_lval_t lval) {
 	return tmp_sig;
 }
 
+static SMTSignal* emit_stmt_lval_piece(ivl_scope_t scope, ivl_lval_t lval, SMTArray **array) {
+	ivl_signal_t sig = ivl_lval_sig(lval);
+	ivl_expr_t sel_expr;
+	ivl_select_type_t sel_type;
+	unsigned width = ivl_lval_width(lval);
+	int msb, lsb;
+	assert(width > 0);
+
+	/* A class supports a nested L-value so it may not have a signal
+	 * at this level. */
+	if (!sig) {
+		error("class type lval not supported");
+		//(void) emit_stmt_lval_class(scope, lval);
+		return NULL;
+	}
+
+	switch (ivl_signal_data_type(sig)) {
+		case IVL_VT_DARRAY:
+			//emit_stmt_lval_darray(scope, lval, sig);
+			//return;
+		case IVL_VT_CLASS:
+			error("Dynamic array or class type signal not supported");
+			//(void) emit_stmt_lval_class(scope, lval);
+			return NULL;
+		default:
+			break;
+	}
+	
+	SMTSignal* tmp_sig = new SMTSignal(sig);
+    get_sig_msb_lsb(sig, &msb, &lsb);
+	/* If there are no selects then just print the name. */
+	sel_expr = ivl_lval_part_off(lval);
+	if (!sel_expr && (width == ivl_signal_width(sig))) {
+		emit_stmt_lval_name(scope, lval, sig, array);
+		ivl_expr_t array_idx = ivl_lval_idx(lval);
+		if(array_idx){
+			tmp_sig->is_array = true;
+		}
+		return tmp_sig;
+	}
+
+	/* We have some kind of select. */
+	sel_type = ivl_lval_sel_type(lval);
+	assert(sel_expr);
+	/* A bit select. */
+	if (width == 1) {
+		emit_stmt_lval_name(scope, lval, sig);
+		fprintf(g_out, "[");
+		emit_scaled_expr(scope, sel_expr, msb, lsb, tmp_sig);
+		fprintf(g_out, "]");
+	} else if (ivl_expr_type(sel_expr) == IVL_EX_NUMBER) {
+		/* A constant part select. */
+		emit_stmt_lval_name(scope, lval, sig);
+		emit_scaled_range(scope, sel_expr, width, msb, lsb, tmp_sig);
+	} else if (sel_type == IVL_SEL_OTHER) {
+		error("Unsupported expr sel type IVL_SEL_OTHER");
+	} else {
+		error("Indexed part select not supported");
+	}
+	return tmp_sig;
+}
+
 static SMTSignal* emit_stmt_lval(ivl_scope_t scope, ivl_statement_t stmt) {
+	SMTSignal* sig = NULL;
+	unsigned count = ivl_stmt_lvals(stmt);
+	if(count != 1){
+		error("Multiple lval (%s:%u)", ivl_stmt_file(stmt), ivl_stmt_lineno(stmt));
+	}
+	
+	if (count > 1) {
+		error("TODO: split into multiple assignments");
+	} else {
+		ivl_lval_t lval = ivl_stmt_lval(stmt, 0);
+		sig = emit_stmt_lval_piece(scope, lval);
+	}
+	return sig;
+}
+
+
+static SMTSignal* emit_stmt_lval(ivl_scope_t scope, ivl_statement_t stmt, SMTArray **array) {
 	SMTSignal* sig = NULL;
 	unsigned count = ivl_stmt_lvals(stmt);
 	if(count != 1){
@@ -177,10 +279,11 @@ static SMTSignal* emit_stmt_lval(ivl_scope_t scope, ivl_statement_t stmt) {
 		fprintf(g_out, "}");*/
 	} else {
 		ivl_lval_t lval = ivl_stmt_lval(stmt, 0);
-		sig = emit_stmt_lval_piece(scope, lval);
+		sig = emit_stmt_lval_piece(scope, lval, array);
 	}
 	return sig;
 }
+
 
 /*
  * A common routine to emit the basic assignment construct. It can also
@@ -264,9 +367,34 @@ static SMTBlockingAssign* emit_stmt_assign(ivl_scope_t scope, ivl_statement_t st
 
 static SMTNonBlockingAssign* emit_stmt_assign_nb(ivl_scope_t scope, ivl_statement_t stmt) {
 	fprintf(g_out, "%*c", get_indent(), ' ');
-	SMTExpr* lval = emit_stmt_lval(scope, stmt);
+	SMTArray *array = new SMTArray();
+	SMTExpr* lval = emit_stmt_lval(scope, stmt, &array);
+	//Transfer lval(SMTSignal) to lval(SMTArray) if lval is array
+	if(lval->is_array){
+		lval = array;
+	}
 	fprintf(g_out, " <= #1 ");
-	SMTExpr* rval = emit_expr(scope, ivl_stmt_rval(stmt));
+	SMTExpr* rval;
+	if(lval->type==SMT_EXPR_SIGNAL&&ivl_expr_type(ivl_stmt_rval(stmt))==IVL_EX_NUMBER){
+			int oper1_signed = ivl_signal_signed(ivl_lval_sig(ivl_stmt_lval(stmt,0)));
+			ivl_expr_t oper2 = ivl_stmt_rval(stmt);
+			SMTSignal* tmp_sig = dynamic_cast<SMTSignal*>(lval);
+			if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)>0)
+					rval = emit_number(
+						_left(ivl_expr_bits(oper2),(int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)),
+						tmp_sig->parent->width, 
+						oper1_signed);
+				else if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)==0)
+					rval = emit_number(
+						ivl_expr_bits(oper2),
+						tmp_sig->parent->width, 
+						oper1_signed);
+				else
+					rval = emit_expr(scope, ivl_stmt_rval(stmt));
+		}else{
+			rval = emit_expr(scope, ivl_stmt_rval(stmt));
+		}
+	// SMTExpr* rval = emit_expr(scope, ivl_stmt_rval(stmt));
 	fprintf(g_out, ";");
 	return new SMTNonBlockingAssign(lval, rval);
 }

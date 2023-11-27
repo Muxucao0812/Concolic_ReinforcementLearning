@@ -222,6 +222,7 @@ SMTExpr* SMTConcat::get_expanded() {
 SMTArray::SMTArray() : SMTExpr(SMT_EXPR_ARRAY){
 	is_index_term = false;
 }
+SMTExpr* SMTArray::get_expanded() { return this;}
 term_t SMTArray::eval_term(SMTClkType clk) {
 	yices_term = parent->get_term(clk);
 	if(is_index_term){
@@ -725,16 +726,44 @@ void SMTAssign::init_assign() {
 	}
 }
 
+
 term_t SMTAssign::update_term() {
 	SMTSignal* sig = dynamic_cast<SMTSignal*>(lval);
-	assert(sig);
-	sig->parent->update_next_version();
-	yices_term = yices_eq(lval->eval_term(SMT_CLK_NEXT), rval->eval_term(SMT_CLK_CURR));
-	if(is_commit){
-		sig->parent->commit();
+	if(sig){
+		sig->parent->update_next_version();
+		SMTSignal* tmp_sig = dynamic_cast<SMTSignal*>(lval);
+		SMTNumber* tmp_num = dynamic_cast<SMTNumber*>(rval);
+		if(tmp_sig&&tmp_num&&tmp_sig->is_index_term){
+			int width = tmp_sig->parent->width;
+			term_t rval_term = rval->eval_term(SMT_CLK_CURR);
+			term_t tmp_index = tmp_sig->_index->eval_term(SMT_CLK_CURR);
+			term_t extend_tmp_index = yices_zero_extend(tmp_index, width-log2(width));
+			term_t tmp_new_term = yices_new_uninterpreted_term(yices_bv_type(width));
+			term_t mask = yices_bvshl(tmp_new_term,extend_tmp_index);
+			yices_assert_formula(yices_context,yices_eq(tmp_new_term,yices_bvconst_int32(1,width)));
+			if(tmp_num->get_value_bin()=="0"){
+				yices_term = yices_bvand2(lval->eval_term(SMT_CLK_NEXT),yices_bvnot(mask));
+			}else if(tmp_num->get_value_bin()=="1"){
+				yices_term = yices_bvor2(lval->eval_term(SMT_CLK_NEXT),mask);
+			}
+		}else{
+			yices_term = yices_eq(lval->eval_term(SMT_CLK_NEXT), rval->eval_term(SMT_CLK_CURR));
+		}
+		if(is_commit){
+			sig->parent->commit();
+		}
+	}else{
+		SMTArray *arr = dynamic_cast<SMTArray*>(lval);
+		if(arr){
+			yices_term = yices_eq(arr->update_term(),yices_update1(arr->parent->get_term(SMT_CLK_CURR),arr->_index->eval_term(SMT_CLK_CURR),rval->eval_term(SMT_CLK_CURR)));
+			arr->parent->commit();
+		}else{
+			assert(0);
+		}
 	}
 	return yices_term;
 }
+
 
 term_t SMTAssign::get_current_term() {
 	if(unexpanded_term == NULL_TERM){
@@ -812,16 +841,30 @@ void SMTAssign::set_covered(uint sim_num) {
 
 void SMTAssign::partial_assign_check() {
 	SMTSignal* sig = dynamic_cast<SMTSignal*>(lval);
-	assert(sig);
+	if(!sig){
+		SMTArray *arr = dynamic_cast<SMTArray*>(lval);
+		if(arr){
+			return ;
+		}else{
+			assert(false);
+		}
+	}
 	SMTSigCore* parent = sig->parent;
 	if((sig->msb - sig->lsb) != (parent->width - 1)){
-		error("Part select lval for assignment: %s", parent->name.c_str());
+		//error("Part select lval for assignment: %s", parent->name.c_str());
 	}
 }
 
 SMTSigCore* SMTAssign::get_lval_sig_core() {
     SMTSignal* lval_sig = dynamic_cast<SMTSignal*>(lval);
-    assert(lval_sig);
+	if(!lval_sig){
+		SMTArray* arr = dynamic_cast<SMTArray*>(lval);
+		if(arr){
+			return arr->parent;
+		}else{
+			assert(false);
+		}
+	}
     return lval_sig->parent;
 }
 
@@ -1182,6 +1225,10 @@ term_t SMTNumber::eval_term(SMTClkType clk) {
 
 bool SMTNumber::is_equal(SMTNumber* num) {
 	return (value_bin == num->value_bin);
+}
+
+std::string SMTNumber::get_value_bin() {
+	return value_bin;
 }
 
 SMTExpr* SMTNumber::get_expanded() {

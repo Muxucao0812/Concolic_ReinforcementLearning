@@ -34,3 +34,4 @@ $(TARGET): $(OBJECTS)
 $(CONFIG_TARGET): $(CONFIG_FILE)
 	@cp -f $(CONFIG_FILE) -t $(IVERILOG_LIB)
 	@echo "Copying config file..."
+

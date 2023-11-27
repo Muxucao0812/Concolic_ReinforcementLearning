@@ -12,16 +12,22 @@
 #include <set>
 #include <list>
 
+
+// Function declarations
+char* _left(const char* s, int n) ;
+
 //Forward declarations
 class SMTAssign;
 class SMTSignal;
 class SMTExpr;
 class SMTConcat;
 class SMTCust;
+class SMTArray;
 class SMTBinary;
 class SMTUnary;
 class SMTTernary;
 class SMTNumber;
+class SMTString;
 class SMTBranchNode;
 class SMTBranch;
 class SMTSigCore;
@@ -98,6 +104,7 @@ public:
 	const SMTExprType type;
 	bool is_bool;		//bool or bitvector
 	bool is_inverted;	//inverted if true
+	bool is_array;		//is array
 	std::vector<SMTExpr*> expr_list;
 	term_t yices_term;
 	bool is_term_eval_needed;
@@ -374,12 +381,14 @@ class SMTNumber: public SMTExpr{
 private:
 	std::string value_bin;
     std::string value_hex;
+	std::string value_with_undef;
 	bool is_signed;
 	
 public:
 	bool has_undef;
 	uint width;
 	
+	std::string get_value_bin();
 	SMTNumber(const char* bits, int bit_width, bool is_signed);
 	void print(std::stringstream& ss) override;
 	void emit_verilog_value();
@@ -440,9 +449,13 @@ public:
 	int lsb;
 	int msb;
 	
+	bool is_index_term;
+	SMTExpr* _index;
+
     SMTSignal();	
     SMTSignal(ivl_signal_t sig);
 	SMTExpr* get_expanded() override;
+
     void print(std::stringstream& ss) override;
 	term_t eval_term(SMTClkType clk) override;
 };

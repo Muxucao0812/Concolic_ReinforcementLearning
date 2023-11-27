@@ -13,4 +13,3 @@ all:
 clean:
 	@make -C src clean --no-print-directory
 	@echo "Cleaned!"
-

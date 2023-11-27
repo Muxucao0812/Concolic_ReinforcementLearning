@@ -17,9 +17,8 @@
 typedef unsigned uint;
 
 class SMTSignal;
-class SMTExpr;
-class SMTSigCore;
 class SMTArray;
+class SMTSigCore;
 class SMTBinary;
 class SMTAssign;
 class SMTProcess;
@@ -43,8 +42,10 @@ extern SMTProcess* emit_process(ivl_scope_t scope, ivl_process_t proc);
 void emit_stmt(ivl_scope_t scope, ivl_statement_t stmt);
 extern void emit_scaled_expr(ivl_scope_t scope, ivl_expr_t expr,
 		int msb, int lsb, SMTSignal* smt_sig);
-extern void emit_scaled_expr(ivl_scope_t scope, ivl_expr_t expr,
+
+extern void emit_scaled_expr(ivl_scope_t scope, ivl_expr_t expr, 
 		int msb, int lsb, SMTArray** smt_arr);
+
 extern void emit_scaled_range(ivl_scope_t scope, ivl_expr_t expr,
 		unsigned width, int msb, int lsb, SMTSignal* smt_sig);
 extern void emit_scope_path(ivl_scope_t scope, ivl_scope_t call_scope);
