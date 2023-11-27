@@ -165,14 +165,8 @@ static SMTSignal* emit_stmt_lval_piece(ivl_scope_t scope, ivl_lval_t lval) {
 		emit_scaled_range(scope, sel_expr, width, msb, lsb, tmp_sig);
 	} else if (sel_type == IVL_SEL_OTHER) {
 		error("Unsupported expr sel type IVL_SEL_OTHER");
-		//assert(lsb == 0);
-		//assert(msb >= 0);
-		//emit_stmt_lval_packed(scope, lval, sig, sel_expr, width);
 	} else {
 		error("Indexed part select not supported");
-		/* An indexed part select. */
-		//emit_stmt_lval_ips(scope, lval, sig, sel_expr, sel_type,
-		//		width, msb, lsb);
 	}
 	return tmp_sig;
 }

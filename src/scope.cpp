@@ -32,6 +32,11 @@ static void emit_var_def(ivl_signal_t sig) {
 			fprintf(g_out, " [%d:%d]", first, last);
 		}
 	}
+	if(ivl_signal_array_count(sig)==1){
+		fprintf(g_out, " = %u\'b0;\n", ivl_signal_width(sig));
+	}else{
+		fprintf(g_out, ";\n");
+	}
 	// fprintf(g_out, " = %u\'b0;\n", ivl_signal_width(sig));
 	fprintf(g_out, ";\n");
 }

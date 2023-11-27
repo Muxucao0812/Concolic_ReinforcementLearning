@@ -10,6 +10,7 @@
 #include <queue>
 #include <vector>
 #include <valarray>
+#include <iostream>
 
 using namespace std;
 
@@ -225,6 +226,7 @@ SMTArray::SMTArray() : SMTExpr(SMT_EXPR_ARRAY){
 SMTExpr* SMTArray::get_expanded() { return this;}
 term_t SMTArray::eval_term(SMTClkType clk) {
 	yices_term = parent->get_term(clk);
+	yices_pp_term(stdout, yices_term, 1000, 1, 0);
 	if(is_index_term){
 		return yices_application1(yices_term, index_term->get_term(SMT_CLK_CURR));
 	}else{
@@ -1386,9 +1388,11 @@ void SMTSigCore::set_input_version(uint version) {
 
 //----------------------------SMT Signal----------------------------------------
 SMTSignal::SMTSignal() : SMTExpr(SMT_EXPR_SIGNAL) {
+	is_index_term = false;
 }
 
 SMTSignal::SMTSignal(ivl_signal_t sig) : SMTExpr(SMT_EXPR_SIGNAL) {
+	is_index_term = false;
     parent = SMTSigCore::get_parent(sig);
     get_sig_msb_lsb(sig, &msb, &lsb);
 }
@@ -1413,7 +1417,14 @@ void SMTSignal::print(std::stringstream& ss) {
 
 term_t SMTSignal::eval_term(SMTClkType clk) {
 	yices_term = parent->get_term(clk);
-	if((msb - lsb) != (parent->width - 1)){
+	// if(true){
+	// 	cout<<"[PRINT TERM STACK]"<<endl;
+	// 	for(int i = 0;i < parent->term_stack.size();++i){
+	// 		yices_pp_term(stdout, parent->term_stack[i],80, 10, 0);
+	// 	}
+	// }
+	yices_pp_term(stdout, yices_term, 1000, 1, 0);
+	if((msb - lsb) != (parent->width - 1) && !this->is_index_term){
 		yices_term = yices_bvextract(yices_term, lsb, msb);
 	}
 	return yices_term;

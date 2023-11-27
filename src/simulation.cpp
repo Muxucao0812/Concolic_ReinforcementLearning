@@ -146,10 +146,10 @@ static void build_stack() {
 	FILE* f_test = NULL;
 	if(enable_sim_copy){
 		f_test = fopen(sim_file_name, "r");
-		write_first_clock(sim_file_name);
+		// write_first_clock(sim_file_name);
 	} else{
 		f_test = fopen("sim.log", "r");
-		write_first_clock("sim.log");
+		// write_first_clock("sim.log");
 	}
 	assert(f_test);
 	uint clock = 0;

@@ -358,7 +358,7 @@ static SMTSignal* emit_expr_signal(ivl_scope_t scope, ivl_expr_t expr, SMTArray*
 	emit_scope_call_path(scope, ivl_signal_scope(sig));
 	emit_id(ivl_signal_basename(sig));
 	if (ivl_signal_dimensions(sig)) {
-		info("Signal dimension not zero");
+		printf("Signel %s has dimension\n", ivl_signal_basename(sig));
 		int lsb = ivl_signal_array_base(sig);
 		int msb = lsb + ivl_signal_array_count(sig);
 		fprintf(g_out, "[");
