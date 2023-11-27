@@ -13,6 +13,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    # Step to clean workspace
+    - name: Clean workspace
+      run: |
+        git clean -ffdx
+        git reset --hard
+
+    # Step to install dependencies
     - name: Fetch dependencies
       env:
           DEBIAN_FRONTEND: noninteractive
@@ -21,6 +29,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install build-essential gcc gdb g++ make yices2-dev autoconf
 
+    # Step to install iverilog
     - name: Get iverilog
       run: |
           git clone https://github.com/steveicarus/iverilog.git
@@ -29,6 +38,8 @@ jobs:
           ./configure
           make -j$(nproc)
           sudo make install
+
+    # Step to compile concolic
     - name: compile concolic
       run: |
           cd src
