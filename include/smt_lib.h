@@ -418,6 +418,7 @@ public:
     int width;
 	int index_width;
     bool is_dep;
+	bool is_hamming;
 	bool is_state_variable;
 	SMTAssign* cont_assign;
 	

@@ -1245,11 +1245,12 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
     name = ivl_signal_basename(sig);
     width = ivl_signal_width(sig);
     zeros = smt_zeros(width);
+	is_hamming = true;
 	sig_to_core_map[sig] = this;
     int msb;
     int lsb;
     get_sig_msb_lsb(sig, &msb, &lsb);
-    if(msb < lsb){
+	if(msb < lsb){
         error("msb < lsb => currently not supported");
     }
     assert(width == (msb-lsb+1));
@@ -1266,21 +1267,95 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
 	curr_version = 0;
     next_version = 0;
 	was_in_queue = false;
-    //set width type
-    bv_type = yices_bv_type(width);
 
-    //create g_unroll number of terms
-    for(uint i = 0; i <= g_unroll; i++){
-        term_t new_term = yices_new_uninterpreted_term(bv_type);
-        yices_set_term_name(new_term, (name + string("_") + to_string(i)).c_str());
-        term_stack.push_back(new_term);
-    }
+	//set width type
+	int index_count = ivl_signal_array_count(sig);
 
-    //create zero term
-    init_term = yices_eq(term_stack[0], yices_bvconst_zero(width));
-	version_at_clock.resize(g_unroll + 2);
-	version_at_clock[0] = 0;
+	//if this signal is an not an array
+	if(index_count == 1){
+		//set width type
+		bv_type = yices_bv_type(width);
+
+		//create g_unroll number of terms
+		for(uint i = 0; i <= g_unroll; i++){
+			term_t new_term = yices_new_uninterpreted_term(bv_type);
+			yices_set_term_name(new_term, (name + string("_") + to_string(i)).c_str());
+			term_stack.push_back(new_term);
+		}
+
+		//create zero term
+		init_term = yices_eq(term_stack[0], yices_bvconst_zero(width));
+		version_at_clock.resize(g_unroll + 2);
+		version_at_clock[0] = 0;
+	}else{
+		type_t bv_value_type = yices_bv_type(width);
+		index_width = (int)log2(float(index_count));
+		type_t bv_index_type = yices_bv_type(index_width);
+		bv_type = yices_function_type1(bv_index_type,bv_value_type);
+
+		//since array update with alias every time, we would not declare all terms at first
+
+		term_t new_term = yices_new_uninterpreted_term(bv_type);
+		yices_set_term_name(new_term, (name + string("_") + to_string(0)).c_str());
+		term_stack.push_back(new_term);
+		for(int i = 0;i < index_count;++i){
+			term_t index_term = yices_bvconst_uint32(index_width, i);
+			term_t value_term = yices_bvconst_zero(width);
+			term_t eq_term = yices_eq(yices_application1(term_stack[0],index_term), value_term);
+			if(i == 0){
+				init_term = eq_term;
+			}else{
+				init_term = yices_and2(init_term, eq_term);
+			}
+		}
+		if(init_term==-1){
+			assert(false);
+		}
+		version_at_clock.resize(g_unroll + 2);
+		version_at_clock[0] = 0;
+	}
 }
+
+// {
+//     name = ivl_signal_basename(sig);
+//     width = ivl_signal_width(sig);
+//     zeros = smt_zeros(width);
+// 	sig_to_core_map[sig] = this;//Xiangchen: Index width is not right
+//     int msb;
+//     int lsb;
+//     get_sig_msb_lsb(sig, &msb, &lsb);
+//     if(msb < lsb){
+//         error("msb < lsb => currently not supported");
+//     }
+//     assert(width == (msb-lsb+1));
+//     if(ivl_signal_port(sig) != IVL_SIP_INPUT){
+//         reg_list.push_back(this);
+// 		is_dep = false;
+// 		is_state_variable = true;
+//     } else{
+//         input_list.push_back(this);
+// 		is_dep = true;
+// 		is_state_variable = false;
+//     }
+// 	cont_assign = NULL;
+// 	curr_version = 0;
+//     next_version = 0;
+// 	was_in_queue = false;
+//     //set width type
+//     bv_type = yices_bv_type(width);
+
+//     //create g_unroll number of terms
+//     for(uint i = 0; i <= g_unroll; i++){
+//         term_t new_term = yices_new_uninterpreted_term(bv_type);
+//         yices_set_term_name(new_term, (name + string("_") + to_string(i)).c_str());
+//         term_stack.push_back(new_term);
+//     }
+
+//     //create zero term
+//     init_term = yices_eq(term_stack[0], yices_bvconst_zero(width));
+// 	version_at_clock.resize(g_unroll + 2);
+// 	version_at_clock[0] = 0;
+// }
 
 SMTSigCore::~SMTSigCore() {
 }
