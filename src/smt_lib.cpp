@@ -226,7 +226,7 @@ SMTArray::SMTArray() : SMTExpr(SMT_EXPR_ARRAY){
 SMTExpr* SMTArray::get_expanded() { return this;}
 term_t SMTArray::eval_term(SMTClkType clk) {
 	yices_term = parent->get_term(clk);
-	yices_pp_term(stdout, yices_term, 1000, 1, 0);
+	// yices_pp_term(stdout, yices_term, 1000, 1, 0);
 	if(is_index_term){
 		return yices_application1(yices_term, index_term->get_term(SMT_CLK_CURR));
 	}else{
@@ -737,7 +737,7 @@ term_t SMTAssign::update_term() {
 		SMTNumber* tmp_num = dynamic_cast<SMTNumber*>(rval);
 		if(tmp_sig&&tmp_num&&tmp_sig->is_index_term){
 			int width = tmp_sig->parent->width;
-			term_t rval_term = rval->eval_term(SMT_CLK_CURR);
+			// term_t rval_term = rval->eval_term(SMT_CLK_CURR);
 			term_t tmp_index = tmp_sig->_index->eval_term(SMT_CLK_CURR);
 			term_t extend_tmp_index = yices_zero_extend(tmp_index, width-log2(width));
 			term_t tmp_new_term = yices_new_uninterpreted_term(yices_bv_type(width));
@@ -1423,7 +1423,7 @@ term_t SMTSignal::eval_term(SMTClkType clk) {
 	// 		yices_pp_term(stdout, parent->term_stack[i],80, 10, 0);
 	// 	}
 	// }
-	yices_pp_term(stdout, yices_term, 1000, 1, 0);
+	// yices_pp_term(stdout, yices_term, 1000, 1, 0);
 	if((msb - lsb) != (parent->width - 1) && !this->is_index_term){
 		yices_term = yices_bvextract(yices_term, lsb, msb);
 	}

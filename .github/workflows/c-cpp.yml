@@ -48,5 +48,5 @@ jobs:
     # Step to run concolic
     - name: run concolic
       run: |
-          cd test/b14
+          cd test/grammerTest
           make
