@@ -413,6 +413,10 @@ SMTBinary::SMTBinary() : SMTExpr(SMT_EXPR_BINARY) {
 
 void SMTBinary::set_opcode(char ivl_code) {
 	switch (ivl_code) {
+		case '%':
+			opcode = "bv-rem";
+			func = yices_bvsrem;
+			break;
 		case '/':
 			opcode = "bv-div";
 			func = yices_bvsdiv;
@@ -530,6 +534,7 @@ void SMTBinary::set_opcode(char ivl_code) {
 			opcode = "bv-ashr";
 			func = yices_bvashr;
 			break;
+
 		default: 
 			;	
 	}

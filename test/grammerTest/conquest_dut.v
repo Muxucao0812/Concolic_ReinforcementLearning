@@ -1,4 +1,4 @@
-// Following code segment is generated from ./src/grammerTest.v:1
+// Following code segment is generated from /home/meng/Code/concolic-testing/test/grammerTest/src/grammerTest.v:1
 module grammerTest(clk, reset, in, out, sig_display, __obs);
     input clk;
     input reset;
@@ -13,7 +13,7 @@ module grammerTest(clk, reset, in, out, sig_display, __obs);
     reg [31:0] out = 32'b0;
     reg [31:0] temp = 32'b0;
 
-    // Following code segment is generated from ./src/grammerTest.v:14
+    // Following code segment is generated from /home/meng/Code/concolic-testing/test/grammerTest/src/grammerTest.v:14
     always @(posedge clk or negedge reset) begin
         if ((reset == 1'b1)) begin
             addr <= #1 2'b00; $display(";A 2");		//(assert (= addr    0b00)) ;2
@@ -27,7 +27,7 @@ module grammerTest(clk, reset, in, out, sig_display, __obs);
         end
     end
 
-    // Following code segment is generated from ./src/grammerTest.v:27
+    // Following code segment is generated from /home/meng/Code/concolic-testing/test/grammerTest/src/grammerTest.v:27
     always @(posedge clk) begin
         if ((cnt == 8'h00)) begin
             $display(";A 8");		//(assert (= (bv-comp cnt  0h00)   0b1)) ;8
@@ -35,22 +35,22 @@ module grammerTest(clk, reset, in, out, sig_display, __obs);
                 2'b00 :
                     begin
                         $display(";A 10");		//(assert (= addr    0b00)) ;10
-                        myArray[2'b00] <= #1 temp; $display(";A 11");		//(assert (= myArray 0    temp )) ;11
+                        myArray[2'b00] <= #1 (temp % 32'h00000005); $display(";A 11");		//(assert (= myArray 0    (bv-rem temp  0h00000005))) ;11
                     end
                 2'b01 :
                     begin
                         $display(";A 12");		//(assert (= addr    0b01)) ;12
-                        myArray[2'b01] <= #1 temp; $display(";A 13");		//(assert (= myArray 1    temp )) ;13
+                        myArray[2'b01] <= #1 (temp % 32'h00000005); $display(";A 13");		//(assert (= myArray 1    (bv-rem temp  0h00000005))) ;13
                     end
                 2'b10 :
                     begin
                         $display(";A 14");		//(assert (= addr    0b10)) ;14
-                        myArray[2'b10] <= #1 temp; $display(";A 15");		//(assert (= myArray 2    temp )) ;15
+                        myArray[2'b10] <= #1 (temp % 32'h00000005); $display(";A 15");		//(assert (= myArray 2    (bv-rem temp  0h00000005))) ;15
                     end
                 2'b11 :
                     begin
                         $display(";A 16");		//(assert (= addr    0b11)) ;16
-                        myArray[2'b11] <= #1 temp; $display(";A 17");		//(assert (= myArray 3    temp )) ;17
+                        myArray[2'b11] <= #1 (temp % 32'h00000005); $display(";A 17");		//(assert (= myArray 3    (bv-rem temp  0h00000005))) ;17
                     end
             endcase
         end
