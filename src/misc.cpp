@@ -76,8 +76,6 @@ void emit_scaled_expr(ivl_scope_t scope, ivl_expr_t expr, int msb, int lsb, SMTS
 				tmp_sig->is_index_term = true;
 				tmp_sig->_index = emit_expr(scope, expr);
 			}
-			info("Invalid expression for signal select");
-			info("[EXAMPLE] nl[data_out]");
 		}
 	} else {
 		if (ivl_expr_type(expr) == IVL_EX_NUMBER) {

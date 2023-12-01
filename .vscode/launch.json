@@ -59,6 +59,61 @@
             ]
         },
 
+        // b12 Test
+        {
+            "name": "concolic-b12",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/bin/iverilog",
+            "args":["/home/meng/Code/concolic-testing/test/b12/src/b12.v","-v",
+                "-o /home/meng/Code/concolic-testing/test/b12/conquest_dut.v",
+                "-t","conquestMulti",
+                "-ptb=/home/meng/Code/concolic-testing/test/b12/conquest_tb.v",
+                "-pclk=clock",
+                "-preset=reset",
+                "-preset_edge=1",
+                "-punroll=1000",
+                "-prandom_sim=3"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/b12",
+            "environment": [
+                {
+                    "name": "TGT",
+                    "value": "/usr/local/lib/ivl"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],   
+        },
+        {
+            "name": "debug-b12",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/lib/ivl/ivl",
+            "args": ["/home/meng/Code/concolic-testing/test/b12/temp.mid",
+            "-C","/home/meng/Code/concolic-testing/test/b12/ivrlh6484a7c3",
+            "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/b12",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
         // grammer Test
         {
             "name": "concolic-grammerTest",

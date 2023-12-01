@@ -287,7 +287,12 @@ static SMTBlockingAssign* emit_assign_and_opt_opcode(ivl_scope_t scope, ivl_stat
 	fprintf(g_out, "%*c", get_indent(), ' ');
     char opcode;
 	const char *opcode_str;
-	SMTExpr* lval = emit_stmt_lval(scope, stmt);
+	SMTArray *array = new SMTArray();
+	SMTExpr* lval = emit_stmt_lval(scope, stmt, &array);
+	if(lval->is_array){
+		lval = array;
+	}
+	
 	/* Get the opcode and the string version of the opcode. */
 	opcode = ivl_stmt_opcode(stmt);
 	switch (opcode) {
