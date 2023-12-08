@@ -40,12 +40,12 @@ module grammerTest(clk, reset, in, out, sig_display, __obs);
                 2'b01 :
                     begin
                         $display(";A 12");		//(assert (= addr    0b01)) ;12
-                        myArray[2'b01] <= #1 (temp % 32'h00000005); $display(";A 13");		//(assert (= myArray 1    (bv-rem temp  0h00000005))) ;13
+                        myArray[2'b01] <= #1 (temp ** 32'h00000002); $display(";A 13");		//(assert (= myArray 1    (bv-pow temp  0h00000002))) ;13
                     end
                 2'b10 :
                     begin
                         $display(";A 14");		//(assert (= addr    0b10)) ;14
-                        myArray[2'b10] <= #1 (temp % 32'h00000005); $display(";A 15");		//(assert (= myArray 2    (bv-rem temp  0h00000005))) ;15
+                        myArray[2'b10] <= #1 (temp ** 32'h00000002); $display(";A 15");		//(assert (= myArray 2    (bv-pow temp  0h00000002))) ;15
                     end
                 2'b11 :
                     begin

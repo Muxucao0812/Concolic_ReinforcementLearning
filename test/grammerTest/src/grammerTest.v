@@ -28,8 +28,8 @@ always @(posedge clk) begin
   if (cnt == 8'b0) begin
     case (addr)
       2'b00: myArray[0] <= temp%5;
-      2'b01: myArray[1] <= temp%5;
-      2'b10: myArray[2] <= temp%5;
+      2'b01: myArray[1] <= temp**2;
+      2'b10: myArray[2] <= temp**2;
       2'b11: myArray[3] <= temp%5;
   endcase
   end
