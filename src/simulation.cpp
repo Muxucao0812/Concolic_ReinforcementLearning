@@ -252,6 +252,7 @@ static bool solve_constraints(uint clock) {
 		model_t *model = yices_get_model(yices_context, true);
 		FILE *f_out = fopen("model.log", "w");
 		yices_print_model(f_out, model);
+		// yices_print_model(stdout, model);
 		fclose(f_out);
 		g_data.update_and_dump("model.log", g_data_mem);
 		yices_free_model(model);
@@ -338,11 +339,11 @@ static bool find_next_cfg(){
 		
 		constraint_t** cnst = constraints_stack.data();
 		while((*cnst)->clock != clock){
-			if((*cnst)->type != CNST_CLK){
+			if((*cnst)->type != CNST_CLK)				
 				smt_yices_assert(yices_context, (*cnst)->yices_term, (*cnst)->obj);
 			}
 			cnst++;
-		}
+	}	
 		assert((*cnst)->type == CNST_CLK);
 		cnst++;
 		
