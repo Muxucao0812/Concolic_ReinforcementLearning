@@ -20,17 +20,13 @@ module b06(
 	input reset,
 	input cont_eql,
 
-	output [1:0] cc_mux,
-	output [1:0] uscite,
-	output  enable_count,
-	output ackout
+	output reg  [1:0] cc_mux,
+	output reg  [1:0] uscite,
+	output reg        enable_count,
+	output reg  	  ackout
 	);
 
 	reg [2:0] state ;
-	reg [1:0] cc_mux;
-	reg [1:0] uscite;
-	reg enable_count;
-	reg ackout;
 
 	parameter   s_init = 3'b000;
 	parameter   s_wait = 3'b001;

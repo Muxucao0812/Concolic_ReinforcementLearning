@@ -4,6 +4,172 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // b01 Test
+        {
+            "name": "concolic-b01",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/bin/iverilog",
+            "args":["/home/meng/Code/concolic-testing/test/b01/src/b01.v","-v",
+                "-o /home/meng/Code/concolic-testing/test/b01/conquest_dut.v",
+                "-t","conquestMulti",
+                "-ptb=/home/meng/Code/concolic-testing/test/b01/conquest_tb.v",
+                "-pclk=clock",
+                "-preset=reset",
+                "-preset_edge=1",
+                "-punroll=1000",
+                "-prandom_sim=3"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/b01",
+            "environment": [
+                {
+                    "name": "TGT",
+                    "value": "/usr/local/lib/ivl"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],   
+        },
+        {
+            "name": "debug-b01",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/lib/ivl/ivl",
+            "args": ["/home/meng/Code/concolic-testing/test/b01/temp.mid",
+            "-C","/home/meng/Code/concolic-testing/test/b01/ivrlh1beb907e",
+            "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/b01",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+        // b06 Test
+        {
+            "name": "concolic-b06",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/bin/iverilog",
+            "args":["/home/meng/Code/concolic-testing/test/b06/src/b06.v","-v",
+                "-o /home/meng/Code/concolic-testing/test/b06/conquest_dut.v",
+                "-t","conquestMulti",
+                "-ptb=/home/meng/Code/concolic-testing/test/b06/conquest_tb.v",
+                "-pclk=clock",
+                "-preset=reset",
+                "-preset_edge=1",
+                "-punroll=1000",
+                "-prandom_sim=3"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/b06",
+            "environment": [
+                {
+                    "name": "TGT",
+                    "value": "/usr/local/lib/ivl"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],   
+        },
+        {
+            "name": "debug-b06",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/lib/ivl/ivl",
+            "args": ["/home/meng/Code/concolic-testing/test/b06/temp.mid",
+            "-C","/home/meng/Code/concolic-testing/test/b06/ivrlh3156c094",
+            "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/b06",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+        // b10 Test
+        {
+            "name": "concolic-b10",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/bin/iverilog",
+            "args":["/home/meng/Code/concolic-testing/test/b10/src/b10.v","-v",
+                "-o /home/meng/Code/concolic-testing/test/b10/conquest_dut.v",
+                "-t","conquestMulti",
+                "-ptb=/home/meng/Code/concolic-testing/test/b10/conquest_tb.v",
+                "-pclk=clock",
+                "-preset=reset",
+                "-preset_edge=1",
+                "-punroll=1000",
+                "-prandom_sim=3"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/b10",
+            "environment": [
+                {
+                    "name": "TGT",
+                    "value": "/usr/local/lib/ivl"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],   
+        },
+        {
+            "name": "debug-b10",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/lib/ivl/ivl",
+            "args": ["/home/meng/Code/concolic-testing/test/b10/temp.mid",
+            "-C","/home/meng/Code/concolic-testing/test/b10/ivrlh60669404",
+            "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/b10",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+
         // b11 Test
         {
             "name": "concolic-b11",

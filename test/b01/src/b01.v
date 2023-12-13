@@ -4,13 +4,12 @@ module b01 (
 	input line2,
 	input reset,
 
-	output outp,
-	output overflw
+	output reg outp,
+	output reg overflw
 );
 
 reg [2:0] stato;
-reg  outp;
-reg overflw;
+
 
 parameter   a = 3'b0;
 parameter   b = 3'b001;

@@ -63,12 +63,12 @@ void add_to_rval(set<SMTSigCore*> &assign_set, SMTExpr* expr){
 
 void smt_yices_assert(context_t *ctx, term_t term, SMTAssign* assign){
 	yices_assert_formula(ctx, term);
-	if(enable_yices_debug){
-		if(assign){
-			//printf(";%s", assign->print(SMT_CLK_CURR).c_str());
-			yices_pp_term(stdout, term, 0xFFFFFF, 1, 0);
-		}
-	}
+	// if(enable_yices_debug){
+	// 	if(assign){
+	// 		//printf(";%s", assign->print(SMT_CLK_CURR).c_str());
+	// 		yices_pp_term(stdout, term, 0xFFFFFF, 1, 0);
+	// 	}
+	// }
 }
 
 //static uint level = 0;
@@ -1246,6 +1246,8 @@ SMTExpr* SMTNumber::get_expanded() {
 std::unordered_map<ivl_signal_t, SMTSigCore*> SMTSigCore::sig_to_core_map;
 vector<SMTSigCore*> SMTSigCore::reg_list;
 vector<SMTSigCore*> SMTSigCore::input_list;
+
+
 SMTSigCore::SMTSigCore(ivl_signal_t sig){
     name = ivl_signal_basename(sig);
     width = ivl_signal_width(sig);
@@ -1307,6 +1309,8 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
 			term_t index_term = yices_bvconst_uint32(index_width, i);
 			term_t value_term = yices_bvconst_zero(width);
 			term_t eq_term = yices_eq(yices_application1(term_stack[0],index_term), value_term);
+		
+
 			if(i == 0){
 				init_term = eq_term;
 			}else{

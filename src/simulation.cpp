@@ -146,10 +146,10 @@ static void build_stack() {
 	FILE* f_test = NULL;
 	if(enable_sim_copy){
 		f_test = fopen(sim_file_name, "r");
-		// write_first_clock(sim_file_name);
+		write_first_clock(sim_file_name);
 	} else{
 		f_test = fopen("sim.log", "r");
-		// write_first_clock("sim.log");
+		write_first_clock("sim.log");
 	}
 	assert(f_test);
 	uint clock = 0;
@@ -247,6 +247,7 @@ static bool check_yices_status(){
 }
 
 static bool solve_constraints(uint clock) {
+	
 	bool is_sat = check_yices_status();
 	if(is_sat){
 		model_t *model = yices_get_model(yices_context, true);
@@ -339,11 +340,11 @@ static bool find_next_cfg(){
 		
 		constraint_t** cnst = constraints_stack.data();
 		while((*cnst)->clock != clock){
-			if((*cnst)->type != CNST_CLK)				
+			if((*cnst)->type != CNST_CLK){			
 				smt_yices_assert(yices_context, (*cnst)->yices_term, (*cnst)->obj);
 			}
 			cnst++;
-	}	
+		}	
 		assert((*cnst)->type == CNST_CLK);
 		cnst++;
 		
@@ -397,6 +398,13 @@ static void check_satisfiability(){
         smt_yices_dump_error();
         error("Simulation not satisfiable");
     }
+
+	// Dump constraints
+	if(true){
+		info("Dumping constraints");
+		smt_yices_dump_error();
+	}
+
 }
 
 static SMTPath* concolic_iteration(SMTPath* curr_path) {

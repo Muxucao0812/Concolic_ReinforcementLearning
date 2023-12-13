@@ -1,4 +1,4 @@
-// Following code segment is generated from ./src/b10.v:2
+// Following code segment is generated from /home/meng/Code/concolic-testing/test/b10/src/b10.v:2
 module b10(r_button, g_button, key, start, reset, test, cts, ctr, rts, rtr, clock, v_in, v_out, __obs);
     input r_button;
     input g_button;
@@ -15,19 +15,19 @@ module b10(r_button, g_button, key, start, reset, test, cts, ctr, rts, rtr, cloc
     output [3:0] v_out;
     input __obs;
 
-    reg ctr;
-    reg cts;
-    reg last_g;
-    reg last_r;
-    reg [3:0] sign;
-    reg [3:0] stato;
-    reg [3:0] v_out;
-    reg voto0;
-    reg voto1;
-    reg voto2;
-    reg voto3;
+    reg ctr = 1'b0;
+    reg cts = 1'b0;
+    reg last_g = 1'b0;
+    reg last_r = 1'b0;
+    reg [3:0] sign = 4'b0;
+    reg [3:0] stato = 4'b0;
+    reg [3:0] v_out = 4'b0;
+    reg voto0 = 1'b0;
+    reg voto1 = 1'b0;
+    reg voto2 = 1'b0;
+    reg voto3 = 1'b0;
 
-    // Following code segment is generated from ./src/b10.v:38
+    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b10/src/b10.v:38
     always @(posedge clock) begin
         if ((reset == 1'b1)) begin
             stato <= #1 4'h0; $display(";A 2");		//(assert (= stato    0h0)) ;2
