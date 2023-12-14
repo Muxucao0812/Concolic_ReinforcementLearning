@@ -19,7 +19,7 @@
                 "-preset_edge=1",
                 "-punroll=1000",
                 "-prandom_sim=3"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b01",
             "environment": [
                 {
@@ -45,7 +45,7 @@
             "args": ["/home/meng/Code/concolic-testing/test/b01/temp.mid",
             "-C","/home/meng/Code/concolic-testing/test/b01/ivrlh1beb907e",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b01",
             "environment": [],
             "externalConsole": false,
@@ -74,7 +74,7 @@
                 "-preset_edge=1",
                 "-punroll=1000",
                 "-prandom_sim=3"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b06",
             "environment": [
                 {
@@ -100,7 +100,7 @@
             "args": ["/home/meng/Code/concolic-testing/test/b06/temp.mid",
             "-C","/home/meng/Code/concolic-testing/test/b06/ivrlh3156c094",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b06",
             "environment": [],
             "externalConsole": false,
@@ -129,7 +129,7 @@
                 "-preset_edge=1",
                 "-punroll=1000",
                 "-prandom_sim=3"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b10",
             "environment": [
                 {
@@ -155,7 +155,7 @@
             "args": ["/home/meng/Code/concolic-testing/test/b10/temp.mid",
             "-C","/home/meng/Code/concolic-testing/test/b10/ivrlh60669404",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b10",
             "environment": [],
             "externalConsole": false,
@@ -185,7 +185,7 @@
                 "-preset_edge=1",
                 "-punroll=1000",
                 "-prandom_sim=3"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b11",
             "environment": [
                 {
@@ -211,7 +211,7 @@
             "args": ["/home/meng/Code/concolic-testing/test/b11/temp.mid",
             "-C","/home/meng/Code/concolic-testing/test/b11/ivrlh77667c94",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b11",
             "environment": [],
             "externalConsole": false,
@@ -240,7 +240,7 @@
                 "-preset_edge=1",
                 "-punroll=1000",
                 "-prandom_sim=3"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b12",
             "environment": [
                 {
@@ -266,7 +266,7 @@
             "args": ["/home/meng/Code/concolic-testing/test/b12/temp.mid",
             "-C","/home/meng/Code/concolic-testing/test/b12/ivrlh6484a7c3",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b12",
             "environment": [],
             "externalConsole": false,
@@ -295,7 +295,7 @@
                 "-preset_edge=1",
                 "-punroll=1000",
                 "-prandom_sim=3"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/grammerTest",
             "environment": [
                 {
@@ -321,7 +321,7 @@
             "args": ["/home/meng/Code/concolic-testing/test/grammerTest/temp.mid",
             "-C","/home/meng/Code/concolic-testing/test/grammerTest/ivrlh446da208",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/grammerTest",
             "environment": [],
             "externalConsole": false,

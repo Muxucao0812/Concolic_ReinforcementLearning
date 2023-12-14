@@ -405,7 +405,7 @@ static void check_satisfiability(){
 
 	// Dump constraints
 	if(true){
-		info("Dumping constraints");
+		// info("Dumping constraints");
 		smt_yices_dump_error();
 	}
 

@@ -575,6 +575,7 @@ term_t SMTBinary::eval_term(SMTClkType clk) {
 		}
 		is_term_eval_needed = expr_list[0]->is_term_eval_needed | expr_list[1]->is_term_eval_needed;
 	}
+	// yices_pp_term(stdout, yices_term, 1000, 1, 0);
 	return yices_term;
 }
 
