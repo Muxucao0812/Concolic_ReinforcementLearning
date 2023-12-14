@@ -134,4 +134,47 @@ module b11(x_in, stbi, clock, reset, x_out, __obs);
                     end
                 4'h7 :
                     begin
-        
+                        $display(";A 57");		//(assert (= stato    0h7)) ;57
+                        if ((r_in[3:2] == 2'b00)) begin
+                            $display(";A 58");		//(assert (= (bv-comp (bv-extract 3 2 r_in ) 0b00)   0b1)) ;58
+                            cont1 = (cont1 - 9'b000010101); $display(";A 60");		//(assert (= cont1    (bv-sub cont1  0b000010101))) ;60
+                        end
+                        else begin
+                            $display(";A 59");		//(assert (= (bv-comp (bv-extract 3 2 r_in ) 0b00)   0b0)) ;59
+                            if ((r_in[3:2] == 2'b01)) begin
+                                $display(";A 61");		//(assert (= (bv-comp (bv-extract 3 2 r_in ) 0b01)   0b1)) ;61
+                                cont1 = (cont1 - 9'b000101010); $display(";A 63");		//(assert (= cont1    (bv-sub cont1  0b000101010))) ;63
+                            end
+                            else begin
+                                $display(";A 62");		//(assert (= (bv-comp (bv-extract 3 2 r_in ) 0b01)   0b0)) ;62
+                                if ((r_in[3:2] == 2'b10)) begin
+                                    $display(";A 64");		//(assert (= (bv-comp (bv-extract 3 2 r_in ) 0b10)   0b1)) ;64
+                                    cont1 = (cont1 + 9'b000000111); $display(";A 66");		//(assert (= cont1    (bv-add cont1  0b000000111))) ;66
+                                end
+                                else begin
+                                    $display(";A 65");		//(assert (= (bv-comp (bv-extract 3 2 r_in ) 0b10)   0b0)) ;65
+                                    cont1 = (cont1 + 9'b000011100); $display(";A 67");		//(assert (= cont1    (bv-add cont1  0b000011100))) ;67
+                                end
+                            end
+                        end
+                        stato = 4'h8; $display(";A 68");		//(assert (= stato    0h8)) ;68
+                    end
+                4'h8 :
+                    begin
+                        $display(";A 69");		//(assert (= stato    0h8)) ;69
+                        if ((cont1 < 9'sb000000000)) begin
+                            $display(";A 70");		//(assert (= (bool-to-bv (bv-slt cont1  0b000000000))   0b1)) ;70
+                            x_out <= #1 cont1_inv[5:0]; $display(";A 72");		//(assert (= x_out    (bv-extract 5 0 cont1_inv ))) ;72
+                        end
+                        else begin
+                            $display(";A 71");		//(assert (= (bool-to-bv (bv-slt cont1  0b000000000))   0b0)) ;71
+                            x_out <= #1 cont1[5:0]; $display(";A 73");		//(assert (= x_out    (bv-extract 5 0 cont1 ))) ;73
+                        end
+                        stato = 4'h1; $display(";A 74");		//(assert (= stato    0h1)) ;74
+                    end
+            endcase
+        end
+    end
+
+endmodule
+

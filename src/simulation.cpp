@@ -18,7 +18,7 @@
 using namespace std;
 
 //configuration
-const bool		enable_error_check = false;
+const bool		enable_error_check = true;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
 const bool		enable_yices_debug = true;
@@ -37,6 +37,8 @@ static uint sim_num;
 
 static SMTBranch* selected_branch;
 static uint selected_clock;
+
+static void check_satisfiability();
 
 static inline void compile() {
     string cmd = "iverilog -o conc_run.vvp " + string(g_output_file) + \
@@ -293,6 +295,7 @@ void simulate_build_stack() {
 }
 
 static bool find_next_cfg(){
+
 	const uint size = constraints_stack.size();
 	vector<br_cnst_t*> branches;
 	
@@ -365,6 +368,7 @@ static bool find_next_cfg(){
 		
 
 		call_to_solver++;
+		check_satisfiability();
 		if(solve_constraints(clock)){
 			selected_branch = it->br;
 			selected_clock = clock;

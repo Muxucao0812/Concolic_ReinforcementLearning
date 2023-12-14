@@ -1034,9 +1034,7 @@ void SMTBranch::update_edge() {
 				yices_assert_formula(yices_context, yices_and3(not_cond_term, assign_term, cond_term));
 				a_sig->restore_versions(0);
 				if(yices_check_context(yices_context, NULL) == STATUS_SAT){
-					// yices_pp_term(stdout, not_cond_term, 1000, 1, 0);
-					// yices_pp_term(stdout, assign_term, 1000, 1, 0);
-					// yices_pp_term(stdout, cond_term, 1000, 1, 0);
+			
 					if(only_edge){
 						only_edge = false;
 						//delete all predecessor edges
@@ -1305,12 +1303,18 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
 		term_t new_term = yices_new_uninterpreted_term(bv_type);
 		yices_set_term_name(new_term, (name + string("_") + to_string(0)).c_str());
 		term_stack.push_back(new_term);
+		
+		// for(auto it = term_stack.begin(); it != term_stack.end(); ++it){
+		// 	yices_pp_term(stdout, *it, 1000, 1, 0);
+		// }
+
+
 		for(int i = 0;i < index_count;++i){
 			term_t index_term = yices_bvconst_uint32(index_width, i);
 			term_t value_term = yices_bvconst_zero(width);
 			term_t eq_term = yices_eq(yices_application1(term_stack[0],index_term), value_term);
 		
-
+			// yices_pp_term(stdout, eq_term, 1000, 1, 0);
 			if(i == 0){
 				init_term = eq_term;
 			}else{

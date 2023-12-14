@@ -93,6 +93,10 @@ bool CTDataMem::update_input_vectors(const char* src_file){
         string name;
         uint clock = 0;
         
+        //if the line contain "(function" or the first char is " ", continue
+        if(line.find("(function") != string::npos || line[0] == ' '){
+            continue;
+        }
         //parse
         uint pos = 3;
         while(line[pos] != ' ') pos++;
