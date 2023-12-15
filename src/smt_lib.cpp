@@ -563,8 +563,9 @@ void SMTBinary::print(std::stringstream& ss) {
 }
 
 term_t SMTBinary::eval_term(SMTClkType clk) {
-	if(is_term_eval_needed){
+	if(is_term_eval_needed){	
 		yices_term = func(expr_list[0]->eval_term(clk), expr_list[1]->eval_term(clk));
+		yices_print_error(stdout);
 		if(is_bool){
 			term_t p[1];
 			p[0] = yices_term;
