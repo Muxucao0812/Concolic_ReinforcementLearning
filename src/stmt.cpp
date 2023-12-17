@@ -342,7 +342,25 @@ static SMTBlockingAssign* emit_assign_and_opt_opcode(ivl_scope_t scope, ivl_stat
 		rval = smt_bi;
 	}
 	else{
-		rval = emit_expr(scope, ivl_stmt_rval(stmt));
+		if(lval->type==SMT_EXPR_SIGNAL&&ivl_expr_type(ivl_stmt_rval(stmt))==IVL_EX_NUMBER){
+			int oper1_signed = ivl_signal_signed(ivl_lval_sig(ivl_stmt_lval(stmt,0)));
+			ivl_expr_t oper2 = ivl_stmt_rval(stmt);
+			SMTSignal* tmp_sig = dynamic_cast<SMTSignal*>(lval);
+			if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)>0)
+					rval = emit_number(
+						_left(ivl_expr_bits(oper2),tmp_sig->parent->width),
+						tmp_sig->parent->width, 
+						oper1_signed);
+				else if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)==0)
+					rval = emit_number(
+						ivl_expr_bits(oper2),
+						tmp_sig->parent->width, 
+						oper1_signed);
+				else
+					rval = emit_expr(scope, ivl_stmt_rval(stmt));
+		}else{
+			rval = emit_expr(scope, ivl_stmt_rval(stmt));
+		}
 	}
 	fprintf(g_out, ";");
 	return new SMTBlockingAssign(lval, rval);
