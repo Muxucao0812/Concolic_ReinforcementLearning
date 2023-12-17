@@ -1,4 +1,4 @@
-// Following code segment is generated from ./src/b01.v:1
+// Following code segment is generated from /home/meng/Code/concolic-testing/test/b01/src/b01.v:1
 module b01(clock, line1, line2, reset, outp, overflw, __obs);
     input clock;
     input line1;
@@ -12,7 +12,7 @@ module b01(clock, line1, line2, reset, outp, overflw, __obs);
     reg overflw = 1'b0;
     reg [2:0] stato = 3'b0;
 
-    // Following code segment is generated from ./src/b01.v:23
+    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b01/src/b01.v:23
     always @(posedge clock) begin
         if ((reset == 1'b1)) begin
             stato <= #1 3'b000; $display(";A 2");		//(assert (= stato    0b000)) ;2

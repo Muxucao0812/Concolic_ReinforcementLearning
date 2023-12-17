@@ -143,9 +143,28 @@ SMTBinary* emit_expr_binary(ivl_scope_t scope, ivl_expr_t expr) {
 		case 'G':
 		case 'a':
 		case 'o':
+			// e.g. Previously, all number like '2' will be defined as 32 bits
+			// 2 bits <- num + 2 will become num + 32'b000...10
+			// The following code can identify # bits of `num` and align them
 			tmp_expr1 = emit_expr(scope, oper1);
 			fprintf(g_out, " %s ", oper);
-			tmp_expr2 = emit_expr(scope, oper2);
+			tmp_sig = dynamic_cast<SMTSignal*>(tmp_expr1);
+			if(tmp_sig && (ivl_expr_parameter(oper2)||ivl_expr_type(oper2)==IVL_EX_NUMBER)){
+				if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)>0)
+					tmp_expr2 = emit_number(
+						_left(ivl_expr_bits(oper2),(int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)),
+						tmp_sig->parent->width, 
+						ivl_expr_signed(oper1));
+				else if((int(strlen(ivl_expr_bits(oper2)))-tmp_sig->parent->width)==0)
+					tmp_expr2 = emit_number(
+						ivl_expr_bits(oper2),
+						tmp_sig->parent->width, 
+						ivl_expr_signed(oper1));
+				else
+					tmp_expr2 = emit_expr(scope, oper2);
+			}else{
+				tmp_expr2 = emit_expr(scope, oper2);
+			}
 			break;
 		case 'R':
 		case 'l':

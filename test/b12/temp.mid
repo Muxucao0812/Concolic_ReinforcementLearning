@@ -63,34 +63,6 @@ module b12(
 
    //reg[((2**COD_COLOR)-1):0] memory [0:(SIZE_MEM-1)];
    //reg[SIZE_ADDRESS:0] mar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    reg [0:0] s;
    reg [2:0] counter;
 

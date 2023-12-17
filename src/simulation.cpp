@@ -18,11 +18,11 @@
 using namespace std;
 
 //configuration
-const bool		enable_error_check = true;
+const bool		enable_error_check = false;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
 const bool		enable_yices_debug = true;
-const uint      iteration_limit = 10;
+const uint      iteration_limit = 100;
 const uint      total_limit = 1000;
 unordered_map<SMTBasicBlock*, uint> iter_count;
 

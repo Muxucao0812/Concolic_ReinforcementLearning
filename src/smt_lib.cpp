@@ -565,7 +565,8 @@ void SMTBinary::print(std::stringstream& ss) {
 term_t SMTBinary::eval_term(SMTClkType clk) {
 	if(is_term_eval_needed){	
 		yices_term = func(expr_list[0]->eval_term(clk), expr_list[1]->eval_term(clk));
-		yices_print_error(stdout);
+		// yices_pp_term(stdout, yices_term, 1000, 1, 0);
+		// yices_print_error(stdout);
 		if(is_bool){
 			term_t p[1];
 			p[0] = yices_term;
@@ -1303,6 +1304,7 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
 		//since array update with alias every time, we would not declare all terms at first
 
 		term_t new_term = yices_new_uninterpreted_term(bv_type);
+
 		yices_set_term_name(new_term, (name + string("_") + to_string(0)).c_str());
 		term_stack.push_back(new_term);
 		
