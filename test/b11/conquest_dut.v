@@ -1,4 +1,4 @@
-// Following code segment is generated from ./src/b11.v:1
+// Following code segment is generated from /home/meng/Code/concolic-testing/test/b11/src/b11.v:1
 module b11(x_in, stbi, clock, reset, x_out, __obs);
     input [5:0] x_in;
     input stbi;
@@ -18,14 +18,14 @@ module b11(x_in, stbi, clock, reset, x_out, __obs);
         cont1_inv = (9'sb000000000 - cont1); $display(";A 0");		//(assert (= cont1_inv    (bv-sub 0b000000000 cont1 ))) ;0
     end
 
-    // Following code segment is generated from ./src/b11.v:28
+    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b11/src/b11.v:28
     always @(posedge clock) begin
         if ((reset == 1'b1)) begin
             $display("target");
             stato = 4'h0; $display(";A 3");		//(assert (= stato    0h0)) ;3
             r_in = 6'b000000; $display(";A 4");		//(assert (= r_in    0b000000)) ;4
             cont = 6'b000000; $display(";A 5");		//(assert (= cont    0b000000)) ;5
-            cont1 = 9'b000000000; $display(";A 6");		//(assert (= cont1    0b000000000)) ;6
+            cont1 = 9'sb000000000; $display(";A 6");		//(assert (= cont1    0b000000000)) ;6
             x_out = 6'b000000; $display(";A 7");		//(assert (= x_out    0b000000)) ;7
         end
         else begin

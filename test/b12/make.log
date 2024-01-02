@@ -1,0 +1,129 @@
+nohup: ignoring input
+Signel memory has dimension
+iverilog -o conc_run.vvp conquest_dut.v conquest_tb.v
+[INFO] Reading Target id from file "branch_id"
+[INFO] Total targets: 104
+[COVERED 0] (assert (= play    0b1)) ;5
+[COVERED 0] (assert (= sound    0b000)) ;7
+[COVERED 0] (assert (= (bool-to-bv (bv-gt counter  0b010))   0b1)) ;8
+[COVERED 0] (assert (= (bool-to-bv (bv-gt counter  0b010))   0b0)) ;9
+[COVERED 0] (assert (= sound    0b001)) ;14
+[COVERED 0] (assert (= (bool-to-bv (bv-gt counter  0b011))   0b1)) ;15
+[COVERED 0] (assert (= (bool-to-bv (bv-gt counter  0b011))   0b0)) ;16
+[COVERED 0] (assert (= sound    0b010)) ;21
+[COVERED 0] (assert (= (bool-to-bv (bv-gt counter  0b100))   0b1)) ;22
+[COVERED 0] (assert (= (bool-to-bv (bv-gt counter  0b100))   0b0)) ;23
+[COVERED 0] (assert (= sound    0b011)) ;28
+[COVERED 0] (assert (= (bool-to-bv (bv-gt counter  0b101))   0b1)) ;29
+[COVERED 0] (assert (= (bool-to-bv (bv-gt counter  0b101))   0b0)) ;30
+[COVERED 0] (assert (= play    0b0)) ;6
+[COVERED 0] (assert (= (bv-comp count  0b11)   0b1)) ;57
+[COVERED 0] (assert (= (bv-comp count  0b11)   0b0)) ;58
+[COVERED 0] (assert (= wr    0b1)) ;98
+[COVERED 0] (assert (= wr    0b0)) ;99
+[COVERED 0] (assert (= (bv-comp start  0b1)   0b1)) ;116
+[COVERED 0] (assert (= (bv-comp start  0b1)   0b0)) ;117
+[COVERED 0] (assert (= gamma    0b00000)) ;120
+[COVERED 0] (assert (= gamma    0b00001)) ;122
+[COVERED 0] (assert (= gamma    0b00010)) ;130
+[COVERED 0] (assert (= gamma    0b00011)) ;136
+[COVERED 0] (assert (= gamma    0b00100)) ;140
+[COVERED 0] (assert (= gamma    0b00101)) ;142
+[COVERED 0] (assert (= gamma    0b00110)) ;148
+[COVERED 0] (assert (= (bv-comp count2  0b000000)   0b0)) ;150
+
+Trying to cover (assert (= sound    0b100)) ;35
+closest distance: 1
+[FOUND 8--0] (assert (= sound    0b100)) ;35
+[COVERED 4] (assert (= sound    0b100)) ;35
+
+Trying to cover (assert (= (bool-to-bv (bv-gt counter  0b110))   0b1)) ;36
+closest distance: 1
+[FOUND 1--1] (assert (= play    0b1)) ;5
+[FOUND 37--1] (assert (= play    0b0)) ;6
+[FOUND 37--1] (assert (= (bool-to-bv (bv-gt counter  0b010))   0b1)) ;8
+[FOUND 37--1] (assert (= (and (/= sound  0b000) (/= sound  0b001) (/= sound  0b010) (/= sound  0b011) (/= sound  0b100) (/= sound  0b101))   true)) ;49
+[COVERED 8] (assert (= (and (/= sound  0b000) (/= sound  0b001) (/= sound  0b010) (/= sound  0b011) (/= sound  0b100) (/= sound  0b101))   true)) ;49
+[FOUND 37--1] (assert (= sound    0b100)) ;35
+[FOUND 115--1] (assert (= (bool-to-bv (bv-gt counter  0b100))   0b1)) ;22
+[FOUND 142--1] (assert (= (bool-to-bv (bv-gt counter  0b011))   0b1)) ;15
+[FOUND 216--1] (assert (= (bool-to-bv (bv-gt counter  0b010))   0b0)) ;9
+[FOUND 288--1] (assert (= (bool-to-bv (bv-gt counter  0b101))   0b1)) ;29
+[FOUND 444--1] (assert (= (bool-to-bv (bv-gt counter  0b100))   0b0)) ;23
+[FOUND 790--1] (assert (= (bool-to-bv (bv-gt counter  0b011))   0b0)) ;16
+[FOUND 5002--1] (assert (= (bool-to-bv (bv-gt counter  0b101))   0b0)) ;30
+[FOUND 1--2] (assert (= gamma    0b00001)) ;122
+[FOUND 1--2] (assert (= gamma    0b00101)) ;142
+[FOUND 1--2] (assert (= gamma    0b10011)) ;280
+[COVERED 19] (assert (= gamma    0b10011)) ;280
+[FOUND 2--2] (assert (= play    0b1)) ;5
+[FOUND 37--2] (assert (= (bv-comp count2  0b000000)   0b1)) ;149
+[COVERED 21] (assert (= (bv-comp count2  0b000000)   0b1)) ;149
+[FOUND 37--2] (assert (= sound    0b001)) ;14
+[FOUND 37--2] (assert (= sound    0b010)) ;21
+[FOUND 37--2] (assert (= sound    0b101)) ;42
+[COVERED 24] (assert (= sound    0b101)) ;42
+[FOUND 37--2] (assert (= sound    0b011)) ;28
+[FOUND 38--2] (assert (= (bool-to-bv (bv-gt counter  0b010))   0b1)) ;8
+[FOUND 38--2] (assert (= (and (/= sound  0b000) (/= sound  0b001) (/= sound  0b010) (/= sound  0b011) (/= sound  0b100) (/= sound  0b101))   true)) ;49
+[FOUND 38--2] (assert (= sound    0b100)) ;35
+[FOUND 38--2] (assert (= play    0b0)) ;6
+[FOUND 115--2] (assert (= sound    0b000)) ;7
+[FOUND 116--2] (assert (= (bool-to-bv (bv-gt counter  0b100))   0b1)) ;22
+[FOUND 143--2] (assert (= (bool-to-bv (bv-gt counter  0b011))   0b1)) ;15
+[FOUND 289--2] (assert (= (bool-to-bv (bv-gt counter  0b101))   0b1)) ;29
+[FOUND 872--2] (assert (= (bool-to-bv (bv-gt counter  0b100))   0b0)) ;23
+[FOUND 1578--2] (assert (= (bool-to-bv (bv-gt counter  0b011))   0b0)) ;16
+[FOUND 2340--2] (assert (= (bool-to-bv (bv-gt counter  0b010))   0b0)) ;9
+[FOUND 8838--2] (assert (= (bool-to-bv (bv-gt counter  0b101))   0b0)) ;30
+[FOUND 1--3] (assert (= (bv-comp start  0b1)   0b1)) ;116
+[FOUND 1--3] (assert (= gamma    0b00010)) ;130
+[FOUND 1--3] (assert (= (and (/= gamma  0b00000) (/= gamma  0b00001) (/= gamma  0b00010) (/= gamma  0b00011) (/= gamma  0b00100) (/= gamma  0b00101) (/= gamma  0b00110) (/= gamma  0b00111) (/= gamma  0b01000) (/= gamma  0b01001) (/= gamma  0b01010) (/= gamma  0b01011) (/= gamma  0b01100) (/= gamma  0b01101) (/= gamma  0b01110) (/= gamma  0b01111) (/= gamma  0b10000) (/= gamma  0b10001) (/= gamma  0b10010) (/= gamma  0b10011) (/= gamma  0b10100) (/= gamma  0b10101) (/= gamma  0b10110) (/= gamma  0b10111) (/= gamma  0b11000) (/= gamma  0b11001))   true)) ;347
+[COVERED 40] (assert (= (and (/= gamma  0b00000) (/= gamma  0b00001) (/= gamma  0b00010) (/= gamma  0b00011) (/= gamma  0b00100) (/= gamma  0b00101) (/= gamma  0b00110) (/= gamma  0b00111) (/= gamma  0b01000) (/= gamma  0b01001) (/= gamma  0b01010) (/= gamma  0b01011) (/= gamma  0b01100) (/= gamma  0b01101) (/= gamma  0b01110) (/= gamma  0b01111) (/= gamma  0b10000) (/= gamma  0b10001) (/= gamma  0b10010) (/= gamma  0b10011) (/= gamma  0b10100) (/= gamma  0b10101) (/= gamma  0b10110) (/= gamma  0b10111) (/= gamma  0b11000) (/= gamma  0b11001))   true)) ;347
+[FOUND 1--3] (assert (= gamma    0b10110)) ;309
+[COVERED 41] (assert (= gamma    0b10110)) ;309
+[FOUND 1--3] (assert (= gamma    0b01100)) ;229
+[COVERED 42] (assert (= gamma    0b01100)) ;229
+[FOUND 1--3] (assert (= gamma    0b00100)) ;140
+[FOUND 1--3] (assert (= gamma    0b10111)) ;318
+[COVERED 44] (assert (= gamma    0b10111)) ;318
+[FOUND 1--3] (assert (= gamma    0b00110)) ;148
+[FOUND 1--3] (assert (= gamma    0b11001)) ;337
+[COVERED 46] (assert (= gamma    0b11001)) ;337
+[FOUND 1--3] (assert (= gamma    0b11000)) ;328
+[COVERED 47] (assert (= gamma    0b11000)) ;328
+[FOUND 1--3] (assert (= gamma    0b01111)) ;259
+[COVERED 48] (assert (= gamma    0b01111)) ;259
+[FOUND 1--3] (assert (= gamma    0b10010)) ;278
+[COVERED 49] (assert (= gamma    0b10010)) ;278
+[FOUND 1--3] (assert (= gamma    0b10100)) ;286
+[COVERED 50] (assert (= gamma    0b10100)) ;286
+[FOUND 2--3] (assert (= gamma    0b00101)) ;142
+[FOUND 2--3] (assert (= gamma    0b10011)) ;280
+[FOUND 2--3] (assert (= gamma    0b00001)) ;122
+[FOUND 3--3] (assert (= play    0b1)) ;5
+[FOUND 4--3] (assert (= (bv-comp start  0b1)   0b0)) ;117
+[FOUND 38--3] (assert (= sound    0b101)) ;42
+[FOUND 38--3] (assert (= sound    0b011)) ;28
+[FOUND 38--3] (assert (= sound    0b010)) ;21
+[FOUND 38--3] (assert (= sound    0b001)) ;14
+[FOUND 109--3] (assert (= (bool-to-bv (bv-gt counter  0b010))   0b1)) ;8
+[FOUND 109--3] (assert (= (and (/= sound  0b000) (/= sound  0b001) (/= sound  0b010) (/= sound  0b011) (/= sound  0b100) (/= sound  0b101))   true)) ;49
+[FOUND 109--3] (assert (= play    0b0)) ;6
+[FOUND 109--3] (assert (= sound    0b100)) ;35
+[FOUND 115--3] (assert (= (bv-comp count2  0b000000)   0b1)) ;149
+[FOUND 116--3] (assert (= sound    0b000)) ;7
+[FOUND 117--3] (assert (= (bool-to-bv (bv-gt counter  0b100))   0b1)) ;22
+[FOUND 250--3] (assert (= (bool-to-bv (bv-gt counter  0b011))   0b1)) ;15
+[FOUND 484--3] (assert (= (bool-to-bv (bv-gt counter  0b101))   0b1)) ;29
+[FOUND 2416--3] (assert (= (bool-to-bv (bv-gt counter  0b010))   0b0)) ;9
+[FOUND 4912--3] (assert (= (bool-to-bv (bv-gt counter  0b100))   0b0)) ;23
+[FOUND 5582--3] (assert (= (bool-to-bv (bv-gt counter  0b011))   0b0)) ;16
+[FOUND 1--4] (assert (= gamma    0b10001)) ;275
+[COVERED 72] (assert (= gamma    0b10001)) ;275
+[FOUND 1--4] (assert (= gamma    0b01000)) ;168
+[COVERED 73] (assert (= gamma    0b01000)) ;168
+[FOUND 1--4] (assert (= gamma    0b00011)) ;136
+[FOUND 1--4] (assert (= gamma    0b00111)) ;157
+[COVERED 75] (assert (= gamma    0b00111)) ;157
+[FOUND 1--4] (assert (= gamma    0b0110
