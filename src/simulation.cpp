@@ -1,4 +1,5 @@
 #include "concolic.h"
+#include "globals.h"
 #include "smt_lib.h"
 #include <iostream>
 #include <cstdio>
@@ -34,6 +35,7 @@ static char sim_file_name[64];
 static char mem_file_name[64];
 static uint hash_table[1024*16];
 static uint sim_num;
+
 
 static SMTBranch* selected_branch;
 static uint selected_clock;
@@ -272,6 +274,13 @@ bool compare_dist(br_cnst_t* a, br_cnst_t* b){
 	return a->br->block->distance < b->br->block->distance;
 }
 
+bool compare_prob(br_cnst_t* a, br_cnst_t* b){
+	if(a->br->branch_probability == b->br->branch_probability){
+		return a->cnst->clock < b->cnst->clock;
+	}
+	return a->br->branch_probability > b->br->branch_probability;
+}
+
 static void update_path_taken(br_cnst_t* alt_path){
     uint alt_path_hash = alt_path->cnst->hash_value + hash_table[alt_path->br->id % 16384]*alt_path->cnst->index;
 	path_hash_map.insert(alt_path_hash);
@@ -330,8 +339,12 @@ static bool find_next_cfg(){
 		}
 	}
 	
-	//sort by distance
-	sort(branches.begin(), branches.end(), compare_dist);
+	// //sort by distance
+	// sort(branches.begin(), branches.end(), compare_dist);
+
+	//sort by probability
+	sort(branches.begin(), branches.end(), compare_prob);
+
 	for(auto it:branches){
 		//printf("Trying %s\n", it->br->print().c_str());
 		uint clock = it->cnst->clock;
@@ -377,9 +390,20 @@ static bool find_next_cfg(){
 			if(!enable_error_check){
 				it->br->set_covered_clk(sim_num+1, clock);
 			}
-			printf("[FOUND %u--%u] %s", clock, selected_branch->block->distance, it->br->print().c_str());
+			printf("[FOUND: CLOCK: %u, IDX: %u, DIST: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->block->distance, selected_branch->branch_probability, it->br->print().c_str());
+			
+			// Xiangchen: Adjust the probability
+			SMTBranch::increase_probability(selected_branch);
+			if(sim_num > prob_num){
+				SMTBranch::decrease_probability(selected_branch);
+			}
+			
+			printf("COVERER RATE: %f\n", selected_branch->covered_branch_count/float(selected_branch->total_branch_count));
 			selected_branch->k_permit_covered++;
+			// Xiangchen: Because we use the probability to sort the branches
+			// So we need not to consider the distance
 			selected_branch->block->distance++;
+
 			return true;
 		}
 	}
@@ -461,6 +485,10 @@ void multi_coverage() {
 	SMTBasicBlock::edge_realignment();
 	SMTBasicBlock::update_all_distances();
 	SMTProcess::make_circular();
+	//random probility
+	SMTBranch::random_probability();
+
+	
 	// ofstream f_cfg("cfg");
 	// SMTBasicBlock::print_all(f_cfg);
 	// f_cfg.close();
@@ -474,6 +502,7 @@ void multi_coverage() {
 		path = new SMTPath(g_data);
 		SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
 	}
+
 	//remove covered
 	SMTBasicBlock::remove_covered_targets(sim_num);
 	sim_num = g_random_sim_num;

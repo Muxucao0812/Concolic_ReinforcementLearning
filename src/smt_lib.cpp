@@ -1057,6 +1057,57 @@ void SMTBranch::update_edge() {
 	}
 }
 
+// Xiangchen: Give every branch a random probability and the sum of all probabilities is 1
+void SMTBranch::random_probability() {
+    srand(time(NULL));
+    double sum = 0.0;
+    std::vector<double> probabilities;
+    // 首先为每个分支生成一个随机数
+    for ([[maybe_unused]] auto it : all_branches_list) {
+        double prob = (double)(rand() % 1000) / 1000;
+        probabilities.push_back(prob);
+        sum += prob;
+    }
+    // 然后调整这些数，使它们的总和为1
+    for (size_t i = 0; i < all_branches_list.size(); ++i) {
+        all_branches_list[i]->branch_probability = probabilities[i] / sum;
+        printf("Branch %d probability: %f\n", all_branches_list[i]->id, all_branches_list[i]->branch_probability);
+    }
+}
+// Xiangchen: Adjust every branch's probability according to if detect the new branch
+// But if it can't detect the new branch, it will decrease the probability of the selected branch
+
+void SMTBranch::increase_probability(SMTBranch* selected_branch) {
+    double increase_factor = 0.005;
+    selected_branch->branch_probability = std::min(1.0, selected_branch->branch_probability + increase_factor);
+
+    double total_probability = 0;
+    for (auto branch : all_branches_list) {
+        total_probability += branch->branch_probability;
+    }
+
+    for (auto branch : all_branches_list) {
+        branch->branch_probability /= total_probability;
+    }
+}
+
+
+void SMTBranch::decrease_probability(SMTBranch* selected_branch) {
+    double decrease_factor = 0.01;
+    selected_branch->branch_probability = std::max(0.0, selected_branch->branch_probability - decrease_factor);
+
+    double total_probability = 0;
+    for (auto branch : all_branches_list) {
+        total_probability += branch->branch_probability;
+    }
+
+    for (auto branch : all_branches_list) {
+        branch->branch_probability /= total_probability;
+    }
+}
+
+
+
 void SMTBranch::instrument() {
     const string &str = print();
 	total_branch_count++;
@@ -1146,6 +1197,12 @@ term_t SMTBranch::update_term() {
 
 //-------------------------SMT Branch Node--------------------------------------
 SMTBranchNode::SMTBranchNode() {
+
+}
+
+//-------------------------SMT Branch Node Detected----------------------------
+SMTBranchNodeCovered::SMTBranchNodeCovered() {
+	
 }
 
 //-------------------------SMT Branch Case--------------------------------------

@@ -30,6 +30,7 @@ class SMTNumber;
 class SMTString;
 class SMTBranchNode;
 class SMTBranch;
+class SMTBranchNodeCovered;
 class SMTSigCore;
 class SMTBasicBlock;
 class SMTProcess;
@@ -231,6 +232,7 @@ public:
     const uint list_idx;    //index in parent's branch list
 	SMTBranchNode*  parent_node;
 	uint k_permit_covered;
+	double branch_probability;
 	bool is_dep;
 	
 	virtual ~SMTBranch();
@@ -242,6 +244,9 @@ public:
 	void update_edge();
 	term_t update_term() override;
 	void instrument() override;
+	static void random_probability();
+	static void increase_probability(SMTBranch* selected_branch);
+	static void decrease_probability(SMTBranch* selected_branch);
 
 	
 	static SMTBranch* create_true_branch(SMTBranchNode* parent);
@@ -263,6 +268,17 @@ public:
     std::vector<SMTBranch*> branch_list;
     SMTExpr* cond;
     uint cond_width;
+};
+
+//---------------------------SMT Branch Node Deteched--------------------------------------
+// Xiangchen: This class is used to represent a branch node that is detached from the process
+class SMTBranchNodeCovered{
+public:
+	SMTBranchNodeCovered();
+	std::vector<SMTBranch*> d_branch_list;
+	SMTExpr* d_cond;
+	uint cond_width;
+	uint d_probility;
 };
 
 

@@ -240,7 +240,7 @@
                 "-preset_edge=1",
                 "-punroll=1000",
                 "-prandom_sim=3"],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "/home/meng/Code/concolic-testing/test/b12",
             "environment": [
                 {
@@ -264,7 +264,7 @@
             "request": "launch",
             "program": "/usr/local/lib/ivl/ivl",
             "args": ["/home/meng/Code/concolic-testing/test/b12/temp.mid",
-            "-C","/home/meng/Code/concolic-testing/test/b12/ivrlh637b7ae6",
+            "-C","/home/meng/Code/concolic-testing/test/b12/ivrlh37585194",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
             "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b12",

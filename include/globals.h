@@ -26,7 +26,8 @@ extern const char*      g_clock_sig_name;
 extern const char*      g_reset_sig_name;
 extern const char*      g_reset_edge_active;
 extern uint             g_random_sim_num;
-extern uint		g_target_limit;
+extern uint		        g_target_limit;
+extern uint             prob_num;
 
 //Configuration declarations
 //#define conc_flush(X)   fflush(X)

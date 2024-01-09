@@ -28,3 +28,4 @@ const char*     g_clock_sig_name;
 const char*     g_reset_sig_name;
 const char*     g_reset_edge_active;
 uint            g_random_sim_num = 3;
+uint            prob_num = 50;
