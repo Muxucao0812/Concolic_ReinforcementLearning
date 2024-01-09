@@ -15,8 +15,14 @@
 #include <algorithm>
 #include <unistd.h>
 #include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
+
+
+// store the blocks
+std::unordered_set<unsigned int> prev_ids;
+std::unordered_set<unsigned int> curr_ids;
 
 //configuration
 const bool		enable_error_check = false;
@@ -161,8 +167,8 @@ static void build_stack() {
 	char tag[16];
 	uint val;
 	
+	is_new_block = false;
 
-	
 	//constraints_stack.push_back(create_clock(0));
 	while(true){
 		fscanf(f_test, "%s%u", tag, &val);
@@ -176,9 +182,24 @@ static void build_stack() {
 		else if (strcmp(tag, ";A") == 0){
 			SMTAssign* assign = SMTAssign::get_assign(val);
 			constraints_stack.push_back(create_constraint(clock, assign));
+			curr_ids.insert(assign->block->id);
+
+
 		}
 	}
+	// examine if cover the new block
+	if(!is_new_block){
+		for(auto id:curr_ids){
+			if(prev_ids.find(id) == prev_ids.end()){
+				is_new_block = true;
+				break;
+			}
+		}
+	}
+	prev_ids = curr_ids;
+	curr_ids.clear();
 
+	printf("If the new block is covered: %d\n", is_new_block);
 	fclose(f_test);
 }
 
@@ -390,15 +411,22 @@ static bool find_next_cfg(){
 			if(!enable_error_check){
 				it->br->set_covered_clk(sim_num+1, clock);
 			}
-			printf("[FOUND: CLOCK: %u, IDX: %u, DIST: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->block->distance, selected_branch->branch_probability, it->br->print().c_str());
-			
-			// Xiangchen: Adjust the probability
-			SMTBranch::increase_probability(selected_branch);
-			if(sim_num > prob_num){
-				SMTBranch::decrease_probability(selected_branch);
-			}
-			
+			// printf("[FOUND: CLOCK: %u, IDX: %u, DIST: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->block->distance, selected_branch->branch_probability, it->br->print().c_str());
+			printf("[FOUND: CLOCK: %u, IDX: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->branch_probability, it->br->print().c_str());
 			printf("COVERER RATE: %f\n", selected_branch->covered_branch_count/float(selected_branch->total_branch_count));
+			// Xiangchen: Adjust the probability
+			if(is_new_block){
+				SMTBranch::increase_probability(selected_branch);
+			}else{
+				if(sim_num > prob_num){
+					SMTBranch::decrease_probability(selected_branch);
+				}else{
+					SMTBranch::increase_probability(selected_branch);
+				}
+			}
+
+			SMTBranch::print_probability();
+		
 			selected_branch->k_permit_covered++;
 			// Xiangchen: Because we use the probability to sort the branches
 			// So we need not to consider the distance
@@ -485,9 +513,6 @@ void multi_coverage() {
 	SMTBasicBlock::edge_realignment();
 	SMTBasicBlock::update_all_distances();
 	SMTProcess::make_circular();
-	//random probility
-	SMTBranch::random_probability();
-
 	
 	// ofstream f_cfg("cfg");
 	// SMTBasicBlock::print_all(f_cfg);
@@ -507,6 +532,11 @@ void multi_coverage() {
 	SMTBasicBlock::remove_covered_targets(sim_num);
 	sim_num = g_random_sim_num;
 	while(!SMTBasicBlock::target_list.empty()){
+
+		//For every target, it will give every branch a probability randomly
+		SMTBranch::random_probability();
+
+
 		SMTBasicBlock* target = SMTBasicBlock::target_list.front();
 		if (target->assign_list[0]->is_covered() || iter_count[target] >= total_limit) {
 			SMTBasicBlock::target_list.pop_front();
@@ -517,7 +547,7 @@ void multi_coverage() {
 		iter_count[target] += iteration_limit;
 		if (target->closest_path && target->closest_path != path) {
 			path = target->closest_path;
-			printf("closest distance: %u\n", target->closest_path_distance);
+			// printf("closest distance: %u\n", target->closest_path_distance);
 			//update block distance from target's adjacency_list
 			//Yangdi: Critical Error of first version
 			//After selecting the path, signal clock versions need to be updated
@@ -527,9 +557,10 @@ void multi_coverage() {
 		//do iterations till not covered or iteration limit reached
 		selected_branch = NULL;
 		uint start_iteration = sim_num;
+
 		while((path = concolic_iteration(path))){
-			sim_num++;
-			            
+			
+			sim_num++;  
 			//erase covered target
 			SMTBasicBlock::remove_covered_targets(sim_num);
 			
@@ -540,6 +571,7 @@ void multi_coverage() {
 		}
 		if (path)
 			SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
+
 		if (!target->assign_list[0]->is_covered()) {
 			target->closest_path_distance+=iteration_limit / 5;
 			//generate random inputs

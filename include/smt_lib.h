@@ -244,10 +244,11 @@ public:
 	void update_edge();
 	term_t update_term() override;
 	void instrument() override;
+	// Function about probability
 	static void random_probability();
 	static void increase_probability(SMTBranch* selected_branch);
 	static void decrease_probability(SMTBranch* selected_branch);
-
+	static void print_probability();
 	
 	static SMTBranch* create_true_branch(SMTBranchNode* parent);
 	static SMTBranch* create_false_branch(SMTBranchNode* parent);

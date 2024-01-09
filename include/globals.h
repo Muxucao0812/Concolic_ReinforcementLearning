@@ -8,6 +8,8 @@
 
 //global variables
 extern FILE*			g_out;
+extern FILE*			g_prob;
+extern const char*	    g_prob_file;
 extern int				g_errors;
 extern unsigned         g_ind;
 extern unsigned         g_ind_incr;
@@ -20,6 +22,7 @@ extern const char*		g_data_state;
 extern CTDataMem		g_data;
 extern clock_t          start_time;
 
+
 //Parameters
 extern uint     		g_unroll;
 extern const char*      g_clock_sig_name;
@@ -28,6 +31,7 @@ extern const char*      g_reset_edge_active;
 extern uint             g_random_sim_num;
 extern uint		        g_target_limit;
 extern uint             prob_num;
+extern bool             is_new_block;
 
 //Configuration declarations
 //#define conc_flush(X)   fflush(X)

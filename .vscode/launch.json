@@ -240,7 +240,7 @@
                 "-preset_edge=1",
                 "-punroll=1000",
                 "-prandom_sim=3"],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b12",
             "environment": [
                 {

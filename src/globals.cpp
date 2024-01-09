@@ -11,6 +11,8 @@ using namespace std;
 
 //global variables
 FILE*			g_out = NULL;
+FILE*			g_prob = NULL;
+const char*	    g_prob_file = "prob.txt";
 int				g_errors = 0;
 unsigned		g_ind = 0;
 unsigned		g_ind_incr = 4;
@@ -21,7 +23,7 @@ const char*		g_data_mem = "data.mem";
 const char*		g_data_state = "data.state";
 CTDataMem		g_data;
 clock_t         start_time;
-
+bool            is_new_block = false;       
 //Parameters
 uint			g_unroll;
 const char*     g_clock_sig_name;

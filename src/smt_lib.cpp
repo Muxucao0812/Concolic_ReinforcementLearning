@@ -1071,7 +1071,7 @@ void SMTBranch::random_probability() {
     // 然后调整这些数，使它们的总和为1
     for (size_t i = 0; i < all_branches_list.size(); ++i) {
         all_branches_list[i]->branch_probability = probabilities[i] / sum;
-        printf("Branch %d probability: %f\n", all_branches_list[i]->id, all_branches_list[i]->branch_probability);
+        // printf("Branch %d probability: %f\n", all_branches_list[i]->id, all_branches_list[i]->branch_probability);
     }
 }
 // Xiangchen: Adjust every branch's probability according to if detect the new branch
@@ -1079,7 +1079,7 @@ void SMTBranch::random_probability() {
 
 void SMTBranch::increase_probability(SMTBranch* selected_branch) {
     double increase_factor = 0.005;
-    selected_branch->branch_probability = std::min(1.0, selected_branch->branch_probability + increase_factor);
+    selected_branch->branch_probability = std::min(1.0, selected_branch->branch_probability*(1+increase_factor));
 
     double total_probability = 0;
     for (auto branch : all_branches_list) {
@@ -1091,10 +1091,9 @@ void SMTBranch::increase_probability(SMTBranch* selected_branch) {
     }
 }
 
-
 void SMTBranch::decrease_probability(SMTBranch* selected_branch) {
     double decrease_factor = 0.01;
-    selected_branch->branch_probability = std::max(0.0, selected_branch->branch_probability - decrease_factor);
+    selected_branch->branch_probability = std::max(0.0, selected_branch->branch_probability*(1 - decrease_factor));
 
     double total_probability = 0;
     for (auto branch : all_branches_list) {
@@ -1104,6 +1103,14 @@ void SMTBranch::decrease_probability(SMTBranch* selected_branch) {
     for (auto branch : all_branches_list) {
         branch->branch_probability /= total_probability;
     }
+}
+
+void SMTBranch::print_probability() {
+	FILE* g_prob = fopen(g_prob_file, "w");
+	for (auto branch : all_branches_list) {
+		fprintf(g_prob, "Branch %d probability: %f\n", branch->id, branch->branch_probability);
+	}
+	fclose(g_prob);
 }
 
 
