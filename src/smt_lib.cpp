@@ -87,6 +87,8 @@ void smt_yices_pop(){
 	}*/
 }
 
+
+
 //----------------------------SMT Expr------------------------------------------
 std::vector<SMTExpr*>  SMTExpr::all_expr_list;
 SMTExpr::SMTExpr(const SMTExprType _type) : type(_type) {
@@ -1074,6 +1076,25 @@ void SMTBranch::random_probability() {
         // printf("Branch %d probability: %f\n", all_branches_list[i]->id, all_branches_list[i]->branch_probability);
     }
 }
+
+// Xiangchen: Give every branch a probability according to the distance from the target
+void SMTBranch::distance_probability() {
+	double sum = 0.0;
+	std::vector<double> probabilities;
+	// 首先为每个分支生成一个随机数
+	for (auto it : all_branches_list) {
+		double prob = 1.0 / (it->block->distance + 1);
+		probabilities.push_back(prob);
+		sum += prob;
+	}
+	// 然后调整这些数，使它们的总和为1
+	for (size_t i = 0; i < all_branches_list.size(); ++i) {
+		all_branches_list[i]->branch_probability = probabilities[i] / sum;
+		// printf("Branch %d probability: %f\n", all_branches_list[i]->id, all_branches_list[i]->branch_probability);
+	}
+}
+
+
 // Xiangchen: Adjust every branch's probability according to if detect the new branch
 // But if it can't detect the new branch, it will decrease the probability of the selected branch
 
@@ -1525,7 +1546,7 @@ void SMTSigCore::yices_insert_reg_init(context_t* ctx) {
 	}
 }
 
-void SMTSigCore::print_state_variables(ofstream &out) {
+void SMTSigCore::print_state_variables(std::ostream &out) {
 	out << "//state variables:";
 	for(auto it:reg_list){
 		if(it->is_state_variable){
@@ -1801,6 +1822,22 @@ void SMTBasicBlock::print_all(ofstream &out) {
     out << "*/\n\n";
 }
 
+void SMTBasicBlock::print_uncovered_targets() {
+    g_uncovered_targets = fopen(g_uncovered_targets_file, "w");
+    if (g_uncovered_targets == nullptr) {
+        std::cerr << "Failed to open file: " << g_uncovered_targets_file << std::endl;
+        return;
+    }
+
+    for (auto it : target_list) {
+        if (it->assign_list.size() && !it->assign_list[0]->is_covered()) {
+            fprintf(g_uncovered_targets, "%d\n", it->assign_list[0]->id);
+        }
+    }
+    fclose(g_uncovered_targets); // Close the file after writing
+}
+
+
 void SMTBasicBlock::reset_flags() {
     for(auto it:block_list){
         it->distance = initial_distance;
@@ -1867,6 +1904,22 @@ void SMTBasicBlock::update_all_closest_paths(SMTPath* path, const vector<constra
 		it->update_closest_path(path, constraints_stack);
 	}
 }
+
+
+// void SMTBasicBlock::update_all_biggest_probability_paths(SMTPath* path, const vector<constraint_t*> &constraints_stack) {
+// 	for(auto it:target_list){
+// 		it->update_all_probabilities(path, constraints_stack);
+// 	}
+// }
+
+// void SMTBasicBlock::update_all_probabilities(SMTPath* path, const vector<constraint_t*> &constraints_stack) {
+// 	// for(auto it:target_list){
+// 		// calculate the probability of each target
+// 		// need to finish
+// 		info("This function need to be finished");
+// 	// }
+// }
+
 
 void SMTBasicBlock::update_closest_path(SMTPath* path, const vector<constraint_t*> &constraints_stack) {
 	//Yangdi: 

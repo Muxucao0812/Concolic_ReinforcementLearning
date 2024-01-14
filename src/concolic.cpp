@@ -10,6 +10,7 @@
 #include <valarray>
 #include <sys/stat.h>
 
+
 using namespace std;
 
 static void generate_tb(ivl_scope_t root);
@@ -253,6 +254,7 @@ void generate_tb(ivl_scope_t root){
     } else{
         error("TODO: Testbench for input width of 1");
     }
+
 
     fprintf(f_tb, "endmodule\n");
     fclose(f_tb);

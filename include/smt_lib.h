@@ -1,5 +1,6 @@
 #pragma once
 
+
 #include "ivl_target.h"
 #include "concolic.h"
 #include "data_mem.h"
@@ -92,6 +93,8 @@ typedef struct constraint_t{
 	uint index;
     uint hash_value;
 }constraint_t;
+
+
 
 //----------------------------SMT Expr------------------------------------------
 class SMTExpr{
@@ -246,6 +249,7 @@ public:
 	void instrument() override;
 	// Function about probability
 	static void random_probability();
+	static void distance_probability();
 	static void increase_probability(SMTBranch* selected_branch);
 	static void decrease_probability(SMTBranch* selected_branch);
 	static void print_probability();
@@ -454,8 +458,16 @@ public:
     static void commit_versions(uint clock);
 	static void restore_versions(uint clock);
 	static void yices_insert_reg_init(context_t * ctx);
-	static void print_state_variables(std::ofstream &out);
+	static void print_state_variables(std::ostream &out);
     static void set_input_version(uint version);
+
+	// reture register name
+	static const std::vector<SMTSigCore*>& get_reg_list(){
+		return reg_list;
+	}
+	std::string get_name(){
+		return name;
+	}
 };
 
 
@@ -526,6 +538,7 @@ public:
 	void update_distance_from_adjacency_list();
 	void update_edge();
     
+	static void print_uncovered_targets();
     static void print_all(std::ofstream &out);
 	static void reset_flags();
 	static void add_target(SMTBasicBlock* target);
@@ -537,6 +550,8 @@ public:
 	static uint target_num();
 	static void update_all_closest_paths(SMTPath* path, const std::vector<constraint_t*> &constraints_stack);
 	static void update_all_distances();
+	static void update_all_biggest_probability_paths(SMTPath* path, const std::vector<constraint_t*> &constraints_stack);
+	static void update_all_probabilities();
 	void dump_distances();
 	void update_closest_path(SMTPath* path, const std::vector<constraint_t*> &constraints_stack);
 	std::pair<uint, uint> distance_from_current_path(const std::vector<constraint_t*> &constraints_stack);

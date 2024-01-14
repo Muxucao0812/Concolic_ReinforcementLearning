@@ -130,6 +130,7 @@ void emit_scope_variables(ivl_scope_t scope) {
 	if (emit_and_free_net_const_list(scope)){
 		fprintf(g_out, "\n");
 	}
+	// SMTSigCore::print_state_variables(std::cout);
 }
 
 static void emit_scope_file_line(ivl_scope_t scope) {
@@ -276,6 +277,15 @@ static void emit_module_port_defs(ivl_scope_t scope) {
 	if (count) fprintf(g_out, "\n");
 }
 
+void emit_module_variables_display(){
+	fprintf(g_out, "%*c// Displaying module variables\n", 4, ' ');
+	fprintf(g_out, "%*calways @(posedge %s) begin\n", 4, ' ', g_clock_sig_name);
+    for(auto sig: SMTSigCore::get_reg_list()){
+        fprintf(g_out, "%*c$display(\"Reg: %s = %%b\", %s);\n", 6, ' ', sig->get_name().c_str(), sig->get_name().c_str());
+    }
+	fprintf(g_out, "%*cend\n", 4, ' ');
+};
+
 // Emit root module
 void emit_root(ivl_scope_t root) {
     //check if hierarchy is flattened 
@@ -309,6 +319,10 @@ void emit_root(ivl_scope_t root) {
 	/* Output the initial/always blocks for this module. */
 	ivl_design_process(g_design, (ivl_process_f) find_process, root);
 
+	// Output the variables printed of this module
+	emit_module_variables_display();
+
+	// Output the endmodule
 	fprintf(g_out, "endmodule\n\n");
 }
 

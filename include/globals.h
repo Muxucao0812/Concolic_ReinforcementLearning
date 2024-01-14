@@ -6,10 +6,16 @@
 #include <cstdio>
 #include <ctime>
 
+
+//mannualy select
+extern bool             user_select_branch;
+
 //global variables
 extern FILE*			g_out;
 extern FILE*			g_prob;
+extern FILE*			g_uncovered_targets;
 extern const char*	    g_prob_file;
+extern const char*	    g_uncovered_targets_file;
 extern int				g_errors;
 extern unsigned         g_ind;
 extern unsigned         g_ind_incr;

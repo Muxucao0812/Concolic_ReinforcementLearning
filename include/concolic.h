@@ -13,6 +13,8 @@
 #include <unordered_map>
 #include <fstream>
 #include "globals.h"
+#include <iostream>
+
 
 typedef unsigned uint;
 
@@ -33,6 +35,7 @@ extern FILE* f_dbg;
 class SMTExpr;
 class SMTSignal;
 class SMTNumber;
+
 
 extern void emit_event(ivl_scope_t scope, ivl_statement_t stmt);
 extern SMTExpr* emit_expr(ivl_scope_t scope, ivl_expr_t expr);
@@ -70,7 +73,7 @@ extern void emit_string(const char *string);
 extern void SMTFreeAll();
 extern uint get_indent(void);
 extern void end_concolic();
-
+extern void emit_module_variables_display();
 /*
  * Find the enclosing module scope.
  */

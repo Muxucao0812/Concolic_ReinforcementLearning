@@ -199,7 +199,7 @@ static void build_stack() {
 	prev_ids = curr_ids;
 	curr_ids.clear();
 
-	printf("If the new block is covered: %d\n", is_new_block);
+	// printf("If the new block is covered: %d\n", is_new_block);
 	fclose(f_test);
 }
 
@@ -366,9 +366,91 @@ static bool find_next_cfg(){
 	//sort by probability
 	sort(branches.begin(), branches.end(), compare_prob);
 
-	for(auto it:branches){
+	if(!user_select_branch){
+		for(auto it:branches){
+			uint clock = it->cnst->clock;
+			//reset context
+			yices_reset_context(yices_context);
+			//insert initial assertion to zero for registers
+			SMTSigCore::yices_insert_reg_init(yices_context);
+			constraint_t** cnst = constraints_stack.data();
+			while((*cnst)->clock != clock){
+				if((*cnst)->type != CNST_CLK){			
+					smt_yices_assert(yices_context, (*cnst)->yices_term, (*cnst)->obj);
+				}
+				cnst++;
+			}	
+			assert((*cnst)->type == CNST_CLK);
+			cnst++;
+			
+			//restore version
+			SMTSigCore::restore_versions(clock);
+			const SMTProcess* target_process = it->cnst->obj->process;
+			while(*cnst != it->cnst){
+				const SMTProcess* process = (*cnst)->obj->process;
+				if(!process->is_edge_triggered || (process == target_process)){
+					term_t term = (*cnst)->obj->update_term();
+					smt_yices_assert(yices_context, term, (*cnst)->obj);
+				}
+				cnst++;
+			}
+
+			//add mutated branch
+			smt_yices_assert(yices_context, it->br->update_term(), it->br);
+			
+
+			call_to_solver++;
+			check_satisfiability();
+			if(solve_constraints(clock)){
+				selected_branch = it->br;
+				selected_clock = clock;
+				//insert hash value even if potentially incorrect
+				update_path_taken(it);
+				if(!enable_error_check){
+					it->br->set_covered_clk(sim_num+1, clock);
+				}
+				// Xiangchen: Adjust the probability
+				if(is_new_block){
+					SMTBranch::increase_probability(selected_branch);
+				}else{
+					if(sim_num > prob_num){
+						SMTBranch::decrease_probability(selected_branch);
+					}
+				}
+				SMTBranch::print_probability();
+				selected_branch->k_permit_covered++;
+				// Xiangchen: Because we use the probability to sort the branches
+				// So we need not to consider the distance
+				selected_branch->block->distance++;
+				return true;
+			}
+		}	
+	}else{
+		// 打印所有分支
+		std::cout << "Available branches:" << std::endl;
+		for(size_t i = 0; i < branches.size(); ++i) {
+			std::cout << "Index " << i << ": " << branches[i]->br->print() << std::endl;
+		}
+
+		// 获取用户输入
+		std::cout << "Enter the index of the branch to select: ";
+		size_t user_choice;
+		std::cin >> user_choice;
+
+		// 检查用户输入的有效性
+		if(user_choice >= branches.size()) {
+			std::cerr << "Invalid index selected." << std::endl;
+			return false;
+		}
+
+		// 使用用户选择的分支
+		auto selected_branch_it = branches.begin() + user_choice;
+
+		// 用选择的分支代替原来的自动选择逻辑
+		auto it = selected_branch_it;
+
 		//printf("Trying %s\n", it->br->print().c_str());
-		uint clock = it->cnst->clock;
+		uint clock = (*it)->cnst->clock;
 		//reset context
 		yices_reset_context(yices_context);
 
@@ -387,8 +469,8 @@ static bool find_next_cfg(){
 		
 		//restore version
 		SMTSigCore::restore_versions(clock);
-		const SMTProcess* target_process = it->cnst->obj->process;
-		while(*cnst != it->cnst){
+		const SMTProcess* target_process = (*it)->cnst->obj->process;
+		while(*cnst != (*it)->cnst){
 			const SMTProcess* process = (*cnst)->obj->process;
 			if(!process->is_edge_triggered || (process == target_process)){
 				term_t term = (*cnst)->obj->update_term();
@@ -398,22 +480,22 @@ static bool find_next_cfg(){
 		}
 
 		//add mutated branch
-		smt_yices_assert(yices_context, it->br->update_term(), it->br);
+		smt_yices_assert(yices_context, (*it)->br->update_term(), (*it)->br);
 		
 
 		call_to_solver++;
 		check_satisfiability();
 		if(solve_constraints(clock)){
-			selected_branch = it->br;
+			selected_branch = (*it)->br;
 			selected_clock = clock;
 			//insert hash value even if potentially incorrect
-			update_path_taken(it);
+			update_path_taken((*it));
 			if(!enable_error_check){
-				it->br->set_covered_clk(sim_num+1, clock);
+				(*it)->br->set_covered_clk(sim_num+1, clock);
 			}
 			// printf("[FOUND: CLOCK: %u, IDX: %u, DIST: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->block->distance, selected_branch->branch_probability, it->br->print().c_str());
-			printf("[FOUND: CLOCK: %u, IDX: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->branch_probability, it->br->print().c_str());
-			printf("COVERER RATE: %f\n", selected_branch->covered_branch_count/float(selected_branch->total_branch_count));
+			// printf("[FOUND: CLOCK: %u, IDX: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->branch_probability, it->br->print().c_str());
+			
 			// Xiangchen: Adjust the probability
 			if(is_new_block){
 				SMTBranch::increase_probability(selected_branch);
@@ -424,18 +506,14 @@ static bool find_next_cfg(){
 					SMTBranch::increase_probability(selected_branch);
 				}
 			}
-
-			SMTBranch::print_probability();
-		
+			// SMTBranch::print_probability();
 			selected_branch->k_permit_covered++;
 			// Xiangchen: Because we use the probability to sort the branches
 			// So we need not to consider the distance
 			selected_branch->block->distance++;
-
 			return true;
 		}
 	}
-	
 	return false;
 }
 
@@ -532,9 +610,12 @@ void multi_coverage() {
 	SMTBasicBlock::remove_covered_targets(sim_num);
 	sim_num = g_random_sim_num;
 	while(!SMTBasicBlock::target_list.empty()){
+		SMTBasicBlock::print_uncovered_targets();
 
 		//For every target, it will give every branch a probability randomly
-		SMTBranch::random_probability();
+		// SMTBranch::random_probability();
+		// For every target, it will give every branch a probability based on the distance
+		SMTBranch::distance_probability();
 
 
 		SMTBasicBlock* target = SMTBasicBlock::target_list.front();
@@ -544,6 +625,8 @@ void multi_coverage() {
 		}
 		target->update_distance_from_adjacency_list();
 		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
+		printf("Coverage rate: %f\n", SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count);
+
 		iter_count[target] += iteration_limit;
 		if (target->closest_path && target->closest_path != path) {
 			path = target->closest_path;
