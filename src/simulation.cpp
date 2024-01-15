@@ -184,7 +184,16 @@ static void build_stack() {
 			constraints_stack.push_back(create_constraint(clock, assign));
 			curr_ids.insert(assign->block->id);
 		}
+		else if (strcmp(tag, ";R") == 0){
+            // 这里添加处理状态的逻辑
+            char stateName[256];
+            unsigned int stateValue;
+            fscanf(f_test, "%s = %u", stateName, &stateValue); // 读取状态名和值
+            // 可能需要根据实际情况处理或存储获取到的状态
+			SMTState::add_state(stateName, stateValue, clock);
+        }
 	}
+
 	// examine if cover the new block
 	if(!is_new_block){
 		for(auto id:curr_ids){

@@ -1982,12 +1982,64 @@ SMTPath::SMTPath(CTDataMem& curr_data) {
     data = curr_data;
 }
 
-SMTPath::~SMTPath() {
-	
+SMTPath::~SMTPath() {	
 }
+
+//----------------------------SMT State-----------------------------------------
+std::map<std::string, StateValue> SMTState::stateMap;
+std::vector<std::pair<std::string, int>> SMTState::get_state_at_clock(uint clock){
+    std::vector<std::pair<std::string, int>> result;
+
+    for (const auto& entry : stateMap) {
+        const StateValue& state = entry.second;
+
+        // 在 state.stateClock 中查找是否存在等于 clock 的元素
+        auto clock_iterator = std::find(state.stateClock.begin(), state.stateClock.end(), clock);
+        // 如果找到匹配的 clock 值
+        if (clock_iterator != state.stateClock.end()) {
+            // 获取相应的索引
+            size_t index = std::distance(state.stateClock.begin(), clock_iterator);
+            // 使用索引获取对应的 stateValue
+            int value = state.stateValue[index];
+            // 将结果添加到返回向量中
+            result.emplace_back(state.stateName, value);
+        }
+    }
+
+    return result;
+}
+
+void SMTState::add_state(const std::string& regName, int value, uint clock) {
+	stateMap[regName].stateName = regName;
+	stateMap[regName].stateValue.push_back(value);
+	stateMap[regName].stateClock.push_back(clock);
+}
+
+void SMTState::clear_states() {
+	stateMap.clear();
+}
+
+void SMTState::print_state(std::ofstream& out) {
+	for (const auto& entry : stateMap) {
+		out << "Name: " << entry.second.stateName << std::endl;
+		out << "Values: ";
+		for (int value : entry.second.stateValue) {
+			out << value << " ";
+		}
+		out << std::endl;
+		out << "Clocks: ";
+		for (uint clock : entry.second.stateClock) {
+			out << clock << " ";
+		}
+		out << std::endl;
+	}
+}
+
 
 //----------------------------SMT Globals---------------------------------------
 void SMTFreeAll(){
 	SMTExpr::free_all();
     SMTSigCore::free_all();
 }
+
+

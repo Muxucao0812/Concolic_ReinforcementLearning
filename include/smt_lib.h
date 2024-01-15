@@ -36,6 +36,9 @@ class SMTSigCore;
 class SMTBasicBlock;
 class SMTProcess;
 class SMTPath;
+class SMTState;
+
+struct StateValue;
 struct constraint_t;
 
 typedef struct{
@@ -580,3 +583,44 @@ public:
 
 	CTDataMem data;
 };
+
+//-------------------------------SMT State--------------------------------------
+
+class SMTState{
+	public:
+		SMTState(){};
+
+		// get state of any clock
+		// example: get_state_at_clock(10) returns the state at clock 10
+		// 	std::vector<std::pair<std::string, int>> stateVector = SMTState::get_state_at_clock(10);
+		// for (const auto& statePair : stateVector) {
+		// 	printf("%s %d\n", statePair.first.c_str(), statePair.second);
+		// }
+    	static std::vector<std::pair<std::string, int>> get_state_at_clock(uint clock);
+
+		// add state to stateMap
+		static void add_state(const std::string& regName, int value, uint clock);
+
+		// clear stateMap
+		static void clear_states();
+
+		// print stateMap
+		static void print_state(std::ofstream &out);
+
+	private:
+		static std::map<std::string, StateValue> stateMap;
+};
+
+struct StateValue {
+    std::string stateName;
+    std::vector<int> stateValue;
+    std::vector<uint> stateClock;
+
+	// default constructor
+	StateValue() = default;
+
+    StateValue(const std::string& name, const std::vector<int>& value, const std::vector<uint>& clock)
+        : stateName(name), stateValue(value), stateClock(clock) {}
+};
+
+
