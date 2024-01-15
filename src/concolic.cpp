@@ -80,6 +80,13 @@ void post_processing(ivl_design_t design){
 }
 
 void extract_parameters(ivl_design_t design){
+    // extract fuzzing
+    const char* fuzzing = ivl_design_flag(design, "fuzzing");
+    if(fuzzing == NULL){
+        error("Fuzzing clock not given");
+    }
+    g_fuzzing = atoi(fuzzing);
+
     //extract step size
     const char* step_size = ivl_design_flag(design, "step");
     if(step_size == NULL){
@@ -94,6 +101,9 @@ void extract_parameters(ivl_design_t design){
 	}
 	g_unroll = atoi(unroll_cyc);
     
+    //Unroll requires more clock cycles than Fuzzing
+    assert(g_unroll >= g_fuzzing);
+
     //extract clock signal name
     g_clock_sig_name = ivl_design_flag(design, "clk");
     if(g_clock_sig_name == NULL){
@@ -221,7 +231,7 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "\n%*c// Generated internal use signals\n", 4, ' ');
         fprintf(f_tb, "%*creg  [31:0] _conc_pc;\n", 4, ' ');
         fprintf(f_tb, "%*creg  [%u:0] _conc_opcode;\n", 4, ' ', g_data.get_width() - 1);
-        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_unroll);
+        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_fuzzing);
 
         //Dump clk toggle
         fprintf(f_tb, "\n%*c// Generated clock pulse\n", 4, ' ');

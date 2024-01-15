@@ -319,6 +319,8 @@ void simulate_build_stack() {
 	
 	//build constraints stack
 	constraints_stack.clear();
+
+	
 	build_stack();
 }
 
@@ -615,7 +617,6 @@ void multi_coverage() {
 		// For every target, it will give every branch a probability based on the distance
 		SMTBranch::distance_probability();
 
-
 		SMTBasicBlock* target = SMTBasicBlock::target_list.front();
 		if (target->assign_list[0]->is_covered() || iter_count[target] >= total_limit) {
 			SMTBasicBlock::target_list.pop_front();
@@ -623,10 +624,11 @@ void multi_coverage() {
 		}
 		target->update_distance_from_adjacency_list();
 		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
-		printf("Coverage rate: %f\n", SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count);
+		printf("\nCovered branch number: %d, uncovered branch number: %d, current coverage rate: %.2f%%\n", SMTBranch::covered_branch_count, SMTBranch::total_branch_count, (SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count) * 100.0);
 
 		iter_count[target] += iteration_limit;
 		if (target->closest_path && target->closest_path != path) {
+			// select the closest path from fuzzing process
 			path = target->closest_path;
 			// printf("closest distance: %u\n", target->closest_path_distance);
 			//update block distance from target's adjacency_list

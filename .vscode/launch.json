@@ -243,6 +243,7 @@
                 "-preset=reset",
                 "-preset_edge=1",
                 "-punroll=1000",
+                "-pfuzzing=100",
                 "-pstep=1",
                 "-prandom_sim=3"],
             "stopAtEntry": false,

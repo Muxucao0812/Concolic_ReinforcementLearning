@@ -6,6 +6,7 @@
 using namespace std;
 
 CTDataMem::CTDataMem(){
+    fuzzing = 0;
 	unroll = 0;
 	width = 0;
 }
@@ -42,8 +43,34 @@ void CTDataMem::generate_step() {
     step = g_step;
     assert(step);
     assert(width);
+    std::vector<std::string> in_Vector; 
+    const uint count = width >> 4;
+    const uint extra = width & 0b1111;
 
-
+    for(uint k=0; k<=step; k++){
+        std::string temp_Vector;
+        uint num = rand();
+        for(uint j=0; j < extra; j++){
+            temp_Vector += '0' + (num & 1);
+            num >>= 1;
+        }
+        for(uint i=0; i < count; i++){
+            num = rand();
+            for(uint j=0; j < 16; j++){
+                temp_Vector += '0' + (num & 1);
+                num >>= 1;
+            }
+        }
+        if(enable_obs_padding){
+            temp_Vector[0] = '0' + (k & 1);
+        }
+        
+        in_Vector.push_back(temp_Vector); 
+    }
+    for (const std::string& str : in_Vector) {
+        data.push_back(str);
+    }
+    dump(g_data_mem);
 }
     
 
@@ -51,15 +78,15 @@ void CTDataMem::generate_step() {
 // It generates 31 bits of random number in lab machine
 // Xiangchen: This function generates unroll number input vectors
 void CTDataMem::generate() {
-    unroll = g_unroll;
-    assert(unroll);
+    fuzzing = g_fuzzing;
+    assert(fuzzing);
     assert(width);
     data.clear();
 
     // We want to use 16 bits from each rand()
     const uint count = width >> 4;
     const uint extra = width & 0b1111;
-    for(uint k=0; k<=unroll; k++){
+    for(uint k=0; k<=fuzzing; k++){
         string in_vector;
         uint num = rand();
         for(uint j=0; j < extra; j++){

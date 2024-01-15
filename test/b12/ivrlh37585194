@@ -3,6 +3,7 @@ flag:clk=clock
 flag:reset=reset
 flag:reset_edge=1
 flag:unroll=500
+flag:fuzzing=100
 flag:step=1
 flag:random_sim=3
 basedir:/usr/local/lib/ivl

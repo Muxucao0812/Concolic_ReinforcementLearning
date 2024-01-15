@@ -33,6 +33,7 @@ bool            is_new_block = false;
 //Parameters
 uint			g_unroll;
 uint			g_step;
+uint			g_fuzzing;
 const char*     g_clock_sig_name;
 const char*     g_reset_sig_name;
 const char*     g_reset_edge_active;
