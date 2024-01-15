@@ -1,4 +1,9 @@
 ;_C          0
+Reg: ackout = 0
+Reg: cc_mux = 00
+Reg: enable_count = 0
+Reg: state = 000
+Reg: uscite = 00
 ;A 2
 ;A 3
 ;A 4
@@ -12,7 +17,17 @@
 ;A 14
 ;A 15
 ;A 16
+Reg: ackout = 0
+Reg: cc_mux = 00
+Reg: enable_count = 0
+Reg: state = 000
+Reg: uscite = 00
 ;_C          2
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -32,7 +47,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C          4
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -50,7 +75,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C          6
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -68,7 +103,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C          8
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -88,7 +133,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C         10
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -106,7 +161,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C         12
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -124,7 +189,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C         14
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -142,7 +217,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C         16
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -162,7 +247,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C         18
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -180,7 +275,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C         20
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -198,7 +303,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C         22
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -216,7 +331,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C         24
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -234,7 +359,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C         26
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -252,7 +387,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C         28
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -270,7 +415,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C         30
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -290,7 +445,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C         32
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -308,7 +473,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C         34
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -326,7 +501,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C         36
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -346,7 +531,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C         38
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -364,7 +559,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C         40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -382,7 +587,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C         42
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -400,7 +615,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C         44
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -418,7 +643,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C         46
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -438,7 +673,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C         48
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -456,7 +701,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C         50
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -476,7 +731,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C         52
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -494,7 +759,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C         54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -512,7 +787,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C         56
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -530,7 +815,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C         58
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -550,7 +845,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C         60
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -568,7 +873,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C         62
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -586,7 +901,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C         64
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -606,7 +931,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C         66
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -626,7 +961,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C         68
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -644,7 +989,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C         70
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -662,7 +1017,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C         72
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -682,7 +1047,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C         74
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -700,7 +1075,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C         76
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -718,7 +1103,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C         78
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -736,7 +1131,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C         80
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -756,7 +1161,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C         82
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -774,7 +1189,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C         84
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -794,7 +1219,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C         86
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -812,7 +1247,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C         88
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -830,7 +1275,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C         90
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -848,7 +1303,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C         92
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -866,7 +1331,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C         94
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -884,7 +1359,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C         96
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -902,7 +1387,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C         98
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -920,7 +1415,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        100
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -940,7 +1445,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        102
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -958,7 +1473,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        104
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -976,7 +1501,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        106
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -994,7 +1529,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        108
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -1012,7 +1557,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        110
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1032,7 +1587,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        112
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1050,7 +1615,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        114
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1068,7 +1643,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        116
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1086,7 +1671,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        118
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -1104,7 +1699,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        120
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -1124,7 +1729,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        122
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1142,7 +1757,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        124
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1162,7 +1787,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        126
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1180,7 +1815,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        128
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1198,7 +1843,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        130
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1216,7 +1871,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        132
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -1234,7 +1899,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        134
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1252,7 +1927,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        136
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1272,7 +1957,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        138
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1290,7 +1985,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        140
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1308,7 +2013,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        142
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1326,7 +2041,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        144
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1344,7 +2069,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        146
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1362,7 +2097,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        148
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1380,7 +2125,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        150
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -1398,7 +2153,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        152
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1418,7 +2183,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        154
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1436,7 +2211,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        156
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1454,7 +2239,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        158
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1472,7 +2267,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        160
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1490,7 +2295,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        162
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -1508,7 +2323,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        164
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1526,7 +2351,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        166
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1546,7 +2381,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        168
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1564,7 +2409,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        170
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1584,7 +2439,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        172
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1602,7 +2467,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        174
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1620,7 +2495,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        176
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1638,7 +2523,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        178
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1658,7 +2553,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        180
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1676,7 +2581,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        182
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1694,7 +2609,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        184
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1712,7 +2637,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        186
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1732,7 +2667,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        188
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1752,7 +2697,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        190
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1770,7 +2725,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        192
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -1788,7 +2753,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        194
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -1806,7 +2781,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        196
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -1824,7 +2809,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        198
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1842,7 +2837,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        200
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1860,7 +2865,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        202
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1878,7 +2893,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        204
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1896,7 +2921,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        206
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -1916,7 +2951,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        208
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -1934,7 +2979,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        210
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -1952,7 +3007,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        212
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -1970,7 +3035,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        214
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -1988,7 +3063,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        216
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -2006,7 +3091,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        218
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -2026,7 +3121,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        220
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2044,7 +3149,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        222
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2062,7 +3177,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        224
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2080,7 +3205,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        226
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -2098,7 +3233,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        228
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -2116,7 +3261,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        230
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -2136,7 +3291,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        232
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2154,7 +3319,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        234
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -2172,7 +3347,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        236
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -2190,7 +3375,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        238
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -2208,7 +3403,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        240
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -2226,7 +3431,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        242
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -2244,7 +3459,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        244
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2262,7 +3487,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        246
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -2280,7 +3515,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        248
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -2298,7 +3543,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        250
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -2316,7 +3571,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        252
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -2334,7 +3599,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        254
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -2352,7 +3627,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        256
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -2372,7 +3657,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        258
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2390,7 +3685,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        260
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -2410,7 +3715,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        262
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2430,7 +3745,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        264
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2448,7 +3773,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        266
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2466,7 +3801,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        268
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2486,7 +3831,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        270
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2504,7 +3859,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        272
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2522,7 +3887,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        274
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -2542,7 +3917,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        276
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2560,7 +3945,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        278
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2578,7 +3973,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        280
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -2598,7 +4003,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        282
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2616,7 +4031,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        284
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2634,7 +4059,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        286
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -2654,7 +4089,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        288
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2672,7 +4117,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        290
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2692,7 +4147,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        292
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2710,7 +4175,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        294
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -2730,7 +4205,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        296
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2748,7 +4233,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        298
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -2766,7 +4261,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        300
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -2784,7 +4289,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        302
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2802,7 +4317,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        304
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -2820,7 +4345,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        306
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -2838,7 +4373,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        308
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2858,7 +4403,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        310
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2876,7 +4431,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        312
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -2894,7 +4459,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        314
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2912,7 +4487,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        316
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -2932,7 +4517,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        318
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2952,7 +4547,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        320
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2970,7 +4575,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        322
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -2988,7 +4603,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        324
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3006,7 +4631,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        326
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3024,7 +4659,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        328
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -3042,7 +4687,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        330
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3060,7 +4715,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        332
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3078,7 +4743,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        334
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3098,7 +4773,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        336
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3116,7 +4801,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        338
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3134,7 +4829,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        340
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -3152,7 +4857,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        342
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -3172,7 +4887,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        344
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3190,7 +4915,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        346
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3208,7 +4943,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        348
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3226,7 +4971,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        350
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3244,7 +4999,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        352
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3262,7 +5027,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        354
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -3282,7 +5057,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        356
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3300,7 +5085,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        358
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3318,7 +5113,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        360
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3336,7 +5141,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        362
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3354,7 +5169,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        364
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3372,7 +5197,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        366
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3390,7 +5225,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        368
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3410,7 +5255,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        370
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3428,7 +5283,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        372
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3446,7 +5311,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        374
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -3464,7 +5339,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        376
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -3482,7 +5367,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        378
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3500,7 +5395,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        380
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -3520,7 +5425,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        382
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3538,7 +5453,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        384
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3556,7 +5481,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        386
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3574,7 +5509,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        388
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -3592,7 +5537,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        390
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -3610,7 +5565,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        392
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3628,7 +5593,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        394
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -3648,7 +5623,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        396
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3666,7 +5651,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        398
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3684,7 +5679,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        400
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3702,7 +5707,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        402
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -3720,7 +5735,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        404
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -3738,7 +5763,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        406
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3758,7 +5793,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        408
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3776,7 +5821,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        410
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3794,7 +5849,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        412
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3812,7 +5877,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        414
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3832,7 +5907,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        416
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3850,7 +5935,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        418
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -3870,7 +5965,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        420
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3888,7 +5993,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        422
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3908,7 +6023,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        424
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -3926,7 +6051,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        426
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -3944,7 +6079,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        428
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3962,7 +6107,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        430
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -3980,7 +6135,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        432
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -3998,7 +6163,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        434
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4016,7 +6191,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        436
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4034,7 +6219,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        438
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4054,7 +6249,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        440
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4072,7 +6277,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        442
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4092,7 +6307,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        444
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4110,7 +6335,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        446
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4128,7 +6363,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        448
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4148,7 +6393,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        450
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4166,7 +6421,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        452
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4184,7 +6449,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        454
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4204,7 +6479,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        456
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4222,7 +6507,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        458
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4240,7 +6535,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        460
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4258,7 +6563,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        462
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4278,7 +6593,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        464
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4296,7 +6621,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        466
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4314,7 +6649,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        468
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4332,7 +6677,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        470
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4350,7 +6705,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        472
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -4370,7 +6735,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        474
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4388,7 +6763,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        476
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4406,7 +6791,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        478
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -4424,7 +6819,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        480
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4444,7 +6849,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        482
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4462,7 +6877,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        484
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4480,7 +6905,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        486
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4498,7 +6933,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        488
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4516,7 +6961,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        490
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4534,7 +6989,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        492
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4552,7 +7017,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        494
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4572,7 +7047,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        496
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4590,7 +7075,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        498
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4608,7 +7103,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        500
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4626,7 +7131,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        502
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4644,7 +7159,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        504
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4664,7 +7189,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        506
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4682,7 +7217,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        508
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4700,7 +7245,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        510
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -4720,7 +7275,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        512
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4738,7 +7303,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        514
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4756,7 +7331,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        516
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4774,7 +7359,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        518
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4792,7 +7387,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        520
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4810,7 +7415,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        522
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4828,7 +7443,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        524
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4846,7 +7471,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        526
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -4866,7 +7501,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        528
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4884,7 +7529,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        530
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -4902,7 +7557,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        532
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -4920,7 +7585,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        534
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -4938,7 +7613,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        536
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -4956,7 +7641,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        538
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -4976,7 +7671,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        540
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -4996,7 +7701,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        542
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5014,7 +7729,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        544
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5034,7 +7759,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        546
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5052,7 +7787,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        548
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5070,7 +7815,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        550
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -5088,7 +7843,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        552
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -5108,7 +7873,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        554
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5126,7 +7901,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        556
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5144,7 +7929,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        558
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -5162,7 +7957,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        560
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -5180,7 +7985,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        562
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5198,7 +8013,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        564
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5216,7 +8041,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        566
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5236,7 +8071,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        568
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5254,7 +8099,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        570
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5272,7 +8127,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        572
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5292,7 +8157,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        574
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5310,7 +8185,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        576
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -5330,7 +8215,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        578
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5348,7 +8243,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        580
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5366,7 +8271,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        582
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5384,7 +8299,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        584
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -5402,7 +8327,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        586
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5420,7 +8355,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        588
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -5438,7 +8383,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        590
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5458,7 +8413,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        592
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5476,7 +8441,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        594
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5494,7 +8469,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        596
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5514,7 +8499,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        598
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5534,7 +8529,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        600
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5552,7 +8557,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        602
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5570,7 +8585,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        604
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -5588,7 +8613,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        606
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -5606,7 +8641,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        608
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5624,7 +8669,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        610
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -5642,7 +8697,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        612
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -5660,7 +8725,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        614
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5678,7 +8753,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        616
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -5698,7 +8783,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        618
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5716,7 +8811,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        620
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5734,7 +8839,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        622
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5754,7 +8869,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        624
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5772,7 +8897,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        626
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5792,7 +8927,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        628
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5810,7 +8955,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        630
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5828,7 +8983,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        632
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5846,7 +9011,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        634
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5864,7 +9039,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        636
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -5884,7 +9069,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        638
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5902,7 +9097,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        640
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5920,7 +9125,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        642
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -5938,7 +9153,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        644
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -5958,7 +9183,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        646
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5976,7 +9211,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        648
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -5994,7 +9239,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        650
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6014,7 +9269,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        652
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6032,7 +9297,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        654
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6052,7 +9327,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        656
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6070,7 +9355,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        658
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6090,7 +9385,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        660
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6108,7 +9413,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        662
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6128,7 +9443,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        664
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6146,7 +9471,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        666
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6164,7 +9499,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        668
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6182,7 +9527,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        670
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6200,7 +9555,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        672
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6218,7 +9583,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        674
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6236,7 +9611,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        676
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -6254,7 +9639,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        678
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -6272,7 +9667,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        680
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -6290,7 +9695,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        682
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6308,7 +9723,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        684
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6328,7 +9753,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        686
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6346,7 +9781,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        688
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6364,7 +9809,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        690
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6382,7 +9837,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        692
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -6400,7 +9865,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        694
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6418,7 +9893,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        696
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6436,7 +9921,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        698
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6454,7 +9949,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        700
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6472,7 +9977,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        702
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6492,7 +10007,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        704
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6510,7 +10035,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        706
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6528,7 +10063,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        708
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6548,7 +10093,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        710
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6566,7 +10121,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        712
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6586,7 +10151,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        714
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6604,7 +10179,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        716
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6622,7 +10207,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        718
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6640,7 +10235,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        720
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6658,7 +10263,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        722
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6676,7 +10291,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        724
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6694,7 +10319,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        726
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -6712,7 +10347,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        728
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6730,7 +10375,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        730
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6748,7 +10403,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        732
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6766,7 +10431,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        734
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6784,7 +10459,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        736
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6802,7 +10487,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        738
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6820,7 +10515,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        740
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -6838,7 +10543,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        742
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -6856,7 +10571,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        744
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -6876,7 +10601,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        746
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6894,7 +10629,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        748
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -6914,7 +10659,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        750
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6932,7 +10687,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        752
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6950,7 +10715,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        754
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -6968,7 +10743,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        756
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -6986,7 +10771,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        758
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7006,7 +10801,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        760
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7024,7 +10829,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        762
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7042,7 +10857,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        764
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7060,7 +10885,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        766
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7078,7 +10913,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        768
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7096,7 +10941,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        770
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -7114,7 +10969,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        772
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7134,7 +10999,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        774
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7152,7 +11027,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        776
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7172,7 +11057,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        778
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7190,7 +11085,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        780
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7208,7 +11113,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        782
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7226,7 +11141,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        784
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7244,7 +11169,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        786
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -7262,7 +11197,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        788
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7280,7 +11225,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        790
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -7298,7 +11253,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        792
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -7316,7 +11281,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        794
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -7334,7 +11309,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        796
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7352,7 +11337,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        798
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -7370,7 +11365,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        800
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7388,7 +11393,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        802
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7406,7 +11421,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        804
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -7424,7 +11449,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        806
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7442,7 +11477,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        808
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -7460,7 +11505,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        810
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7478,7 +11533,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        812
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7496,7 +11561,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        814
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -7514,7 +11589,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        816
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7532,7 +11617,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        818
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7550,7 +11645,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        820
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -7568,7 +11673,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        822
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7586,7 +11701,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        824
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7604,7 +11729,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        826
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7624,7 +11759,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        828
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7642,7 +11787,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        830
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7660,7 +11815,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        832
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7678,7 +11843,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        834
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7696,7 +11871,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        836
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7714,7 +11899,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        838
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7732,7 +11927,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        840
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -7750,7 +11955,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        842
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7768,7 +11983,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        844
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7788,7 +12013,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        846
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7806,7 +12041,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        848
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7824,7 +12069,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        850
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7844,7 +12099,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        852
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7862,7 +12127,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        854
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -7880,7 +12155,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        856
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -7898,7 +12183,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        858
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -7916,7 +12211,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        860
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -7934,7 +12239,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        862
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -7952,7 +12267,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        864
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7970,7 +12295,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        866
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -7988,7 +12323,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        868
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8008,7 +12353,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        870
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8026,7 +12381,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        872
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8046,7 +12411,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        874
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8064,7 +12439,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        876
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8082,7 +12467,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        878
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8102,7 +12497,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        880
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8120,7 +12525,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        882
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8138,7 +12553,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        884
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8158,7 +12583,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        886
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8178,7 +12613,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        888
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8196,7 +12641,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        890
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -8216,7 +12671,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        892
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8234,7 +12699,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        894
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8254,7 +12729,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        896
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8272,7 +12757,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        898
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8290,7 +12785,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        900
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8308,7 +12813,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        902
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8326,7 +12841,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        904
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8344,7 +12869,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        906
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -8362,7 +12897,17 @@
 ;A 61
 ;A 62
 ;A 63
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        908
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -8380,7 +12925,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        910
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8400,7 +12955,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        912
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8420,7 +12985,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        914
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8438,7 +13013,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        916
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8456,7 +13041,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        918
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8474,7 +13069,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        920
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8492,7 +13097,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        922
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8510,7 +13125,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        924
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8528,7 +13153,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        926
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -8546,7 +13181,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        928
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8564,7 +13209,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        930
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -8584,7 +13239,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        932
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8602,7 +13267,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        934
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -8622,7 +13297,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        936
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8640,7 +13325,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        938
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -8658,7 +13353,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C        940
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -8676,7 +13381,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        942
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -8694,7 +13409,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        944
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;A 7
 ;A 9
 ;A 10
@@ -8712,7 +13437,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        946
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -8730,7 +13465,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        948
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8748,7 +13493,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        950
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8766,7 +13521,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        952
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -8784,7 +13549,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        954
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8804,7 +13579,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        956
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8822,7 +13607,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;_C        958
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8840,7 +13635,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        960
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8858,7 +13663,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        962
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8876,7 +13691,17 @@
 ;A 67
 ;A 68
 ;A 69
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 110
+Reg: uscite = 11
 ;_C        964
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;A 8
 ;A 11
 ;A 12
@@ -8894,7 +13719,17 @@
 ;A 70
 ;A 71
 ;A 72
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 110
+Reg: uscite = 11
 ;_C        966
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8912,7 +13747,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        968
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -8932,7 +13777,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        970
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8950,7 +13805,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;_C        972
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -8970,7 +13835,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        974
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -8990,7 +13865,17 @@
 ;A 43
 ;A 44
 ;A 45
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;_C        976
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -9008,7 +13893,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        978
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -9026,7 +13921,17 @@
 ;A 32
 ;A 33
 ;A 34
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;_C        980
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -9044,7 +13949,17 @@
 ;A 38
 ;A 39
 ;A 40
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;_C        982
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 010
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -9064,7 +13979,17 @@
 ;A 49
 ;A 50
 ;A 51
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        984
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 011
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -9082,7 +14007,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        986
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -9100,7 +14035,17 @@
 ;A 23
 ;A 24
 ;A 25
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        988
+Reg: ackout = 1
+Reg: cc_mux = 10
+Reg: enable_count = 1
+Reg: state = 101
+Reg: uscite = 01
 ;A 8
 ;A 11
 ;A 12
@@ -9118,7 +14063,17 @@
 ;A 20
 ;A 21
 ;A 22
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 001
+Reg: uscite = 01
 ;_C        990
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 010
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -9138,7 +14093,17 @@
 ;A 52
 ;A 53
 ;A 54
+Reg: ackout = 1
+Reg: cc_mux = 01
+Reg: enable_count = 1
+Reg: state = 011
+Reg: uscite = 01
 ;_C        992
+Reg: ackout = 0
+Reg: cc_mux = 01
+Reg: enable_count = 0
+Reg: state = 001
+Reg: uscite = 01
 ;A 7
 ;A 9
 ;A 10
@@ -9156,7 +14121,17 @@
 ;A 29
 ;A 30
 ;A 31
+Reg: ackout = 0
+Reg: cc_mux = 10
+Reg: enable_count = 0
+Reg: state = 101
+Reg: uscite = 01
 ;_C        994
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -9174,7 +14149,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        996
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;A 7
 ;A 9
 ;A 10
@@ -9192,7 +14177,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 0
+Reg: cc_mux = 11
+Reg: enable_count = 0
+Reg: state = 100
+Reg: uscite = 00
 ;_C        998
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12
@@ -9210,7 +14205,17 @@
 ;A 58
 ;A 59
 ;A 60
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;_C       1000
+Reg: ackout = 1
+Reg: cc_mux = 11
+Reg: enable_count = 1
+Reg: state = 100
+Reg: uscite = 00
 ;A 8
 ;A 11
 ;A 12

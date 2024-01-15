@@ -183,8 +183,6 @@ static void build_stack() {
 			SMTAssign* assign = SMTAssign::get_assign(val);
 			constraints_stack.push_back(create_constraint(clock, assign));
 			curr_ids.insert(assign->block->id);
-
-
 		}
 	}
 	// examine if cover the new block

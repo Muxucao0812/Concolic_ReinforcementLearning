@@ -281,7 +281,7 @@ void emit_module_variables_display(){
 	fprintf(g_out, "%*c// Displaying module variables\n", 4, ' ');
 	fprintf(g_out, "%*calways @(posedge %s) begin\n", 4, ' ', g_clock_sig_name);
     for(auto sig: SMTSigCore::get_reg_list()){
-        fprintf(g_out, "%*c$display(\"Reg: %s = %%b\", %s);\n", 6, ' ', sig->get_name().c_str(), sig->get_name().c_str());
+        fprintf(g_out, "%*c$display(\"R; %s = %%b\", %s);\n", 6, ' ', sig->get_name().c_str(), sig->get_name().c_str());
     }
 	fprintf(g_out, "%*cend\n", 4, ' ');
 };

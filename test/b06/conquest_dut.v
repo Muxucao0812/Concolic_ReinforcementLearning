@@ -146,5 +146,13 @@ module b06(eql, clock, reset, cont_eql, cc_mux, uscite, enable_count, ackout, __
         end
     end
 
+    // Displaying module variables
+    always @(posedge clock) begin
+      $display("Reg: ackout = %b", ackout);
+      $display("Reg: cc_mux = %b", cc_mux);
+      $display("Reg: enable_count = %b", enable_count);
+      $display("Reg: state = %b", state);
+      $display("Reg: uscite = %b", uscite);
+    end
 endmodule
 

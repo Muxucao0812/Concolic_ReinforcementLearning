@@ -176,5 +176,14 @@ module b11(x_in, stbi, clock, reset, x_out, __obs);
         end
     end
 
+    // Displaying module variables
+    always @(posedge clock) begin
+      $display("Reg: cont = %b", cont);
+      $display("Reg: cont1 = %b", cont1);
+      $display("Reg: cont1_inv = %b", cont1_inv);
+      $display("Reg: r_in = %b", r_in);
+      $display("Reg: stato = %b", stato);
+      $display("Reg: x_out = %b", x_out);
+    end
 endmodule
 

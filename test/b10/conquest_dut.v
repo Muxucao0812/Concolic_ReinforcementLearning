@@ -242,5 +242,19 @@ module b10(r_button, g_button, key, start, reset, test, cts, ctr, rts, rtr, cloc
         end
     end
 
+    // Displaying module variables
+    always @(posedge clock) begin
+      $display("Reg: ctr = %b", ctr);
+      $display("Reg: cts = %b", cts);
+      $display("Reg: last_g = %b", last_g);
+      $display("Reg: last_r = %b", last_r);
+      $display("Reg: sign = %b", sign);
+      $display("Reg: stato = %b", stato);
+      $display("Reg: v_out = %b", v_out);
+      $display("Reg: voto0 = %b", voto0);
+      $display("Reg: voto1 = %b", voto1);
+      $display("Reg: voto2 = %b", voto2);
+      $display("Reg: voto3 = %b", voto3);
+    end
 endmodule
 

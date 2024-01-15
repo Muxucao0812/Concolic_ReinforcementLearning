@@ -31,6 +31,7 @@ extern clock_t          start_time;
 
 //Parameters
 extern uint     		g_unroll;
+extern uint     		g_step;
 extern const char*      g_clock_sig_name;
 extern const char*      g_reset_sig_name;
 extern const char*      g_reset_edge_active;
