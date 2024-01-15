@@ -35,8 +35,21 @@ void CTDataMem::dump(const char* file) {
     mem.close();
 }
 
+
+
+// Xiangchen: This function generates input vectors according to the step
+void CTDataMem::generate_step() {
+    step = g_step;
+    assert(step);
+    assert(width);
+
+
+}
+    
+
 // Yangdi: Be careful when using rand()
 // It generates 31 bits of random number in lab machine
+// Xiangchen: This function generates unroll number input vectors
 void CTDataMem::generate() {
     unroll = g_unroll;
     assert(unroll);

@@ -3,6 +3,7 @@
 #include <vector>
 #include "concolic.h"
 #include <cstdlib>
+#include <cmath>
 
 using namespace std;
 
@@ -281,8 +282,14 @@ void emit_module_variables_display(){
 	fprintf(g_out, "%*c// Displaying module variables\n", 4, ' ');
 	fprintf(g_out, "%*calways @(posedge %s) begin\n", 4, ' ', g_clock_sig_name);
     for(auto sig: SMTSigCore::get_reg_list()){
-        fprintf(g_out, "%*c$display(\"R; %s = %%b\", %s);\n", 6, ' ', sig->get_name().c_str(), sig->get_name().c_str());
-    }
+		if(sig->is_array == false){
+        	fprintf(g_out, "%*c$display(\"R; %s = %%b\", %s);\n", 6, ' ', sig->get_name().c_str(), sig->get_name().c_str());
+		}else{
+			for (uint i = 0; i < static_cast<uint>(std::pow(2, sig->index_width)); i++) {
+				fprintf(g_out, "%*c$display(\"R; %s[%d] = %%b\", %s[%d]);\n", 6, ' ', sig->get_name().c_str(), i, sig->get_name().c_str(), i);
+			}
+		}
+	}
 	fprintf(g_out, "%*cend\n", 4, ' ');
 };
 

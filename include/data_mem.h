@@ -24,6 +24,9 @@ public:
     //Generate random bits in data, then dump to file
     void generate();
     
+    //Generate step number of input vectors
+    void generate_step();
+
     //Add input signal name to in_ports
     sig_pos* add_input(std::string name, uint port_width);
 	
@@ -44,5 +47,6 @@ private:
     std::vector<std::string> data;			 //structure for holding data    
     uint width;
     uint unroll;
+    uint step;
 
 };

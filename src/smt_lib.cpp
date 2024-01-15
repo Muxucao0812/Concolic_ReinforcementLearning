@@ -1351,6 +1351,9 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
         reg_list.push_back(this);
 		is_dep = false;
 		is_state_variable = true;
+		if(ivl_signal_dimensions(sig)){
+			is_array = true;
+		}
     } else{
         input_list.push_back(this);
 		is_dep = true;

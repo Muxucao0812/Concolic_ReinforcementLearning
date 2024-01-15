@@ -441,6 +441,7 @@ public:
     bool is_dep;
 	bool is_hamming;
 	bool is_state_variable;
+	bool is_array;
 	SMTAssign* cont_assign;
 	
 	std::vector<SMTAssign*> assignments;
