@@ -954,7 +954,7 @@ SMTNonBlockingAssign::SMTNonBlockingAssign(SMTExpr* lval, SMTExpr* rval) :
 
 //-----------------------------SMT Branch---------------------------------------
 uint SMTBranch::total_branch_count;
-uint SMTBranch::covered_branch_count;
+uint SMTBranch::covered_branch_count=0;
 uint SMTBranch::saved_total_branch;
 uint SMTBranch::saved_covered_branch;
 vector<SMTBranch*> SMTBranch::all_branches_list;
@@ -983,14 +983,14 @@ SMTBranch::~SMTBranch() {
 }
 
 void SMTBranch::set_covered_clk(uint sim_num, uint clock) {
-	assert(clock <= g_unroll);
+	assert(clock <= g_fuzzing);
 	coverage[clock] = true;
 	if(!is_covered()){
 		set_covered(sim_num);
 		covered_branch_count++;
-		//if(covered_branch_count == total_branch_count){
-		//	end_concolic();
-		//}
+		if(covered_branch_count == total_branch_count){
+			end_concolic();
+		}
 	}
 }
 

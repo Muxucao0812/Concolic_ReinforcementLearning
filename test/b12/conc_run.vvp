@@ -1612,7 +1612,7 @@ T_9 ;
     %delay 5, 0;
     %pushi/vec4 0, 0, 1;
     %store/vec4 v0x55555599b790_0, 0, 1;
-    %delay 5000, 0;
+    %delay 1000, 0;
     %vpi_call 2 54 "$finish" {0 0 0};
     %end;
     .thread T_9;

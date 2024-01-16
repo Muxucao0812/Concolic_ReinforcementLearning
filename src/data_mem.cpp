@@ -76,7 +76,7 @@ void CTDataMem::generate_step() {
 
 // Yangdi: Be careful when using rand()
 // It generates 31 bits of random number in lab machine
-// Xiangchen: This function generates unroll number input vectors
+// Xiangchen: This function generates fuzzing number input vectors
 void CTDataMem::generate() {
     fuzzing = g_fuzzing;
     assert(fuzzing);

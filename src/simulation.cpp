@@ -41,6 +41,7 @@ static char sim_file_name[64];
 static char mem_file_name[64];
 static uint hash_table[1024*16];
 static uint sim_num;
+static uint current_clock;
 
 
 static SMTBranch* selected_branch;
@@ -152,7 +153,66 @@ static void write_first_clock(const char* file_name){
 	fclose(f_test);
 }
 
-static void build_stack() {
+static void build_stack_fuzzing() {
+	FILE* f_test = NULL;
+	if(enable_sim_copy){
+		f_test = fopen(sim_file_name, "r");
+		write_first_clock(sim_file_name);
+	} else{
+		f_test = fopen("sim.log", "r");
+		write_first_clock("sim.log");
+	}
+	assert(f_test);
+	uint clock = 0;
+    g_hash_value = 0;
+	char tag[16];
+	uint val;
+	
+	is_new_block = false;
+
+	//constraints_stack.push_back(create_clock(0));
+	while(true){
+		fscanf(f_test, "%s%u", tag, &val);
+		if(strcmp(tag, ";_C") == 0){
+			clock = val;
+			if(clock == g_fuzzing + 1)	break;
+			constraints_stack.push_back(create_clock(clock));
+            SMTSigCore::set_input_version(clock);
+            SMTSigCore::commit_versions(clock);
+		}
+		else if (strcmp(tag, ";A") == 0){
+			SMTAssign* assign = SMTAssign::get_assign(val);
+			constraints_stack.push_back(create_constraint(clock, assign));
+			curr_ids.insert(assign->block->id);
+		}
+		else if (strcmp(tag, ";R") == 0){
+            // 这里添加处理状态的逻辑
+            char stateName[256];
+            unsigned int stateValue;
+            fscanf(f_test, "%s = %u", stateName, &stateValue); // 读取状态名和值
+            // 可能需要根据实际情况处理或存储获取到的状态
+			SMTState::add_state(stateName, stateValue, clock);
+        }
+	}
+
+	// examine if cover the new block
+	if(!is_new_block){
+		for(auto id:curr_ids){
+			if(prev_ids.find(id) == prev_ids.end()){
+				is_new_block = true;
+				break;
+			}
+		}
+	}
+	prev_ids = curr_ids;
+	curr_ids.clear();
+
+	// printf("If the new block is covered: %d\n", is_new_block);
+	fclose(f_test);
+}
+
+
+static void build_stack_concolic() {
 	FILE* f_test = NULL;
 	if(enable_sim_copy){
 		f_test = fopen(sim_file_name, "r");
@@ -319,7 +379,7 @@ static bool is_path_taken(br_cnst_t* alt_path){
     return path_hash_map.find(alt_path_hash) != path_hash_map.end();
 }
 
-void simulate_build_stack() {
+void simulate_build_stack_fuzzing() {
 	//simulate
 	sim();
 	
@@ -330,7 +390,21 @@ void simulate_build_stack() {
 	constraints_stack.clear();
 
 	
-	build_stack();
+	build_stack_fuzzing();
+}
+
+void simulate_build_stack_concolic() {
+	//simulate
+	sim();
+	
+	//reset variable versions to zero
+	SMTSigCore::clear_all_versions();
+	
+	//build constraints stack
+	constraints_stack.clear();
+
+	
+	build_stack_concolic();
 }
 
 static bool find_next_cfg(){
@@ -566,7 +640,7 @@ static SMTPath* concolic_iteration(SMTPath* curr_path) {
 	}
     
 	if(find_next_cfg()){
-        simulate_build_stack();
+        simulate_build_stack_concolic();
         //create path
         next_path = new SMTPath(g_data);
     }
@@ -609,7 +683,7 @@ void multi_coverage() {
 	for(uint i=0; i<g_random_sim_num; i++){
 		//generate random inputs
 		g_data.generate();
-		simulate_build_stack();   
+		simulate_build_stack_fuzzing();   
 		//save path
 		path = new SMTPath(g_data);
 		SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
@@ -618,11 +692,14 @@ void multi_coverage() {
 	//remove covered
 	SMTBasicBlock::remove_covered_targets(sim_num);
 	sim_num = g_random_sim_num;
+	current_clock = g_fuzzing;
 	while(!SMTBasicBlock::target_list.empty()){
+
+		//print uncovered targets to file
 		SMTBasicBlock::print_uncovered_targets();
 
 		//For every target, it will give every branch a probability randomly
-		// SMTBranch::random_probability();
+		//SMTBranch::random_probability();
 		// For every target, it will give every branch a probability based on the distance
 		SMTBranch::distance_probability();
 
@@ -644,14 +721,13 @@ void multi_coverage() {
 			//Yangdi: Critical Error of first version
 			//After selecting the path, signal clock versions need to be updated
 			path->data.dump(g_data_mem);
-			simulate_build_stack();
+			simulate_build_stack_concolic();
 		}
 		//do iterations till not covered or iteration limit reached
 		selected_branch = NULL;
 		uint start_iteration = sim_num;
 
 		while((path = concolic_iteration(path))){
-			
 			sim_num++;  
 			//erase covered target
 			SMTBasicBlock::remove_covered_targets(sim_num);
@@ -661,6 +737,7 @@ void multi_coverage() {
 				break;
 			}
 		}
+
 		if (path)
 			SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
 
@@ -669,7 +746,7 @@ void multi_coverage() {
 			//generate random inputs
 			for (uint i = 0; i < 2; i++) {
 				g_data.generate();
-				simulate_build_stack();   
+				simulate_build_stack_fuzzing();   
 				//save path
 				path = new SMTPath(g_data);
 				SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
