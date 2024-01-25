@@ -2,27 +2,33 @@ module conquest_tb();
 
     // Generated top module signals
     reg  clock;
-    reg  line1 = 1'b0;
-    reg  line2 = 1'b0;
     reg  reset;
-    wire outp;
-    wire overflw;
+    reg  bs = 1'b0;
+    reg  na = 1'b0;
+    reg  hold = 1'b0;
+    reg  [10:0] in1 = 11'b0;
+    reg  [10:0] in2 = 11'b0;
+    reg  [19:0] in3 = 20'b0;
+    wire [29:0] ris;
     reg  __obs;
 
     // Generated top module instance
-    b01 _conc_top_inst(
+    b19 _conc_top_inst(
             .clock     ( clock ),
-            .line1     ( line1 ),
-            .line2     ( line2 ),
             .reset     ( reset ),
-            .outp      ( outp ),
-            .overflw   ( overflw ),
+            .bs        ( bs ),
+            .na        ( na ),
+            .hold      ( hold ),
+            .in1       ( in1 ),
+            .in2       ( in2 ),
+            .in3       ( in3 ),
+            .ris       ( ris ),
             .__obs     ( __obs ));
 
     // Generated internal use signals
     reg  [31:0] _conc_pc;
-    reg  [2:0] _conc_opcode;
-    reg  [2:0] _conc_ram[0:30];
+    reg  [45:0] _conc_opcode;
+    reg  [45:0] _conc_ram[0:30];
 
 
     // Generated clock pulse
@@ -33,9 +39,13 @@ module conquest_tb();
     // Generated program counter
     always @(posedge clock) begin
         _conc_opcode = _conc_ram[_conc_pc];
-        __obs <= #5 _conc_opcode[2];
-        line1 <= #5 _conc_opcode[0];
-        line2 <= #5 _conc_opcode[1];
+        __obs <= #5 _conc_opcode[45];
+        bs <= #5 _conc_opcode[0];
+        hold <= #5 _conc_opcode[2];
+        in1 <= #5 _conc_opcode[13:3];
+        in2 <= #5 _conc_opcode[24:14];
+        in3 <= #5 _conc_opcode[44:25];
+        na <= #5 _conc_opcode[1];
         _conc_pc = _conc_pc + 32'b1;
         $strobe(";_C %d", _conc_pc);
     end

@@ -787,9 +787,8 @@ void multi_coverage() {
 			continue;
 		}
 		target->update_distance_from_adjacency_list();
-		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
 		printf("\nCovered branch number: %d, uncovered branch number: %d, current coverage rate: %.2f%%\n", SMTBranch::covered_branch_count, SMTBranch::total_branch_count-SMTBranch::covered_branch_count, (SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count) * 100.0);
-
+		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
 		iter_count[target] += iteration_limit;
 		if (target->closest_path && target->closest_path != path) {
 			// select the closest path from fuzzing process
@@ -872,7 +871,8 @@ void end_concolic(){
     //printf("[TIME] %.0lf sec\n", difftime(end_time, start_time));
 	printf("[TIME] %.2lf sec\n", (end_time - start_time)/double(CLOCKS_PER_SEC));
     printf("[ITER] %u\n", sim_num);
-	
+	printf("\nCovered branch number: %d, uncovered branch number: %d, current coverage rate: %.2f%%\n", SMTBranch::covered_branch_count, SMTBranch::total_branch_count-SMTBranch::covered_branch_count, (SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count) * 100.0);
+
     yices_free_context(yices_context);
     yices_exit();
     SMTFreeAll();

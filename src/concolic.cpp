@@ -80,19 +80,14 @@ void post_processing(ivl_design_t design){
 }
 
 void extract_parameters(ivl_design_t design){
-    // // extract fuzzing
-    // const char* fuzzing = ivl_design_flag(design, "fuzzing");
-    // if(fuzzing == NULL){
-    //     error("Fuzzing clock not given");
-    // }
-    // g_fuzzing = atoi(fuzzing);
+
 
     //extract step size
-    const char* step_size = ivl_design_flag(design, "step");
-    if(step_size == NULL){
-        error("Step size not given");
-    }
-    g_step = atoi(step_size);
+    // const char* step_size = ivl_design_flag(design, "step");
+    // if(step_size == NULL){
+    //     error("Step size not given");
+    // }
+    // g_step = atoi(step_size);
     
     //extract unroll cycles
     const char* unroll_cyc = ivl_design_flag(design, "unroll");
@@ -100,6 +95,14 @@ void extract_parameters(ivl_design_t design){
 		error("Unroll cycle not given");
 	}
 	g_unroll = atoi(unroll_cyc);
+
+
+    // // extract fuzzing
+    // const char* fuzzing = ivl_design_flag(design, "fuzzing");
+    // if(fuzzing == NULL){
+    //     error("Fuzzing clock not given");
+    // }
+    g_fuzzing = g_unroll;
     
     //Unroll requires more clock cycles than Fuzzing
     // assert(g_unroll >= g_fuzzing);
