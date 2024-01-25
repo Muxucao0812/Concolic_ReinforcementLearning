@@ -141,7 +141,6 @@ module b01(clock, line1, line2, reset, outp, overflw, __obs);
     always @(posedge clock) begin
       $display(";R outp = %b", outp);
       $display(";R overflw = %b", overflw);
-      $display(";R stato = %b", stato);
     end
 endmodule
 

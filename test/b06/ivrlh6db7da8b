@@ -1,9 +1,9 @@
-flag:tb=/home/meng/Code/concolic-testing/test/b01/conquest_tb.v
+flag:tb=/home/meng/Code/concolic-testing/test/b06/conquest_tb.v
 flag:clk=clock
 flag:reset=reset
 flag:reset_edge=1
-flag:unroll=1000
-flag:step=1
+flag:unroll=30
+flag:fuzzing=30
 flag:random_sim=3
 basedir:/usr/local/lib/ivl
 module:/usr/local/lib/ivl/system.vpi
@@ -24,7 +24,7 @@ generation:no-verilog-ams
 generation:icarus-misc
 warnings:n
 ignore_missing_modules:false
-out: /home/meng/Code/concolic-testing/test/b01/conquest_dut.v
+out: /home/meng/Code/concolic-testing/test/b06/conquest_dut.v
 iwidth:32
 widthcap:65536
-ivlpp:/usr/local/lib/ivl/ivlpp  -L -F"/tmp/ivrlg2b43bb5c" -P"/tmp/ivrlib43bb5c"
+ivlpp:/usr/local/lib/ivl/ivlpp  -L -F"/tmp/ivrlg26db7da8b" -P"/tmp/ivrli6db7da8b"

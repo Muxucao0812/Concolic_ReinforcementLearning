@@ -1124,7 +1124,7 @@ module b14(clock, reset, datai, addr, datao, rd, wr, __obs);
       $display(";R m = %b", m);
       $display(";R mf = %b", mf);
       $display(";R rd = %b", rd);
-      $display(";R reg0 = %b", reg0);
+      $display(";R reg0[0] = %b", reg0[0]);
       $display(";R reg1 = %b", reg1);
       $display(";R reg2 = %b", reg2);
       $display(";R reg3 = %b", reg3);

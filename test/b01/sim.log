@@ -1,0 +1,8 @@
+;_C          0
+;R outp = 0
+;R overflw = 0
+;A 2
+;A 3
+;A 4
+;_C          1
+conquest_tb.v:52: $finish called at 7 (1s)

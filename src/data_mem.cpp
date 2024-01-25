@@ -81,6 +81,7 @@ void CTDataMem::generate() {
     // fuzzing = g_fuzzing;
     unroll = g_unroll;
     // assert(fuzzing);
+    assert(unroll);
     assert(width);
     data.clear();
 

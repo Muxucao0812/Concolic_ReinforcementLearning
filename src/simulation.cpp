@@ -777,9 +777,9 @@ void multi_coverage() {
 		SMTBasicBlock::print_uncovered_targets();
 
 		//For every target, it will give every branch a probability randomly
-		//SMTBranch::random_probability();
+		SMTBranch::random_probability();
 		// For every target, it will give every branch a probability based on the distance
-		SMTBranch::distance_probability();
+		// SMTBranch::distance_probability();
 
 		SMTBasicBlock* target = SMTBasicBlock::target_list.front();
 		if (target->assign_list[0]->is_covered() || iter_count[target] >= total_limit) {
@@ -788,7 +788,7 @@ void multi_coverage() {
 		}
 		target->update_distance_from_adjacency_list();
 		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
-		printf("\nCovered branch number: %d, uncovered branch number: %d, current coverage rate: %.2f%%\n", SMTBranch::covered_branch_count, SMTBranch::total_branch_count, (SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count) * 100.0);
+		printf("\nCovered branch number: %d, uncovered branch number: %d, current coverage rate: %.2f%%\n", SMTBranch::covered_branch_count, SMTBranch::total_branch_count-SMTBranch::covered_branch_count, (SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count) * 100.0);
 
 		iter_count[target] += iteration_limit;
 		if (target->closest_path && target->closest_path != path) {

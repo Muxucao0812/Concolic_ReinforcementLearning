@@ -5,4 +5,5 @@ CLK_NAME 	= clock
 RESET_NAME 	= reset
 RESET_EDGE 	= 1
 UNROLL_CYC	= 50
+FUZZING_CYC = 50
 OBJ_SRC 	= ./src/b14.v
