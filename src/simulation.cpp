@@ -270,6 +270,66 @@ static void build_stack_concolic() {
 	fclose(f_test);
 }
 
+
+static void build_stack() {
+	FILE* f_test = NULL;
+	if(enable_sim_copy){
+		f_test = fopen(sim_file_name, "r");
+		write_first_clock(sim_file_name);
+	} else{
+		f_test = fopen("sim.log", "r");
+		write_first_clock("sim.log");
+	}
+	assert(f_test);
+	uint clock = 0;
+    g_hash_value = 0;
+	char tag[16];
+	uint val;
+	
+	is_new_block = false;
+
+	//constraints_stack.push_back(create_clock(0));
+	while(true){
+		fscanf(f_test, "%s%u", tag, &val);
+		if(strcmp(tag, ";_C") == 0){
+			clock = val;
+			if(clock == g_unroll + 1)	break;
+			constraints_stack.push_back(create_clock(clock));
+            SMTSigCore::set_input_version(clock);
+            SMTSigCore::commit_versions(clock);
+		}
+		else if (strcmp(tag, ";A") == 0){
+			SMTAssign* assign = SMTAssign::get_assign(val);
+			constraints_stack.push_back(create_constraint(clock, assign));
+			curr_ids.insert(assign->block->id);
+		}
+		else if (strcmp(tag, ";R") == 0){
+            // 这里添加处理状态的逻辑
+            char stateName[256];
+            unsigned int stateValue;
+            fscanf(f_test, "%s = %u", stateName, &stateValue); // 读取状态名和值
+            // 可能需要根据实际情况处理或存储获取到的状态
+			SMTState::add_state(stateName, stateValue, clock);
+        }
+	}
+
+	// examine if cover the new block
+	if(!is_new_block){
+		for(auto id:curr_ids){
+			if(prev_ids.find(id) == prev_ids.end()){
+				is_new_block = true;
+				break;
+			}
+		}
+	}
+	prev_ids = curr_ids;
+	curr_ids.clear();
+
+	// printf("If the new block is covered: %d\n", is_new_block);
+	fclose(f_test);
+}
+
+
 static inline void free_stack() {
 	while(!constraints_stack.empty()){
 		delete constraints_stack.back();
@@ -406,6 +466,22 @@ void simulate_build_stack_concolic() {
 	
 	build_stack_concolic();
 }
+
+void simulate_build_stack() {
+	//simulate
+	sim();
+	
+	//reset variable versions to zero
+	SMTSigCore::clear_all_versions();
+	
+	//build constraints stack
+	constraints_stack.clear();
+
+	
+	build_stack();
+}
+
+
 
 static bool find_next_cfg(){
 
@@ -640,7 +716,7 @@ static SMTPath* concolic_iteration(SMTPath* curr_path) {
 	}
     
 	if(find_next_cfg()){
-        simulate_build_stack_concolic();
+        simulate_build_stack();
         //create path
         next_path = new SMTPath(g_data);
     }
@@ -683,7 +759,9 @@ void multi_coverage() {
 	for(uint i=0; i<g_random_sim_num; i++){
 		//generate random inputs
 		g_data.generate();
-		simulate_build_stack_fuzzing();   
+
+		// simulate_build_stack_fuzzing();   
+		simulate_build_stack();   
 		//save path
 		path = new SMTPath(g_data);
 		SMTBasicBlock::update_all_closest_paths(path, constraints_stack);

@@ -231,7 +231,8 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "\n%*c// Generated internal use signals\n", 4, ' ');
         fprintf(f_tb, "%*creg  [31:0] _conc_pc;\n", 4, ' ');
         fprintf(f_tb, "%*creg  [%u:0] _conc_opcode;\n", 4, ' ', g_data.get_width() - 1);
-        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_fuzzing);
+        // fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_fuzzing);
+        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_unroll);
 
         //Dump clk toggle
         fprintf(f_tb, "\n%*c// Generated clock pulse\n", 4, ' ');

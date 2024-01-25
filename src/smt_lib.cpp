@@ -983,7 +983,7 @@ SMTBranch::~SMTBranch() {
 }
 
 void SMTBranch::set_covered_clk(uint sim_num, uint clock) {
-	assert(clock <= g_fuzzing);
+	// assert(clock <= g_fuzzing);
 	coverage[clock] = true;
 	if(!is_covered()){
 		set_covered(sim_num);

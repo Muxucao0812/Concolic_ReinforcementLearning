@@ -1,4 +1,4 @@
-// Following code segment is generated from ./src/b14.v:1
+// Following code segment is generated from /home/meng/Code/concolic-testing/test/b14/src/b14.v:1
 module b14(clock, reset, datai, addr, datao, rd, wr, __obs);
     input clock;
     input reset;
@@ -55,7 +55,7 @@ module b14(clock, reset, datai, addr, datao, rd, wr, __obs);
         s = IR[30:29]; $display(";A 5");		//(assert (= s    (bv-extract 30 29 IR ))) ;5
     end
 
-    // Following code segment is generated from ./src/b14.v:57
+    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b14/src/b14.v:57
     always @(posedge clock) begin
         if ((reset == 1'b1)) begin
             IR <= #1 31'b0000000000000000000000000000000; $display(";A 8");		//(assert (= IR    0b0000000000000000000000000000000)) ;8
@@ -1111,5 +1111,29 @@ module b14(clock, reset, datai, addr, datao, rd, wr, __obs);
         end
     end
 
+    // Displaying module variables
+    always @(posedge clock) begin
+      $display(";R B = %b", B);
+      $display(";R IR = %b", IR);
+      $display(";R addr = %b", addr);
+      $display(";R cf = %b", cf);
+      $display(";R d = %b", d);
+      $display(";R datao = %b", datao);
+      $display(";R df = %b", df);
+      $display(";R ff = %b", ff);
+      $display(";R m = %b", m);
+      $display(";R mf = %b", mf);
+      $display(";R rd = %b", rd);
+      $display(";R reg0 = %b", reg0);
+      $display(";R reg1 = %b", reg1);
+      $display(";R reg2 = %b", reg2);
+      $display(";R reg3 = %b", reg3);
+      $display(";R rx = %b", rx);
+      $display(";R s = %b", s);
+      $display(";R state = %b", state);
+      $display(";R t = %b", t);
+      $display(";R tail = %b", tail);
+      $display(";R wr = %b", wr);
+    end
 endmodule
 

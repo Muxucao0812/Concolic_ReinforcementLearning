@@ -1,0 +1,26 @@
+digraph fsm {
+s0 -> s0 [label="IN=??1,\nOUT=10000000"];
+s0 -> s1 [label="IN=?10,\nOUT=10000000"];
+s0 -> s4 [label="IN=?00,\nOUT=10000000"];
+s1 -> s0 [label="IN=??1,\nOUT=00010000"];
+s1 -> s2 [label="IN=0?0,\nOUT=00010000"];
+s1 -> s5 [label="IN=1?0,\nOUT=00010000"];
+s2 -> s0 [label="IN=??1,\nOUT=00001000"];
+s2 -> s3 [label="IN=?00,\nOUT=00001000"];
+s2 -> s7 [label="IN=?10,\nOUT=00001000"];
+s3 -> s0 [label="IN=?00,\nOUT=00000010"];
+s3 -> s0 [label="IN=??1,\nOUT=00000010"];
+s3 -> s6 [label="IN=?10,\nOUT=00000010"];
+s4 -> s0 [label="IN=??1,\nOUT=00100000"];
+s4 -> s2 [label="IN=?00,\nOUT=00100000"];
+s4 -> s5 [label="IN=?10,\nOUT=00100000"];
+s5 -> s0 [label="IN=??1,\nOUT=00000100"];
+s5 -> s3 [label="IN=0?0,\nOUT=00000100"];
+s5 -> s7 [label="IN=1?0,\nOUT=00000100"];
+s6 -> s0 [label="IN=??1,\nOUT=01000000"];
+s6 -> s1 [label="IN=?10,\nOUT=01000000"];
+s6 -> s4 [label="IN=?00,\nOUT=01000000"];
+s7 -> s0 [label="IN=0?0,\nOUT=00000001"];
+s7 -> s0 [label="IN=??1,\nOUT=00000001"];
+s7 -> s6 [label="IN=1?0,\nOUT=00000001"];
+}

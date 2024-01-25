@@ -78,15 +78,16 @@ void CTDataMem::generate_step() {
 // It generates 31 bits of random number in lab machine
 // Xiangchen: This function generates fuzzing number input vectors
 void CTDataMem::generate() {
-    fuzzing = g_fuzzing;
-    assert(fuzzing);
+    // fuzzing = g_fuzzing;
+    unroll = g_unroll;
+    // assert(fuzzing);
     assert(width);
     data.clear();
 
     // We want to use 16 bits from each rand()
     const uint count = width >> 4;
     const uint extra = width & 0b1111;
-    for(uint k=0; k<=fuzzing; k++){
+    for(uint k=0; k<=unroll; k++){
         string in_vector;
         uint num = rand();
         for(uint j=0; j < extra; j++){
