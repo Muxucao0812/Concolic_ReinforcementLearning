@@ -233,6 +233,7 @@ private:
 	
 public:
 	static uint total_branch_count;
+	static uint target_count;
 	static uint covered_branch_count;
 	const SMTBranchType type;
     const uint list_idx;    //index in parent's branch list
@@ -542,7 +543,7 @@ public:
 	void update_distance_from_adjacency_list();
 	void update_edge();
     
-	static void print_uncovered_targets();
+	static void print_cover_result();
     static void print_all(std::ofstream &out);
 	static void reset_flags();
 	static void add_target(SMTBasicBlock* target);
@@ -562,8 +563,8 @@ public:
 	static std::list<SMTBasicBlock*> target_list;
 	SMTPath* closest_path;
 	uint* adjacency_list;
-uint closest_path_distance = 0xFFFFFFF;
-uint closest_path_clock = 0xFFFFFFF;
+	uint closest_path_distance = 0xFFFFFFF;
+	uint closest_path_clock = 0xFFFFFFF;
 	
 private:
     void print_assigns(std::ofstream &out);
@@ -581,7 +582,26 @@ public:
 	SMTPath(CTDataMem &curr_data);
 	virtual ~SMTPath();
 
+	void Dump(const char* file1, const char* file2);
+	void UpdatePath();
+	void ConnectPath(SMTPath* otherPath);
+
+	// 拷贝构造函数
+    SMTPath(const SMTPath& other) : data(other.data), data_step(other.data_step) {
+        // 深拷贝
+    }
+
+    // 拷贝赋值操作符
+    SMTPath& operator=(const SMTPath& other) {
+        if (this != &other) { // 防止自赋值
+            data = other.data; // 假设CTDataMem支持赋值操作
+            data_step = other.data_step;
+        }
+        return *this;
+    }
+
 	CTDataMem data;
+	CTDataMem data_step;
 };
 
 //-------------------------------SMT State--------------------------------------

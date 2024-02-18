@@ -83,11 +83,11 @@ void extract_parameters(ivl_design_t design){
 
 
     //extract step size
-    // const char* step_size = ivl_design_flag(design, "step");
-    // if(step_size == NULL){
-    //     error("Step size not given");
-    // }
-    // g_step = atoi(step_size);
+    const char* step_size = ivl_design_flag(design, "step");
+    if(step_size == NULL){
+        error("Step size not given");
+    }
+    g_step = atoi(step_size);
     
     //extract unroll cycles
     const char* unroll_cyc = ivl_design_flag(design, "unroll");
@@ -96,16 +96,6 @@ void extract_parameters(ivl_design_t design){
 	}
 	g_unroll = atoi(unroll_cyc);
 
-
-    // // extract fuzzing
-    // const char* fuzzing = ivl_design_flag(design, "fuzzing");
-    // if(fuzzing == NULL){
-    //     error("Fuzzing clock not given");
-    // }
-    g_fuzzing = g_unroll;
-    
-    //Unroll requires more clock cycles than Fuzzing
-    // assert(g_unroll >= g_fuzzing);
 
     //extract clock signal name
     g_clock_sig_name = ivl_design_flag(design, "clk");
@@ -234,8 +224,7 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "\n%*c// Generated internal use signals\n", 4, ' ');
         fprintf(f_tb, "%*creg  [31:0] _conc_pc;\n", 4, ' ');
         fprintf(f_tb, "%*creg  [%u:0] _conc_opcode;\n", 4, ' ', g_data.get_width() - 1);
-        // fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_fuzzing);
-        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_unroll);
+        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_step);
 
         //Dump clk toggle
         fprintf(f_tb, "\n%*c// Generated clock pulse\n", 4, ' ');
@@ -265,12 +254,12 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "%*c%s = 1'b0;\n", 8, ' ', g_clock_sig_name);
         fprintf(f_tb, "%*c%s = %s;\n", 8, ' ', g_reset_sig_name, reset_edge_inactive);
         fprintf(f_tb, "%*c_conc_pc = 32'b0;\n", 8, ' ');
-        fprintf(f_tb, "%*c$readmemb(\"%s\", _conc_ram);\n", 8, ' ', g_data_mem);
+        fprintf(f_tb, "%*c$readmemb(\"%s\", _conc_ram);\n", 8, ' ', g_data_mem_step);
 
         fprintf(f_tb, "%*c#2 %s = 1'b1;\n", 8, ' ', g_clock_sig_name);
         fprintf(f_tb, "%*c%s = %s;\n", 8, ' ', g_reset_sig_name, g_reset_edge_active);
         fprintf(f_tb, "%*c#5 %s = %s;\n", 8, ' ', g_reset_sig_name, reset_edge_inactive);
-        fprintf(f_tb, "%*c#%d $finish;\n", 8, ' ', g_fuzzing * 10);
+        fprintf(f_tb, "%*c#%d $finish;\n", 8, ' ', g_unroll * 10);
         fprintf(f_tb, "%*cend\n\n", 4, ' ');
     } else{
         error("TODO: Testbench for input width of 1");

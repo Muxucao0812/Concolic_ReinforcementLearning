@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <unordered_map>
 #include <unordered_set>
+#include <sys/stat.h>
 
 using namespace std;
 
@@ -29,8 +30,8 @@ const bool		enable_error_check = false;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
 const bool		enable_yices_debug = true;
-const uint      iteration_limit = 100;
-const uint      total_limit = 1000;
+const uint      iteration_limit = 10;
+const uint      total_limit = 100;
 unordered_map<SMTBasicBlock*, uint> iter_count;
 
 static inline void free_stack();
@@ -41,7 +42,7 @@ static char sim_file_name[64];
 static char mem_file_name[64];
 static uint hash_table[1024*16];
 static uint sim_num;
-static uint current_clock;
+static uint sim_clk;
 
 
 static SMTBranch* selected_branch;
@@ -49,11 +50,40 @@ static uint selected_clock;
 
 static void check_satisfiability();
 
+void writeLastFContentToFile(const std::string& inputFileName, FILE* outputFile) {
+    std::ifstream inputFile(inputFileName);
+    std::string line;
+    std::string lastFContent;
+
+    if (inputFile.is_open()) {
+        while (std::getline(inputFile, line)) {
+            if (line.find(";F") != std::string::npos) {
+                lastFContent = line.substr(line.find(";F") + 3);  // Extract content after ";F"
+            }
+        }
+        inputFile.close();
+
+        if (outputFile != nullptr) {
+            fprintf(outputFile, "%s\n", lastFContent.c_str());
+            std::cout << "Content written to file." << std::endl;
+        } else {
+            std::cout << "Invalid output file." << std::endl;
+        }
+    } else {
+        std::cout << "Failed to open input file: " << inputFileName << std::endl;
+    }
+}
+
 static inline void compile() {
     string cmd = "iverilog -o conc_run.vvp " + string(g_output_file) + \
 		  " " + string(g_tb_file);
 	printf("%s\n", cmd.c_str());
 	system(cmd.c_str());
+}
+
+bool file_exist (const std::string& name) {
+  struct stat buffer;   
+  return (stat (name.c_str(), &buffer) == 0); 
 }
 
 static constraint_t* create_clock(uint clock){
@@ -74,6 +104,59 @@ static void update_path_hash_map(constraint_t* cnst){
     g_hash_value += hash_table[cnst->obj->id % 16384]*cnst->index;
     path_hash_map.insert(g_hash_value);
 }
+
+static void update_vvp(uint target_cycles = g_step) {
+    std::ifstream vvp("conc_run.vvp");
+    if (!vvp.is_open()) {
+        return;
+    }
+
+    std::vector<std::string> lines;
+    std::string line;
+    while (getline(vvp, line)) {
+        lines.push_back(line);
+    }
+    vvp.close(); // 关闭文件以便稍后覆盖
+
+    std::string pattern_str1 = "_conc_ram";
+    std::string pattern_str2 = "delay "; // Only for test
+    for (auto& _line : lines) {
+        if (_line.find(pattern_str1) != std::string::npos) {
+            char* cline = strdup(_line.c_str());
+            char* compos_p1 = strtok(cline, " ");
+            bool pre_target = false;
+            std::string newLine;
+            while (compos_p1 != NULL) {
+                if (pre_target) {
+                    pattern_str2 += std::string(compos_p1);
+                    newLine += std::to_string(target_cycles) + " ";
+                    pre_target = false;
+                } else {
+                    newLine += compos_p1 + std::string(" ");
+                }
+                if (std::string(compos_p1) == "\"_conc_ram\",") {
+                    pre_target = true;
+                }
+                compos_p1 = strtok(NULL, " ");
+            }
+            _line = newLine;
+            free(cline);
+        } else if (_line.find(pattern_str2) != std::string::npos) {
+            std::string target_str = std::to_string(g_unroll * 10);
+            int pos_start = _line.find(target_str);
+            _line = _line.substr(0, pos_start) + std::to_string((target_cycles) * 10) + _line.substr(pos_start + target_str.length());
+        }
+        // 不需要额外的else分支，因为_line已经包含了未修改的内容
+    }
+
+    // 将修改后的内容写回原文件
+    std::ofstream vvp_out("conc_run.vvp", std::ofstream::trunc);
+    for (const auto& _line : lines) {
+        vvp_out << _line << '\n';
+    }
+    vvp_out.close();
+}
+
 
 static void smt_yices_dump_error(){
     //reset context
@@ -104,7 +187,7 @@ static constraint_t* create_constraint(uint clock, SMTAssign* assign){
 	cnst->clock = clock;
 	cnst->obj = assign;
 	cnst->index = constraints_stack.size();
-    cnst->yices_term = assign->update_term();//是assign错了
+    cnst->yices_term = assign->update_term();
     if(cnst->yices_term <= 0){
         yices_print_error(stdout);
         error("Term evaluation failed at assign id: %u", assign->id);
@@ -153,7 +236,8 @@ static void write_first_clock(const char* file_name){
 	fclose(f_test);
 }
 
-static void build_stack_fuzzing() {
+
+static void build_stack(uint sim_clk=g_step) {
 	FILE* f_test = NULL;
 	if(enable_sim_copy){
 		f_test = fopen(sim_file_name, "r");
@@ -175,125 +259,7 @@ static void build_stack_fuzzing() {
 		fscanf(f_test, "%s%u", tag, &val);
 		if(strcmp(tag, ";_C") == 0){
 			clock = val;
-			if(clock == g_fuzzing + 1)	break;
-			constraints_stack.push_back(create_clock(clock));
-            SMTSigCore::set_input_version(clock);
-            SMTSigCore::commit_versions(clock);
-		}
-		else if (strcmp(tag, ";A") == 0){
-			SMTAssign* assign = SMTAssign::get_assign(val);
-			constraints_stack.push_back(create_constraint(clock, assign));
-			curr_ids.insert(assign->block->id);
-		}
-		else if (strcmp(tag, ";R") == 0){
-            // 这里添加处理状态的逻辑
-            char stateName[256];
-            unsigned int stateValue;
-            fscanf(f_test, "%s = %u", stateName, &stateValue); // 读取状态名和值
-            // 可能需要根据实际情况处理或存储获取到的状态
-			SMTState::add_state(stateName, stateValue, clock);
-        }
-	}
-
-	// examine if cover the new block
-	if(!is_new_block){
-		for(auto id:curr_ids){
-			if(prev_ids.find(id) == prev_ids.end()){
-				is_new_block = true;
-				break;
-			}
-		}
-	}
-	prev_ids = curr_ids;
-	curr_ids.clear();
-
-	// printf("If the new block is covered: %d\n", is_new_block);
-	fclose(f_test);
-}
-
-
-static void build_stack_concolic() {
-	FILE* f_test = NULL;
-	if(enable_sim_copy){
-		f_test = fopen(sim_file_name, "r");
-		write_first_clock(sim_file_name);
-	} else{
-		f_test = fopen("sim.log", "r");
-		write_first_clock("sim.log");
-	}
-	assert(f_test);
-	uint clock = 0;
-    g_hash_value = 0;
-	char tag[16];
-	uint val;
-	
-	is_new_block = false;
-
-	//constraints_stack.push_back(create_clock(0));
-	while(true){
-		fscanf(f_test, "%s%u", tag, &val);
-		if(strcmp(tag, ";_C") == 0){
-			clock = val;
-			if(clock == g_unroll + 1)	break;
-			constraints_stack.push_back(create_clock(clock));
-            SMTSigCore::set_input_version(clock);
-            SMTSigCore::commit_versions(clock);
-		}
-		else if (strcmp(tag, ";A") == 0){
-			SMTAssign* assign = SMTAssign::get_assign(val);
-			constraints_stack.push_back(create_constraint(clock, assign));
-			curr_ids.insert(assign->block->id);
-		}
-		else if (strcmp(tag, ";R") == 0){
-            // 这里添加处理状态的逻辑
-            char stateName[256];
-            unsigned int stateValue;
-            fscanf(f_test, "%s = %u", stateName, &stateValue); // 读取状态名和值
-            // 可能需要根据实际情况处理或存储获取到的状态
-			SMTState::add_state(stateName, stateValue, clock);
-        }
-	}
-
-	// examine if cover the new block
-	if(!is_new_block){
-		for(auto id:curr_ids){
-			if(prev_ids.find(id) == prev_ids.end()){
-				is_new_block = true;
-				break;
-			}
-		}
-	}
-	prev_ids = curr_ids;
-	curr_ids.clear();
-
-	// printf("If the new block is covered: %d\n", is_new_block);
-	fclose(f_test);
-}
-
-
-static void build_stack() {
-	FILE* f_test = NULL;
-	if(enable_sim_copy){
-		f_test = fopen(sim_file_name, "r");
-		write_first_clock(sim_file_name);
-	} else{
-		f_test = fopen("sim.log", "r");
-		write_first_clock("sim.log");
-	}
-	assert(f_test);
-	uint clock = 0;
-    g_hash_value = 0;
-	char tag[16];
-	uint val;
-	
-	is_new_block = false;
-
-	//constraints_stack.push_back(create_clock(0));
-	while(true){
-		fscanf(f_test, "%s%u", tag, &val);
-		if(strcmp(tag, ";_C") == 0){
-			clock = val;
-			if(clock == g_unroll + 1)	break;
+			if(clock == sim_clk + 1)	break;
 			constraints_stack.push_back(create_clock(clock));
             SMTSigCore::set_input_version(clock);
             SMTSigCore::commit_versions(clock);
@@ -364,6 +330,7 @@ static void set_mem_log_name(uint sim_num) {
 	sprintf(mem_file_name, "tests/data_%04u.mem", sim_num);
 }*/
 
+
 static void sim() {
 	if(enable_sim_copy){
 		string cmd = "cp data.mem " + string(mem_file_name);
@@ -429,6 +396,16 @@ bool compare_prob(br_cnst_t* a, br_cnst_t* b){
 	return a->br->branch_probability > b->br->branch_probability;
 }
 
+static void get_available_branches(vector<br_cnst_t*>& branches, uint begin_clk, uint end_clk){
+	vector<br_cnst_t*> temp;
+	for(auto it:branches){
+		if(it->cnst->clock >= begin_clk && it->cnst->clock <= end_clk){
+			temp.push_back(it);
+		}
+	}
+	branches = temp;
+}
+
 static void update_path_taken(br_cnst_t* alt_path){
     uint alt_path_hash = alt_path->cnst->hash_value + hash_table[alt_path->br->id % 16384]*alt_path->cnst->index;
 	path_hash_map.insert(alt_path_hash);
@@ -439,51 +416,40 @@ static bool is_path_taken(br_cnst_t* alt_path){
     return path_hash_map.find(alt_path_hash) != path_hash_map.end();
 }
 
-void simulate_build_stack_fuzzing() {
+
+
+
+void simulate_build_stack(uint sim_clk=g_step) {
 	//simulate
 	sim();
-	
 	//reset variable versions to zero
 	SMTSigCore::clear_all_versions();
-	
 	//build constraints stack
 	constraints_stack.clear();
-
-	
-	build_stack_fuzzing();
-}
-
-void simulate_build_stack_concolic() {
-	//simulate
-	sim();
-	
-	//reset variable versions to zero
-	SMTSigCore::clear_all_versions();
-	
-	//build constraints stack
-	constraints_stack.clear();
-
-	
-	build_stack_concolic();
-}
-
-void simulate_build_stack() {
-	//simulate
-	sim();
-	
-	//reset variable versions to zero
-	SMTSigCore::clear_all_versions();
-	
-	//build constraints stack
-	constraints_stack.clear();
-
-	
-	build_stack();
+	build_stack(sim_clk);
 }
 
 
+void explore_one_step(SMTPath* curr_path) {
+	SMTPath* step_path = NULL;
 
-static bool find_next_cfg(){
+	// generate random inputs and add to data
+	g_data.generate();
+	step_path = new SMTPath(g_data);
+	curr_path->ConnectPath(step_path);
+	g_data = curr_path->data;
+	// dump path to file
+	curr_path->Dump(g_data_mem, g_data_mem_step);
+	update_vvp(curr_path->data.get_clk());
+
+	// get the simulation clk and build the stack
+	sim_clk = curr_path->data.get_clk();
+	simulate_build_stack(sim_clk);  
+}
+
+static bool find_next_cfg(uint init_clk, uint curr_clk) {
+	uint begin_clk = init_clk;
+	uint end_clk = curr_clk;
 
 	const uint size = constraints_stack.size();
 	vector<br_cnst_t*> branches;
@@ -519,9 +485,11 @@ static bool find_next_cfg(){
 		}
 	}
 	
+	//get the branches between begin and end
+	get_available_branches(branches, begin_clk, end_clk);
+
 	// //sort by distance
 	// sort(branches.begin(), branches.end(), compare_dist);
-
 	//sort by probability
 	sort(branches.begin(), branches.end(), compare_prob);
 
@@ -541,7 +509,6 @@ static bool find_next_cfg(){
 			}	
 			assert((*cnst)->type == CNST_CLK);
 			cnst++;
-			
 			//restore version
 			SMTSigCore::restore_versions(clock);
 			const SMTProcess* target_process = it->cnst->obj->process;
@@ -557,7 +524,7 @@ static bool find_next_cfg(){
 			//add mutated branch
 			smt_yices_assert(yices_context, it->br->update_term(), it->br);
 			
-
+		
 			call_to_solver++;
 			check_satisfiability();
 			if(solve_constraints(clock)){
@@ -700,13 +667,15 @@ static void check_satisfiability(){
 
 }
 
-static SMTPath* concolic_iteration(SMTPath* curr_path) {
-    SMTPath* next_path = NULL;
-    
+static SMTPath* concolic_iteration(SMTPath *curr_path) {
+	SMTPath *init_path = NULL;
+	init_path = new SMTPath(*curr_path);
+    SMTPath *next_path = NULL;
+	SMTPath *step_path = NULL;
+    // SMTPath* step_path = NULL;
 	if(enable_error_check){
 		//check satisfiability
 		check_satisfiability();
-
 		//check if selected branch is covered
 		if(selected_branch){
 			if(!selected_branch->is_covered_clk(selected_clock)){
@@ -714,13 +683,18 @@ static SMTPath* concolic_iteration(SMTPath* curr_path) {
 			}
 		}
 	}
-    
-	if(find_next_cfg()){
+
+	explore_one_step(curr_path);
+
+	if(find_next_cfg(init_path->data.get_clk(), curr_path->data.get_clk())){
+		
         simulate_build_stack();
         //create path
-        next_path = new SMTPath(g_data);
+        step_path = new SMTPath(g_data);
     }
-	
+	init_path->ConnectPath(step_path);
+	next_path = init_path;
+
 	return next_path;
 }
 
@@ -759,46 +733,43 @@ void multi_coverage() {
 	for(uint i=0; i<g_random_sim_num; i++){
 		//generate random inputs
 		g_data.generate();
-
-		// simulate_build_stack_fuzzing();   
 		simulate_build_stack();   
 		//save path
 		path = new SMTPath(g_data);
 		SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
 	}
 
-	//remove covered
+	// remove covered
 	SMTBasicBlock::remove_covered_targets(sim_num);
 	sim_num = g_random_sim_num;
-	current_clock = g_fuzzing;
 	while(!SMTBasicBlock::target_list.empty()){
-
-		//print uncovered targets to file
-		SMTBasicBlock::print_uncovered_targets();
-
+		// Initalize the probability of every branch
 		//For every target, it will give every branch a probability randomly
 		SMTBranch::random_probability();
 		// For every target, it will give every branch a probability based on the distance
 		// SMTBranch::distance_probability();
 
 		SMTBasicBlock* target = SMTBasicBlock::target_list.front();
-		if (target->assign_list[0]->is_covered() || iter_count[target] >= total_limit) {
+		if (target->assign_list[0]->is_covered() /*|| iter_count[target] >= total_limit*/) {
 			SMTBasicBlock::target_list.pop_front();
 			continue;
 		}
 		target->update_distance_from_adjacency_list();
-		printf("\nCovered branch number: %d, uncovered branch number: %d, current coverage rate: %.2f%%\n", SMTBranch::covered_branch_count, SMTBranch::total_branch_count-SMTBranch::covered_branch_count, (SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count) * 100.0);
 		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
 		iter_count[target] += iteration_limit;
 		if (target->closest_path && target->closest_path != path) {
 			// select the closest path from fuzzing process
 			path = target->closest_path;
+
 			// printf("closest distance: %u\n", target->closest_path_distance);
 			//update block distance from target's adjacency_list
 			//Yangdi: Critical Error of first version
 			//After selecting the path, signal clock versions need to be updated
-			path->data.dump(g_data_mem);
-			simulate_build_stack_concolic();
+			
+			path->UpdatePath();
+			path->Dump(g_data_mem, g_data_mem_step);
+
+			simulate_build_stack();
 		}
 		//do iterations till not covered or iteration limit reached
 		selected_branch = NULL;
@@ -806,13 +777,21 @@ void multi_coverage() {
 
 		while((path = concolic_iteration(path))){
 			sim_num++;  
-			//erase covered target
-			SMTBasicBlock::remove_covered_targets(sim_num);
-			
 			//check if target covered or iteration limit reached
 			if(target->assign_list[0]->is_covered() || (sim_num - start_iteration) > iteration_limit){
+				//erase covered target
+				SMTBasicBlock::remove_covered_targets(sim_num);
 				break;
 			}
+		}
+		if (/*target->assign_list[0]->is_covered() ||*/ iter_count[target] >= total_limit) {
+			if(target->assign_list[0]->is_covered())
+				continue;
+			SMTBasicBlock::target_list.pop_front();
+			fprintf(g_exp_res,"Unreached %d\n",target->assign_list[0]->id);
+			writeLastFContentToFile("sim.log",g_exp_res);
+
+			continue;
 		}
 
 		if (path)
@@ -823,7 +802,7 @@ void multi_coverage() {
 			//generate random inputs
 			for (uint i = 0; i < 2; i++) {
 				g_data.generate();
-				simulate_build_stack_fuzzing();   
+				simulate_build_stack();   
 				//save path
 				path = new SMTPath(g_data);
 				SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
@@ -835,6 +814,24 @@ void multi_coverage() {
 	}
 }
 
+void dump_branch_ids() {
+	if(file_exist("branch_ids")){
+		return ;
+	}else{
+		ofstream bisFile("branch_ids",ios::out);
+		uint assign_counts = SMTAssign::get_assign_count();
+		for(uint i = 0;i < assign_counts; ++i){
+			SMTAssign* assign = SMTAssign::get_assign(i);
+			if(assign->assign_type==SMT_ASSIGN_BRANCH){
+				bisFile << i <<endl;
+			}
+		}
+		bisFile.close();
+		exit(0);
+	}
+	return ;
+}
+
 void start_concolic() {
 	sim_num = 0;
 	init();
@@ -844,34 +841,42 @@ void start_concolic() {
 	} else{
 		info("Total targets: %d", target_count);
 	}
-
+	SMTBranch::target_count = target_count;
 	start_time = clock();
 
 	// multi target to cover all
+	dump_branch_ids();
 	multi_coverage();
 	end_concolic();
 }
+
 
 void end_concolic(){
     clock_t end_time = clock();
 	fflush(stdout);
     
-    //ofstream report("report_cov.log");
-    //report << "[TIME] " << difftime(end_time, start_time) << " sec\n";
-	//report << "[TIME] " << (end_time - start_time)/double(CLOCKS_PER_SEC) << " sec\n";
-	//report << "[ITER] " << sim_num << '\n';
-    //report << "[SOLVER CALL] " << call_to_solver << '\n';
-	//report << "[CNST BEFORE] " << total_constraints_before << '\n';
-	//report << "[CNST AFTER] " << total_constraints_after << '\n';
-	//report << "[TOTAL BRANCH] " << SMTBranch::total_branch_count << '\n';
-	//report << "[COVERED BRANCH] " << SMTBranch::covered_branch_count << '\n';
-    //SMTAssign::print_coverage(report);
-    //report.close();
+    // ofstream report("report_cov.log");
+    // report << "[TIME] " << difftime(end_time, start_time) << " sec\n";
+	// report << "[TIME] " << (end_time - start_time)/double(CLOCKS_PER_SEC) << " sec\n";
+	// report << "[ITER] " << sim_num << '\n';
+    // report << "[SOLVER CALL] " << call_to_solver << '\n';
+	// report << "[CNST BEFORE] " << total_constraints_before << '\n';
+	// report << "[CNST AFTER] " << total_constraints_after << '\n';
+	// report << "[TOTAL BRANCH] " << SMTBranch::total_branch_count << '\n';
+	// report << "[COVERED BRANCH] " << SMTBranch::covered_branch_count << '\n';
+    // SMTAssign::print_coverage(report);
+    // report.close();
     
-    //printf("[TIME] %.0lf sec\n", difftime(end_time, start_time));
+	// print uncovered targets to file
+	uint uncovered_target_count = SMTBasicBlock::target_list.size();
+	SMTBasicBlock::print_cover_result();
+	printf("\nUNC BRANCH: %u\n", uncovered_target_count);
+	
+	printf("\nCovered branch number: %d, Uncovered branch number: %d, Coverage rate: %.2f%%\n", SMTBranch::covered_branch_count,SMTBranch::total_branch_count-SMTBranch::covered_branch_count, ((float)(SMTBranch::covered_branch_count) / SMTBranch::total_branch_count) * 100.0);
+
 	printf("[TIME] %.2lf sec\n", (end_time - start_time)/double(CLOCKS_PER_SEC));
     printf("[ITER] %u\n", sim_num);
-	printf("\nCovered branch number: %d, uncovered branch number: %d, current coverage rate: %.2f%%\n", SMTBranch::covered_branch_count, SMTBranch::total_branch_count-SMTBranch::covered_branch_count, (SMTBranch::covered_branch_count / (float)SMTBranch::total_branch_count) * 100.0);
+
 
     yices_free_context(yices_context);
     yices_exit();

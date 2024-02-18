@@ -12,7 +12,7 @@ S_0x555555977580 .scope module, "conquest_tb" "conquest_tb" 2 1;
 v0x55555599b210_0 .var "__obs", 0 0;
 v0x55555599b2d0_0 .var "_conc_opcode", 5 0;
 v0x55555599b390_0 .var "_conc_pc", 31 0;
-v0x55555599b450 .array "_conc_ram", 100 0, 5 0;
+v0x55555599b450 .array "_conc_ram", 500 0, 5 0;
 v0x55555599b510_0 .var "clock", 0 0;
 v0x55555599b5b0_0 .var "k", 3 0;
 v0x55555599b650_0 .net "nl", 3 0, v0x55555599a770_0;  1 drivers
@@ -1612,7 +1612,7 @@ T_9 ;
     %delay 5, 0;
     %pushi/vec4 0, 0, 1;
     %store/vec4 v0x55555599b790_0, 0, 1;
-    %delay 1000, 0;
+    %delay 5000, 0;
     %vpi_call 2 54 "$finish" {0 0 0};
     %end;
     .thread T_9;

@@ -23,7 +23,7 @@ extern ivl_design_t     g_design;
 extern const char*      g_output_file;
 extern const char*      g_tb_file;
 extern const char*		g_data_mem;
-extern const char*		g_data_mem_raw;
+extern const char*		g_data_mem_step;
 extern const char*		g_data_state;
 extern CTDataMem		g_data;
 extern clock_t          start_time;
@@ -32,7 +32,6 @@ extern clock_t          start_time;
 //Parameters
 extern uint     		g_unroll;
 extern uint     		g_step;
-extern uint     		g_fuzzing;
 extern const char*      g_clock_sig_name;
 extern const char*      g_reset_sig_name;
 extern const char*      g_reset_edge_active;
@@ -40,6 +39,12 @@ extern uint             g_random_sim_num;
 extern uint		        g_target_limit;
 extern uint             prob_num;
 extern bool             is_new_block;
+
+//Experiment result handler
+extern const char*      g_name_exp_res;
+/*! \brief Global experiment result file*/
+extern FILE*            g_exp_res;
+
 
 //Configuration declarations
 //#define conc_flush(X)   fflush(X)

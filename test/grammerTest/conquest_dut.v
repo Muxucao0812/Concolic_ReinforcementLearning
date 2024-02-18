@@ -138,5 +138,16 @@ module grammerTest(clk, reset, in, out, sig_display, __obs);
         out <= #1 myArray[addr]; $display(";A 46");		//(assert (= out    ( myArray addr ))) ;46
     end
 
+    // Displaying module variables
+    always @(posedge clk) begin
+      $display(";R addr = %b", addr);
+      $display(";R cnt = %b", cnt);
+      $display(";R myArray[0] = %b", myArray[0]);
+      $display(";R myArray[1] = %b", myArray[1]);
+      $display(";R myArray[2] = %b", myArray[2]);
+      $display(";R myArray[3] = %b", myArray[3]);
+      $display(";R out = %b", out);
+      $display(";R temp = %b", temp);
+    end
 endmodule
 

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-//mannualy select
+//manualy select
 bool            user_select_branch = false;
 
 
@@ -26,6 +26,7 @@ ivl_design_t	g_design = 0;
 const char*     g_output_file = "conquest_dut.v";
 const char*     g_tb_file = "conquest_tb.v";
 const char*		g_data_mem = "data.mem";
+const char*		g_data_mem_step = "data_step.mem";
 const char*		g_data_state = "data.state";
 CTDataMem		g_data;
 clock_t         start_time;
@@ -33,9 +34,14 @@ bool            is_new_block = false;
 //Parameters
 uint			g_unroll;
 uint			g_step;
-uint			g_fuzzing;
 const char*     g_clock_sig_name;
 const char*     g_reset_sig_name;
 const char*     g_reset_edge_active;
-uint            g_random_sim_num = 3;
+uint            g_random_sim_num;
 uint            prob_num = 50;
+
+/*! \brief The name of experiment result file*/
+const char*      g_name_exp_res = "exp_res.txt";
+
+/*! \brief Global experiment result file*/
+FILE*            g_exp_res;

@@ -6,14 +6,14 @@
 using namespace std;
 
 CTDataMem::CTDataMem(){
-    fuzzing = 0;
-	unroll = 0;
+	clk = 0;
+    step = 0;
 	width = 0;
 }
 
 // load data from file
 bool CTDataMem::load(const char* file) {
-	data.clear();
+	input_vector.clear();
     ifstream mem(file);
     if(!mem.is_open()){
         return false;
@@ -21,7 +21,7 @@ bool CTDataMem::load(const char* file) {
     string line;
     // read each line without '\n'
     while(mem >> line){
-        data.push_back(line);
+        input_vector.push_back(line);
     }
     mem.close();
     return true;
@@ -30,7 +30,7 @@ bool CTDataMem::load(const char* file) {
 //Dump data to file
 void CTDataMem::dump(const char* file) {
     ofstream mem(file);
-    for(auto line:data){
+    for(auto line:input_vector){
         mem << line << '\n';
     }
     mem.close();
@@ -38,57 +38,19 @@ void CTDataMem::dump(const char* file) {
 
 
 
-// Xiangchen: This function generates input vectors according to the step
-void CTDataMem::generate_step() {
-    step = g_step;
-    assert(step);
-    assert(width);
-    std::vector<std::string> in_Vector; 
-    const uint count = width >> 4;
-    const uint extra = width & 0b1111;
-
-    for(uint k=0; k<=step; k++){
-        std::string temp_Vector;
-        uint num = rand();
-        for(uint j=0; j < extra; j++){
-            temp_Vector += '0' + (num & 1);
-            num >>= 1;
-        }
-        for(uint i=0; i < count; i++){
-            num = rand();
-            for(uint j=0; j < 16; j++){
-                temp_Vector += '0' + (num & 1);
-                num >>= 1;
-            }
-        }
-        if(enable_obs_padding){
-            temp_Vector[0] = '0' + (k & 1);
-        }
-        
-        in_Vector.push_back(temp_Vector); 
-    }
-    for (const std::string& str : in_Vector) {
-        data.push_back(str);
-    }
-    dump(g_data_mem);
-}
-    
-
 // Yangdi: Be careful when using rand()
 // It generates 31 bits of random number in lab machine
 // Xiangchen: This function generates fuzzing number input vectors
 void CTDataMem::generate() {
-    // fuzzing = g_fuzzing;
-    unroll = g_unroll;
-    // assert(fuzzing);
-    assert(unroll);
+    step = g_step;
+    assert(step);
     assert(width);
-    data.clear();
+    input_vector.clear();
 
     // We want to use 16 bits from each rand()
     const uint count = width >> 4;
     const uint extra = width & 0b1111;
-    for(uint k=0; k<=unroll; k++){
+    for(uint k=0; k<step; k++){
         string in_vector;
         uint num = rand();
         for(uint j=0; j < extra; j++){
@@ -105,9 +67,9 @@ void CTDataMem::generate() {
         if(enable_obs_padding){
             in_vector[0] = '0' + (k & 1);
         }
-        data.push_back(in_vector);
+        input_vector.push_back(in_vector);
     }
-    dump(g_data_mem);
+    dump(g_data_mem_step);
 }
 
 sig_pos* CTDataMem::add_input(string name, uint port_width){
@@ -121,7 +83,7 @@ sig_pos* CTDataMem::add_input(string name, uint port_width){
 }
 
 void CTDataMem::modify(uint clock, const sig_pos* sig, const std::string &value){
-	string &str = data[clock];
+	string &str = input_vector[clock];
     str.replace(str.length() - sig->msb - 1, sig->width, value);
 }
 
@@ -134,15 +96,15 @@ bool CTDataMem::update_input_vectors(const char* src_file){
 	while(getline(f_in, line)){
         string name;
         uint clock = 0;
-        
+    
         //if the line contain "(function" or the first char is " ", continue
         if(line.find("(function") != string::npos || line[0] == ' '){
             continue;
         }
         //parse
-        uint pos = 3;
-        while(line[pos] != ' ') pos++;
-        uint mark1 = pos + 3;
+        uint pos = 3;//标注第一个空格开始的位置
+        while(line[pos] != ' ') pos++;//标注信号与值之间的空格
+        uint mark1 = pos + 3;//标注值开始的位置
         line[pos--] = 0;
         while(line[pos] != '_') pos--;
         name = line.substr(3, (pos-3));
@@ -154,10 +116,10 @@ bool CTDataMem::update_input_vectors(const char* src_file){
                 pos++;
             }
             //Yangdi: skip clock 0
-            if (clock == 0) continue;
+            // if (clock == 0) continue;
             pos = mark1 + 1;
             while(line[pos] != ')') pos++;
-            modify(clock - 1, it->second, line.substr(mark1, pos - mark1));
+            modify(clock, it->second, line.substr(mark1, pos - mark1));
         }
     }
     return true;
@@ -167,3 +129,11 @@ void CTDataMem::update_and_dump(const char* src_file, const char* dest_file){
 	update_input_vectors(src_file);
 	dump(dest_file);
 }
+
+void CTDataMem::connect(const CTDataMem& src) {
+    for(uint i = 0; i < src.input_vector.size(); i++) {
+        this->input_vector.push_back(src.input_vector[i]);
+    }
+}
+
+

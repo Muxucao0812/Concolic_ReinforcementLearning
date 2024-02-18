@@ -955,6 +955,7 @@ SMTNonBlockingAssign::SMTNonBlockingAssign(SMTExpr* lval, SMTExpr* rval) :
 //-----------------------------SMT Branch---------------------------------------
 uint SMTBranch::total_branch_count;
 uint SMTBranch::covered_branch_count=0;
+uint SMTBranch::target_count;
 uint SMTBranch::saved_total_branch;
 uint SMTBranch::saved_covered_branch;
 vector<SMTBranch*> SMTBranch::all_branches_list;
@@ -983,12 +984,11 @@ SMTBranch::~SMTBranch() {
 }
 
 void SMTBranch::set_covered_clk(uint sim_num, uint clock) {
-	// assert(clock <= g_fuzzing);
 	coverage[clock] = true;
 	if(!is_covered()){
 		set_covered(sim_num);
 		covered_branch_count++;
-		if(covered_branch_count == total_branch_count){
+		if(SMTBasicBlock::target_list.size() == 0){
 			end_concolic();
 		}
 	}
@@ -1825,19 +1825,28 @@ void SMTBasicBlock::print_all(ofstream &out) {
     out << "*/\n\n";
 }
 
-void SMTBasicBlock::print_uncovered_targets() {
+
+
+void SMTBasicBlock::print_cover_result() {
+
+	uint uncovered_targets_count = 0;
     g_uncovered_targets = fopen(g_uncovered_targets_file, "w");
     if (g_uncovered_targets == nullptr) {
         std::cerr << "Failed to open file: " << g_uncovered_targets_file << std::endl;
         return;
     }
 
-    for (auto it : target_list) {
+    for (auto it : SMTBasicBlock::target_list) {
         if (it->assign_list.size() && !it->assign_list[0]->is_covered()) {
             fprintf(g_uncovered_targets, "%d\n", it->assign_list[0]->id);
+			uncovered_targets_count++;
         }
     }
     fclose(g_uncovered_targets); // Close the file after writing
+// 	printf("Covered targets: %d, Uncovered targets: %d, Coverage: %.2f%%\n", 
+//        SMTBranch::target_count - uncovered_targets_count, 
+//        uncovered_targets_count, 
+//        100.0 * (double)(SMTBranch::target_count - uncovered_targets_count) / SMTBranch::target_count);
 }
 
 
@@ -1979,8 +1988,40 @@ void SMTBasicBlock::update_all_distances() {
 
 //--------------------------------SMT Path--------------------------------------
 SMTPath::SMTPath(CTDataMem& curr_data) {
-    data = curr_data;
+    data_step = curr_data;
 }
+
+void SMTPath::Dump(const char* file1, const char* file2) {
+	// data dump into g_data_mem
+	// data_step dump into g_data_mem_step
+	this->data.dump(file1);
+	this->data_step.dump(file2);
+}
+	
+
+
+void SMTPath::UpdatePath() {
+	// add the data_step into data
+	this -> data.in_ports = this -> data_step.in_ports;
+    this->data.set_width(this->data_step.get_width());
+    this->data.set_clk(this->data_step.get_step() + this->data.get_clk());
+
+    for (uint i = 0; i < this->data_step.get_step(); i++) {
+        this->data.add_to_input_vector(this->data_step.get_input_vector()[i]);
+    }
+}
+
+void SMTPath::ConnectPath(SMTPath* otherPath){
+	// add the data_step into data
+    this->data.set_clk(this->data_step.get_step() + this->data.get_clk());
+
+	// connect the data_step of otherPath); to the data of this
+	for(uint i = 0; i < otherPath->data_step.get_step(); i++){
+		this->data.add_to_input_vector(otherPath->data_step.get_input_vector()[i]);
+	}
+
+}
+
 
 SMTPath::~SMTPath() {	
 }

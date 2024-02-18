@@ -16,33 +16,33 @@
 ;R outp = 1
 ;R overflw = 0
 ;A 19
-;A 21
-;A 23
+;A 20
+;A 22
 ;A 24
 ;A 25
 ;_C          3
-;A 33
-;A 35
-;A 37
-;A 38
-;A 39
+;A 40
+;A 41
+;A 43
+;A 45
+;A 46
 ;R outp = 1
 ;R overflw = 0
 ;_C          4
 ;R outp = 0
 ;R overflw = 0
-;A 47
-;A 48
-;A 50
-;A 52
-;A 53
+;A 54
+;A 55
+;A 57
+;A 59
+;A 60
 ;_C          5
 ;A 12
 ;A 13
 ;A 15
 ;A 17
 ;A 18
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
 ;_C          6
 ;R outp = 1
@@ -54,46 +54,46 @@
 ;A 32
 ;_C          7
 ;A 40
-;A 42
-;A 44
+;A 41
+;A 43
 ;A 45
 ;A 46
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
 ;_C          8
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
-;A 47
-;A 49
-;A 51
-;A 52
-;A 53
+;A 54
+;A 55
+;A 57
+;A 59
+;A 60
 ;_C          9
-;A 5
-;A 7
-;A 9
-;A 10
-;A 11
+;A 12
+;A 14
+;A 16
+;A 17
+;A 18
 ;R outp = 0
 ;R overflw = 0
 ;_C         10
 ;R outp = 1
-;R overflw = 0
+;R overflw = 1
 ;A 19
-;A 20
-;A 22
+;A 21
+;A 23
 ;A 24
 ;A 25
 ;_C         11
-;A 40
-;A 42
-;A 44
-;A 45
-;A 46
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
 ;R outp = 1
 ;R overflw = 0
 ;_C         12
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
 ;A 47
 ;A 49
@@ -102,52 +102,52 @@
 ;A 53
 ;_C         13
 ;A 5
-;A 7
-;A 9
+;A 6
+;A 8
 ;A 10
 ;A 11
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
 ;_C         14
 ;R outp = 1
 ;R overflw = 0
-;A 19
-;A 21
-;A 23
-;A 24
-;A 25
+;A 26
+;A 27
+;A 29
+;A 31
+;A 32
 ;_C         15
-;A 33
-;A 35
-;A 37
-;A 38
-;A 39
-;R outp = 1
+;A 40
+;A 41
+;A 43
+;A 45
+;A 46
+;R outp = 0
 ;R overflw = 0
 ;_C         16
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
-;A 47
-;A 48
-;A 50
-;A 52
-;A 53
+;A 54
+;A 55
+;A 57
+;A 59
+;A 60
 ;_C         17
 ;A 12
-;A 14
-;A 16
+;A 13
+;A 15
 ;A 17
 ;A 18
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
 ;_C         18
 ;R outp = 1
 ;R overflw = 1
-;A 19
-;A 21
-;A 23
-;A 24
-;A 25
+;A 26
+;A 28
+;A 30
+;A 31
+;A 32
 ;_C         19
 ;A 33
 ;A 35
@@ -170,7 +170,7 @@
 ;A 9
 ;A 10
 ;A 11
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
 ;_C         22
 ;R outp = 1
@@ -186,7 +186,7 @@
 ;A 37
 ;A 38
 ;A 39
-;R outp = 0
+;R outp = 1
 ;R overflw = 0
 ;_C         24
 ;R outp = 1
@@ -198,8 +198,8 @@
 ;A 53
 ;_C         25
 ;A 5
-;A 7
-;A 9
+;A 6
+;A 8
 ;A 10
 ;A 11
 ;R outp = 1
@@ -207,38 +207,38 @@
 ;_C         26
 ;R outp = 1
 ;R overflw = 0
-;A 19
-;A 20
-;A 22
-;A 24
-;A 25
+;A 26
+;A 27
+;A 29
+;A 31
+;A 32
 ;_C         27
 ;A 40
-;A 41
-;A 43
+;A 42
+;A 44
 ;A 45
 ;A 46
-;R outp = 1
-;R overflw = 0
-;_C         28
 ;R outp = 0
 ;R overflw = 0
-;A 54
-;A 55
-;A 57
-;A 59
-;A 60
+;_C         28
+;R outp = 1
+;R overflw = 0
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
 ;_C         29
-;A 12
-;A 14
-;A 16
-;A 17
-;A 18
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
 ;R outp = 0
 ;R overflw = 0
 ;_C         30
 ;R outp = 1
-;R overflw = 1
+;R overflw = 0
 ;A 19
 ;A 21
 ;A 23
