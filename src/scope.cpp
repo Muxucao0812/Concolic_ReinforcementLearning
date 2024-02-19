@@ -279,18 +279,20 @@ static void emit_module_port_defs(ivl_scope_t scope) {
 }
 
 void emit_module_variables_display(){
-	fprintf(g_out, "%*c// Displaying module variables\n", 4, ' ');
-	fprintf(g_out, "%*calways @(posedge %s) begin\n", 4, ' ', g_clock_sig_name);
+	fprintf(g_out, "%*c// Displaying module variables\n", g_ind, ' ');
+	fprintf(g_out, "%*cbegin\n", g_ind, ' ');
+	g_ind += g_ind_incr;
     for(auto sig: SMTSigCore::get_reg_list()){
 		if(sig->is_array == false){
-        	fprintf(g_out, "%*c$display(\";R %s = %%b\", %s);\n", 6, ' ', sig->get_name().c_str(), sig->get_name().c_str());
+        	fprintf(g_out, "%*c$display(\";R %s = %%b\", %s);\n", g_ind, ' ', sig->get_name().c_str(), sig->get_name().c_str());
 		}else{
 			for (uint i = 0; i < static_cast<uint>(std::pow(2, sig->index_width)); i++) {
-				fprintf(g_out, "%*c$display(\";R %s[%d] = %%b\", %s[%d]);\n", 6, ' ', sig->get_name().c_str(), i, sig->get_name().c_str(), i);
+				fprintf(g_out, "%*c$display(\";R %s[%d] = %%b\", %s[%d]);\n", g_ind, ' ', sig->get_name().c_str(), i, sig->get_name().c_str(), i);
 			}
 		}
 	}
-	fprintf(g_out, "%*cend\n", 4, ' ');
+	g_ind -= g_ind_incr;
+	fprintf(g_out, "%*cend\n", g_ind, ' ');
 };
 
 // Emit root module
@@ -325,9 +327,6 @@ void emit_root(ivl_scope_t root) {
 
 	/* Output the initial/always blocks for this module. */
 	ivl_design_process(g_design, (ivl_process_f) find_process, root);
-
-	// Output the variables printed of this module
-	emit_module_variables_display();
 
 	// Output the endmodule
 	fprintf(g_out, "endmodule\n\n");

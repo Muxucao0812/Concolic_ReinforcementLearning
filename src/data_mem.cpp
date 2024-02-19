@@ -41,10 +41,11 @@ void CTDataMem::dump(const char* file) {
 // Yangdi: Be careful when using rand()
 // It generates 31 bits of random number in lab machine
 // Xiangchen: This function generates fuzzing number input vectors
-void CTDataMem::generate() {
+void CTDataMem::generate(const char* file) {
     step = g_step;
     assert(step);
     assert(width);
+    clk = step;
     input_vector.clear();
 
     // We want to use 16 bits from each rand()
@@ -69,7 +70,7 @@ void CTDataMem::generate() {
         }
         input_vector.push_back(in_vector);
     }
-    dump(g_data_mem_step);
+    dump(file);
 }
 
 sig_pos* CTDataMem::add_input(string name, uint port_width){
@@ -87,7 +88,7 @@ void CTDataMem::modify(uint clock, const sig_pos* sig, const std::string &value)
     str.replace(str.length() - sig->msb - 1, sig->width, value);
 }
 
-bool CTDataMem::update_input_vectors(const char* src_file){
+bool CTDataMem::update_input_vectors(const char* src_file, uint clock_limitation){
 	ifstream f_in(src_file);
 	if(!f_in.is_open()){
 		return false;
@@ -116,17 +117,26 @@ bool CTDataMem::update_input_vectors(const char* src_file){
                 pos++;
             }
             //Yangdi: skip clock 0
-            // if (clock == 0) continue;
+            if (clock == 0) continue;
             pos = mark1 + 1;
             while(line[pos] != ')') pos++;
-            modify(clock, it->second, line.substr(mark1, pos - mark1));
+            if(clock <= clock_limitation){
+                modify(clock-1, it->second, line.substr(mark1, pos - mark1));
+            }else{
+                continue;
+            }
+ 
         }
     }
     return true;
 }
 
-void CTDataMem::update_and_dump(const char* src_file, const char* dest_file){
-	update_input_vectors(src_file);
+void CTDataMem::clear_input_vector(){
+    input_vector.clear();
+}
+
+void CTDataMem::update_and_dump(const char* src_file, const char* dest_file, uint clock){
+	update_input_vectors(src_file, clock);
 	dump(dest_file);
 }
 
@@ -135,5 +145,24 @@ void CTDataMem::connect(const CTDataMem& src) {
         this->input_vector.push_back(src.input_vector[i]);
     }
 }
+
+void CTDataMem::intercept(const CTDataMem& source, uint start, uint end) {
+    // 清空当前的input_vector
+    this->input_vector.clear();
+    this->in_ports = source.in_ports;
+    this->width = source.width;
+    this->clk = end;
+   
+    // 从source的input_vector中截取部分数据并添加到当前对象的input_vector中
+    if (end > source.input_vector.size()) {
+        end = source.input_vector.size();
+    }
+    if (start < end) {
+        this->input_vector.insert(this->input_vector.end(),
+                                  source.input_vector.begin() + start,
+                                  source.input_vector.begin() + end);
+    }
+}
+
 
 

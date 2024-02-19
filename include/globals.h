@@ -26,6 +26,7 @@ extern const char*		g_data_mem;
 extern const char*		g_data_mem_step;
 extern const char*		g_data_state;
 extern CTDataMem		g_data;
+extern CTDataMem		g_data_step;
 extern clock_t          start_time;
 
 

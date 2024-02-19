@@ -174,6 +174,7 @@ void generate_tb(ivl_scope_t root){
             ivl_signal_port_t port_type = ivl_scope_mod_module_port_type(root, i);
             if(port_type == IVL_SIP_INPUT){
 				g_data.add_input(name, temp_width);
+                g_data_step.add_input(name, temp_width);
 				is_init_val_req = true;
             } else if(port_type == IVL_SIP_OUTPUT){
                 type = "wire";
@@ -194,6 +195,7 @@ void generate_tb(ivl_scope_t root){
     }
     if(enable_obs_padding){
 		g_data.add_input("__obs", 1);
+        g_data_step.add_input("__obs", 1);
         fprintf(f_tb, "%*creg  __obs;\n", 4, ' ');
     }
     if(!clk_found){
@@ -224,7 +226,7 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "\n%*c// Generated internal use signals\n", 4, ' ');
         fprintf(f_tb, "%*creg  [31:0] _conc_pc;\n", 4, ' ');
         fprintf(f_tb, "%*creg  [%u:0] _conc_opcode;\n", 4, ' ', g_data.get_width() - 1);
-        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_step);
+        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_step-1);
 
         //Dump clk toggle
         fprintf(f_tb, "\n%*c// Generated clock pulse\n", 4, ' ');
@@ -254,7 +256,7 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "%*c%s = 1'b0;\n", 8, ' ', g_clock_sig_name);
         fprintf(f_tb, "%*c%s = %s;\n", 8, ' ', g_reset_sig_name, reset_edge_inactive);
         fprintf(f_tb, "%*c_conc_pc = 32'b0;\n", 8, ' ');
-        fprintf(f_tb, "%*c$readmemb(\"%s\", _conc_ram);\n", 8, ' ', g_data_mem_step);
+        fprintf(f_tb, "%*c$readmemb(\"%s\", _conc_ram);\n", 8, ' ', g_data_mem);
 
         fprintf(f_tb, "%*c#2 %s = 1'b1;\n", 8, ' ', g_clock_sig_name);
         fprintf(f_tb, "%*c%s = %s;\n", 8, ' ', g_reset_sig_name, g_reset_edge_active);

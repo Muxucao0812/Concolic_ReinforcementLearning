@@ -35,6 +35,12 @@ static inline void emit_block_begin(){
 static inline void emit_block_end(){
 	assert(g_ind >= g_ind_incr);
 	g_ind -= g_ind_incr;
+	if(g_ind == 4){
+		g_ind += g_ind_incr;
+		// Output the variables printed of this module
+		emit_module_variables_display();
+		g_ind -= g_ind_incr;
+	}
 	fprintf(g_out, "%*cend\n", g_ind, ' ');
 	single_indent = 0;
 }

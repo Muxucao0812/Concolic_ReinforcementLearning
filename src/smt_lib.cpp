@@ -1988,36 +1988,34 @@ void SMTBasicBlock::update_all_distances() {
 
 //--------------------------------SMT Path--------------------------------------
 SMTPath::SMTPath(CTDataMem& curr_data) {
-    data_step = curr_data;
+    data = curr_data;
 }
 
-void SMTPath::Dump(const char* file1, const char* file2) {
+void SMTPath::Dump(const char* file) {
 	// data dump into g_data_mem
-	// data_step dump into g_data_mem_step
-	this->data.dump(file1);
-	this->data_step.dump(file2);
+	this->data.dump(file);
+
 }
 	
 
+// void SMTPath::UpdatePath() {
+// 	// add the data_step into data
+// 	this -> data_step.in_ports = this -> data.in_ports;
+//     this->data_step.set_width(this->data.get_width());
+//     this->data_step.set_clk(this->data.get_step() + this->data.get_clk());
 
-void SMTPath::UpdatePath() {
-	// add the data_step into data
-	this -> data.in_ports = this -> data_step.in_ports;
-    this->data.set_width(this->data_step.get_width());
-    this->data.set_clk(this->data_step.get_step() + this->data.get_clk());
-
-    for (uint i = 0; i < this->data_step.get_step(); i++) {
-        this->data.add_to_input_vector(this->data_step.get_input_vector()[i]);
-    }
-}
+//     for (uint i = 0; i < this->data.get_step(); i++) {
+//         this->data.add_to_input_vector(this->data.get_input_vector()[i]);
+//     }
+// }
 
 void SMTPath::ConnectPath(SMTPath* otherPath){
 	// add the data_step into data
-    this->data.set_clk(this->data_step.get_step() + this->data.get_clk());
+    this->data.set_clk(this->data.get_step() + this->data.get_clk());
 
 	// connect the data_step of otherPath); to the data of this
-	for(uint i = 0; i < otherPath->data_step.get_step(); i++){
-		this->data.add_to_input_vector(otherPath->data_step.get_input_vector()[i]);
+	for(uint i = 0; i < otherPath->data.get_step(); i++){
+		this->data.add_to_input_vector(otherPath->data.get_input_vector()[i]);
 	}
 
 }

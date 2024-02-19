@@ -29,6 +29,7 @@ const char*		g_data_mem = "data.mem";
 const char*		g_data_mem_step = "data_step.mem";
 const char*		g_data_state = "data.state";
 CTDataMem		g_data;
+CTDataMem		g_data_step;
 clock_t         start_time;
 bool            is_new_block = false;       
 //Parameters

@@ -374,7 +374,7 @@ static bool solve_constraints(uint clock) {
 		yices_print_model(f_out, model);
 		// yices_print_model(stdout, model);
 		fclose(f_out);
-		g_data.update_and_dump("model.log", g_data_mem);
+		g_data.update_and_dump("model.log", g_data_mem, clock);
 		yices_free_model(model);
 	}
 	return is_sat;
@@ -434,15 +434,15 @@ void explore_one_step(SMTPath* curr_path) {
 	SMTPath* step_path = NULL;
 
 	// generate random inputs and add to data
-	g_data.generate();
-	step_path = new SMTPath(g_data);
+	g_data_step.generate(g_data_mem_step);
+	step_path = new SMTPath(g_data_step);
 	curr_path->ConnectPath(step_path);
-	g_data = curr_path->data;
+
 	// dump path to file
-	curr_path->Dump(g_data_mem, g_data_mem_step);
-	update_vvp(curr_path->data.get_clk());
+	curr_path->Dump(g_data_mem);
 
 	// get the simulation clk and build the stack
+	update_vvp(curr_path->data.get_clk());
 	sim_clk = curr_path->data.get_clk();
 	simulate_build_stack(sim_clk);  
 }
@@ -670,6 +670,7 @@ static void check_satisfiability(){
 static SMTPath* concolic_iteration(SMTPath *curr_path) {
 	SMTPath *init_path = NULL;
 	init_path = new SMTPath(*curr_path);
+
     SMTPath *next_path = NULL;
 	SMTPath *step_path = NULL;
     // SMTPath* step_path = NULL;
@@ -692,7 +693,7 @@ static SMTPath* concolic_iteration(SMTPath *curr_path) {
         //create path
         step_path = new SMTPath(g_data);
     }
-	init_path->ConnectPath(step_path);
+	// init_path->ConnectPath(step_path);
 	next_path = init_path;
 
 	return next_path;
@@ -728,11 +729,13 @@ void multi_coverage() {
 	// ofstream f_cfg("cfg");
 	// SMTBasicBlock::print_all(f_cfg);
 	// f_cfg.close();
+	
+	// generate random seed
+	srand(time(NULL));
 	//random simulations
-	srand(1234);
 	for(uint i=0; i<g_random_sim_num; i++){
 		//generate random inputs
-		g_data.generate();
+		g_data.generate(g_data_mem);
 		simulate_build_stack();   
 		//save path
 		path = new SMTPath(g_data);
@@ -766,9 +769,7 @@ void multi_coverage() {
 			//Yangdi: Critical Error of first version
 			//After selecting the path, signal clock versions need to be updated
 			
-			path->UpdatePath();
-			path->Dump(g_data_mem, g_data_mem_step);
-
+			path->Dump(g_data_mem);
 			simulate_build_stack();
 		}
 		//do iterations till not covered or iteration limit reached
@@ -801,7 +802,7 @@ void multi_coverage() {
 			target->closest_path_distance+=iteration_limit / 5;
 			//generate random inputs
 			for (uint i = 0; i < 2; i++) {
-				g_data.generate();
+				g_data.generate(g_data_mem);
 				simulate_build_stack();   
 				//save path
 				path = new SMTPath(g_data);

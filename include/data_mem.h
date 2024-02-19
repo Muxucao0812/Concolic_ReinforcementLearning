@@ -34,13 +34,13 @@ public:
     void dump(const char* dest_file);
     
     //Generate random bits in data, then dump to file
-    void generate();
+    void generate(const char* file);
 
     //Add input signal name to in_ports
     sig_pos* add_input(std::string name, uint port_width);
 	
 	//Read src_file (output of constraint solver), update variables, and dump output
-	void update_and_dump(const char* src_file, const char* dest_file);
+	void update_and_dump(const char* src_file, const char* dest_file, uint clock);
 	
     //Input ports mapped with their name
 	std::map<std::string, sig_pos*> in_ports;	
@@ -48,11 +48,18 @@ public:
     // Connect two vectors
     void connect(const CTDataMem& src);
 
+    // Intercept one vector
+    void intercept(const CTDataMem& source, uint start, uint end);
+
+    //clear all data
+    void clear_input_vector();
+
+
 private:
     //modify a range of bits
 	void modify(uint clock, const sig_pos* sig, const std::string &value);
     //Read src_file (output of constraint solver) and update variables
-	bool update_input_vectors(const char* src_file);
+	bool update_input_vectors(const char* src_file, uint clock_limitation);
 
     std::vector<std::string> input_vector;			 //structure for holding data    
     uint width;

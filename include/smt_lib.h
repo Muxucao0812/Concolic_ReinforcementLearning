@@ -582,26 +582,14 @@ public:
 	SMTPath(CTDataMem &curr_data);
 	virtual ~SMTPath();
 
-	void Dump(const char* file1, const char* file2);
-	void UpdatePath();
+	void Dump(const char* file);
+	// void UpdatePath();
 	void ConnectPath(SMTPath* otherPath);
 
-	// 拷贝构造函数
-    SMTPath(const SMTPath& other) : data(other.data), data_step(other.data_step) {
-        // 深拷贝
-    }
 
-    // 拷贝赋值操作符
-    SMTPath& operator=(const SMTPath& other) {
-        if (this != &other) { // 防止自赋值
-            data = other.data; // 假设CTDataMem支持赋值操作
-            data_step = other.data_step;
-        }
-        return *this;
-    }
 
 	CTDataMem data;
-	CTDataMem data_step;
+
 };
 
 //-------------------------------SMT State--------------------------------------

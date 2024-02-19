@@ -174,16 +174,16 @@ module b11(x_in, stbi, clock, reset, x_out, __obs);
                     end
             endcase
         end
+        // Displaying module variables
+        begin
+            $display(";R cont = %b", cont);
+            $display(";R cont1 = %b", cont1);
+            $display(";R cont1_inv = %b", cont1_inv);
+            $display(";R r_in = %b", r_in);
+            $display(";R stato = %b", stato);
+            $display(";R x_out = %b", x_out);
+        end
     end
 
-    // Displaying module variables
-    always @(posedge clock) begin
-      $display(";R cont = %b", cont);
-      $display(";R cont1 = %b", cont1);
-      $display(";R cont1_inv = %b", cont1_inv);
-      $display(";R r_in = %b", r_in);
-      $display(";R stato = %b", stato);
-      $display(";R x_out = %b", x_out);
-    end
 endmodule
 
