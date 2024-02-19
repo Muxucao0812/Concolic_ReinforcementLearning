@@ -31,10 +31,11 @@ const char*		g_data_state = "data.state";
 CTDataMem		g_data;
 CTDataMem		g_data_step;
 clock_t         start_time;
-bool            is_new_block = false;       
+bool            g_is_new_block = false;       
 //Parameters
 uint			g_unroll;
 uint			g_step;
+uint            g_sim_clk = 10;
 const char*     g_clock_sig_name;
 const char*     g_reset_sig_name;
 const char*     g_reset_edge_active;

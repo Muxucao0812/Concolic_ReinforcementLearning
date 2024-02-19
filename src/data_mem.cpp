@@ -138,6 +138,7 @@ void CTDataMem::clear_input_vector(){
 void CTDataMem::update_and_dump(const char* src_file, const char* dest_file, uint clock){
 	update_input_vectors(src_file, clock);
 	dump(dest_file);
+    dump(g_data_mem);
 }
 
 void CTDataMem::connect(const CTDataMem& src) {

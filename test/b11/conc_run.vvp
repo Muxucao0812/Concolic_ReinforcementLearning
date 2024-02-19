@@ -12,7 +12,7 @@ S_0x5555558c3bc0 .scope module, "conquest_tb" "conquest_tb" 2 1;
 v0x555555907cf0_0 .var "__obs", 0 0;
 v0x555555907db0_0 .var "_conc_opcode", 7 0;
 v0x555555907e70_0 .var "_conc_pc", 31 0;
-v0x555555907f60 .array "_conc_ram", 20 0, 7 0; 
+v0x555555907f60 .array "_conc_ram", 25 0, 7 0; 
 v0x555555908020_0 .var "clock", 0 0;
 v0x5555559080c0_0 .var "reset", 0 0;
 v0x555555908190_0 .var "stbi", 0 0;

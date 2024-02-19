@@ -42,7 +42,6 @@ static char sim_file_name[64];
 static char mem_file_name[64];
 static uint hash_table[1024*16];
 static uint sim_num;
-static uint sim_clk;
 
 
 static SMTBranch* selected_branch;
@@ -252,14 +251,14 @@ static void build_stack(uint sim_clk=g_step) {
 	char tag[16];
 	uint val;
 	
-	is_new_block = false;
+	g_is_new_block = false;
 
 	//constraints_stack.push_back(create_clock(0));
 	while(true){
 		fscanf(f_test, "%s%u", tag, &val);
 		if(strcmp(tag, ";_C") == 0){
 			clock = val;
-			if(clock == sim_clk + 1)	break;
+			if(clock == g_sim_clk + 1)	break;
 			constraints_stack.push_back(create_clock(clock));
             SMTSigCore::set_input_version(clock);
             SMTSigCore::commit_versions(clock);
@@ -280,10 +279,10 @@ static void build_stack(uint sim_clk=g_step) {
 	}
 
 	// examine if cover the new block
-	if(!is_new_block){
+	if(!g_is_new_block){
 		for(auto id:curr_ids){
 			if(prev_ids.find(id) == prev_ids.end()){
-				is_new_block = true;
+				g_is_new_block = true;
 				break;
 			}
 		}
@@ -291,7 +290,7 @@ static void build_stack(uint sim_clk=g_step) {
 	prev_ids = curr_ids;
 	curr_ids.clear();
 
-	// printf("If the new block is covered: %d\n", is_new_block);
+	// printf("If the new block is covered: %d\n", g_is_new_block);
 	fclose(f_test);
 }
 
@@ -374,7 +373,7 @@ static bool solve_constraints(uint clock) {
 		yices_print_model(f_out, model);
 		// yices_print_model(stdout, model);
 		fclose(f_out);
-		g_data.update_and_dump("model.log", g_data_mem, clock);
+		g_data_step.update_and_dump("model.log", g_data_mem_step, clock);
 		yices_free_model(model);
 	}
 	return is_sat;
@@ -419,14 +418,14 @@ static bool is_path_taken(br_cnst_t* alt_path){
 
 
 
-void simulate_build_stack(uint sim_clk=g_step) {
+void simulate_build_stack() {
 	//simulate
 	sim();
 	//reset variable versions to zero
 	SMTSigCore::clear_all_versions();
 	//build constraints stack
 	constraints_stack.clear();
-	build_stack(sim_clk);
+	build_stack(g_sim_clk);
 }
 
 
@@ -443,11 +442,11 @@ void explore_one_step(SMTPath* curr_path) {
 
 	// get the simulation clk and build the stack
 	update_vvp(curr_path->data.get_clk());
-	sim_clk = curr_path->data.get_clk();
-	simulate_build_stack(sim_clk);  
+	g_sim_clk = curr_path->data.get_clk();
+	simulate_build_stack();  
 }
 
-static bool find_next_cfg(uint init_clk, uint curr_clk) {
+static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	uint begin_clk = init_clk;
 	uint end_clk = curr_clk;
 
@@ -486,7 +485,7 @@ static bool find_next_cfg(uint init_clk, uint curr_clk) {
 	}
 	
 	//get the branches between begin and end
-	get_available_branches(branches, begin_clk, end_clk);
+	get_available_branches(branches, begin_clk+1, end_clk);
 
 	// //sort by distance
 	// sort(branches.begin(), branches.end(), compare_dist);
@@ -521,10 +520,14 @@ static bool find_next_cfg(uint init_clk, uint curr_clk) {
 				cnst++;
 			}
 
+	
 			//add mutated branch
 			smt_yices_assert(yices_context, it->br->update_term(), it->br);
 			
-		
+			g_data_step.clear_input_vector();
+			g_data_step.intercept(path->data, 0, clock);
+			g_data_step.dump(g_data_mem_step);
+
 			call_to_solver++;
 			check_satisfiability();
 			if(solve_constraints(clock)){
@@ -535,8 +538,10 @@ static bool find_next_cfg(uint init_clk, uint curr_clk) {
 				if(!enable_error_check){
 					it->br->set_covered_clk(sim_num+1, clock);
 				}
+				g_sim_clk = clock;
+				simulate_build_stack();
 				// Xiangchen: Adjust the probability
-				if(is_new_block){
+				if(g_is_new_block){
 					SMTBranch::increase_probability(selected_branch);
 				}else{
 					if(sim_num > prob_num){
@@ -623,7 +628,7 @@ static bool find_next_cfg(uint init_clk, uint curr_clk) {
 			// printf("[FOUND: CLOCK: %u, IDX: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->branch_probability, it->br->print().c_str());
 			
 			// Xiangchen: Adjust the probability
-			if(is_new_block){
+			if(g_is_new_block){
 				SMTBranch::increase_probability(selected_branch);
 			}else{
 				if(sim_num > prob_num){
@@ -670,9 +675,8 @@ static void check_satisfiability(){
 static SMTPath* concolic_iteration(SMTPath *curr_path) {
 	SMTPath *init_path = NULL;
 	init_path = new SMTPath(*curr_path);
-
     SMTPath *next_path = NULL;
-	SMTPath *step_path = NULL;
+
     // SMTPath* step_path = NULL;
 	if(enable_error_check){
 		//check satisfiability
@@ -687,15 +691,9 @@ static SMTPath* concolic_iteration(SMTPath *curr_path) {
 
 	explore_one_step(curr_path);
 
-	if(find_next_cfg(init_path->data.get_clk(), curr_path->data.get_clk())){
-		
-        simulate_build_stack();
-        //create path
-        step_path = new SMTPath(g_data);
+	if(find_next_cfg(curr_path, init_path->data.get_clk(), curr_path->data.get_clk())){
+        next_path = new SMTPath(g_data_step);
     }
-	// init_path->ConnectPath(step_path);
-	next_path = init_path;
-
 	return next_path;
 }
 

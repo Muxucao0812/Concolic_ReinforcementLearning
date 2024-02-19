@@ -1873,7 +1873,7 @@ void SMTBasicBlock::remove_covered_targets(uint iter) {
 		} else {
 			++it;
 		}
-        }
+	}
 }
 
 /*void SMTBasicBlock::remove_dominator_targets() {
