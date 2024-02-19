@@ -2,8 +2,8 @@ flag:tb=/home/meng/Code/concolic-testing/test/b06/conquest_tb.v
 flag:clk=clock
 flag:reset=reset
 flag:reset_edge=1
-flag:unroll=30
-flag:fuzzing=30
+flag:unroll=1000
+flag:step=10
 flag:random_sim=3
 basedir:/usr/local/lib/ivl
 module:/usr/local/lib/ivl/system.vpi

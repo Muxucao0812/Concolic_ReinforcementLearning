@@ -258,7 +258,7 @@ static void build_stack(uint sim_clk=g_step) {
 		fscanf(f_test, "%s%u", tag, &val);
 		if(strcmp(tag, ";_C") == 0){
 			clock = val;
-			if(clock == g_sim_clk + 1)	break;
+			if(clock == g_sim_clk )	break;
 			constraints_stack.push_back(create_clock(clock));
             SMTSigCore::set_input_version(clock);
             SMTSigCore::commit_versions(clock);
@@ -787,9 +787,6 @@ void multi_coverage() {
 			if(target->assign_list[0]->is_covered())
 				continue;
 			SMTBasicBlock::target_list.pop_front();
-			fprintf(g_exp_res,"Unreached %d\n",target->assign_list[0]->id);
-			writeLastFContentToFile("sim.log",g_exp_res);
-
 			continue;
 		}
 
@@ -813,11 +810,11 @@ void multi_coverage() {
 	}
 }
 
-void dump_branch_ids() {
-	if(file_exist("branch_ids")){
+void dump_branch_id() {
+	if(file_exist("branch_id")){
 		return ;
 	}else{
-		ofstream bisFile("branch_ids",ios::out);
+		ofstream bisFile("branch_id",ios::out);
 		uint assign_counts = SMTAssign::get_assign_count();
 		for(uint i = 0;i < assign_counts; ++i){
 			SMTAssign* assign = SMTAssign::get_assign(i);
@@ -834,6 +831,8 @@ void dump_branch_ids() {
 void start_concolic() {
 	sim_num = 0;
 	init();
+	// multi target to cover all
+	dump_branch_id();
 	uint target_count = select_target();
 	if(target_count == 0){
 		error("No target specified");
@@ -843,8 +842,6 @@ void start_concolic() {
 	SMTBranch::target_count = target_count;
 	start_time = clock();
 
-	// multi target to cover all
-	dump_branch_ids();
 	multi_coverage();
 	end_concolic();
 }
@@ -869,7 +866,6 @@ void end_concolic(){
 	// print uncovered targets to file
 	uint uncovered_target_count = SMTBasicBlock::target_list.size();
 	SMTBasicBlock::print_cover_result();
-	printf("\nUNC BRANCH: %u\n", uncovered_target_count);
 	
 	printf("\nCovered branch number: %d, Uncovered branch number: %d, Coverage rate: %.2f%%\n", SMTBranch::covered_branch_count,SMTBranch::total_branch_count-SMTBranch::covered_branch_count, ((float)(SMTBranch::covered_branch_count) / SMTBranch::total_branch_count) * 100.0);
 
