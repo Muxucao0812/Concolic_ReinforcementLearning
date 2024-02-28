@@ -965,8 +965,8 @@ SMTBranch::SMTBranch(SMTBranchNode* _parent_node, SMTBranchType type,
         type(type),
 		list_idx(_parent_node->branch_list.size()),
 		parent_node(_parent_node){
-	coverage = new bool[g_unroll+2];
-	memset(coverage, false, sizeof(bool)*(g_unroll+2));
+	coverage = new bool[g_unroll+10];
+	memset(coverage, false, sizeof(bool)*(g_unroll+10));
 	parent_node->branch_list.push_back(this);
 	covered_any_clock = false;
 	k_permit_covered = 0;
@@ -975,7 +975,7 @@ SMTBranch::SMTBranch(SMTBranchNode* _parent_node, SMTBranchType type,
 }
 
 bool SMTBranch::is_covered_clk(uint clock) {
-	assert(clock <= g_unroll);
+	assert(clock <= g_unroll+10);
 	return coverage[clock];
 }
 

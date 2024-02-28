@@ -44,7 +44,6 @@ const bool		enable_error_check = false;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
 const bool		enable_yices_debug = true;
-const uint      iteration_limit = 100;
 const uint      total_limit = 100;
 const uint      learning_limit = 10;
 unordered_map<SMTBasicBlock*, uint> iter_count;
@@ -631,7 +630,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 
 	//get branch unique index
 	std::vector<unsigned int> actions;
-	for(int i = 0;i < branches.size();++i){
+	for(std::vector<br_cnst_t*>::size_type i = 0;i < branches.size();++i){
 		actions.push_back(branches[i]->br->id);
 	}
 	//choose mutated branch
@@ -907,7 +906,7 @@ void step_coverage() {
 	SMTBasicBlock::remove_covered_targets(path->data.get_clk());
 
 	sim_num = g_random_sim_num;
-	uint start_iteration = sim_num;
+	// uint start_iteration = sim_num;
 	
 	//For every branch, it will give every branch a probability randomly
 	SMTBranch::random_probability();
@@ -924,8 +923,6 @@ void step_coverage() {
 		target->update_distance_from_adjacency_list();
 		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
 
-		// update iteration count
-		iter_count[target] ++;
 
 		if (target->closest_path && target->closest_path != path) {
 			path = target->closest_path;
@@ -936,9 +933,15 @@ void step_coverage() {
 	
 
 		while((path = concolic_iteration(path))){
+			if(path->data.get_clk() > g_unroll){
+				path->data.input_vector.clear();
+				iter_count[target] ++;
+			}
+			if(iter_count[target] >= total_limit){
+				break;
+			}
 			//check if target covered or iteration limit reached
-			if(target->assign_list[0]->is_covered() || path->data.get_clk() > g_unroll){
-				//erase covered target
+			if(target->assign_list[0]->is_covered()){
 				SMTBasicBlock::remove_covered_targets(path->data.get_clk());
 				sim_num++;
 				break;
