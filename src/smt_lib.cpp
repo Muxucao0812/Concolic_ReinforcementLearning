@@ -1711,6 +1711,7 @@ void SMTProcess::make_circular() {
 uint SMTBasicBlock::id_counter = 0;
 list<SMTBasicBlock*> SMTBasicBlock::target_list;
 list<SMTBasicBlock*> SMTBasicBlock::covered_target_list;
+list<SMTBasicBlock*> SMTBasicBlock::uncovered_target_list;
 std::vector<SMTBasicBlock*> SMTBasicBlock::block_list;
 SMTBasicBlock::SMTBasicBlock() : id(id_counter) {
     id_counter++;
@@ -1851,7 +1852,7 @@ void SMTBasicBlock::print_cover_result() {
     }
 
 	fprintf(g_cover_result, "Uncovered targets:\n");
-    for (auto it : SMTBasicBlock::target_list) {
+    for (auto it : SMTBasicBlock::uncovered_target_list) {
         if (it->assign_list.size() && !it->assign_list[0]->is_covered()) {
             fprintf(g_cover_result, "%d\n", it->assign_list[0]->id);
 			uncovered_targets_count++;

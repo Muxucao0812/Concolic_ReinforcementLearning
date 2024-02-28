@@ -12,7 +12,7 @@ S_0x55555595b720 .scope module, "conquest_tb" "conquest_tb" 2 1;
 v0x5555559d9be0_0 .var "__obs", 0 0;
 v0x5555559d9ca0_0 .var "_conc_opcode", 5 0;
 v0x5555559d9d60_0 .var "_conc_pc", 31 0;
-v0x5555559d9e20 .array "_conc_ram", 115 0, 5 0; 
+v0x5555559d9e20 .array "_conc_ram", 24 0, 5 0; 
 v0x5555559d9ee0_0 .var "clock", 0 0;
 v0x5555559d9f80_0 .var "k", 3 0;
 v0x5555559da020_0 .net "nl", 3 0, v0x5555559d9140_0;  1 drivers

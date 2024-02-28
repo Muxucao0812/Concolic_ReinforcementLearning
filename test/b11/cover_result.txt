@@ -1,0 +1,39 @@
+Uncovered targets:
+65
+Total uncovered targets number: 1
+Covered targets:
+1
+2
+8
+13
+15
+16
+19
+21
+28
+29
+32
+34
+38
+39
+20
+40
+45
+47
+51
+53
+57
+58
+59
+61
+69
+70
+71
+22
+33
+23
+52
+62
+46
+64
+Total covered targets number: 34

@@ -417,6 +417,7 @@ static void build_stack(uint sim_clk=g_step) {
         }
 	}
 
+	SMTState::print_state(g_data_state);
 
 	// examine if cover the new block
 	if(!g_is_new_block){
@@ -513,7 +514,7 @@ static bool solve_constraints(uint clock) {
 		yices_print_model(f_out, model);
 		// yices_print_model(stdout, model);
 		fclose(f_out);
-		g_data_step.update_and_dump("model.log", g_data_mem_step, clock);
+		g_data_step.update_and_dump("model.log", g_data_mem, clock);
 		yices_free_model(model);
 	}
 	return is_sat;
@@ -627,7 +628,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	//get the branches between begin and end
 	get_available_branches(branches, begin_clk+1, end_clk);
 
-	SMTState::print_state(g_data_state);
+	// SMTState::print_state(g_data_state);
 
 	//get branch unique index
 	std::vector<unsigned int> actions;
@@ -905,14 +906,14 @@ void step_coverage() {
 
 	// remove covered
 	SMTBasicBlock::remove_covered_targets(path->data.get_clk());
-	sim_num = g_random_sim_num;
+
 	// uint start_iteration = sim_num;
 	
 	//For every branch, it will give every branch a probability randomly
 	SMTBranch::random_probability();
 
 	while(!SMTBasicBlock::target_list.empty()){
-
+		sim_num = 0;
 		// erase covered target
 		SMTBasicBlock* target = SMTBasicBlock::target_list.front();
 		if (target->assign_list[0]->is_covered()) {
@@ -936,18 +937,18 @@ void step_coverage() {
 		while((path = concolic_iteration(path))){
 			SMTBasicBlock::print_cover_result();
 			if(path->data.get_clk() > g_unroll){
+				if(target->assign_list[0]->is_covered()){
+					SMTBasicBlock::remove_covered_targets(path->data.get_clk());
+					break;
+				}
 				path->data.clear_input_vector();
 				constraints_stack.clear();
 				sim_num ++;
-				g_data.generate(g_data_mem);
-				update_vvp(g_step);
-				g_sim_clk = g_step;
-				simulate_build_stack();
-				path = new SMTPath(g_data);
-
+				explore_one_step(path);
 			}
 			if(sim_num >= total_limit){
 				SMTBasicBlock::target_list.pop_front();
+				SMTBasicBlock::uncovered_target_list.push_back(target);
 				break;
 			}
 			//check if target covered or iteration limit reached
@@ -1129,10 +1130,10 @@ void end_concolic(){
     
 
 	
-	printf("\nCovered branch number: %d, Uncovered branch number: %d, Coverage rate: %.2f%%\n", SMTBranch::covered_branch_count,SMTBranch::total_branch_count-SMTBranch::covered_branch_count, ((float)(SMTBranch::covered_branch_count) / SMTBranch::total_branch_count) * 100.0);
+	printf("\nCovered branch number: %ld, Uncovered branch number: %ld, Coverage rate: %.2f%%\n",  SMTBasicBlock::covered_target_list.size(), SMTBasicBlock::uncovered_target_list.size(), (double)SMTBasicBlock::covered_target_list.size() / (SMTBranch::target_count) * 100);
 
 	printf("[TIME] %.2lf sec\n", (end_time - start_time)/double(CLOCKS_PER_SEC));
-    printf("[ITER] %u\n", sim_num);
+
 
 
     yices_free_context(yices_context);

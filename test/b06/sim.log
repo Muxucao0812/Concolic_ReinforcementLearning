@@ -1,5 +1,5 @@
 ;_C          0
-WARNING: conquest_tb.v:53: $readmemb(data.mem): Not enough words in the file for the requested range [0:20].
+WARNING: conquest_tb.v:53: $readmemb(data.mem): Not enough words in the file for the requested range [0:10].
 ;A 2
 ;A 3
 ;A 4
@@ -11,7 +11,7 @@ WARNING: conquest_tb.v:53: $readmemb(data.mem): Not enough words in the file for
 ;R state = 000
 ;R uscite = 00
 ;_C          1
-;_Input 010
+;_Input 011
 ;A 7
 ;A 9
 ;A 10
@@ -25,52 +25,37 @@ WARNING: conquest_tb.v:53: $readmemb(data.mem): Not enough words in the file for
 ;R state = 000
 ;R uscite = 00
 ;_C          2
-;_Input 100
+;_Input 101
 ;A 8
 ;A 11
 ;A 12
 ;A 17
-;A 19
-;A 23
-;A 24
-;A 25
+;A 18
+;A 20
+;A 21
+;A 22
 ;R ackout = 0
 ;R cc_mux = 01
 ;R enable_count = 0
 ;R state = 001
 ;R uscite = 01
 ;_C          3
-;_Input 000
-;A 8
-;A 11
-;A 12
-;A 26
-;A 28
-;A 32
-;A 33
-;A 34
-;R ackout = 1
-;R cc_mux = 10
-;R enable_count = 1
-;R state = 101
-;R uscite = 01
-;_C          4
-;_Input 111
+;_Input 011
 ;A 7
 ;A 9
 ;A 10
-;A 17
-;A 18
-;A 20
-;A 21
-;A 22
+;A 35
+;A 36
+;A 38
+;A 39
+;A 40
 ;R ackout = 1
-;R cc_mux = 01
+;R cc_mux = 11
 ;R enable_count = 1
-;R state = 001
-;R uscite = 01
-;_C          5
-;_Input 010
+;R state = 010
+;R uscite = 00
+;_C          4
+;_Input 110
 ;A 7
 ;A 9
 ;A 10
@@ -86,8 +71,83 @@ WARNING: conquest_tb.v:53: $readmemb(data.mem): Not enough words in the file for
 ;R enable_count = 0
 ;R state = 010
 ;R uscite = 00
+;_C          5
+;_Input 011
+;A 7
+;A 9
+;A 10
+;A 46
+;A 47
+;A 49
+;A 50
+;A 51
+;R ackout = 1
+;R cc_mux = 01
+;R enable_count = 1
+;R state = 011
+;R uscite = 01
 ;_C          6
-;_Input 110
+;_Input 011
+;A 7
+;A 9
+;A 10
+;A 46
+;A 47
+;A 49
+;A 50
+;A 51
+;R ackout = 0
+;R cc_mux = 01
+;R enable_count = 0
+;R state = 011
+;R uscite = 01
+;_C          7
+;_Input 101
+;A 8
+;A 11
+;A 12
+;A 46
+;A 47
+;A 49
+;A 50
+;A 51
+;R ackout = 0
+;R cc_mux = 01
+;R enable_count = 0
+;R state = 011
+;R uscite = 01
+;_C          8
+;_Input 001
+;A 8
+;A 11
+;A 12
+;A 46
+;A 47
+;A 49
+;A 50
+;A 51
+;R ackout = 1
+;R cc_mux = 01
+;R enable_count = 1
+;R state = 011
+;R uscite = 01
+;_C          9
+;_Input 101
+;A 8
+;A 11
+;A 12
+;A 46
+;A 47
+;A 49
+;A 50
+;A 51
+;R ackout = 1
+;R cc_mux = 01
+;R enable_count = 1
+;R state = 011
+;R uscite = 01
+;_C         10
+;_Input 010
 ;A 7
 ;A 9
 ;A 10
@@ -101,8 +161,8 @@ WARNING: conquest_tb.v:53: $readmemb(data.mem): Not enough words in the file for
 ;R enable_count = 1
 ;R state = 011
 ;R uscite = 01
-;_C          7
-;_Input 000
+;_C         11
+;_Input xxx
 ;A 8
 ;A 11
 ;A 12
@@ -116,81 +176,21 @@ WARNING: conquest_tb.v:53: $readmemb(data.mem): Not enough words in the file for
 ;R enable_count = 0
 ;R state = 001
 ;R uscite = 01
-;_C          8
-;_Input 101
-;A 8
-;A 11
-;A 12
-;A 26
-;A 27
-;A 29
-;A 30
-;A 31
-;R ackout = 1
-;R cc_mux = 10
-;R enable_count = 1
-;R state = 101
-;R uscite = 01
-;_C          9
-;_Input 001
-;A 8
-;A 11
-;A 12
-;A 55
-;A 56
-;A 58
-;A 59
-;A 60
-;R ackout = 1
-;R cc_mux = 11
-;R enable_count = 1
-;R state = 100
-;R uscite = 00
-;_C         10
-;_Input 101
-;A 8
-;A 11
-;A 12
-;A 55
-;A 56
-;A 58
-;A 59
-;A 60
-;R ackout = 1
-;R cc_mux = 11
-;R enable_count = 1
-;R state = 100
-;R uscite = 00
-;_C         11
-;_Input 010
-;A 7
-;A 9
-;A 10
-;A 55
-;A 57
-;A 61
-;A 62
-;A 63
-;R ackout = 1
-;R cc_mux = 11
-;R enable_count = 1
-;R state = 100
-;R uscite = 00
 ;_C         12
 ;_Input xxx
 ;A 8
 ;A 11
 ;A 12
-;A 64
-;A 66
-;A 70
-;A 71
-;A 72
-;R ackout = 0
+;A 26
+;A 28
+;A 32
+;A 33
+;A 34
+;R ackout = 1
 ;R cc_mux = 10
-;R enable_count = 0
-;R state = 110
-;R uscite = 11
+;R enable_count = 1
+;R state = 101
+;R uscite = 01
 ;_C         13
 ;_Input xxx
 ;A 8

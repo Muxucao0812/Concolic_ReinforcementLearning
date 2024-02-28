@@ -4,7 +4,8 @@ TOP_MODULE 	= b11
 CLK_NAME 	= clock
 RESET_NAME 	= reset
 RESET_EDGE 	= 1
-UNROLL_CYC	= 100
+UNROLL_CYC	= 30
+STEP        = 5
 TARGET		= 23
 OBJ_SRC 	= ./src/b11.v
 

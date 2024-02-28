@@ -1,4 +1,4 @@
-// Following code segment is generated from /home/meng/Code/concolic-testing/test/b06/src/b06.v:17
+// Following code segment is generated from ./src/b06.v:17
 module b06(eql, clock, reset, cont_eql, cc_mux, uscite, enable_count, ackout, __obs);
     input eql;
     input clock;
@@ -16,7 +16,7 @@ module b06(eql, clock, reset, cont_eql, cc_mux, uscite, enable_count, ackout, __
     reg [2:0] state = 3'b0;
     reg [1:0] uscite = 2'b0;
 
-    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b06/src/b06.v:47
+    // Following code segment is generated from ./src/b06.v:47
     always @(posedge clock) begin
         if ((reset == 1'b1)) begin
             state <= #1 3'b000; $display(";A 2");		//(assert (= state    0b000)) ;2
@@ -148,7 +148,7 @@ module b06(eql, clock, reset, cont_eql, cc_mux, uscite, enable_count, ackout, __
         begin
             $display(";R ackout = %b", ackout);
             $display(";R cc_mux = %b", cc_mux);
-            $display(";R enable_count = %b", enable_count);
+            $display(";R enable_count[0] = %b", enable_count[0]);
             $display(";R state = %b", state);
             $display(";R uscite = %b", uscite);
         end
