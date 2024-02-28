@@ -83,16 +83,6 @@ void post_processing(ivl_design_t design){
 }
 
 void extract_parameters(ivl_design_t design){
-
-
-    //extract step size
-    const char* step_size = ivl_design_flag(design, "step");
-    if(step_size == NULL){
-        error("Step size not given");
-    }
-    g_step = atoi(step_size);
-    
-    g_sim_clk = atoi(step_size);
     //extract unroll cycles
     const char* unroll_cyc = ivl_design_flag(design, "unroll");
 	if(unroll_cyc == NULL){
@@ -100,6 +90,13 @@ void extract_parameters(ivl_design_t design){
 	}
 	g_unroll = atoi(unroll_cyc);
 
+    //extract step size
+    const char* step_size = ivl_design_flag(design, "step");
+    if(step_size == NULL){
+        error("Step size not given");
+    }
+    g_step = atoi(step_size);
+    g_sim_clk = atoi(step_size);
 
     //extract clock signal name
     g_clock_sig_name = ivl_design_flag(design, "clk");

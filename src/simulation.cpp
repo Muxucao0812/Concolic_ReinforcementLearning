@@ -934,6 +934,7 @@ void step_coverage() {
 		selected_branch = NULL;
 	
 		while((path = concolic_iteration(path))){
+			SMTBasicBlock::print_cover_result();
 			if(path->data.get_clk() > g_unroll){
 				path->data.clear_input_vector();
 				constraints_stack.clear();
@@ -947,7 +948,6 @@ void step_coverage() {
 			}
 			if(sim_num >= total_limit){
 				SMTBasicBlock::target_list.pop_front();
-				SMTBasicBlock::uncovered_target_list.push_back(target);
 				break;
 			}
 			//check if target covered or iteration limit reached
@@ -963,12 +963,11 @@ void step_coverage() {
 				simulate_build_stack();   
 				path = new SMTPath(g_data);
 				target->SMTBasicBlock::update_path(path, constraints_stack);
-				sim_num++;
-				
+				sim_num++;	
 			}
-			if(path){
-				SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
-			}
+			// if(path){
+			// 	SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
+			// }
 		}
 
 

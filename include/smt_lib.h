@@ -563,7 +563,6 @@ public:
 	std::pair<uint, uint> distance_from_current_path(const std::vector<constraint_t*> &constraints_stack);
 	static std::list<SMTBasicBlock*> target_list;
 	static std::list<SMTBasicBlock*> covered_target_list;
-	static std::list<SMTBasicBlock*> uncovered_target_list;
 	SMTPath* closest_path;
 	uint* adjacency_list;
 	uint closest_path_distance = 0xFFFFFFF;

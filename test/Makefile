@@ -10,13 +10,13 @@ ifeq ($(IS_FLATTENED),true)
 all:
 	@iverilog -f files.f -o $(OBJ_INST) -t conquestMulti \
 		-ptb=conquest_tb.v -pclk=$(CLK_NAME) -preset=$(RESET_NAME) -preset_edge=$(RESET_EDGE) \
-		-punroll=$(UNROLL_CYC) -prandom_sim=$(RANDOM_SIM)
+		-punroll=$(UNROLL_CYC) -prandom_sim=$(RANDOM_SIM) -pstep=$(STEP)
 
 else
 all: $(OBJ_FLAT)
 	@iverilog $(OBJ_FLAT) -o $(OBJ_INST) -t conquestMulti \
         -ptb=conquest_tb.v -pclk=$(CLK_NAME) -preset=$(RESET_NAME) -preset_edge=$(RESET_EDGE) \
-        -punroll=$(UNROLL_CYC) -prandom_sim=$(RANDOM_SIM)
+        -punroll=$(UNROLL_CYC) -prandom_sim=$(RANDOM_SIM) -pstep=$(STEP)
 
 $(OBJ_FLAT): $(OBJ_SRC)
 	@flattenverilog -f files.f -top $(TOP_MODULE) -nobanner -out $(OBJ_FLAT) -remove_unused_nets
