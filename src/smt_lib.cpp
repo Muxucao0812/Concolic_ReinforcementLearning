@@ -1195,7 +1195,7 @@ void SMTBranch::clear_k_permit() {
 
 void SMTBranch::clear_coverage(uint min_clock) {
     for(auto it:all_branches_list){
-		for(uint clock = min_clock; clock <= g_unroll; clock++){
+		for(uint clock = min_clock; clock <= g_unroll+10; clock++){
             it->coverage[clock] = false;
         }
 	}
@@ -1373,7 +1373,7 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
 		bv_type = yices_bv_type(width);
 
 		//create g_unroll number of terms
-		for(uint i = 0; i <= g_unroll; i++){
+		for(uint i = 0; i <= g_unroll+10; i++){
 			term_t new_term = yices_new_uninterpreted_term(bv_type);
 			yices_set_term_name(new_term, (name + string("_") + to_string(i)).c_str());
 			term_stack.push_back(new_term);
@@ -1381,7 +1381,7 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
 
 		//create zero term
 		init_term = yices_eq(term_stack[0], yices_bvconst_zero(width));
-		version_at_clock.resize(g_unroll + 2);
+		version_at_clock.resize(g_unroll + 10);
 		version_at_clock[0] = 0;
 	}else{
 		type_t bv_value_type = yices_bv_type(width);
@@ -1416,7 +1416,7 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
 		if(init_term==-1){
 			assert(false);
 		}
-		version_at_clock.resize(g_unroll + 2);
+		version_at_clock.resize(g_unroll + 10);
 		version_at_clock[0] = 0;
 	}
 }
@@ -1710,6 +1710,8 @@ void SMTProcess::make_circular() {
 //--------------------------SMT Basic Block-------------------------------------
 uint SMTBasicBlock::id_counter = 0;
 list<SMTBasicBlock*> SMTBasicBlock::target_list;
+list<SMTBasicBlock*> SMTBasicBlock::covered_target_list;
+list<SMTBasicBlock*> SMTBasicBlock::uncovered_target_list;
 std::vector<SMTBasicBlock*> SMTBasicBlock::block_list;
 SMTBasicBlock::SMTBasicBlock() : id(id_counter) {
     id_counter++;
@@ -1840,21 +1842,33 @@ void SMTBasicBlock::print_all(ofstream &out) {
 
 
 void SMTBasicBlock::print_cover_result() {
-
 	uint uncovered_targets_count = 0;
-    g_uncovered_targets = fopen(g_uncovered_targets_file, "w");
-    if (g_uncovered_targets == nullptr) {
-        std::cerr << "Failed to open file: " << g_uncovered_targets_file << std::endl;
+	uint covered_targets_count = 0;
+    g_cover_result = fopen(g_cover_result_file, "w");
+
+    if (g_cover_result == nullptr) {
+        std::cerr << "Failed to open file: " << g_cover_result_file << std::endl;
         return;
     }
 
-    for (auto it : SMTBasicBlock::target_list) {
+	fprintf(g_cover_result, "Uncovered targets:\n");
+    for (auto it : SMTBasicBlock::uncovered_target_list) {
         if (it->assign_list.size() && !it->assign_list[0]->is_covered()) {
-            fprintf(g_uncovered_targets, "%d\n", it->assign_list[0]->id);
+            fprintf(g_cover_result, "%d\n", it->assign_list[0]->id);
 			uncovered_targets_count++;
         }
     }
-    fclose(g_uncovered_targets); // Close the file after writing
+	fprintf(g_cover_result, "Total uncovered targets number: %d\n", uncovered_targets_count);
+
+	fprintf(g_cover_result, "Covered targets:\n");
+	for (auto it : SMTBasicBlock::covered_target_list) {
+		if (it->assign_list.size() && it->assign_list[0]->is_covered()) {
+			fprintf(g_cover_result, "%d\n", it->assign_list[0]->id);
+			covered_targets_count++;
+		}
+	}
+	fprintf(g_cover_result, "Total covered targets number: %d\n", covered_targets_count);
+    fclose(g_cover_result); // Close the file after writing
 // 	printf("Covered targets: %d, Uncovered targets: %d, Coverage: %.2f%%\n", 
 //        SMTBranch::target_count - uncovered_targets_count, 
 //        uncovered_targets_count, 
@@ -1881,6 +1895,7 @@ void SMTBasicBlock::remove_covered_targets(uint iter) {
 	while (it != target_list.end()) {
 		if((*it)->assign_list.size() && (*it)->assign_list[0]->is_covered()){
 			printf("[COVERED %d AT CLOCK] %s", iter, (*it)->assign_list[0]->print().c_str());
+			SMTBasicBlock::covered_target_list.push_back(*it);
 			it = target_list.erase(it);
 		} else {
 			++it;

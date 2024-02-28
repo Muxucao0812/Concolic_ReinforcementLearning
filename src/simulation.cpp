@@ -44,8 +44,9 @@ const bool		enable_error_check = false;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
 const bool		enable_yices_debug = true;
-const uint      total_limit = 100;
-const uint      learning_limit = 10;
+const uint 		iteration_limit = 100;//for one branch, this is the maximum number of iterations
+const uint      total_limit = 10;
+const uint      learning_limit = 3;
 unordered_map<SMTBasicBlock*, uint> iter_count;
 
 static inline void free_stack();
@@ -904,7 +905,6 @@ void step_coverage() {
 
 	// remove covered
 	SMTBasicBlock::remove_covered_targets(path->data.get_clk());
-
 	sim_num = g_random_sim_num;
 	// uint start_iteration = sim_num;
 	
@@ -912,10 +912,12 @@ void step_coverage() {
 	SMTBranch::random_probability();
 
 	while(!SMTBasicBlock::target_list.empty()){
+
 		// erase covered target
 		SMTBasicBlock* target = SMTBasicBlock::target_list.front();
 		if (target->assign_list[0]->is_covered()) {
 			SMTBasicBlock::target_list.pop_front();
+			SMTBasicBlock::covered_target_list.push_back(target);
 			continue;
 		}
 
@@ -923,7 +925,7 @@ void step_coverage() {
 		target->update_distance_from_adjacency_list();
 		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
 
-
+		// select the closest path from random simulation
 		if (target->closest_path && target->closest_path != path) {
 			path = target->closest_path;
 			path->Dump(g_data_mem);
@@ -931,61 +933,45 @@ void step_coverage() {
 		}
 		selected_branch = NULL;
 	
-
 		while((path = concolic_iteration(path))){
 			if(path->data.get_clk() > g_unroll){
-				path->data.input_vector.clear();
-				iter_count[target] ++;
+				path->data.clear_input_vector();
+				constraints_stack.clear();
+				sim_num ++;
+				g_data.generate(g_data_mem);
+				update_vvp(g_step);
+				g_sim_clk = g_step;
+				simulate_build_stack();
+				path = new SMTPath(g_data);
+
 			}
-			if(iter_count[target] >= total_limit){
+			if(sim_num >= total_limit){
+				SMTBasicBlock::target_list.pop_front();
+				SMTBasicBlock::uncovered_target_list.push_back(target);
 				break;
 			}
 			//check if target covered or iteration limit reached
 			if(target->assign_list[0]->is_covered()){
 				SMTBasicBlock::remove_covered_targets(path->data.get_clk());
-				sim_num++;
 				break;
 			}
-		}
-
-		//  if sim_num is greater than learning limit, clear the input vector and generate new inputs
-		if(sim_num == learning_limit+1){
-			g_data.clear_input_vector();
-			g_sim_clk = g_step;
-			g_data.generate(g_data_mem);
-			update_vvp(g_step);
-			simulate_build_stack();   
-			path = new SMTPath(g_data);
-			for(auto it:SMTBasicBlock::target_list){
-				it->SMTBasicBlock::update_path(path, constraints_stack);
-			}
-		}
-		
-		if (iter_count[target] >= total_limit) {
-			if(target->assign_list[0]->is_covered())
-				continue;
-			SMTBasicBlock::target_list.pop_front();
-			continue;
-		}
-
-		if (path)
-			SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
-
-		if (!target->assign_list[0]->is_covered()) {
-			target->closest_path_distance+=iteration_limit / 5;
-			//generate random inputs
-			for (uint i = 0; i < 2; i++) {
+			if(sim_num == learning_limit){
+				g_data.clear_input_vector();
+				g_sim_clk = g_step;
 				g_data.generate(g_data_mem);
+				update_vvp(g_step);
 				simulate_build_stack();   
-				//save path
 				path = new SMTPath(g_data);
+				target->SMTBasicBlock::update_path(path, constraints_stack);
+				sim_num++;
+				
+			}
+			if(path){
 				SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
 			}
-			SMTBasicBlock::target_list.pop_front();
-			SMTBasicBlock::target_list.push_back(target);
-			SMTBasicBlock::print_cover_result();
-			target->dump_distances();
 		}
+
+
 	}
 }
 

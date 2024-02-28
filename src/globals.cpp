@@ -16,9 +16,9 @@ bool            user_select_branch = false;
 //global variables
 FILE*			g_out = NULL;
 FILE*			g_prob = NULL;
-FILE*			g_uncovered_targets = NULL;
+FILE*			g_cover_result = NULL;
 const char*	    g_prob_file = "prob.txt";
-const char*	    g_uncovered_targets_file = "uncovered_targets.txt";
+const char*	    g_cover_result_file = "cover_result.txt";
 int				g_errors = 0;
 unsigned		g_ind = 0;
 unsigned		g_ind_incr = 4;
