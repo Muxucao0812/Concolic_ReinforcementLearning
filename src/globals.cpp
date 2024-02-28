@@ -32,6 +32,7 @@ CTDataMem		g_data;
 CTDataMem		g_data_step;
 clock_t         start_time;
 bool            g_is_new_block = false;       
+bool            g_distance_decrease = false;
 //Parameters
 uint			g_unroll;
 uint			g_step;
@@ -49,7 +50,7 @@ const char*      g_name_exp_res = "exp_res.txt";
 FILE*            g_exp_res;
 
 //Qlearn parameters
-double epsilon_qlearn = 0.4; // 探索率
-double alpha_qlearn = 0.6; // 学习率
-double gamma_qlearn = 0.6; // 折扣因子
+double epsilon_qlearn = 0.6; // 探索率
+double alpha_qlearn = 0.5; // 学习率
+double gamma_qlearn = 0.8; // 折扣因子
 std::unordered_map<std::string, std::vector<double>> q_table; //q_table

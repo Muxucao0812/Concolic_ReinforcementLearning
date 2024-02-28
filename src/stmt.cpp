@@ -35,6 +35,9 @@ static inline void emit_block_begin(){
 static inline void emit_block_end(){
 	assert(g_ind >= g_ind_incr);
 	g_ind -= g_ind_incr;
+	
+
+
 	fprintf(g_out, "%*cend\n", g_ind, ' ');
 	single_indent = 0;
 }
@@ -43,6 +46,8 @@ static void emit_blocked_stmt(ivl_scope_t scope, ivl_statement_t stmt){
 	if(ivl_statement_type(stmt) != IVL_ST_BLOCK){
 		emit_block_begin();
 		emit_stmt(scope, stmt);
+			
+		emit_module_variables_display();
 		emit_block_end();
 	} else {
 		emit_stmt(scope, stmt);

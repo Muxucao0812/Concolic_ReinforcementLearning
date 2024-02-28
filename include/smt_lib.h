@@ -540,6 +540,7 @@ public:
     
     void print(std::ofstream &out);
     void update_distance();
+	void update_path(SMTPath* path, const std::vector<constraint_t*> &constraints_stack);
 	void update_distance_from_adjacency_list();
 	void update_edge();
     
@@ -613,22 +614,26 @@ class SMTState{
 		static void clear_states();
 
 		// print stateMap
-		static void print_state(std::ofstream &out);
+		static void print_state(const char* file);
 
 	private:
 		static std::map<std::string, StateValue> stateMap;
 };
 
-struct StateValue {
-    std::string stateName;
-    std::vector<int> stateValue;
-    std::vector<uint> stateClock;
 
-	// default constructor
-	StateValue() = default;
+struct StateData {
+    int value;
+    uint clock;
 
-    StateValue(const std::string& name, const std::vector<int>& value, const std::vector<uint>& clock)
-        : stateName(name), stateValue(value), stateClock(clock) {}
+    StateData(int val, uint clk) : value(val), clock(clk) {}
 };
 
+struct StateValue {
+    std::vector<StateData> stateData;
+    // default constructor
+    StateValue() = default;
+
+    StateValue(const std::vector<StateData>& data)
+        : stateData(data) {}
+};
 

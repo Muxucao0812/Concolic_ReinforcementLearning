@@ -1796,6 +1796,18 @@ void SMTBasicBlock::update_distance() {
 	}
 }
 
+
+// update path
+void SMTBasicBlock::update_path(SMTPath* path, const vector<constraint_t*> &constraints_stack) {
+	SMTBasicBlock::reset_flags();	//reset distances of all blocks
+	std::pair<uint, uint> dist_clock = distance_from_current_path(constraints_stack);
+	closest_path = path;
+	closest_path_distance = dist_clock.first;
+	closest_path_clock = dist_clock.second;
+}
+
+
+
 // update distance of all blocks from adjacent list
 void SMTBasicBlock::update_distance_from_adjacency_list() {
 	assert(adjacency_list);
@@ -1868,7 +1880,7 @@ void SMTBasicBlock::remove_covered_targets(uint iter) {
 	std::list<SMTBasicBlock*>::iterator it = target_list.begin();
 	while (it != target_list.end()) {
 		if((*it)->assign_list.size() && (*it)->assign_list[0]->is_covered()){
-			printf("[COVERED %d] %s", iter, (*it)->assign_list[0]->print().c_str());
+			printf("[COVERED %d AT CLOCK] %s", iter, (*it)->assign_list[0]->print().c_str());
 			it = target_list.erase(it);
 		} else {
 			++it;
@@ -1991,6 +2003,10 @@ SMTPath::SMTPath(CTDataMem& curr_data) {
     data = curr_data;
 }
 
+
+SMTPath::~SMTPath() {	
+
+}
 void SMTPath::Dump(const char* file) {
 	// data dump into g_data_mem
 	this->data.dump(file);
@@ -2021,58 +2037,66 @@ void SMTPath::ConnectPath(SMTPath* otherPath){
 }
 
 
-SMTPath::~SMTPath() {	
-}
 
 //----------------------------SMT State-----------------------------------------
 std::map<std::string, StateValue> SMTState::stateMap;
-std::vector<std::pair<std::string, int>> SMTState::get_state_at_clock(uint clock){
-    std::vector<std::pair<std::string, int>> result;
+// std::vector<std::pair<std::string, int>> SMTState::get_state_at_clock(uint clock){
+//     std::vector<std::pair<std::string, int>> result;
+//     for (const auto& entry : stateMap) {
+//         const StateValue& state = entry.second;
+//         // 在 state.stateClock 中查找是否存在等于 clock 的元素
+//         auto clock_iterator = std::find(state.stateClock.begin(), state.stateClock.end(), clock);
+//         // 如果找到匹配的 clock 值
+//         if (clock_iterator != state.stateClock.end()) {
+//             // 获取相应的索引
+//             size_t index = std::distance(state.stateClock.begin(), clock_iterator);
+//             // 使用索引获取对应的 stateValue
+//             int value = state.stateValue[index];
+//             // 将结果添加到返回向量中
+//             result.emplace_back(state.stateName, value);
+//         }
+//     }
 
-    for (const auto& entry : stateMap) {
-        const StateValue& state = entry.second;
-
-        // 在 state.stateClock 中查找是否存在等于 clock 的元素
-        auto clock_iterator = std::find(state.stateClock.begin(), state.stateClock.end(), clock);
-        // 如果找到匹配的 clock 值
-        if (clock_iterator != state.stateClock.end()) {
-            // 获取相应的索引
-            size_t index = std::distance(state.stateClock.begin(), clock_iterator);
-            // 使用索引获取对应的 stateValue
-            int value = state.stateValue[index];
-            // 将结果添加到返回向量中
-            result.emplace_back(state.stateName, value);
-        }
-    }
-
-    return result;
-}
+//     return result;
+// }
 
 void SMTState::add_state(const std::string& regName, int value, uint clock) {
-	stateMap[regName].stateName = regName;
-	stateMap[regName].stateValue.push_back(value);
-	stateMap[regName].stateClock.push_back(clock);
+    auto& stateData = stateMap[regName].stateData;
+
+    // Find if there is an existing entry with the same clock
+    auto it = std::find_if(stateData.begin(), stateData.end(),
+                           [clock](const StateData& pair) { return pair.clock == clock; });
+
+    if (it != stateData.end()) {
+        // If found, update the value for this clock
+        it->value = value;
+    } else {
+        // If not found, add a new entry
+        stateData.emplace_back(value, clock);
+    }
 }
 
 void SMTState::clear_states() {
 	stateMap.clear();
 }
 
-void SMTState::print_state(std::ofstream& out) {
+void SMTState::print_state(const char* file) {
+
+	ofstream mem(file);
 	for (const auto& entry : stateMap) {
-		out << "Name: " << entry.second.stateName << std::endl;
-		out << "Values: ";
-		for (int value : entry.second.stateValue) {
-			out << value << " ";
+		const std::string& stateName = entry.first;
+		const std::vector<StateData>& stateData = entry.second.stateData;
+		mem << stateName << ":\n";
+		for (const auto& pair : stateData) {
+			mem << "  " << pair.clock << ": " << pair.value << "\n";
 		}
-		out << std::endl;
-		out << "Clocks: ";
-		for (uint clock : entry.second.stateClock) {
-			out << clock << " ";
-		}
-		out << std::endl;
 	}
+
+    mem.close();
 }
+
+
+
 
 
 //----------------------------SMT Globals---------------------------------------

@@ -44,8 +44,9 @@ const bool		enable_error_check = false;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
 const bool		enable_yices_debug = true;
-const uint      iteration_limit = 10;
+const uint      iteration_limit = 100;
 const uint      total_limit = 100;
+const uint      learning_limit = 10;
 unordered_map<SMTBasicBlock*, uint> iter_count;
 
 static inline void free_stack();
@@ -416,6 +417,7 @@ static void build_stack(uint sim_clk=g_step) {
         }
 	}
 
+
 	// examine if cover the new block
 	if(!g_is_new_block){
 		for(auto id:curr_ids){
@@ -625,6 +627,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	//get the branches between begin and end
 	get_available_branches(branches, begin_clk+1, end_clk);
 
+	SMTState::print_state(g_data_state);
 
 	//get branch unique index
 	std::vector<unsigned int> actions;
@@ -684,6 +687,8 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			g_data_step.clear_input_vector();
 			g_data_step.intercept(path->data, 0, clock);
 			g_data_step.dump(g_data_mem_step);
+			
+			smt_yices_dump_error();
 
 			call_to_solver++;
 			check_satisfiability();
@@ -874,6 +879,114 @@ uint select_target() {
 	return SMTBasicBlock::target_num();
 }
 
+
+
+void step_coverage() {
+	SMTPath *path = NULL;
+	SMTSigCore::clear_all_versions();
+	//edge realignment
+
+	SMTBasicBlock::edge_realignment();
+	SMTBasicBlock::update_all_distances();
+	SMTProcess::make_circular();
+
+	// generate random seed
+	srand(time(NULL));
+	
+	//random simulations
+	for(uint i=0; i<g_random_sim_num; i++){
+		//generate random inputs
+		g_data.generate(g_data_mem);
+		simulate_build_stack();   
+		//save path
+		path = new SMTPath(g_data);
+		SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
+	}
+
+	// remove covered
+	SMTBasicBlock::remove_covered_targets(path->data.get_clk());
+
+	sim_num = g_random_sim_num;
+	uint start_iteration = sim_num;
+	
+	//For every branch, it will give every branch a probability randomly
+	SMTBranch::random_probability();
+
+	while(!SMTBasicBlock::target_list.empty()){
+		// erase covered target
+		SMTBasicBlock* target = SMTBasicBlock::target_list.front();
+		if (target->assign_list[0]->is_covered()) {
+			SMTBasicBlock::target_list.pop_front();
+			continue;
+		}
+
+		// update distance from adjacency list
+		target->update_distance_from_adjacency_list();
+		printf("\nTrying to cover %s", target->assign_list[0]->print().c_str());
+
+		// update iteration count
+		iter_count[target] ++;
+
+		if (target->closest_path && target->closest_path != path) {
+			path = target->closest_path;
+			path->Dump(g_data_mem);
+			simulate_build_stack();
+		}
+		selected_branch = NULL;
+	
+
+		while((path = concolic_iteration(path))){
+			//check if target covered or iteration limit reached
+			if(target->assign_list[0]->is_covered() || path->data.get_clk() > g_unroll){
+				//erase covered target
+				SMTBasicBlock::remove_covered_targets(path->data.get_clk());
+				sim_num++;
+				break;
+			}
+		}
+
+		//  if sim_num is greater than learning limit, clear the input vector and generate new inputs
+		if(sim_num == learning_limit+1){
+			g_data.clear_input_vector();
+			g_sim_clk = g_step;
+			g_data.generate(g_data_mem);
+			update_vvp(g_step);
+			simulate_build_stack();   
+			path = new SMTPath(g_data);
+			for(auto it:SMTBasicBlock::target_list){
+				it->SMTBasicBlock::update_path(path, constraints_stack);
+			}
+		}
+		
+		if (iter_count[target] >= total_limit) {
+			if(target->assign_list[0]->is_covered())
+				continue;
+			SMTBasicBlock::target_list.pop_front();
+			continue;
+		}
+
+		if (path)
+			SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
+
+		if (!target->assign_list[0]->is_covered()) {
+			target->closest_path_distance+=iteration_limit / 5;
+			//generate random inputs
+			for (uint i = 0; i < 2; i++) {
+				g_data.generate(g_data_mem);
+				simulate_build_stack();   
+				//save path
+				path = new SMTPath(g_data);
+				SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
+			}
+			SMTBasicBlock::target_list.pop_front();
+			SMTBasicBlock::target_list.push_back(target);
+			SMTBasicBlock::print_cover_result();
+			target->dump_distances();
+		}
+	}
+}
+
+
 // Using multi target
 void multi_coverage() {
 	SMTPath *path = NULL;
@@ -1004,7 +1117,8 @@ void start_concolic() {
 	SMTBranch::target_count = target_count;
 	start_time = clock();
 
-	multi_coverage();
+	// multi_coverage();
+	step_coverage();
 	end_concolic();
 }
 

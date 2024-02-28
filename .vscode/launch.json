@@ -325,7 +325,7 @@
             "request": "launch",
             "program": "/usr/local/lib/ivl/ivl",
             "args": ["/home/meng/Code/concolic-testing/test/b12/temp.mid",
-            "-C","/home/meng/Code/concolic-testing/test/b12/ivrlh37585194",
+            "-C","/home/meng/Code/concolic-testing/test/b12/ivrlh7782d163",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
             "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b12",

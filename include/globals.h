@@ -42,6 +42,7 @@ extern uint             g_random_sim_num;
 extern uint		        g_target_limit;
 extern uint             prob_num;
 extern bool             g_is_new_block;
+extern bool             g_distance_decrease;
 
 //Experiment result handler
 extern const char*      g_name_exp_res;
