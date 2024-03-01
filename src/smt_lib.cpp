@@ -2043,12 +2043,15 @@ void SMTPath::Dump(const char* file) {
 void SMTPath::ConnectPath(SMTPath* otherPath){
 	// add the data_step into data
     this->data.set_clk(this->data.get_step() + this->data.get_clk());
-
 	// connect the data_step of otherPath); to the data of this
 	for(uint i = 0; i < otherPath->data.get_step(); i++){
 		this->data.add_to_input_vector(otherPath->data.get_input_vector()[i]);
 	}
+}
 
+void SMTPath::ClearPath(){
+	this->data.clear_input_vector();
+	this->data.set_clk(0);
 }
 
 
@@ -2110,6 +2113,23 @@ void SMTState::print_state(const char* file) {
     mem.close();
 }
 
+void SMTState::print_state_at_clock(const char* file, uint clock, double reward, unsigned int actionIndex) {
+	ofstream mem(file);
+	mem << "reward: "<< reward << "\n";
+	mem << "Action: "<< actionIndex << "\n";
+	for (const auto& entry : stateMap) {
+		const std::string& stateName = entry.first;
+		const std::vector<StateData>& stateData = entry.second.stateData;
+		mem << stateName ;
+		for (const auto& pair : stateData) {
+			if (pair.clock == clock) {
+				mem << ": " << pair.value << "\n";
+				// mem << "  " << pair.clock << ": " << pair.value << "\n";
+			}
+		}
+	}
+	mem.close();
+}
 
 
 

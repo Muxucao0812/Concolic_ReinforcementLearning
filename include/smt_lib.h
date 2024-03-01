@@ -584,10 +584,12 @@ class SMTPath{
 public:
 	SMTPath(CTDataMem &curr_data);
 	virtual ~SMTPath();
-
+	// dump the path to a file
 	void Dump(const char* file);
-	// void UpdatePath();
+	// connect two paths
 	void ConnectPath(SMTPath* otherPath);
+	// clean the path clk and input_vector
+	void ClearPath();
 
 
 
@@ -617,6 +619,9 @@ class SMTState{
 
 		// print stateMap
 		static void print_state(const char* file);
+
+		// print stateMap at clock
+		static void print_state_at_clock(const char* file, uint clock, double reward, unsigned int actionIndex);
 
 	private:
 		static std::map<std::string, StateValue> stateMap;

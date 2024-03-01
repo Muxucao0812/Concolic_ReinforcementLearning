@@ -24,7 +24,7 @@ module conquest_tb();
     // Generated internal use signals
     reg  [31:0] _conc_pc;
     reg  [31:0] _conc_opcode;
-    reg  [31:0] _conc_ram[0:5];
+    reg  [31:0] _conc_ram[0:10];
 
 
     // Generated clock pulse

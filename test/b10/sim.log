@@ -1,5 +1,5 @@
 ;_C          0
-WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for the requested range [0:10].
+WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for the requested range [0:108].
 ;A 2
 ;A 3
 ;A 4
@@ -13,6 +13,7 @@ WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for
 ;A 12
 ;R ctr = 0
 ;R cts = 0
+;R last_g = 0
 ;R last_r = 0
 ;R sign = 0000
 ;R stato = 0000
@@ -22,7 +23,7 @@ WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for
 ;R voto2 = 0
 ;R voto3 = 0
 ;_C          1
-;_Input 000000010101
+;_Input 001100110110
 ;A 13
 ;A 14
 ;A 15
@@ -38,6 +39,7 @@ WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for
 ;A 28
 ;R ctr = 0
 ;R cts = 0
+;R last_g = 0
 ;R last_r = 0
 ;R sign = 0000
 ;R stato = 0000
@@ -47,24 +49,7 @@ WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for
 ;R voto2 = 0
 ;R voto3 = 0
 ;_C          2
-;_Input 111101010100
-;A 29
-;A 31
-;A 37
-;A 39
-;A 41
-;R ctr = 0
-;R cts = 0
-;R last_r = 0
-;R sign = 0000
-;R stato = 0001
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 0
-;R voto2 = 0
-;R voto3 = 0
-;_C          3
-;_Input 001001001111
+;_Input 100111111000
 ;A 29
 ;A 30
 ;A 32
@@ -76,7 +61,8 @@ WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for
 ;A 39
 ;A 41
 ;R ctr = 0
-;R cts = 1
+;R cts = 0
+;R last_g = 0
 ;R last_r = 0
 ;R sign = 0000
 ;R stato = 0001
@@ -85,8 +71,1156 @@ WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for
 ;R voto1 = 0
 ;R voto2 = 0
 ;R voto3 = 0
+;_C          3
+;_Input 011110110001
+;A 43
+;A 44
+;A 46
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0010
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
 ;_C          4
+;_Input 110100000111
+;A 62
+;A 63
+;A 64
+;A 65
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0011
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C          5
+;_Input 000011100110
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C          6
+;_Input 110010001110
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C          7
+;_Input 000001101101
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C          8
+;_Input 110100101010
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C          9
+;_Input 000001111111
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         10
+;_Input 100110110111
+;A 75
+;A 77
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         11
+;_Input 010010101100
+;A 75
+;A 77
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         12
+;_Input 100011010010
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         13
+;_Input 000001101011
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         14
+;_Input 101001100101
+;A 89
+;A 91
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         15
+;_Input 011100110100
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         16
 ;_Input 101000001011
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         17
+;_Input 010100011111
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         18
+;_Input 101010000100
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         19
+;_Input 010100110100
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         20
+;_Input 111101100111
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         21
+;_Input 000101111010
+;A 75
+;A 77
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         22
+;_Input 100000000101
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         23
+;_Input 000000111011
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         24
+;_Input 111000110010
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         25
+;_Input 011000100011
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         26
+;_Input 101000110100
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         27
+;_Input 000001010010
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         28
+;_Input 000111000001
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         29
+;_Input 100100010000
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         30
+;_Input 000001111111
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         31
+;_Input 111110011010
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         32
+;_Input 001101110101
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         33
+;_Input 111010000000
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         34
+;_Input 000000100001
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         35
+;_Input 110011001010
+;A 89
+;A 91
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         36
+;_Input 011110000010
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         37
+;_Input 111110111000
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         38
+;_Input 011000001010
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         39
+;_Input 110101011100
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         40
+;_Input 010100001110
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         41
+;_Input 100001100110
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         42
+;_Input 001001101100
+;A 89
+;A 91
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         43
+;_Input 101100110010
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         44
+;_Input 000111001101
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         45
+;_Input 101101011111
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         46
+;_Input 000001001101
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         47
+;_Input 100101001001
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         48
+;_Input 000000101010
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         49
+;_Input 100110001101
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         50
+;_Input 000100110111
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         51
+;_Input 100000100000
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         52
+;_Input 000011001101
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         53
+;_Input 000110001111
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         54
+;_Input 110010011001
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         55
+;_Input 011110000011
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         56
+;_Input 100001000010
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         57
+;_Input 001111001011
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         58
+;_Input 100010000000
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         59
+;_Input 000001111101
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         60
+;_Input 101010101111
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         61
+;_Input 000101011101
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         62
+;_Input 000111010001
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         63
+;_Input 101011010100
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         64
+;_Input 001101110100
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         65
+;_Input 111110000011
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 1
+;R voto2 = 1
+;R voto3 = 0
+;_C         66
+;_Input 010000011110
+;A 66
+;A 68
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 1
+;R voto2 = 1
+;R voto3 = 0
+;_C         67
+;_Input 111001000111
+;A 66
+;A 67
+;A 69
+;A 70
+;A 71
+;A 73
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 1
+;R voto2 = 1
+;R voto3 = 0
+;_C         68
+;_Input 010100111101
+;A 94
+;A 95
+;A 97
+;A 98
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 1000
+;R v_out = 0110
+;R voto0 = 0
+;R voto1 = 1
+;R voto2 = 1
+;R voto3 = 0
+;_C         69
+;_Input 011110111100
+;A 29
+;A 30
+;A 32
+;A 33
+;A 34
+;A 35
+;A 36
+;A 38
+;A 40
+;A 42
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0001
+;R v_out = 0110
+;R voto0 = 0
+;R voto1 = 1
+;R voto2 = 1
+;R voto3 = 0
+;_C         70
+;_Input 110001001001
 ;A 43
 ;A 45
 ;A 48
@@ -95,473 +1229,564 @@ WARNING: conquest_tb.v:69: $readmemb(data.mem): Not enough words in the file for
 ;A 60
 ;A 61
 ;R ctr = 0
-;R cts = 1
+;R cts = 0
+;R last_g = 0
 ;R last_r = 0
 ;R sign = 0000
 ;R stato = 0010
-;R v_out = 0000
+;R v_out = 0110
 ;R voto0 = 0
 ;R voto1 = 0
 ;R voto2 = 0
 ;R voto3 = 0
-;_C          5
-;_Input 000110001110
+;_C         71
+;_Input 001001111010
 ;A 43
 ;A 45
-;A 47
-;A 49
-;A 50
-;A 52
-;A 54
-;A 56
-;A 57
+;A 48
+;A 58
+;A 59
+;A 60
+;A 61
 ;R ctr = 0
-;R cts = 1
+;R cts = 0
+;R last_g = 0
 ;R last_r = 0
 ;R sign = 0000
 ;R stato = 0010
-;R v_out = 0000
+;R v_out = 0110
 ;R voto0 = 0
 ;R voto1 = 0
 ;R voto2 = 0
 ;R voto3 = 0
-;_C          6
-;_Input 011010110111
+;_C         72
+;_Input 100011001001
+;A 43
+;A 45
+;A 48
+;A 58
+;A 59
+;A 60
+;A 61
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0010
+;R v_out = 0110
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         73
+;_Input 010111000010
 ;A 43
 ;A 44
 ;A 46
 ;R ctr = 0
-;R cts = 1
+;R cts = 0
+;R last_g = 0
 ;R last_r = 0
 ;R sign = 0000
 ;R stato = 0010
-;R v_out = 0000
-;R voto0 = 1
-;R voto1 = 1
+;R v_out = 0110
+;R voto0 = 0
+;R voto1 = 0
 ;R voto2 = 0
 ;R voto3 = 0
-;_C          7
-;_Input xxxxxxxxxxxx
+;_C         74
+;_Input 101101010010
 ;A 62
 ;A 63
 ;A 64
 ;A 65
 ;R ctr = 0
-;R cts = 1
+;R cts = 0
+;R last_g = 0
 ;R last_r = 0
 ;R sign = 0000
 ;R stato = 0011
+;R v_out = 0110
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         75
+;_Input 000011101001
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0110
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         76
+;_Input 001101011001
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         77
+;_Input 100000110101
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         78
+;_Input 011011100001
+;A 89
+;A 91
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         79
+;_Input 110100111010
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         80
+;_Input 001111110111
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         81
+;_Input 110011011010
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         82
+;_Input 000001101110
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         83
+;_Input 100000111011
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         84
+;_Input 010111000010
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         85
+;_Input 111010100101
+;A 75
+;A 77
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         86
+;_Input 011110111001
+;A 75
+;A 77
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         87
+;_Input 101111011101
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         88
+;_Input 000001100001
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         89
+;_Input 100101011010
+;A 89
+;A 91
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         90
+;_Input 010010110101
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         91
+;_Input 111111100110
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         92
+;_Input 010001100100
+;A 75
+;A 77
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         93
+;_Input 100011010111
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         94
+;_Input 000001011111
+;A 80
+;A 82
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         95
+;_Input 100000100001
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         96
+;_Input 000001111110
+;A 89
+;A 91
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         97
+;_Input 101110111100
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         98
+;_Input 001011110011
+;A 66
+;A 67
+;A 69
+;A 70
+;A 72
+;A 74
+;R ctr = 0
+;R cts = 0
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0100
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C         99
+;_Input 011011000000
+;A 75
+;A 76
+;A 78
+;A 79
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0101
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C        100
+;_Input 101011110011
+;A 80
+;A 81
+;A 83
+;A 84
+;A 85
+;A 86
+;A 87
+;A 88
+;R ctr = 1
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0110
+;R v_out = 0000
+;R voto0 = 0
+;R voto1 = 0
+;R voto2 = 0
+;R voto3 = 0
+;_C        101
+;_Input 001010011100
+;A 89
+;A 90
+;A 92
+;A 93
+;R ctr = 0
+;R cts = 1
+;R last_g = 0
+;R last_r = 0
+;R sign = 0000
+;R stato = 0111
 ;R v_out = 0000
 ;R voto0 = 1
-;R voto1 = 1
-;R voto2 = 0
+;R voto1 = 0
+;R voto2 = 1
 ;R voto3 = 0
-;_C          8
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C          9
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         10
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         11
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         12
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         13
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         14
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         15
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         16
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         17
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         18
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         19
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         20
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         21
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         22
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         23
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         24
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         25
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         26
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         27
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         28
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         29
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         30
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         31
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         32
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         33
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         34
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         35
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         36
-;_Input xxxxxxxxxxxx
-;A 66
-;A 68
-;R ctr = 0
-;R cts = 1
-;R last_r = 0
-;R sign = 0000
-;R stato = 0100
-;R v_out = 0000
-;R voto0 = 0
-;R voto1 = 1
-;R voto2 = 0
-;R voto3 = 0
-;_C         37
-;_Input xxxxxxxxxxxx
-conquest_tb.v:73: $finish called at 367 (1s)
+;_C        102
+;_Input 111101010001
+conquest_tb.v:73: $finish called at 1017 (1s)

@@ -1,5 +1,5 @@
 ;_C          0
-WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for the requested range [0:69].
+WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for the requested range [0:41].
 ;A 2
 ;A 3
 ;A 4
@@ -7,55 +7,55 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R overflw = 0
 ;R stato = 000
 ;_C          1
-;_Input 011
+;_Input 000
 ;A 5
-;A 6
-;A 8
+;A 7
+;A 9
 ;A 10
 ;A 11
 ;R outp = 0
 ;R overflw = 0
 ;R stato = 000
 ;_C          2
-;_Input 110
-;A 26
-;A 27
-;A 29
-;A 31
-;A 32
-;R outp = 1
+;_Input 100
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = 0
 ;R overflw = 0
-;R stato = 100
+;R stato = 001
 ;_C          3
-;_Input 010
-;A 40
-;A 41
-;A 43
-;A 45
-;A 46
+;_Input 000
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
 ;R outp = 0
 ;R overflw = 0
-;R stato = 101
+;R stato = 010
 ;_C          4
-;_Input 110
-;A 54
-;A 55
-;A 57
-;A 59
-;A 60
+;_Input 100
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
 ;R outp = 0
 ;R overflw = 0
-;R stato = 111
+;R stato = 110
 ;_C          5
 ;_Input 000
-;A 12
-;A 14
-;A 16
-;A 17
-;A 18
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
 ;R outp = 0
 ;R overflw = 0
-;R stato = 011
+;R stato = 000
 ;_C          6
 ;_Input 111
 ;A 19
@@ -64,7 +64,7 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;A 24
 ;A 25
 ;R outp = 0
-;R overflw = 1
+;R overflw = 0
 ;R stato = 001
 ;_C          7
 ;_Input 010
@@ -77,10 +77,10 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R overflw = 0
 ;R stato = 101
 ;_C          8
-;_Input 110
+;_Input 100
 ;A 54
-;A 55
-;A 57
+;A 56
+;A 58
 ;A 59
 ;A 60
 ;R outp = 0
@@ -88,14 +88,14 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R stato = 111
 ;_C          9
 ;_Input 000
-;A 12
-;A 14
-;A 16
-;A 17
-;A 18
-;R outp = 0
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
+;R outp = 1
 ;R overflw = 0
-;R stato = 011
+;R stato = 000
 ;_C         10
 ;_Input 100
 ;A 19
@@ -104,7 +104,7 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;A 24
 ;A 25
 ;R outp = 0
-;R overflw = 1
+;R overflw = 0
 ;R stato = 001
 ;_C         11
 ;_Input 000
@@ -117,7 +117,7 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R overflw = 0
 ;R stato = 010
 ;_C         12
-;_Input 000
+;_Input 100
 ;A 47
 ;A 49
 ;A 51
@@ -127,7 +127,7 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R overflw = 0
 ;R stato = 110
 ;_C         13
-;_Input 100
+;_Input 000
 ;A 5
 ;A 7
 ;A 9
@@ -137,55 +137,55 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R overflw = 0
 ;R stato = 000
 ;_C         14
-;_Input 011
+;_Input 100
 ;A 19
-;A 20
-;A 22
+;A 21
+;A 23
 ;A 24
 ;A 25
 ;R outp = 0
 ;R overflw = 0
 ;R stato = 001
 ;_C         15
+;_Input 000
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = 0
+;R overflw = 0
+;R stato = 010
+;_C         16
+;_Input 100
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
+;R outp = 0
+;R overflw = 0
+;R stato = 110
+;_C         17
+;_Input 011
+;A 5
+;A 6
+;A 8
+;A 10
+;A 11
+;R outp = 0
+;R overflw = 0
+;R stato = 000
+;_C         18
 ;_Input 110
-;A 40
-;A 41
-;A 43
-;A 45
-;A 46
+;A 26
+;A 27
+;A 29
+;A 31
+;A 32
 ;R outp = 1
 ;R overflw = 0
-;R stato = 101
-;_C         16
-;_Input 010
-;A 54
-;A 55
-;A 57
-;A 59
-;A 60
-;R outp = 0
-;R overflw = 0
-;R stato = 111
-;_C         17
-;_Input 100
-;A 12
-;A 14
-;A 16
-;A 17
-;A 18
-;R outp = 0
-;R overflw = 0
-;R stato = 011
-;_C         18
-;_Input 011
-;A 19
-;A 20
-;A 22
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 1
-;R stato = 001
+;R stato = 100
 ;_C         19
 ;_Input 010
 ;A 40
@@ -193,7 +193,7 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;A 43
 ;A 45
 ;A 46
-;R outp = 1
+;R outp = 0
 ;R overflw = 0
 ;R stato = 101
 ;_C         20
@@ -217,336 +217,16 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R overflw = 0
 ;R stato = 011
 ;_C         22
-;_Input 111
+;_Input 100
 ;A 19
-;A 20
-;A 22
+;A 21
+;A 23
 ;A 24
 ;A 25
 ;R outp = 0
 ;R overflw = 1
 ;R stato = 001
 ;_C         23
-;_Input 010
-;A 40
-;A 41
-;A 43
-;A 45
-;A 46
-;R outp = 1
-;R overflw = 0
-;R stato = 101
-;_C         24
-;_Input 010
-;A 54
-;A 55
-;A 57
-;A 59
-;A 60
-;R outp = 0
-;R overflw = 0
-;R stato = 111
-;_C         25
-;_Input 100
-;A 12
-;A 14
-;A 16
-;A 17
-;A 18
-;R outp = 0
-;R overflw = 0
-;R stato = 011
-;_C         26
-;_Input 011
-;A 19
-;A 20
-;A 22
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 1
-;R stato = 001
-;_C         27
-;_Input 110
-;A 40
-;A 41
-;A 43
-;A 45
-;A 46
-;R outp = 1
-;R overflw = 0
-;R stato = 101
-;_C         28
-;_Input 000
-;A 54
-;A 56
-;A 58
-;A 59
-;A 60
-;R outp = 0
-;R overflw = 0
-;R stato = 111
-;_C         29
-;_Input 100
-;A 5
-;A 7
-;A 9
-;A 10
-;A 11
-;R outp = 1
-;R overflw = 0
-;R stato = 000
-;_C         30
-;_Input 011
-;A 19
-;A 20
-;A 22
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 0
-;R stato = 001
-;_C         31
-;_Input 010
-;A 40
-;A 41
-;A 43
-;A 45
-;A 46
-;R outp = 1
-;R overflw = 0
-;R stato = 101
-;_C         32
-;_Input 110
-;A 54
-;A 55
-;A 57
-;A 59
-;A 60
-;R outp = 0
-;R overflw = 0
-;R stato = 111
-;_C         33
-;_Input 000
-;A 12
-;A 14
-;A 16
-;A 17
-;A 18
-;R outp = 0
-;R overflw = 0
-;R stato = 011
-;_C         34
-;_Input 100
-;A 19
-;A 21
-;A 23
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 1
-;R stato = 001
-;_C         35
-;_Input 000
-;A 33
-;A 35
-;A 37
-;A 38
-;A 39
-;R outp = 0
-;R overflw = 0
-;R stato = 010
-;_C         36
-;_Input 100
-;A 47
-;A 49
-;A 51
-;A 52
-;A 53
-;R outp = 0
-;R overflw = 0
-;R stato = 110
-;_C         37
-;_Input 000
-;A 5
-;A 7
-;A 9
-;A 10
-;A 11
-;R outp = 0
-;R overflw = 0
-;R stato = 000
-;_C         38
-;_Input 100
-;A 19
-;A 21
-;A 23
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 0
-;R stato = 001
-;_C         39
-;_Input 000
-;A 33
-;A 35
-;A 37
-;A 38
-;A 39
-;R outp = 0
-;R overflw = 0
-;R stato = 010
-;_C         40
-;_Input 111
-;A 47
-;A 48
-;A 50
-;A 52
-;A 53
-;R outp = 0
-;R overflw = 0
-;R stato = 110
-;_C         41
-;_Input 000
-;A 12
-;A 14
-;A 16
-;A 17
-;A 18
-;R outp = 1
-;R overflw = 0
-;R stato = 011
-;_C         42
-;_Input 000
-;A 19
-;A 21
-;A 23
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 1
-;R stato = 001
-;_C         43
-;_Input 100
-;A 33
-;A 35
-;A 37
-;A 38
-;A 39
-;R outp = 0
-;R overflw = 0
-;R stato = 010
-;_C         44
-;_Input 000
-;A 47
-;A 49
-;A 51
-;A 52
-;A 53
-;R outp = 0
-;R overflw = 0
-;R stato = 110
-;_C         45
-;_Input 000
-;A 5
-;A 7
-;A 9
-;A 10
-;A 11
-;R outp = 0
-;R overflw = 0
-;R stato = 000
-;_C         46
-;_Input 100
-;A 19
-;A 21
-;A 23
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 0
-;R stato = 001
-;_C         47
-;_Input 000
-;A 33
-;A 35
-;A 37
-;A 38
-;A 39
-;R outp = 0
-;R overflw = 0
-;R stato = 010
-;_C         48
-;_Input 100
-;A 47
-;A 49
-;A 51
-;A 52
-;A 53
-;R outp = 0
-;R overflw = 0
-;R stato = 110
-;_C         49
-;_Input 000
-;A 5
-;A 7
-;A 9
-;A 10
-;A 11
-;R outp = 0
-;R overflw = 0
-;R stato = 000
-;_C         50
-;_Input 100
-;A 19
-;A 21
-;A 23
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 0
-;R stato = 001
-;_C         51
-;_Input 000
-;A 33
-;A 35
-;A 37
-;A 38
-;A 39
-;R outp = 0
-;R overflw = 0
-;R stato = 010
-;_C         52
-;_Input 100
-;A 47
-;A 49
-;A 51
-;A 52
-;A 53
-;R outp = 0
-;R overflw = 0
-;R stato = 110
-;_C         53
-;_Input 000
-;A 5
-;A 7
-;A 9
-;A 10
-;A 11
-;R outp = 0
-;R overflw = 0
-;R stato = 000
-;_C         54
-;_Input 100
-;A 19
-;A 21
-;A 23
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 0
-;R stato = 001
-;_C         55
 ;_Input 011
 ;A 33
 ;A 34
@@ -556,7 +236,7 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R outp = 0
 ;R overflw = 0
 ;R stato = 010
-;_C         56
+;_C         24
 ;_Input 110
 ;A 54
 ;A 55
@@ -566,48 +246,8 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R outp = 1
 ;R overflw = 0
 ;R stato = 111
-;_C         57
-;_Input 000
-;A 12
-;A 14
-;A 16
-;A 17
-;A 18
-;R outp = 0
-;R overflw = 0
-;R stato = 011
-;_C         58
-;_Input 111
-;A 19
-;A 20
-;A 22
-;A 24
-;A 25
-;R outp = 0
-;R overflw = 1
-;R stato = 001
-;_C         59
-;_Input 010
-;A 40
-;A 41
-;A 43
-;A 45
-;A 46
-;R outp = 1
-;R overflw = 0
-;R stato = 101
-;_C         60
-;_Input 010
-;A 54
-;A 55
-;A 57
-;A 59
-;A 60
-;R outp = 0
-;R overflw = 0
-;R stato = 111
-;_C         61
-;_Input 111
+;_C         25
+;_Input 011
 ;A 12
 ;A 13
 ;A 15
@@ -616,7 +256,7 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R outp = 0
 ;R overflw = 0
 ;R stato = 011
-;_C         62
+;_C         26
 ;_Input 010
 ;A 26
 ;A 27
@@ -626,8 +266,8 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R outp = 1
 ;R overflw = 1
 ;R stato = 100
-;_C         63
-;_Input xxx
+;_C         27
+;_Input 100
 ;A 40
 ;A 42
 ;A 44
@@ -636,6 +276,366 @@ WARNING: conquest_tb.v:49: $readmemb(data.mem): Not enough words in the file for
 ;R outp = 0
 ;R overflw = 0
 ;R stato = 101
+;_C         28
+;_Input 011
+;A 47
+;A 48
+;A 50
+;A 52
+;A 53
+;R outp = 1
+;R overflw = 0
+;R stato = 110
+;_C         29
+;_Input 100
+;A 12
+;A 14
+;A 16
+;A 17
+;A 18
+;R outp = 1
+;R overflw = 0
+;R stato = 011
+;_C         30
+;_Input 000
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = 0
+;R overflw = 1
+;R stato = 001
+;_C         31
+;_Input 111
+;A 33
+;A 34
+;A 36
+;A 38
+;A 39
+;R outp = 0
+;R overflw = 0
+;R stato = 010
+;_C         32
+;_Input 010
+;A 54
+;A 55
+;A 57
+;A 59
+;A 60
+;R outp = 1
+;R overflw = 0
+;R stato = 111
+;_C         33
+;_Input 100
+;A 12
+;A 14
+;A 16
+;A 17
+;A 18
+;R outp = 0
+;R overflw = 0
+;R stato = 011
+;_C         34
+;_Input 000
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = 0
+;R overflw = 1
+;R stato = 001
+;_C         35
+;_Input 100
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = 0
+;R overflw = 0
+;R stato = 010
+;_C         36
+;_Input 000
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
+;R outp = 0
+;R overflw = 0
+;R stato = 110
+;_C         37
+;_Input 111
+;A 5
+;A 6
+;A 8
+;A 10
+;A 11
+;R outp = 0
+;R overflw = 0
+;R stato = 000
+;_C         38
+;_Input 000
+;A 26
+;A 28
+;A 30
+;A 31
+;A 32
+;R outp = 1
+;R overflw = 0
+;R stato = 100
+;_C         39
+;_Input xxx
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = 1
+;R overflw = 0
+;R stato = 010
+;_C         40
+;_Input xxx
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
+;R outp = x
+;R overflw = 0
+;R stato = 110
+;_C         41
+;_Input xxx
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
+;R outp = x
+;R overflw = 0
+;R stato = 000
+;_C         42
+;_Input xxx
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = x
+;R overflw = 0
+;R stato = 001
+;_C         43
+;_Input xxx
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = x
+;R overflw = 0
+;R stato = 010
+;_C         44
+;_Input xxx
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
+;R outp = x
+;R overflw = 0
+;R stato = 110
+;_C         45
+;_Input xxx
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
+;R outp = x
+;R overflw = 0
+;R stato = 000
+;_C         46
+;_Input xxx
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = x
+;R overflw = 0
+;R stato = 001
+;_C         47
+;_Input xxx
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = x
+;R overflw = 0
+;R stato = 010
+;_C         48
+;_Input xxx
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
+;R outp = x
+;R overflw = 0
+;R stato = 110
+;_C         49
+;_Input xxx
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
+;R outp = x
+;R overflw = 0
+;R stato = 000
+;_C         50
+;_Input xxx
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = x
+;R overflw = 0
+;R stato = 001
+;_C         51
+;_Input xxx
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = x
+;R overflw = 0
+;R stato = 010
+;_C         52
+;_Input xxx
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
+;R outp = x
+;R overflw = 0
+;R stato = 110
+;_C         53
+;_Input xxx
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
+;R outp = x
+;R overflw = 0
+;R stato = 000
+;_C         54
+;_Input xxx
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = x
+;R overflw = 0
+;R stato = 001
+;_C         55
+;_Input xxx
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = x
+;R overflw = 0
+;R stato = 010
+;_C         56
+;_Input xxx
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
+;R outp = x
+;R overflw = 0
+;R stato = 110
+;_C         57
+;_Input xxx
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
+;R outp = x
+;R overflw = 0
+;R stato = 000
+;_C         58
+;_Input xxx
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = x
+;R overflw = 0
+;R stato = 001
+;_C         59
+;_Input xxx
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = x
+;R overflw = 0
+;R stato = 010
+;_C         60
+;_Input xxx
+;A 47
+;A 49
+;A 51
+;A 52
+;A 53
+;R outp = x
+;R overflw = 0
+;R stato = 110
+;_C         61
+;_Input xxx
+;A 5
+;A 7
+;A 9
+;A 10
+;A 11
+;R outp = x
+;R overflw = 0
+;R stato = 000
+;_C         62
+;_Input xxx
+;A 19
+;A 21
+;A 23
+;A 24
+;A 25
+;R outp = x
+;R overflw = 0
+;R stato = 001
+;_C         63
+;_Input xxx
+;A 33
+;A 35
+;A 37
+;A 38
+;A 39
+;R outp = x
+;R overflw = 0
+;R stato = 010
 ;_C         64
 ;_Input xxx
 ;A 47

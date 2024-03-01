@@ -44,7 +44,7 @@ const bool		enable_error_check = false;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
 const bool		enable_yices_debug = true;
-const uint 		iteration_limit = 100;//for one branch, this is the maximum number of iterations
+const uint 		iteration_limit = 1000;//for one branch, this is the maximum number of iterations
 const uint      total_limit = 10;
 const uint      learning_limit = 3;
 unordered_map<SMTBasicBlock*, uint> iter_count;
@@ -186,6 +186,21 @@ void sortBranches(std::vector<br_cnst_t*>& branches, const std::vector<unsigned 
               });
 }
 
+// 从指定的文件中读取动作列表，并返回一个包含这些动作的向量
+std::vector<unsigned int> readActionsFromFile(const std::string& filename) {
+    std::ifstream file(filename);
+    std::vector<unsigned int> action_list;
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " + filename << std::endl;
+        return action_list; // 返回一个空的向量
+    }
+    unsigned int action;
+    while (file >> action) {
+        action_list.push_back(action);
+    }
+    file.close(); // 关闭文件
+    return action_list;
+}
 
 void writeLastFContentToFile(const std::string& inputFileName, FILE* outputFile) {
     std::ifstream inputFile(inputFileName);
@@ -417,7 +432,6 @@ static void build_stack(uint sim_clk=g_step) {
         }
 	}
 
-	SMTState::print_state(g_data_state);
 
 	// examine if cover the new block
 	if(!g_is_new_block){
@@ -428,8 +442,9 @@ static void build_stack(uint sim_clk=g_step) {
 			}
 		}
 	}
-	prev_ids = curr_ids;
-	curr_ids.clear();
+
+	prev_ids = std::move(curr_ids); // 将curr_ids的内容移动到prev_ids
+
 
 	// printf("If the new block is covered: %d\n", g_is_new_block);
 	fclose(f_test);
@@ -628,132 +643,40 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	//get the branches between begin and end
 	get_available_branches(branches, begin_clk+1, end_clk);
 
-	// SMTState::print_state(g_data_state);
-
-	//get branch unique index
+	//choose mutated branch，sort by QLearning
 	std::vector<unsigned int> actions;
 	for(std::vector<br_cnst_t*>::size_type i = 0;i < branches.size();++i){
 		actions.push_back(branches[i]->br->id);
 	}
-	//choose mutated branch
 	State currentState("model.log");//初始状态
 	std::vector<unsigned int> action_list = chooseActions(currentState, q_table, epsilon_qlearn, actions);//action_list = 选择branch index
 	sortBranches(branches,action_list);
+
+
+	// //choose mutated branch，sort by DQN
+	// std::vector<unsigned int> action_list = readActionsFromFile("branch_list.txt");
+	// sortBranches(branches,action_list);
 
 	// //sort by distance
 	//sort(branches.begin(), branches.end(), compare_dist);
 	//sort by probability
 	//sort(branches.begin(), branches.end(), compare_prob);
     
+	// if(!user_select_branch)
 
-	if(!user_select_branch){
-		for(auto it:branches){
-			if (it->cnst == nullptr) {
-				std::cerr << "Error: Constraint pointer is null." << std::endl;
-				continue; // Skip this iteration
-       		 }
-			uint clock = it->cnst->clock;
-
-			// yices_print_error(stdout);
-
-			//reset context
-			yices_reset_context(yices_context);
-			//insert initial assertion to zero for registers
-			SMTSigCore::yices_insert_reg_init(yices_context);
-			constraint_t** cnst = constraints_stack.data();
-			while((*cnst)->clock != clock){
-				if((*cnst)->type != CNST_CLK){			
-					smt_yices_assert(yices_context, (*cnst)->yices_term, (*cnst)->obj);
-				}
-				cnst++;
-			}	
-			assert((*cnst)->type == CNST_CLK);
-			cnst++;
-			//restore version
-			SMTSigCore::restore_versions(clock);
-			const SMTProcess* target_process = it->cnst->obj->process;
-			while(*cnst != it->cnst){
-				const SMTProcess* process = (*cnst)->obj->process;
-				if(!process->is_edge_triggered || (process == target_process)){
-					term_t term = (*cnst)->obj->update_term();
-					smt_yices_assert(yices_context, term, (*cnst)->obj);
-				}
-				cnst++;
+	for(auto it:branches){
+		if (it->cnst == nullptr) {
+			std::cerr << "Error: Constraint pointer is null." << std::endl;
+			continue; // Skip this iteration
 			}
+		uint clock = it->cnst->clock;
 
-	
-			//add mutated branch
-			smt_yices_assert(yices_context, it->br->update_term(), it->br);
-			
-			g_data_step.clear_input_vector();
-			g_data_step.intercept(path->data, 0, clock);
-			g_data_step.dump(g_data_mem_step);
-			
-			smt_yices_dump_error();
+		yices_print_error(stdout);
 
-			call_to_solver++;
-			check_satisfiability();
-			if(solve_constraints(clock)){
-				selected_branch = it->br;
-				selected_clock = clock;
-				//insert hash value even if potentially incorrect
-				update_path_taken(it);
-				if(!enable_error_check){
-					it->br->set_covered_clk(sim_num+1, clock);
-				}
-				g_sim_clk = clock;
-				simulate_build_stack();
-				// Xiangchen: Adjust the probability
-				State newState("model.log"); // 获得新状态
-        		double reward = calculateReward(g_is_new_block); // 计算奖励
-        		updateQValue(q_table, currentState, newState,it, reward, alpha_qlearn, gamma_qlearn,1);//更新Q表
-				if(g_is_new_block){
-					SMTBranch::increase_probability(selected_branch);
-				}else{
-					if(sim_num > prob_num){
-						SMTBranch::decrease_probability(selected_branch);
-					}
-				}
-				SMTBranch::print_probability();
-				selected_branch->k_permit_covered++;
-				// Xiangchen: Because we use the probability to sort the branches
-				// So we need not to consider the distance
-				selected_branch->block->distance++;
-				return true;
-			}
-		}	
-	}else{
-		// 打印所有分支
-		std::cout << "Available branches:" << std::endl;
-		for(size_t i = 0; i < branches.size(); ++i) {
-			std::cout << "Index " << i << ": " << branches[i]->br->print() << std::endl;
-		}
-
-		// 获取用户输入
-		std::cout << "Enter the index of the branch to select: ";
-		size_t user_choice;
-		std::cin >> user_choice;
-
-		// 检查用户输入的有效性
-		if(user_choice >= branches.size()) {
-			std::cerr << "Invalid index selected." << std::endl;
-			return false;
-		}
-
-		// 使用用户选择的分支
-		auto selected_branch_it = branches.begin() + user_choice;
-
-		// 用选择的分支代替原来的自动选择逻辑
-		auto it = selected_branch_it;
-
-		//printf("Trying %s\n", it->br->print().c_str());
-		uint clock = (*it)->cnst->clock;
 		//reset context
 		yices_reset_context(yices_context);
-
 		//insert initial assertion to zero for registers
 		SMTSigCore::yices_insert_reg_init(yices_context);
-		
 		constraint_t** cnst = constraints_stack.data();
 		while((*cnst)->clock != clock){
 			if((*cnst)->type != CNST_CLK){			
@@ -763,11 +686,10 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 		}	
 		assert((*cnst)->type == CNST_CLK);
 		cnst++;
-		
 		//restore version
 		SMTSigCore::restore_versions(clock);
-		const SMTProcess* target_process = (*it)->cnst->obj->process;
-		while(*cnst != (*it)->cnst){
+		const SMTProcess* target_process = it->cnst->obj->process;
+		while(*cnst != it->cnst){
 			const SMTProcess* process = (*cnst)->obj->process;
 			if(!process->is_edge_triggered || (process == target_process)){
 				term_t term = (*cnst)->obj->update_term();
@@ -776,43 +698,149 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			cnst++;
 		}
 
+
 		//add mutated branch
-		smt_yices_assert(yices_context, (*it)->br->update_term(), (*it)->br);
+		smt_yices_assert(yices_context, it->br->update_term(), it->br);
 		
+		g_data_step.clear_input_vector();
+		g_data_step.intercept(path->data, 0, clock);
+		g_data_step.dump(g_data_mem_step);
+		
+		smt_yices_dump_error();
 
 		call_to_solver++;
 		check_satisfiability();
 		if(solve_constraints(clock)){
-			selected_branch = (*it)->br;
+			selected_branch = it->br;
 			selected_clock = clock;
 			//insert hash value even if potentially incorrect
-			update_path_taken((*it));
+			update_path_taken(it);
 			if(!enable_error_check){
-				(*it)->br->set_covered_clk(sim_num+1, clock);
+				it->br->set_covered_clk(sim_num+1, clock);
 			}
-			// printf("[FOUND: CLOCK: %u, IDX: %u, DIST: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->block->distance, selected_branch->branch_probability, it->br->print().c_str());
-			// printf("[FOUND: CLOCK: %u, IDX: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->branch_probability, it->br->print().c_str());
-			
-			// Xiangchen: Adjust the probability
+			g_sim_clk = clock;
+			simulate_build_stack();
+
+			// Give the reward
+			// Update Qlearning reward 
+			State newState("model.log"); // 获得新状态
+			double reward = calculateReward(g_is_new_block); // 计算奖励
+			updateQValue(q_table, currentState, newState,it, reward, alpha_qlearn, gamma_qlearn,1);//更新Q表
+
+			// //// Update DQN reward 
+			// double reward = calculateReward(g_is_new_block); // 计算奖励
+			// unsigned int actionIndex = it->br->id;
+			// SMTState::print_state_at_clock(g_data_state, g_sim_clk, reward, actionIndex);
+
 			if(g_is_new_block){
 				SMTBranch::increase_probability(selected_branch);
 			}else{
 				if(sim_num > prob_num){
 					SMTBranch::decrease_probability(selected_branch);
-				}else{
-					SMTBranch::increase_probability(selected_branch);
 				}
 			}
-			// SMTBranch::print_probability();
+			SMTBranch::print_probability();
 			selected_branch->k_permit_covered++;
 			// Xiangchen: Because we use the probability to sort the branches
 			// So we need not to consider the distance
 			selected_branch->block->distance++;
 			return true;
 		}
-	}
+	}	
+
 	return false;
 }
+	// }else{
+	// 	// 打印所有分支
+	// 	std::cout << "Available branches:" << std::endl;
+	// 	for(size_t i = 0; i < branches.size(); ++i) {
+	// 		std::cout << "Index " << i << ": " << branches[i]->br->print() << std::endl;
+	// 	}
+
+	// 	// 获取用户输入
+	// 	std::cout << "Enter the index of the branch to select: ";
+	// 	size_t user_choice;
+	// 	std::cin >> user_choice;
+
+	// 	// 检查用户输入的有效性
+	// 	if(user_choice >= branches.size()) {
+	// 		std::cerr << "Invalid index selected." << std::endl;
+	// 		return false;
+	// 	}
+
+	// 	// 使用用户选择的分支
+	// 	auto selected_branch_it = branches.begin() + user_choice;
+
+	// 	// 用选择的分支代替原来的自动选择逻辑
+	// 	auto it = selected_branch_it;
+
+	// 	//printf("Trying %s\n", it->br->print().c_str());
+	// 	uint clock = (*it)->cnst->clock;
+	// 	//reset context
+	// 	yices_reset_context(yices_context);
+
+	// 	//insert initial assertion to zero for registers
+	// 	SMTSigCore::yices_insert_reg_init(yices_context);
+		
+	// 	constraint_t** cnst = constraints_stack.data();
+	// 	while((*cnst)->clock != clock){
+	// 		if((*cnst)->type != CNST_CLK){			
+	// 			smt_yices_assert(yices_context, (*cnst)->yices_term, (*cnst)->obj);
+	// 		}
+	// 		cnst++;
+	// 	}	
+	// 	assert((*cnst)->type == CNST_CLK);
+	// 	cnst++;
+		
+	// 	//restore version
+	// 	SMTSigCore::restore_versions(clock);
+	// 	const SMTProcess* target_process = (*it)->cnst->obj->process;
+	// 	while(*cnst != (*it)->cnst){
+	// 		const SMTProcess* process = (*cnst)->obj->process;
+	// 		if(!process->is_edge_triggered || (process == target_process)){
+	// 			term_t term = (*cnst)->obj->update_term();
+	// 			smt_yices_assert(yices_context, term, (*cnst)->obj);
+	// 		}
+	// 		cnst++;
+	// 	}
+
+	// 	//add mutated branch
+	// 	smt_yices_assert(yices_context, (*it)->br->update_term(), (*it)->br);
+		
+
+	// 	call_to_solver++;
+	// 	check_satisfiability();
+	// 	if(solve_constraints(clock)){
+	// 		selected_branch = (*it)->br;
+	// 		selected_clock = clock;
+	// 		//insert hash value even if potentially incorrect
+	// 		update_path_taken((*it));
+	// 		if(!enable_error_check){
+	// 			(*it)->br->set_covered_clk(sim_num+1, clock);
+	// 		}
+	// 		// printf("[FOUND: CLOCK: %u, IDX: %u, DIST: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->block->distance, selected_branch->branch_probability, it->br->print().c_str());
+	// 		// printf("[FOUND: CLOCK: %u, IDX: %u, PROB: %f] %s", clock, selected_branch->list_idx, selected_branch->branch_probability, it->br->print().c_str());
+			
+	// 		// Xiangchen: Adjust the probability
+	// 		if(g_is_new_block){
+	// 			SMTBranch::increase_probability(selected_branch);
+	// 		}else{
+	// 			if(sim_num > prob_num){
+	// 				SMTBranch::decrease_probability(selected_branch);
+	// 			}else{
+	// 				SMTBranch::increase_probability(selected_branch);
+	// 			}
+	// 		}
+	// 		// SMTBranch::print_probability();
+	// 		selected_branch->k_permit_covered++;
+	// 		// Xiangchen: Because we use the probability to sort the branches
+	// 		// So we need not to consider the distance
+	// 		selected_branch->block->distance++;
+	// 		return true;
+	// 	}
+	// }
+
+
 
 static void check_satisfiability(){
     //reset context
@@ -941,7 +969,7 @@ void step_coverage() {
 					SMTBasicBlock::remove_covered_targets(path->data.get_clk());
 					break;
 				}
-				path->data.clear_input_vector();
+				path->ClearPath();
 				constraints_stack.clear();
 				sim_num ++;
 				explore_one_step(path);
@@ -955,16 +983,6 @@ void step_coverage() {
 			if(target->assign_list[0]->is_covered()){
 				SMTBasicBlock::remove_covered_targets(path->data.get_clk());
 				break;
-			}
-			if(sim_num == learning_limit){
-				g_data.clear_input_vector();
-				g_sim_clk = g_step;
-				g_data.generate(g_data_mem);
-				update_vvp(g_step);
-				simulate_build_stack();   
-				path = new SMTPath(g_data);
-				target->SMTBasicBlock::update_path(path, constraints_stack);
-				sim_num++;	
 			}
 			// if(path){
 			// 	SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
@@ -1137,7 +1155,7 @@ void end_concolic(){
 
 
     yices_free_context(yices_context);
-    yices_exit();
+    // yices_exit();
     SMTFreeAll();
     exit(0);
 }

@@ -1,5 +1,5 @@
 ;_C          0
-WARNING: conquest_tb.v:47: $readmemb(data.mem): Not enough words in the file for the requested range [0:34].
+WARNING: conquest_tb.v:47: $readmemb(data.mem): Not enough words in the file for the requested range [0:27].
 ;A 0
 target
 ;A 3
@@ -39,7 +39,7 @@ target
 ;R stato = 0010
 ;R x_out = 000000
 ;_C          3
-;_Input 01000010
+;_Input 01000100
 ;A 19
 ;A 21
 ;A 29
@@ -63,6 +63,18 @@ target
 ;R stato = 0001
 ;R x_out = 000000
 ;_C          5
+;_Input 01000000
+;A 13
+;A 14
+;A 15
+;A 17
+;R cont = 000000
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = 0
+;R stato = 0001
+;R x_out = 000000
+;_C          6
 ;_Input 00100000
 ;A 13
 ;A 14
@@ -74,8 +86,8 @@ target
 ;R r_in[0] = 0
 ;R stato = 0010
 ;R x_out = 000000
-;_C          6
-;_Input 00101000
+;_C          7
+;_Input 11010111
 ;A 19
 ;A 21
 ;A 29
@@ -85,33 +97,9 @@ target
 ;R cont1_inv = 000000000
 ;R r_in[0] = 0
 ;R stato = 0001
-;R x_out = 000000
-;_C          7
-;_Input 10100000
-;A 13
-;A 14
-;A 16
-;A 18
-;R cont = 000000
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0010
 ;R x_out = 000000
 ;_C          8
-;_Input 00000101
-;A 19
-;A 21
-;A 29
-;A 31
-;R cont = 000000
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C          9
-;_Input 11000000
+;_Input 01000000
 ;A 13
 ;A 14
 ;A 15
@@ -122,8 +110,8 @@ target
 ;R r_in[0] = 0
 ;R stato = 0001
 ;R x_out = 000000
-;_C         10
-;_Input 00000000
+;_C          9
+;_Input 10010000
 ;A 13
 ;A 14
 ;A 16
@@ -134,8 +122,179 @@ target
 ;R r_in[0] = 0
 ;R stato = 0010
 ;R x_out = 000000
+;_C         10
+;_Input 01000010
+;A 19
+;A 21
+;A 28
+;A 30
+;R cont = 000000
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = 0
+;R stato = 0011
+;R x_out = 000000
 ;_C         11
-;_Input 00100101
+;_Input 01100110
+;A 32
+;A 34
+;A 36
+;A 37
+;R cont = 000000
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = 0
+;R stato = 0100
+;R x_out = 000000
+;_C         12
+;_Input 11110100
+;A 38
+;A 40
+;A 43
+;A 44
+;R cont = 000000
+;R cont1 = 000010000
+;R cont1_inv = 000000000
+;R r_in[0] = 0
+;R stato = 0110
+;R x_out = 000000
+;A 0
+;_C         13
+;_Input 00100001
+;A 51
+;A 53
+;A 56
+;R cont = 000000
+;R cont1 = 000010000
+;R cont1_inv = 111110000
+;R r_in[0] = 0
+;R stato = 0111
+;R x_out = 000000
+;_C         14
+;_Input 10101010
+;A 57
+;A 58
+;A 60
+;A 68
+;R cont = 000000
+;R cont1 = 111111011
+;R cont1_inv = 111110000
+;R r_in[0] = 0
+;R stato = 1000
+;R x_out = 000000
+;A 0
+;_C         15
+;_Input 00101101
+;A 69
+;A 70
+;A 72
+;A 74
+;R cont = 000000
+;R cont1 = 111111011
+;R cont1_inv = 000000101
+;R r_in[0] = 0
+;R stato = 0001
+;R x_out = 000000
+;_C         16
+;_Input 10010011
+;A 13
+;A 14
+;A 16
+;A 18
+;R cont = 000000
+;R cont1 = 111111011
+;R cont1_inv = 000000101
+;R r_in[0] = 1
+;R stato = 0010
+;R x_out = 000101
+;_C         17
+;_Input 00111111
+;A 19
+;A 21
+;A 28
+;A 30
+;R cont = 000000
+;R cont1 = 111111011
+;R cont1_inv = 000000101
+;R r_in[0] = 1
+;R stato = 0011
+;R x_out = 000101
+;_C         18
+;_Input 10011100
+;A 32
+;A 33
+;A 35
+;A 37
+;R cont = 000000
+;R cont1 = 000000000
+;R cont1_inv = 000000101
+;R r_in[0] = 1
+;R stato = 0100
+;R x_out = 000101
+;A 0
+;_C         19
+;_Input 00011011
+;A 38
+;A 39
+;A 41
+;A 42
+;R cont = 000000
+;R cont1 = 000010011
+;R cont1_inv = 000000000
+;R r_in[0] = 1
+;R stato = 0101
+;R x_out = 000101
+;A 0
+;_C         20
+;_Input 10110111
+;A 45
+;A 47
+;A 50
+;R cont = 000000
+;R cont1 = 000010011
+;R cont1_inv = 111101101
+;R r_in[0] = 1
+;R stato = 0111
+;R x_out = 000101
+;_C         21
+;_Input 00010000
+;A 57
+;A 58
+;A 60
+;A 68
+;R cont = 000000
+;R cont1 = 111111110
+;R cont1_inv = 111101101
+;R r_in[0] = 1
+;R stato = 1000
+;R x_out = 000101
+;A 0
+;_C         22
+;_Input 00001101
+;A 69
+;A 70
+;A 72
+;A 74
+;R cont = 000000
+;R cont1 = 111111110
+;R cont1_inv = 000000010
+;R r_in[0] = 1
+;R stato = 0001
+;R x_out = 000101
+;_C         23
+;_Input 00000000
+;A 13
+;A 14
+;A 16
+;A 18
+;R cont = 000000
+;R cont1 = 111111110
+;R cont1_inv = 000000010
+;R r_in[0] = 0
+;R stato = 0010
+;R x_out = 000010
+;_C         24
+;_Input 11110111
 ;A 19
 ;A 20
 ;A 22
@@ -144,12 +303,13 @@ target
 ;A 27
 ;R cont = 000001
 ;R cont1 = 000000000
-;R cont1_inv = 000000000
+;R cont1_inv = 000000010
 ;R r_in[0] = 0
 ;R stato = 1000
-;R x_out = 000000
-;_C         12
-;_Input 11111111
+;R x_out = 000010
+;A 0
+;_C         25
+;_Input xxxxxxxx
 ;A 69
 ;A 71
 ;A 73
@@ -159,298 +319,139 @@ target
 ;R cont1_inv = 000000000
 ;R r_in[0] = 0
 ;R stato = 0001
-;R x_out = 000000
-;_C         13
-;_Input 01000000
-;A 13
-;A 14
-;A 15
-;A 17
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         14
-;_Input 11000000
-;A 13
-;A 14
-;A 15
-;A 17
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         15
-;_Input 01000000
-;A 13
-;A 14
-;A 15
-;A 17
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         16
-;_Input 10100000
-;A 13
-;A 14
-;A 16
-;A 18
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0010
-;R x_out = 000000
-;_C         17
-;_Input 00010101
-;A 19
-;A 21
-;A 29
-;A 31
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         18
-;_Input 00100000
-;A 13
-;A 14
-;A 16
-;A 18
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0010
-;R x_out = 000000
-;_C         19
-;_Input 11001011
-;A 19
-;A 21
-;A 29
-;A 31
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         20
-;_Input 01000000
-;A 13
-;A 14
-;A 15
-;A 17
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         21
-;_Input 11000000
-;A 13
-;A 14
-;A 15
-;A 17
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         22
-;_Input 01000000
-;A 13
-;A 14
-;A 15
-;A 17
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         23
-;_Input 11000000
-;A 13
-;A 14
-;A 15
-;A 17
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         24
-;_Input 00010000
-;A 13
-;A 14
-;A 16
-;A 18
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0010
-;R x_out = 000000
-;_C         25
-;_Input 11101011
-;A 19
-;A 21
-;A 28
-;A 30
-;R cont = 000001
-;R cont1 = 000000000
-;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0011
-;R x_out = 000000
+;R x_out = 000010
 ;_C         26
-;_Input 01100011
-;A 32
-;A 34
-;A 36
-;A 37
+;_Input xxxxxxxx
+;A 13
+;A 14
+;A 16
+;A 18
 ;R cont = 000001
-;R cont1 = 000000001
+;R cont1 = 000000000
 ;R cont1_inv = 000000000
-;R r_in[0] = 0
-;R stato = 0100
+;R r_in[0] = x
+;R stato = 0010
 ;R x_out = 000000
-;A 0
 ;_C         27
-;_Input 11101100
-;A 38
-;A 40
-;A 43
-;A 44
+;_Input xxxxxxxx
+;A 19
+;A 21
+;A 29
+;A 31
 ;R cont = 000001
-;R cont1 = 000001111
-;R cont1_inv = 111111111
-;R r_in[0] = 0
-;R stato = 0110
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
+;R stato = 0001
 ;R x_out = 000000
-;A 0
 ;_C         28
-;_Input 01000101
-;A 51
-;A 53
-;A 56
+;_Input xxxxxxxx
+;A 13
+;A 14
+;A 16
+;A 18
 ;R cont = 000001
-;R cont1 = 000001111
-;R cont1_inv = 111110001
-;R r_in[0] = 0
-;R stato = 0111
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
+;R stato = 0010
 ;R x_out = 000000
 ;_C         29
-;_Input 10010000
-;A 57
-;A 58
-;A 60
-;A 68
-;R cont = 000001
-;R cont1 = 111111010
-;R cont1_inv = 111110001
-;R r_in[0] = 0
-;R stato = 1000
-;R x_out = 000000
-;A 0
-;_C         30
-;_Input 01110110
-;A 69
-;A 70
-;A 72
-;A 74
-;R cont = 000001
-;R cont1 = 111111010
-;R cont1_inv = 000000110
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000000
-;_C         31
-;_Input 10111000
-;A 13
-;A 14
-;A 16
-;A 18
-;R cont = 000001
-;R cont1 = 111111010
-;R cont1_inv = 000000110
-;R r_in[0] = 0
-;R stato = 0010
-;R x_out = 000110
-;_C         32
-;_Input 01011001
+;_Input xxxxxxxx
 ;A 19
 ;A 21
 ;A 29
 ;A 31
 ;R cont = 000001
-;R cont1 = 111111010
-;R cont1_inv = 000000110
-;R r_in[0] = 0
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
 ;R stato = 0001
-;R x_out = 000110
-;_C         33
-;_Input 11110000
-;A 13
-;A 14
-;A 15
-;A 17
-;R cont = 000001
-;R cont1 = 111111010
-;R cont1_inv = 000000110
-;R r_in[0] = 0
-;R stato = 0001
-;R x_out = 000110
-;_C         34
-;_Input 00010110
+;R x_out = 000000
+;_C         30
+;_Input xxxxxxxx
 ;A 13
 ;A 14
 ;A 16
 ;A 18
 ;R cont = 000001
-;R cont1 = 111111010
-;R cont1_inv = 000000110
-;R r_in[0] = 0
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
 ;R stato = 0010
-;R x_out = 000110
+;R x_out = 000000
+;_C         31
+;_Input xxxxxxxx
+;A 19
+;A 21
+;A 29
+;A 31
+;R cont = 000001
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
+;R stato = 0001
+;R x_out = 000000
+;_C         32
+;_Input xxxxxxxx
+;A 13
+;A 14
+;A 16
+;A 18
+;R cont = 000001
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
+;R stato = 0010
+;R x_out = 000000
+;_C         33
+;_Input xxxxxxxx
+;A 19
+;A 21
+;A 29
+;A 31
+;R cont = 000001
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
+;R stato = 0001
+;R x_out = 000000
+;_C         34
+;_Input xxxxxxxx
+;A 13
+;A 14
+;A 16
+;A 18
+;R cont = 000001
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
+;R stato = 0010
+;R x_out = 000000
 ;_C         35
 ;_Input xxxxxxxx
 ;A 19
 ;A 21
-;A 28
-;A 30
+;A 29
+;A 31
 ;R cont = 000001
-;R cont1 = 111111010
-;R cont1_inv = 000000110
-;R r_in[0] = 0
-;R stato = 0011
-;R x_out = 000110
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
+;R stato = 0001
+;R x_out = 000000
 ;_C         36
 ;_Input xxxxxxxx
-;A 32
-;A 34
-;A 36
-;A 37
+;A 13
+;A 14
+;A 16
+;A 18
 ;R cont = 000001
-;R cont1 = 000000001
-;R cont1_inv = 000000110
-;R r_in[0] = 0
-;R stato = 0100
-;R x_out = 000110
-;A 0
+;R cont1 = 000000000
+;R cont1_inv = 000000000
+;R r_in[0] = x
+;R stato = 0010
+;R x_out = 000000
 ;_C         37
 ;_Input xxxxxxxx
 conquest_tb.v:51: $finish called at 367 (1s)

@@ -1,5 +1,5 @@
 ;_C          0
-WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for the requested range [0:114].
+WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for the requested range [0:26].
 ;A 103
 ;A 104
 ;A 105
@@ -466,7 +466,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 000000
 ;R wr = 0
 ;_C          2
-;_Input 110001
+;_Input 110011
 ;A 116
 ;A 118
 ;A 122
@@ -686,7 +686,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 100001
 ;R wr = 0
 ;_C          3
-;_Input 011011
+;_Input 011111
 ;A 6
 ;A 51
 ;A 52
@@ -906,7 +906,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 100001
 ;R wr = 0
 ;_C          4
-;_Input 111001
+;_Input 110011
 ;A 116
 ;A 118
 ;A 122
@@ -1126,7 +1126,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 100001
 ;R wr = 0
 ;_C          5
-;_Input 011000
+;_Input 010010
 ;A 6
 ;A 51
 ;A 52
@@ -1344,20 +1344,24 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 100001
 ;R wr = 0
 ;_C          6
-;_Input 001100
-;A 117
-;A 119
-;A 136
-;A 137
-;A 138
-;A 139
+;_Input 001101
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
 ;R address = 00000
 ;R count = 01
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00100
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -1410,7 +1414,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00100
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -1463,7 +1467,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00100
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -1516,7 +1520,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00100
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -1561,7 +1565,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 100001
 ;R wr = 1
 ;_C          7
-;_Input 110110
+;_Input 100000
 ;A 6
 ;A 51
 ;A 52
@@ -1571,7 +1575,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00100
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -1624,7 +1628,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00100
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -1676,7 +1680,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00100
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -1722,15 +1726,19 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R wr = 0
 ;A 117
 ;A 119
-;A 140
-;A 141
+;A 130
+;A 131
+;A 132
+;A 133
+;A 134
+;A 135
 ;R address = 00000
 ;R count = 11
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00101
+;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -1775,25 +1783,1777 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 100001
 ;R wr = 0
 ;_C          8
-;_Input 001010
+;_Input 011110
 ;A 117
 ;A 119
-;A 142
-;A 143
-;A 144
-;A 145
-;A 146
-;A 147
+;A 136
+;A 137
+;A 138
+;A 139
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
-;R data_in = 00
+;R data_in = 10
 ;R data_out = 00
-;R gamma = 00110
+;R gamma = 00100
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 97
+;A 98
+;A 100
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 00
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 57
+;A 59
+;A 61
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 00
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 00
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;_C          9
+;_Input 100001
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 00
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 00
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 00
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 00
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         10
+;_Input 001011
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         11
+;_Input 110010
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 117
+;A 119
+;A 130
+;A 131
+;A 132
+;A 133
+;A 134
+;A 135
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00011
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         12
+;_Input 001000
+;A 117
+;A 119
+;A 136
+;A 137
+;A 138
+;A 139
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 97
+;A 98
+;A 100
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 57
+;A 59
+;A 61
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;_C         13
+;_Input 001011
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         14
+;_Input 110111
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         15
+;_Input 011011
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         16
+;_Input 111100
+;A 117
+;A 119
+;A 130
+;A 131
+;A 132
+;A 133
+;A 134
+;A 135
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00011
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1838,14 +3598,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 99
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
-;R data_in = 00
-;R data_out = 00
-;R gamma = 00110
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 10
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1891,14 +3651,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 61
 ;R address = 00000
 ;R count = 00
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
-;R data_in = 00
-;R data_out = 00
-;R gamma = 00110
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 10
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1944,14 +3704,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 52
 ;R address = 00000
 ;R count = 00
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
-;R data_in = 00
-;R data_out = 00
-;R gamma = 00110
+;R data_in = 10
+;R data_out = 10
+;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 10
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1992,22 +3752,21 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C          9
-;_Input 101111
-;A 5
-;A 7
-;A 9
-;A 13
+;_C         17
+;_Input 011100
+;A 6
+;A 51
+;A 52
 ;R address = 00000
 ;R count = 00
-;R count2 = 100001
-;R counter = 001
-;R data_in = 00
-;R data_out = 00
-;R gamma = 00110
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 10
+;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 10
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2039,10 +3798,881 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[29] = 00
 ;R memory[30] = 00
 ;R memory[31] = 00
-;R nl = 0001
+;R nl = 0000
 ;R nloss = 0
 ;R num = 00
-;R play = 1
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 10
+;R gamma = 00011
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 10
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 97
+;A 98
+;A 100
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 10
+;R gamma = 00011
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;A 117
+;A 119
+;A 136
+;A 137
+;A 138
+;A 139
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 10
+;R gamma = 00100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 1
+;_C         18
+;_Input 000110
+;A 117
+;A 119
+;A 140
+;A 141
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 10
+;R gamma = 00101
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 10
+;R gamma = 00101
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 10
+;R gamma = 00101
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 10
+;R gamma = 00101
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         19
+;_Input 101101
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 10
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00101
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00101
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00101
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 10
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         20
+;_Input 000011
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 11
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 57
+;A 59
+;A 61
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         21
+;_Input 110111
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
@@ -2053,14 +4683,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 61
 ;R address = 00000
 ;R count = 01
-;R count2 = 100001
-;R counter = 001
-;R data_in = 00
-;R data_out = 00
-;R gamma = 00110
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 11
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2092,10 +4722,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[29] = 00
 ;R memory[30] = 00
 ;R memory[31] = 00
-;R nl = 0001
+;R nl = 0000
 ;R nloss = 0
 ;R num = 00
-;R play = 1
+;R play = 0
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
@@ -2105,14 +4735,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 99
 ;R address = 00000
 ;R count = 01
-;R count2 = 100001
-;R counter = 001
-;R data_in = 00
-;R data_out = 00
-;R gamma = 00110
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 11
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2144,10 +4774,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[29] = 00
 ;R memory[30] = 00
 ;R memory[31] = 00
-;R nl = 0001
+;R nl = 0000
 ;R nloss = 0
 ;R num = 00
-;R play = 1
+;R play = 0
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
@@ -2165,14 +4795,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 129
 ;R address = 00000
 ;R count = 01
-;R count2 = 100001
-;R counter = 001
-;R data_in = 00
-;R data_out = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
 ;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 11
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2204,17 +4834,17 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[29] = 00
 ;R memory[30] = 00
 ;R memory[31] = 00
-;R nl = 0001
+;R nl = 0000
 ;R nloss = 0
 ;R num = 00
-;R play = 1
+;R play = 0
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         10
-;_Input 011100
+;_C         22
+;_Input 000100
 ;A 117
 ;A 119
 ;A 130
@@ -2225,14 +4855,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 135
 ;R address = 00000
 ;R count = 01
-;R count2 = 100001
-;R counter = 001
-;R data_in = 00
-;R data_out = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 11
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2277,14 +4907,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 99
 ;R address = 00000
 ;R count = 01
-;R count2 = 100001
-;R counter = 001
-;R data_in = 00
-;R data_out = 00
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 11
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2330,67 +4960,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 61
 ;R address = 00000
 ;R count = 10
-;R count2 = 100001
-;R counter = 001
-;R data_in = 00
-;R data_out = 00
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 00
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
-;R data_in = 00
-;R data_out = 00
+;R data_in = 11
+;R data_out = 11
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 11
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2431,21 +5008,74 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         11
-;_Input xxxxxx
 ;A 6
 ;A 51
 ;A 52
 ;R address = 00000
 ;R count = 10
-;R count2 = 100001
+;R count2 = 000000
+;R counter = 000
+;R data_in = 11
+;R data_out = 11
+;R gamma = 00011
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 11
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 01
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         23
+;_Input 111000
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 10
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 00
+;R data_out = 11
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 11
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2491,14 +5121,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 61
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 00
+;R data_out = 11
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 00
+;R memory[0] = 11
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2544,10 +5174,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 100
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 00
+;R data_out = 11
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
@@ -2600,10 +5230,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 139
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 00
+;R data_out = 11
 ;R gamma = 00100
 ;R ind[0] = 0
 ;R max = 00000
@@ -2648,7 +5278,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 1
-;_C         12
+;_C         24
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -2656,10 +5286,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 141
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 00
+;R data_out = 11
 ;R gamma = 00101
 ;R ind[0] = 0
 ;R max = 00000
@@ -2708,10 +5338,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 99
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 00
+;R data_out = 11
 ;R gamma = 00101
 ;R ind[0] = 0
 ;R max = 00000
@@ -2761,10 +5391,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 61
 ;R address = 00000
 ;R count = 00
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 00
+;R data_out = 11
 ;R gamma = 00101
 ;R ind[0] = 0
 ;R max = 00000
@@ -2814,10 +5444,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 52
 ;R address = 00000
 ;R count = 00
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 00
+;R data_out = 11
 ;R gamma = 00101
 ;R ind[0] = 0
 ;R max = 00000
@@ -2862,14 +5492,14 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         13
+;_C         25
 ;_Input xxxxxx
 ;A 6
 ;A 51
 ;A 52
 ;R address = 00000
 ;R count = 00
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
 ;R data_out = 01
@@ -2922,7 +5552,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 61
 ;R address = 00000
 ;R count = 01
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
 ;R data_out = 01
@@ -2974,7 +5604,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 99
 ;R address = 00000
 ;R count = 01
-;R count2 = 100001
+;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
 ;R data_out = 01
@@ -3080,7 +5710,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         14
+;_C         26
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -3297,7 +5927,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         15
+;_C         27
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -3514,7 +6144,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         16
+;_C         28
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -3731,7 +6361,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         17
+;_C         29
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -3948,7 +6578,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         18
+;_C         30
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -4167,7 +6797,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         19
+;_C         31
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -4384,7 +7014,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         20
+;_C         32
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -4601,7 +7231,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         21
+;_C         33
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -4818,7 +7448,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         22
+;_C         34
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -5035,7 +7665,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         23
+;_C         35
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -5254,7 +7884,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         24
+;_C         36
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -5471,7 +8101,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         25
+;_C         37
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -5688,7 +8318,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         26
+;_C         38
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -5905,7 +8535,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         27
+;_C         39
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -6122,7 +8752,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         28
+;_C         40
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -6341,7 +8971,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         29
+;_C         41
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -6558,7 +9188,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         30
+;_C         42
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -6775,7 +9405,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         31
+;_C         43
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -6992,7 +9622,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         32
+;_C         44
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -7209,7 +9839,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         33
+;_C         45
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -7428,7 +10058,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         34
+;_C         46
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -7645,7 +10275,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         35
+;_C         47
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -7862,7 +10492,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         36
+;_C         48
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -8079,7 +10709,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         37
+;_C         49
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -8296,7 +10926,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         38
+;_C         50
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -8515,7 +11145,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         39
+;_C         51
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -8732,7 +11362,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         40
+;_C         52
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -8949,7 +11579,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         41
+;_C         53
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -9166,7 +11796,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         42
+;_C         54
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -9383,7 +12013,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         43
+;_C         55
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -9602,7 +12232,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         44
+;_C         56
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -9819,7 +12449,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         45
+;_C         57
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -10036,7 +12666,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         46
+;_C         58
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -10253,7 +12883,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         47
+;_C         59
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -10472,7 +13102,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         48
+;_C         60
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -10688,7 +13318,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         49
+;_C         61
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -10904,7 +13534,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         50
+;_C         62
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -11120,7 +13750,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         51
+;_C         63
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -11336,7 +13966,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         52
+;_C         64
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -11552,7 +14182,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         53
+;_C         65
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -11768,7 +14398,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         54
+;_C         66
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -11984,7 +14614,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         55
+;_C         67
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -12200,7 +14830,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         56
+;_C         68
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -12416,7 +15046,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         57
+;_C         69
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -12632,7 +15262,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         58
+;_C         70
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -12848,7 +15478,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         59
+;_C         71
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -13064,7 +15694,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         60
+;_C         72
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -13280,7 +15910,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         61
+;_C         73
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -13496,7 +16126,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         62
+;_C         74
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -13712,7 +16342,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         63
+;_C         75
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -13928,7 +16558,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         64
+;_C         76
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -14144,7 +16774,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         65
+;_C         77
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -14360,7 +16990,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         66
+;_C         78
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -14576,7 +17206,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         67
+;_C         79
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -14792,7 +17422,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         68
+;_C         80
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -15008,7 +17638,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         69
+;_C         81
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -15224,7 +17854,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         70
+;_C         82
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -15440,7 +18070,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         71
+;_C         83
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -15656,7 +18286,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         72
+;_C         84
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -15872,7 +18502,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         73
+;_C         85
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -16088,7 +18718,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         74
+;_C         86
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -16304,7 +18934,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         75
+;_C         87
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -16520,7 +19150,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         76
+;_C         88
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -16736,7 +19366,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         77
+;_C         89
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -16952,7 +19582,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         78
+;_C         90
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -17168,7 +19798,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         79
+;_C         91
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -17384,7 +20014,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         80
+;_C         92
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -17600,7 +20230,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         81
+;_C         93
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -17817,7 +20447,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         82
+;_C         94
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -18033,7 +20663,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         83
+;_C         95
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -18247,7 +20877,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         84
+;_C         96
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -18467,7 +21097,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         85
+;_C         97
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -18687,7 +21317,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         86
+;_C         98
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -18907,7 +21537,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         87
+;_C         99
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -19127,7 +21757,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         88
+;_C        100
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -19347,7 +21977,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         89
+;_C        101
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -19567,7 +22197,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         90
+;_C        102
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -19787,7 +22417,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         91
+;_C        103
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -20007,7 +22637,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         92
+;_C        104
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -20227,7 +22857,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         93
+;_C        105
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -20447,7 +23077,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         94
+;_C        106
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -20667,7 +23297,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         95
+;_C        107
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -20887,7 +23517,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         96
+;_C        108
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -21107,7 +23737,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         97
+;_C        109
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -21327,7 +23957,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         98
+;_C        110
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -21547,7 +24177,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         99
+;_C        111
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -21767,7 +24397,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        100
+;_C        112
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -21987,7 +24617,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        101
+;_C        113
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -22207,7 +24837,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        102
+;_C        114
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -22427,7 +25057,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        103
+;_C        115
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -22647,7 +25277,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        104
+;_C        116
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -22867,7 +25497,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        105
+;_C        117
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -23087,7 +25717,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        106
+;_C        118
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -23307,7 +25937,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        107
+;_C        119
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -23527,2649 +26157,25 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        108
-;_Input xxxxxx
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 11
-;R count2 = 001000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 11
-;R count2 = 001000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 57
-;A 59
-;A 61
-;R address = 00000
-;R count = 00
-;R count2 = 001000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 00
-;R count2 = 001000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        109
-;_Input xxxxxx
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 00
-;R count2 = 001000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 01
-;R count2 = 001000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 01
-;R count2 = 001000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 01
-;R count2 = 000111
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        110
-;_Input xxxxxx
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 01
-;R count2 = 000110
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 01
-;R count2 = 000110
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 10
-;R count2 = 000110
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 000110
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        111
-;_Input xxxxxx
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 000110
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 11
-;R count2 = 000110
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 11
-;R count2 = 000110
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 11
-;R count2 = 000101
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        112
-;_Input xxxxxx
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 11
-;R count2 = 000100
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 11
-;R count2 = 000100
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 57
-;A 59
-;A 61
-;R address = 00000
-;R count = 00
-;R count2 = 000100
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 00
-;R count2 = 000100
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        113
-;_Input xxxxxx
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 00
-;R count2 = 000100
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 01
-;R count2 = 000100
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 01
-;R count2 = 000100
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 01
-;R count2 = 000011
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        114
-;_Input xxxxxx
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 01
-;R count2 = 000010
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 01
-;R count2 = 000010
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 10
-;R count2 = 000010
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 000010
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        115
-;_Input xxxxxx
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 000010
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 11
-;R count2 = 000010
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 11
-;R count2 = 000010
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 11
-;R count2 = 000001
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        116
-;_Input xxxxxx
-;A 117
-;A 119
-;A 174
-;A 176
-;A 180
-;A 182
-;A 193
-;A 204
-;A 215
-;A 225
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 57
-;A 59
-;A 61
-;R address = 00000
-;R count = 00
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 00
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        117
-;_Input xxxxxx
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 00
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 01010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 117
-;A 119
-;A 174
-;A 175
-;A 177
-;A 178
-;A 179
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10001
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        118
-;_Input xxxxxx
-;A 117
-;A 119
-;A 275
-;A 276
-;A 277
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 1
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 1
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 10
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 1
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 1
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C        119
-;_Input xxxxxx
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 1
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 1
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 1
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 117
-;A 119
-;A 278
-;A 279
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 01
-;R data_out = 01
-;R gamma = 10011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 01
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 1
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
 ;_C        120
 ;_Input xxxxxx
 ;A 117
 ;A 119
-;A 280
-;A 281
-;A 282
-;A 283
-;A 284
-;A 285
+;A 174
+;A 176
+;A 180
+;A 182
+;A 193
+;A 204
+;A 215
+;A 225
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 001000
 ;R counter = 000
 ;R data_in = 01
 ;R data_out = 01
-;R gamma = 10100
+;R gamma = 01010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 01
@@ -26205,7 +26211,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[30] = 00
 ;R memory[31] = 00
 ;R nl = 0000
-;R nloss = 1
+;R nloss = 0
 ;R num = 11
 ;R play = 0
 ;R s = 0
@@ -26217,11 +26223,11 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 99
 ;R address = 00000
 ;R count = 11
-;R count2 = 100001
+;R count2 = 001000
 ;R counter = 000
 ;R data_in = 01
 ;R data_out = 01
-;R gamma = 10100
+;R gamma = 01010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 01
@@ -26257,7 +26263,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[30] = 00
 ;R memory[31] = 00
 ;R nl = 0000
-;R nloss = 1
+;R nloss = 0
 ;R num = 11
 ;R play = 0
 ;R s = 0
@@ -26270,11 +26276,11 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 61
 ;R address = 00000
 ;R count = 00
-;R count2 = 100001
+;R count2 = 001000
 ;R counter = 000
 ;R data_in = 01
 ;R data_out = 01
-;R gamma = 10100
+;R gamma = 01010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 01
@@ -26310,7 +26316,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[30] = 00
 ;R memory[31] = 00
 ;R nl = 0000
-;R nloss = 1
+;R nloss = 0
 ;R num = 11
 ;R play = 0
 ;R s = 0
@@ -26323,11 +26329,11 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;A 52
 ;R address = 00000
 ;R count = 00
-;R count2 = 100001
+;R count2 = 001000
 ;R counter = 000
 ;R data_in = 01
 ;R data_out = 01
-;R gamma = 10100
+;R gamma = 01010
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 01
@@ -26363,7 +26369,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[30] = 00
 ;R memory[31] = 00
 ;R nl = 0000
-;R nloss = 1
+;R nloss = 0
 ;R num = 11
 ;R play = 0
 ;R s = 0

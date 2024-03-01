@@ -227,7 +227,7 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "\n%*c// Generated internal use signals\n", 4, ' ');
         fprintf(f_tb, "%*creg  [31:0] _conc_pc;\n", 4, ' ');
         fprintf(f_tb, "%*creg  [%u:0] _conc_opcode;\n", 4, ' ', g_data.get_width() - 1);
-        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_sim_clk);
+        fprintf(f_tb, "%*creg  [%u:0] _conc_ram[0:%u];\n\n", 4, ' ', g_data.get_width() - 1, g_unroll + 10);
 
         //Dump clk toggle
         fprintf(f_tb, "\n%*c// Generated clock pulse\n", 4, ' ');
@@ -263,7 +263,7 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "%*c#2 %s = 1'b1;\n", 8, ' ', g_clock_sig_name);
         fprintf(f_tb, "%*c%s = %s;\n", 8, ' ', g_reset_sig_name, g_reset_edge_active);
         fprintf(f_tb, "%*c#5 %s = %s;\n", 8, ' ', g_reset_sig_name, reset_edge_inactive);
-        fprintf(f_tb, "%*c#%d $finish;\n", 8, ' ', g_unroll * 12);
+        fprintf(f_tb, "%*c#%d $finish;\n", 8, ' ', g_unroll + 10);
         fprintf(f_tb, "%*cend\n\n", 4, ' ');
     } else{
         error("TODO: Testbench for input width of 1");
