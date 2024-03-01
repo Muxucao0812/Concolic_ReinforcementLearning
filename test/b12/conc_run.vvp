@@ -1758,7 +1758,7 @@ T_8 ;
     %delay 5, 0;1000 %delay 5, 0;
     %pushi/vec4 0, 0, 1;
     %store/vec4 v0x5555559da160_0, 0, 1;
-    %delay 1000, 0;
+    %delay 1200, 0;
     %vpi_call 2 55 "$finish" {0 0 0};
     %end;
     .thread T_8;

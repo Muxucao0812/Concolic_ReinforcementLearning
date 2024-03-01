@@ -263,7 +263,7 @@ void generate_tb(ivl_scope_t root){
         fprintf(f_tb, "%*c#2 %s = 1'b1;\n", 8, ' ', g_clock_sig_name);
         fprintf(f_tb, "%*c%s = %s;\n", 8, ' ', g_reset_sig_name, g_reset_edge_active);
         fprintf(f_tb, "%*c#5 %s = %s;\n", 8, ' ', g_reset_sig_name, reset_edge_inactive);
-        fprintf(f_tb, "%*c#%d $finish;\n", 8, ' ', g_unroll * 10);
+        fprintf(f_tb, "%*c#%d $finish;\n", 8, ' ', g_unroll * 12);
         fprintf(f_tb, "%*cend\n\n", 4, ' ');
     } else{
         error("TODO: Testbench for input width of 1");

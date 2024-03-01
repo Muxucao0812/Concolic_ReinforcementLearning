@@ -203,7 +203,7 @@ class DQN:
     
     def take_action(self, state, branch_list):
         state_tensor = torch.tensor([state], dtype=torch.float).to(self.device)
-         if np.random.random() < self.epsilon:
+        if np.random.random() < self.epsilon:
         # 随机选择一个动作
             return [random.choice(branch_list)]
         with torch.no_grad():  # 在进行推断时不需要计算梯度
@@ -319,7 +319,7 @@ replay_buffer = ReplayBuffer(capacity)
 }
 void execute_python_sort_branch() {
 PyRun_SimpleString(R"(
-    state = get_state("data.state")
+	state = get_state("data.state")
     state = np.array(list(state_int.values()))  # 将状态字典转换为数组
     sorted_branch_list = dqn_agent.take_action(state, list(range(0,347)))
     with open('sorted_branch_list.txt', 'w') as file:
