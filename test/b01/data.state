@@ -1,6 +1,5 @@
-outp:
-  52: 0
-overflw:
-  52: 0
-stato:
-  52: 110
+reward: -0.1
+Action: 26
+outp: 0
+overflw: 0
+stato: 11

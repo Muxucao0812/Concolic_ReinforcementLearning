@@ -2,26 +2,26 @@ Uncovered targets:
 Total uncovered targets number: 0
 Covered targets:
 5
+6
 7
 12
 14
 19
-20
 21
+26
+27
 33
+34
 35
 40
 41
+42
 47
-48
 49
 54
 55
 56
-6
-26
-27
 13
-34
-42
+28
+48
 Total covered targets number: 23
