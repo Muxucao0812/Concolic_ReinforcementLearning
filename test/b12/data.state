@@ -1,7 +1,7 @@
 reward: -0.1
-Action: 5
+Action: 226
 address: 0
-count: 0
+count: 1
 count2: 0
 counter: 0
 data_in: 11
@@ -43,10 +43,10 @@ memory[8]: 0
 memory[9]: 0
 nl: 0
 nloss: 0
-num: 11
+num: 0
 play: 0
 s: 0
 scan: 0
 speaker: 0
 timebase: 100001
-wr: 0
+wr: 1

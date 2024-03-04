@@ -68,3 +68,11 @@ extern double epsilon_qlearn ; // 探索率
 extern double alpha_qlearn ; // 学习率
 extern double gamma_qlearn ; // 折扣因子
 extern std::unordered_map<std::string, std::vector<double>> q_table; //q_table
+
+
+//DQN code
+extern const char* dqn_structure;
+extern const char* dqn_init;
+extern const char* dqn_sort_branch;
+extern const char* dqn_update;
+

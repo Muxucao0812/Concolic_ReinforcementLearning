@@ -1,47 +1,48 @@
-#Makefile for iverilog target
-PROJ=conquestMulti
+# Makefile for iverilog target with Anaconda Python integration
 
-# Change this directory to verilog
+# Project name
+PROJ = conquestMulti
+
+# Icarus Verilog configuration
 IVERILOG_DIR = /usr/local
-IVERILOG_LIB = $(IVERILOG_DIR)/lib/ivl
-IVERILOG_INC = $(IVERILOG_DIR)/include/iverilog
+IVERILOG_LIB_DIR = $(IVERILOG_DIR)/lib/ivl
+IVERILOG_INC_DIR = $(IVERILOG_DIR)/include/iverilog
+
+# System Python configuration
+PYTHON_VERSION = 3.8
+CONDA_DIR = /home/meng/miniconda3
+PYTHON_INC = $(CONDA_DIR)/envs/concolic/include/python$(PYTHON_VERSION)
+PYTHON_LIBS = $(CONDA_DIR)/envs/concolic/lib  -lpython$(PYTHON_VERSION)
 
 
-# Anaconda Python configuration
-PYTHON_VERSION = 3.9
-ANACONDA_PATH = /home/meng/anaconda3
+# Target configuration
+TARGET = $(IVERILOG_LIB_DIR)/$(PROJ).tgt
+CONFIG_FILES = $(PROJ).conf $(PROJ)-s.conf
+CONFIG_TARGETS = $(addprefix $(IVERILOG_LIB_DIR)/,$(CONFIG_FILES))
 
-# Assuming Python headers and libraries follow the usual naming convention
-PYTHON_INC = -I$(ANACONDA_PATH)/include/python$(PYTHON_VERSION)
-# Note: The library name might need to be adjusted based on the actual file in the Anaconda lib directory
-PYTHON_LIBS = -L$(ANACONDA_PATH)/lib -lpython$(PYTHON_VERSION)
-
-TARGET=$(IVERILOG_LIB)/$(PROJ).tgt
-CONFIG_FILE=$(PROJ).conf $(PROJ)-s.conf
-CONFIG_TARGET=$(IVERILOG_LIB)/$(PROJ).conf $(IVERILOG_LIB)/$(PROJ)-s.conf
-
-OBJECTS=$(patsubst %.cpp, %.o, $(wildcard *.cpp))
-HEADERS=$(wildcard ../include/*.h)
+# Source and header files
+CPP_SOURCES = $(wildcard *.cpp)
+HEADERS = $(wildcard ../include/*.h)
+OBJECTS = $(CPP_SOURCES:.cpp=.o)
 
 .PHONY: all clean
 
-all: $(TARGET) $(CONFIG_TARGET)
-
+all: $(TARGET) $(CONFIG_TARGETS)
 
 clean:
-	@rm -rf *.o
-	@rm -rf $(TARGET)
+	@rm -rf $(OBJECTS) $(TARGET)
 
-
-%.o: %.cpp	$(HEADERS)
-	@g++ -Wall -ggdb3 -std=c++14 -c $< -o $@ $(PYTHON_INC) -I../include/ -I$(IVERILOG_INC) -I$(IVERILOG_DIR) -fpic
+# Compilation of source files
+%.o: %.cpp $(HEADERS)
+	@g++ -Wall -ggdb3 -std=c++14 -c $< -o $@ -I../include -I$(IVERILOG_INC_DIR) -I$(PYTHON_INC) -L$(PYTHON_LIBS)  -fpic
 	@echo "Compiling $<..."
 
+# Linking to create the target
 $(TARGET): $(OBJECTS)
-	@g++ $(OBJECTS) -Wall -ggdb3 -o $@ -std=c++11 -fpic -shared -lyices  $(PYTHON_LIBS) -Wl,-rpath,/home/meng/anaconda3/lib
+	@g++ -Wall -ggdb3 -std=c++11 -o $@ $(OBJECTS) -fpic -shared -lyices -I$(PYTHON_INC) -L$(PYTHON_LIBS) -Wl,-rpath,/home/meng/miniconda3/envs/concolic/lib --enable-shared
 	@echo "Linking..."
 
-$(CONFIG_TARGET): $(CONFIG_FILE)
-	@cp -f $(CONFIG_FILE) -t $(IVERILOG_LIB)
+# Copying configuration files
+$(CONFIG_TARGETS): $(CONFIG_FILES)
+	@cp -f $(CONFIG_FILES) $(IVERILOG_LIB_DIR)
 	@echo "Copying config file..."
-

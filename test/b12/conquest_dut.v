@@ -1,4 +1,4 @@
-// Following code segment is generated from /home/meng/Code/concolic-testing/test/b12/src/b12.v:1
+// Following code segment is generated from ./src/b12.v:1
 module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
     input clock;
     input reset;
@@ -30,7 +30,7 @@ module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
     reg [5:0] timebase = 6'b0;
     reg wr = 1'b0;
 
-    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b12/src/b12.v:68
+    // Following code segment is generated from ./src/b12.v:68
     always @(posedge clock) begin
         if (reset) begin
             s = 1'b0; $display(";A 2");		//(assert (= s    0b0)) ;2
@@ -193,7 +193,7 @@ module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
         end
     end
 
-    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b12/src/b12.v:167
+    // Following code segment is generated from ./src/b12.v:167
     always @(posedge clock) begin
         if (reset) begin
             count = 2'b00; $display(";A 55");		//(assert (= count    0b00)) ;55
@@ -265,7 +265,7 @@ module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
         end
     end
 
-    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b12/src/b12.v:189
+    // Following code segment is generated from ./src/b12.v:189
     always @(posedge clock) begin
         if (reset) begin
             data_out <= #1 2'b00; $display(";A 64");		//(assert (= data_out    0b00)) ;64
@@ -367,7 +367,7 @@ module b12(clock, reset, start, k, nloss, nl, speaker, __obs);
         end
     end
 
-    // Following code segment is generated from /home/meng/Code/concolic-testing/test/b12/src/b12.v:251
+    // Following code segment is generated from ./src/b12.v:251
     always @(posedge clock) begin
         if (reset) begin
             nloss <= #1 1'b0; $display(";A 103");		//(assert (= nloss    0b0)) ;103
