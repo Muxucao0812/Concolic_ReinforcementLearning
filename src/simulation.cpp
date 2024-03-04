@@ -668,7 +668,8 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	FILE* file = fopen("/home/meng/Code/concolic-testing/src/DQN.py", "r");
     if (file != NULL) {
 		printf("RUN DQN INIT\n");
-        PyRun_SimpleFile(file, "DQN.py");
+        // PyRun_SimpleFile(file, "DQN.py");
+		system("python3 /home/meng/Code/concolic-testing/src/DQN.py");
         fclose(file);
     } else {
 		printf("NOT RUN DQN INIT\n");
@@ -677,7 +678,8 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	FILE* file_sort = fopen("/home/meng/Code/concolic-testing/src/DQN_sort_branch.py", "r");
     if (file_sort != NULL) {
 		printf("RUN DQN SORT\n");
-        PyRun_SimpleFile(file_sort, "DQN_sort_branch.py");
+        // PyRun_SimpleFile(file_sort, "DQN_sort_branch.py");
+		system("python3 /home/meng/Code/concolic-testing/src/DQN_sort_branch.py");
         fclose(file_sort);
     } else {
 		printf("NOT RUN DQN SORT\n");
@@ -766,6 +768,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			if (file_sort != NULL) {
 				printf(" RUN DQN UPDATE\n");
 				PyRun_SimpleFile(file_update, "DQN_update.py");
+				// system("python3 /home/meng/Code/concolic-testing/src/DQN_update.py");
 				fclose(file_update);
 			} else {
 				printf("NOT RUN DQN UPDATE\n");

@@ -252,7 +252,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 000000
 ;R wr = 0
 ;_C          1
-;_Input 001011
+;_Input 011100
 ;A 6
 ;A 51
 ;A 52
@@ -411,23 +411,17 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 000000
 ;R wr = 0
-;A 116
-;A 118
-;A 122
-;A 123
-;A 124
-;A 125
-;A 126
-;A 127
-;A 128
-;A 129
+;A 117
+;A 119
+;A 120
+;A 121
 ;R address = 00000
 ;R count = 01
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00010
+;R gamma = 00000
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -469,25 +463,21 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
-;R timebase = 100001
+;R timebase = 000000
 ;R wr = 0
 ;_C          2
-;_Input 101000
+;_Input 100000
 ;A 117
 ;A 119
-;A 130
-;A 131
-;A 132
-;A 133
-;A 134
-;A 135
+;A 120
+;A 121
 ;R address = 00000
 ;R count = 01
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00000
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -529,7 +519,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
-;R timebase = 100001
+;R timebase = 000000
 ;R wr = 0
 ;A 97
 ;A 99
@@ -539,7 +529,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00000
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -581,7 +571,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
-;R timebase = 100001
+;R timebase = 000000
 ;R wr = 0
 ;A 58
 ;A 60
@@ -592,7 +582,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00000
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -634,7 +624,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
-;R timebase = 100001
+;R timebase = 000000
 ;R wr = 0
 ;A 6
 ;A 51
@@ -645,7 +635,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R counter = 000
 ;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00000
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -687,10 +677,10 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
-;R timebase = 100001
+;R timebase = 000000
 ;R wr = 0
 ;_C          3
-;_Input 000111
+;_Input 000011
 ;A 6
 ;A 51
 ;A 52
@@ -698,9 +688,9 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 10
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 01
+;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00000
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -742,8 +732,8 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
-;R timebase = 100001
-;R wr = 1
+;R timebase = 000000
+;R wr = 0
 ;A 58
 ;A 60
 ;A 61
@@ -751,9 +741,9 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 11
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 01
+;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00000
 ;R ind[0] = 0
 ;R max = 00000
 ;R memory[0] = 00
@@ -795,21 +785,20 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
-;R timebase = 100001
-;R wr = 1
+;R timebase = 000000
+;R wr = 0
 ;A 97
-;A 98
-;A 100
+;A 99
 ;R address = 00000
 ;R count = 11
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 01
+;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00000
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 01
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -848,8 +837,8 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0
-;R timebase = 100001
-;R wr = 1
+;R timebase = 000000
+;R wr = 0
 ;A 116
 ;A 118
 ;A 122
@@ -864,12 +853,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 11
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 01
+;R data_in = 00
 ;R data_out = 00
 ;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 01
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -909,27 +898,29 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R scan = 00000
 ;R speaker = 0
 ;R timebase = 100001
-;R wr = 1
+;R wr = 0
 ;_C          4
-;_Input 101100
-;A 117
-;A 119
-;A 130
-;A 131
-;A 132
-;A 133
-;A 134
-;A 135
+;_Input 100101
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
 ;R address = 00000
 ;R count = 11
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 01
+;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 01
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -976,12 +967,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 11
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 01
+;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 01
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1029,12 +1020,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 00
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 01
+;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 01
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1082,12 +1073,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 00
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 01
+;R data_in = 00
 ;R data_out = 00
-;R gamma = 00011
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 01
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1129,7 +1120,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 100001
 ;R wr = 0
 ;_C          5
-;_Input 010101
+;_Input 001111
 ;A 6
 ;A 51
 ;A 52
@@ -1137,12 +1128,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 00
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 11
-;R data_out = 01
-;R gamma = 00011
+;R data_in = 00
+;R data_out = 00
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 01
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1182,7 +1173,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R scan = 00000
 ;R speaker = 0
 ;R timebase = 100001
-;R wr = 1
+;R wr = 0
 ;A 58
 ;A 60
 ;A 61
@@ -1190,12 +1181,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 01
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 11
-;R data_out = 01
-;R gamma = 00011
+;R data_in = 00
+;R data_out = 00
+;R gamma = 00010
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 01
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1235,142 +1226,139 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R scan = 00000
 ;R speaker = 0
 ;R timebase = 100001
-;R wr = 1
+;R wr = 0
 ;A 97
-;A 98
-;A 100
+;A 99
 ;R address = 00000
 ;R count = 01
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 11
-;R data_out = 01
+;R data_in = 00
+;R data_out = 00
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 00
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 116
+;A 118
+;A 122
+;A 123
+;A 124
+;A 125
+;A 126
+;A 127
+;A 128
+;A 129
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 00
+;R data_out = 00
+;R gamma = 00010
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 00
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 00
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C          6
+;_Input 001110
+;A 117
+;A 119
+;A 130
+;A 131
+;A 132
+;A 133
+;A 134
+;A 135
+;R address = 00000
+;R count = 01
+;R count2 = 000000
+;R counter = 000
+;R data_in = 00
+;R data_out = 00
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 1
-;A 116
-;A 118
-;A 122
-;A 123
-;A 124
-;A 125
-;A 126
-;A 127
-;A 128
-;A 129
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 01
-;R gamma = 00010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 1
-;_C          6
-;_Input 011111
-;A 116
-;A 118
-;A 122
-;A 123
-;A 124
-;A 125
-;A 126
-;A 127
-;A 128
-;A 129
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 01
-;R gamma = 00010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1417,12 +1405,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 01
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 11
-;R data_out = 01
-;R gamma = 00010
+;R data_in = 00
+;R data_out = 00
+;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 11
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1470,12 +1458,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 10
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 11
-;R data_out = 01
-;R gamma = 00010
+;R data_in = 00
+;R data_out = 00
+;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 11
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1523,12 +1511,12 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count = 10
 ;R count2 = 000000
 ;R counter = 000
-;R data_in = 11
-;R data_out = 01
-;R gamma = 00010
+;R data_in = 00
+;R data_out = 00
+;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 11
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -1570,884 +1558,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R timebase = 100001
 ;R wr = 0
 ;_C          7
-;_Input 110101
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 116
-;A 118
-;A 122
-;A 123
-;A 124
-;A 125
-;A 126
-;A 127
-;A 128
-;A 129
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 10
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C          8
-;_Input 001110
-;A 117
-;A 119
-;A 130
-;A 131
-;A 132
-;A 133
-;A 134
-;A 135
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 11
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 57
-;A 59
-;A 61
-;R address = 00000
-;R count = 00
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 00
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 11
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C          9
-;_Input 110111
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 00
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 1
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 1
-;A 97
-;A 98
-;A 100
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 1
-;A 116
-;A 118
-;A 122
-;A 123
-;A 124
-;A 125
-;A 126
-;A 127
-;A 128
-;A 129
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00010
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 00
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 1
-;_C         10
-;_Input xxxxxx
-;A 117
-;A 119
-;A 130
-;A 131
-;A 132
-;A 133
-;A 134
-;A 135
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 97
-;A 99
-;R address = 00000
-;R count = 01
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 58
-;A 60
-;A 61
-;R address = 00000
-;R count = 10
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 6
-;A 51
-;A 52
-;R address = 00000
-;R count = 10
-;R count2 = 000000
-;R counter = 000
-;R data_in = 11
-;R data_out = 11
-;R gamma = 00011
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 11
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
-;R memory[8] = 00
-;R memory[9] = 00
-;R memory[10] = 00
-;R memory[11] = 00
-;R memory[12] = 00
-;R memory[13] = 00
-;R memory[14] = 00
-;R memory[15] = 00
-;R memory[16] = 00
-;R memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0000
-;R nloss = 0
-;R num = 01
-;R play = 0
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;_C         11
-;_Input xxxxxx
+;_Input 110010
 ;A 6
 ;A 51
 ;A 52
@@ -2456,11 +1567,11 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 11
+;R data_out = 00
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 11
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2509,11 +1620,11 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 11
+;R data_out = 00
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
-;R memory[0] = 11
+;R memory[0] = 00
 ;R memory[1] = 00
 ;R memory[2] = 00
 ;R memory[3] = 00
@@ -2562,7 +1673,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 11
+;R data_out = 00
 ;R gamma = 00011
 ;R ind[0] = 0
 ;R max = 00000
@@ -2618,7 +1729,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 11
+;R data_out = 00
 ;R gamma = 00100
 ;R ind[0] = 0
 ;R max = 00000
@@ -2663,8 +1774,8 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 1
-;_C         12
-;_Input xxxxxx
+;_C          8
+;_Input 010110
 ;A 117
 ;A 119
 ;A 140
@@ -2674,7 +1785,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 11
+;R data_out = 00
 ;R gamma = 00101
 ;R ind[0] = 0
 ;R max = 00000
@@ -2726,7 +1837,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 11
+;R data_out = 00
 ;R gamma = 00101
 ;R ind[0] = 0
 ;R max = 00000
@@ -2779,7 +1890,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 11
+;R data_out = 00
 ;R gamma = 00101
 ;R ind[0] = 0
 ;R max = 00000
@@ -2832,7 +1943,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R count2 = 000000
 ;R counter = 000
 ;R data_in = 01
-;R data_out = 11
+;R data_out = 00
 ;R gamma = 00101
 ;R ind[0] = 0
 ;R max = 00000
@@ -2877,8 +1988,8 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         13
-;_Input xxxxxx
+;_C          9
+;_Input 110100
 ;A 6
 ;A 51
 ;A 52
@@ -3095,7 +2206,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         14
+;_C         10
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -3312,7 +2423,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         15
+;_C         11
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -3529,7 +2640,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         16
+;_C         12
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -3746,7 +2857,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         17
+;_C         13
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -3963,7 +3074,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         18
+;_C         14
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -4182,7 +3293,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         19
+;_C         15
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -4399,7 +3510,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         20
+;_C         16
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -4616,7 +3727,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         21
+;_C         17
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -4833,7 +3944,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         22
+;_C         18
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -5050,7 +4161,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         23
+;_C         19
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -5269,7 +4380,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         24
+;_C         20
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -5486,7 +4597,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         25
+;_C         21
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -5703,7 +4814,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         26
+;_C         22
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -5920,7 +5031,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         27
+;_C         23
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -6137,7 +5248,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         28
+;_C         24
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -6356,7 +5467,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         29
+;_C         25
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -6573,7 +5684,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         30
+;_C         26
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -6790,7 +5901,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         31
+;_C         27
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -7007,7 +6118,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         32
+;_C         28
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -7224,7 +6335,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         33
+;_C         29
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -7443,7 +6554,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         34
+;_C         30
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -7660,7 +6771,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         35
+;_C         31
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -7877,7 +6988,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         36
+;_C         32
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -8094,7 +7205,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         37
+;_C         33
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -8311,7 +7422,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         38
+;_C         34
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -8530,7 +7641,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         39
+;_C         35
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -8747,7 +7858,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         40
+;_C         36
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -8964,7 +8075,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         41
+;_C         37
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -9181,7 +8292,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         42
+;_C         38
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -9398,7 +8509,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         43
+;_C         39
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -9617,7 +8728,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 1
 ;R timebase = 100001
 ;R wr = 0
-;_C         44
+;_C         40
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -9834,7 +8945,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         45
+;_C         41
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -10051,7 +9162,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         46
+;_C         42
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -10268,7 +9379,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         47
+;_C         43
 ;_Input xxxxxx
 ;A 5
 ;A 14
@@ -10487,7 +9598,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         48
+;_C         44
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -10703,7 +9814,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         49
+;_C         45
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -10919,7 +10030,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         50
+;_C         46
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -11135,7 +10246,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         51
+;_C         47
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -11351,7 +10462,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         52
+;_C         48
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -11567,7 +10678,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         53
+;_C         49
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -11783,7 +10894,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         54
+;_C         50
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -11999,7 +11110,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         55
+;_C         51
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -12215,7 +11326,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         56
+;_C         52
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -12431,7 +11542,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         57
+;_C         53
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -12647,7 +11758,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         58
+;_C         54
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -12863,7 +11974,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         59
+;_C         55
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -13079,7 +12190,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         60
+;_C         56
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -13295,7 +12406,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         61
+;_C         57
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -13511,7 +12622,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         62
+;_C         58
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -13727,7 +12838,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         63
+;_C         59
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -13943,7 +13054,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         64
+;_C         60
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -14159,7 +13270,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         65
+;_C         61
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -14375,7 +13486,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         66
+;_C         62
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -14591,7 +13702,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         67
+;_C         63
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -14807,7 +13918,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         68
+;_C         64
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -15023,7 +14134,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         69
+;_C         65
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -15239,7 +14350,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         70
+;_C         66
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -15455,7 +14566,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         71
+;_C         67
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -15671,7 +14782,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         72
+;_C         68
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -15854,51 +14965,6 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[5] = 00
 ;R memory[6] = 00
 ;R memory[7] = 00
-;R me memory[17] = 00
-;R memory[18] = 00
-;R memory[19] = 00
-;R memory[20] = 00
-;R memory[21] = 00
-;R memory[22] = 00
-;R memory[23] = 00
-;R memory[24] = 00
-;R memory[25] = 00
-;R memory[26] = 00
-;R memory[27] = 00
-;R memory[28] = 00
-;R memory[29] = 00
-;R memory[30] = 00
-;R memory[31] = 00
-;R nl = 0100
-;R nloss = 0
-;R num = 11
-;R play = 1
-;R s = 0
-;R scan = 00000
-;R speaker = 0
-;R timebase = 100001
-;R wr = 0
-;A 5
-;A 21
-;A 23
-;A 27
-;R address = 00000
-;R count = 00
-;R count2 = 010011
-;R counter = 010
-;R data_in = 10
-;R data_out = 10
-;R gamma = 00110
-;R ind[0] = 0
-;R max = 00000
-;R memory[0] = 10
-;R memory[1] = 00
-;R memory[2] = 00
-;R memory[3] = 00
-;R memory[4] = 00
-;R memory[5] = 00
-;R memory[6] = 00
-;R memory[7] = 00
 ;R memory[8] = 00
 ;R memory[9] = 00
 ;R memory[10] = 00
@@ -15923,6 +14989,51 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R memory[29] = 00
 ;R memory[30] = 00
 ;R memory[31] = 00
+;R nl = 0000
+;R nloss = 0
+;R num = 11
+;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C         69
+;_Input xxxxxx
+;A 6
+;A 51
+;A 52
+;R address = 00000
+;R count = 00
+;R count2 = 001000
+;R counter = 000
+;R data_in = 01
+;R data_out = 01
+;R gamma = 00111
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
 ;R memory[22] = 00
 ;R memory[23] = 00
 ;R memory[24] = 00
@@ -16103,7 +15214,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         74
+;_C         70
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -16319,7 +15430,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         75
+;_C         71
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -16535,7 +15646,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         76
+;_C         72
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -16751,7 +15862,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         77
+;_C         73
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -16967,7 +16078,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         78
+;_C         74
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -17183,7 +16294,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         79
+;_C         75
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -17399,7 +16510,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         80
+;_C         76
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -17615,7 +16726,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         81
+;_C         77
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -17832,7 +16943,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         82
+;_C         78
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -18048,7 +17159,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         83
+;_C         79
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -18262,7 +17373,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         84
+;_C         80
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -18482,7 +17593,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         85
+;_C         81
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -18702,7 +17813,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         86
+;_C         82
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -18922,7 +18033,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         87
+;_C         83
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -19142,7 +18253,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         88
+;_C         84
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -19362,7 +18473,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         89
+;_C         85
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -19582,7 +18693,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         90
+;_C         86
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -19802,7 +18913,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         91
+;_C         87
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -20022,7 +19133,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         92
+;_C         88
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -20242,7 +19353,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         93
+;_C         89
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -20462,7 +19573,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         94
+;_C         90
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -20682,7 +19793,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         95
+;_C         91
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -20902,7 +20013,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         96
+;_C         92
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -21122,7 +20233,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         97
+;_C         93
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -21342,7 +20453,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         98
+;_C         94
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -21562,7 +20673,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C         99
+;_C         95
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -21782,7 +20893,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        100
+;_C         96
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -22002,7 +21113,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        101
+;_C         97
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -22222,7 +21333,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        102
+;_C         98
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -22442,7 +21553,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        103
+;_C         99
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -22662,7 +21773,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        104
+;_C        100
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -22882,7 +21993,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        105
+;_C        101
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -23102,7 +22213,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        106
+;_C        102
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -23322,7 +22433,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        107
+;_C        103
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -23542,7 +22653,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        108
+;_C        104
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -23762,7 +22873,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        109
+;_C        105
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -23982,7 +23093,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        110
+;_C        106
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -24202,7 +23313,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        111
+;_C        107
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -24422,7 +23533,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        112
+;_C        108
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -24642,7 +23753,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        113
+;_C        109
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -24862,7 +23973,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        114
+;_C        110
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -25082,7 +24193,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        115
+;_C        111
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -25302,7 +24413,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        116
+;_C        112
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -25522,7 +24633,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        117
+;_C        113
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -25739,7 +24850,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        118
+;_C        114
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -25954,7 +25065,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        119
+;_C        115
 ;_Input xxxxxx
 ;A 6
 ;A 51
@@ -26168,7 +25279,7 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R speaker = 0
 ;R timebase = 100001
 ;R wr = 0
-;_C        120
+;_C        116
 ;_Input xxxxxx
 ;A 117
 ;A 119
@@ -26381,6 +25492,874 @@ WARNING: conquest_tb.v:51: $readmemb(data.mem): Not enough words in the file for
 ;R nloss = 1
 ;R num = 11
 ;R play = 0
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C        117
+;_Input xxxxxx
+;A 5
+;A 14
+;A 16
+;A 20
+;R address = 00000
+;R count = 00
+;R count2 = 100001
+;R counter = 001
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 00
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 01
+;R count2 = 100001
+;R counter = 001
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 00
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 01
+;R count2 = 100001
+;R counter = 001
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 00
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 117
+;A 119
+;A 286
+;A 288
+;A 293
+;A 294
+;R address = 00000
+;R count = 01
+;R count2 = 100000
+;R counter = 001
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 00
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C        118
+;_Input xxxxxx
+;A 117
+;A 119
+;A 286
+;A 288
+;A 293
+;A 294
+;R address = 00000
+;R count = 01
+;R count2 = 011111
+;R counter = 001
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 01
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 01
+;R count2 = 011111
+;R counter = 001
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 01
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 10
+;R count2 = 011111
+;R counter = 001
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 01
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 5
+;A 14
+;A 16
+;A 20
+;R address = 00000
+;R count = 10
+;R count2 = 011111
+;R counter = 010
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 01
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C        119
+;_Input xxxxxx
+;A 5
+;A 14
+;A 16
+;A 20
+;R address = 00000
+;R count = 10
+;R count2 = 011111
+;R counter = 011
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 10
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 58
+;A 60
+;A 61
+;R address = 00000
+;R count = 11
+;R count2 = 011111
+;R counter = 011
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 10
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 11
+;R count2 = 011111
+;R counter = 011
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 10
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 117
+;A 119
+;A 286
+;A 288
+;A 293
+;A 294
+;R address = 00000
+;R count = 11
+;R count2 = 011110
+;R counter = 011
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 10
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;_C        120
+;_Input xxxxxx
+;A 117
+;A 119
+;A 286
+;A 288
+;A 293
+;A 294
+;R address = 00000
+;R count = 11
+;R count2 = 011101
+;R counter = 011
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 11
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 97
+;A 99
+;R address = 00000
+;R count = 11
+;R count2 = 011101
+;R counter = 011
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 11
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 57
+;A 59
+;A 61
+;R address = 00000
+;R count = 00
+;R count2 = 011101
+;R counter = 011
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 11
+;R play = 1
+;R s = 0
+;R scan = 00000
+;R speaker = 0
+;R timebase = 100001
+;R wr = 0
+;A 5
+;A 14
+;A 16
+;A 20
+;R address = 00000
+;R count = 00
+;R count2 = 011101
+;R counter = 100
+;R data_in = 01
+;R data_out = 01
+;R gamma = 10100
+;R ind[0] = 0
+;R max = 00000
+;R memory[0] = 01
+;R memory[1] = 00
+;R memory[2] = 00
+;R memory[3] = 00
+;R memory[4] = 00
+;R memory[5] = 00
+;R memory[6] = 00
+;R memory[7] = 00
+;R memory[8] = 00
+;R memory[9] = 00
+;R memory[10] = 00
+;R memory[11] = 00
+;R memory[12] = 00
+;R memory[13] = 00
+;R memory[14] = 00
+;R memory[15] = 00
+;R memory[16] = 00
+;R memory[17] = 00
+;R memory[18] = 00
+;R memory[19] = 00
+;R memory[20] = 00
+;R memory[21] = 00
+;R memory[22] = 00
+;R memory[23] = 00
+;R memory[24] = 00
+;R memory[25] = 00
+;R memory[26] = 00
+;R memory[27] = 00
+;R memory[28] = 00
+;R memory[29] = 00
+;R memory[30] = 00
+;R memory[31] = 00
+;R nl = 0010
+;R nloss = 1
+;R num = 11
+;R play = 1
 ;R s = 0
 ;R scan = 00000
 ;R speaker = 0

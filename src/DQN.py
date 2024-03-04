@@ -1,7 +1,6 @@
 
 import sys
 import random
-
 import numpy as np
 import collections
 import torch
@@ -21,8 +20,6 @@ def parse_sim_log(file_path):
                 cycles_data[register_name] = register_value
 
     return cycles_data
-
-
 
 def convert_values_to_int(data):
     for key, value in data.items():
@@ -180,8 +177,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 done = False
 
 #初始化环境
-env = RegistersEnv(state_int)
+# env = RegistersEnv(state_int)
 
+state_int = get_state("data.state")
 # 环境参数
 branch_list = range(0,347)
 state_dim = len(state_int)  # 状态维度

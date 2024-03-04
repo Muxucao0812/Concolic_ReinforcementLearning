@@ -34,7 +34,8 @@ clean:
 
 # Compilation of source files
 %.o: %.cpp $(HEADERS)
-	@g++ -Wall -ggdb3 -std=c++14 -c $< -o $@ -I../include -I$(IVERILOG_INC_DIR) -I$(PYTHON_INC) -L$(PYTHON_LIBS)  -fpic
+	@g++ -Wall -ggdb3 -std=c++14 -c $< -o $@ -I../include -I$(IVERILOG_INC_DIR) -I$(PYTHON_INC) -L$(PYTHON_LIBS)  -fpic -L/home/meng/miniconda3/envs/concolic/lib/libpython3.8.so
+	@echo /home/meng/miniconda3/envs/concolic/lib/libpython3.8.so
 	@echo "Compiling $<..."
 
 # Linking to create the target

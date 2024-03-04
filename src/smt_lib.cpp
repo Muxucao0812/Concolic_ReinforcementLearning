@@ -1894,7 +1894,7 @@ void SMTBasicBlock::remove_covered_targets(uint iter) {
 	std::list<SMTBasicBlock*>::iterator it = target_list.begin();
 	while (it != target_list.end()) {
 		if((*it)->assign_list.size() && (*it)->assign_list[0]->is_covered()){
-			printf("[COVERED %d AT CLOCK] %s", iter, (*it)->assign_list[0]->print().c_str());
+			printf("[COVERED AT %d CLOCK] %s", iter, (*it)->assign_list[0]->print().c_str());
 			SMTBasicBlock::covered_target_list.push_back(*it);
 			it = target_list.erase(it);
 		} else {

@@ -17,10 +17,11 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 done = False
 
 #初始化环境
-env = RegistersEnv(state_int)
+#env = RegistersEnv(state_int)
 
 # 环境参数
 branch_list = range(0,347)
+state_int = get_state("data.state")
 state_dim = len(state_int)  # 状态维度
 action_dim = len(branch_list) # 动作维度
 hidden_dim = 32  # 隐藏层维数
