@@ -13,7 +13,7 @@ ifeq ($(IS_FLATTENED),true)
 all:
 	@iverilog -f files.f -o $(OBJ_INST) -t conquestMulti \
 		-ptb=conquest_tb.v -pclk=$(CLK_NAME) -preset=$(RESET_NAME) -preset_edge=$(RESET_EDGE) \
-		-punroll=$(UNROLL_CYC) -prandom_sim=$(RANDOM_SIM) -pstep=$(STEP)
+		-punroll=$(UNROLL_CYC) -prandom_sim=$(RANDOM_SIM) -pstep=$(STEP) -I$(PYCFLAGS) -L$(PYLFLAGS)
 
 else
 all: $(OBJ_FLAT)

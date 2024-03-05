@@ -664,14 +664,15 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	// //choose mutated branch，sort by DQN
 	Py_Initialize();
     // 设置Python搜索路径
-    PyRun_SimpleString("import sys");
-    PyRun_SimpleString("sys.path.append('/home/meng/Code/concolic-testing/src')");
+    // PyRun_SimpleString("import sys");
+    // PyRun_SimpleString("sys.path.append('/home/meng/Code/concolic-testing/src')");
     // 导入Python模块
 	PyObject* obj = Py_BuildValue("s", "/home/meng/Code/concolic-testing/src/DQN.py");
 	FILE* file = _Py_fopen_obj(obj, "r+");
 	if (file != NULL)
 	{
-		PyRun_SimpleFile(file, "/home/meng/Code/concolic-testing/src/DQN.py");
+		// PyRun_SimpleFile(file, "/home/meng/Code/concolic-testing/src/DQN.py");
+		system("python3 /home/meng/Code/concolic-testing/src/DQN.py");
 	}
 	
 	std::vector<unsigned int> action_list = readActionsFromFile("sorted_branch_list.txt");

@@ -97,7 +97,10 @@ class DQN:
 
     
     def take_action(self, state, branch_list):
-        state_tensor = torch.tensor([state], dtype=torch.float).to(self.device)
+        state_array = np.array(state)
+
+        # Convert the numpy array to a PyTorch tensor
+        state_tensor = torch.tensor(state_array, dtype=torch.float).to(self.device)
         if np.random.random() < self.epsilon:
         # 随机选择一个动作
             return [random.choice(branch_list)]
