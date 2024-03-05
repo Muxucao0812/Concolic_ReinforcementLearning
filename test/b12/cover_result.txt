@@ -12,11 +12,13 @@ Covered targets:
 122
 130
 136
-140
 5
-7
-9
+14
+16
+140
 142
-168
+148
+150
 226
-Total covered targets number: 18
+268
+Total covered targets number: 20

@@ -663,28 +663,16 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 
 	// //choose mutated branch，sort by DQN
 	Py_Initialize();
-	// dlopen("/lib/x86_64-linux-gnu/libm.so.6", RTLD_LAZY | RTLD_GLOBAL);
-	// executePythonScript(dqn_structure);
-	FILE* file = fopen("/home/meng/Code/concolic-testing/src/DQN.py", "r");
-    if (file != NULL) {
-		printf("RUN DQN INIT\n");
-        // PyRun_SimpleFile(file, "DQN.py");
-		system("python3 /home/meng/Code/concolic-testing/src/DQN.py");
-        fclose(file);
-    } else {
-		printf("NOT RUN DQN INIT\n");
-        // Handle error opening file
-    }
-	FILE* file_sort = fopen("/home/meng/Code/concolic-testing/src/DQN_sort_branch.py", "r");
-    if (file_sort != NULL) {
-		printf("RUN DQN SORT\n");
-        // PyRun_SimpleFile(file_sort, "DQN_sort_branch.py");
-		system("python3 /home/meng/Code/concolic-testing/src/DQN_sort_branch.py");
-        fclose(file_sort);
-    } else {
-		printf("NOT RUN DQN SORT\n");
-        // Handle error opening file
-    }
+    // 设置Python搜索路径
+    PyRun_SimpleString("import sys");
+    PyRun_SimpleString("sys.path.append('/home/meng/Code/concolic-testing/src')");
+    // 导入Python模块
+	PyObject* obj = Py_BuildValue("s", "/home/meng/Code/concolic-testing/src/DQN.py");
+	FILE* file = _Py_fopen_obj(obj, "r+");
+	if (file != NULL)
+	{
+		PyRun_SimpleFile(file, "/home/meng/Code/concolic-testing/src/DQN.py");
+	}
 	
 	std::vector<unsigned int> action_list = readActionsFromFile("sorted_branch_list.txt");
 	sortBranches(branches,action_list);
@@ -764,16 +752,16 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			unsigned int actionIndex = it->br->id;
 			SMTState::print_state_at_clock(g_data_state, g_sim_clk, reward, actionIndex);
 			//executePythonScript(dqn_update);
-			FILE* file_update = fopen("DQN_update.py", "r");
-			if (file_sort != NULL) {
-				printf(" RUN DQN UPDATE\n");
-				PyRun_SimpleFile(file_update, "DQN_update.py");
-				// system("python3 /home/meng/Code/concolic-testing/src/DQN_update.py");
-				fclose(file_update);
-			} else {
-				printf("NOT RUN DQN UPDATE\n");
-				// Handle error opening file
-			}
+			// FILE* file_update = fopen("DQN_update.py", "r");
+			// if (file_sort != NULL) {
+			// 	printf(" RUN DQN UPDATE\n");
+			// 	// PyRun_SimpleFile(file_update, "DQN_update.py");
+			// 	system("python3 /home/meng/Code/concolic-testing/src/DQN_update.py");
+			// 	fclose(file_update);
+			// } else {
+			// 	printf("NOT RUN DQN UPDATE\n");
+			// 	// Handle error opening file
+			// }
 
 			if(g_is_new_block){
 				SMTBranch::increase_probability(selected_branch);

@@ -7,6 +7,9 @@ import torch
 import torch.nn.functional as F
 sys.path.append('.')  # 添加当前目录到Python路径
 
+def hello():
+    print("hello")
+    
 def parse_sim_log(file_path):
     # 初始化数据结构
     cycles_data = {}
@@ -179,8 +182,8 @@ done = False
 #初始化环境
 # env = RegistersEnv(state_int)
 
-state_int = get_state("data.state")
 # 环境参数
+state_int = get_state("data.state")
 branch_list = range(0,347)
 state_dim = len(state_int)  # 状态维度
 action_dim = len(branch_list) # 动作维度
@@ -191,6 +194,29 @@ dqn_agent = DQN(state_dim, hidden_dim, action_dim, learning_rate, gamma, epsilon
 replay_buffer = ReplayBuffer(capacity)
 
 # #main 
-# out_sort_branch("data.state") 
-# #get from simulation()
-# update_state("data.state")
+# 1. get sort branch
+state = get_state("data.state")
+state = np.array(list(state_int.values()))  # 将状态字典转换为数组
+sorted_branch_list = dqn_agent.take_action(state, list(range(0,347)))
+with open('sorted_branch_list.txt', 'w') as file:
+    file.write(f"{sorted_branch_list}\n") 
+
+# 2. simulation in cocolic
+
+# 3. update
+action = get_action("data.state")
+reward = get_reward("data.state")
+next_state = get_state("data.state")
+next_state = np.array(list(next_state.values()))  # 将下一个状态字典转换为数组
+replay_buffer.add(state_int, action, reward, next_state, done)  # 保存到回放缓冲区
+# 检查回放缓冲区是否足够大以开始学习
+if replay_buffer.size() > batch_size:
+    transitions = replay_buffer.sample(batch_size)  # 从回放缓冲区采样
+    dqn_agent.update({
+        'states': np.vstack(transitions[0]),
+        'actions': transitions[1],
+        'rewards': transitions[2],
+        'next_states': np.vstack(transitions[3]),
+        'dones': transitions[4]
+    })
+state = next_state  # 更新状态

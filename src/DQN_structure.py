@@ -6,6 +6,7 @@ import numpy as np
 import collections
 import torch
 import torch.nn.functional as F
+from DQN import *
 sys.path.append('.')  # 添加当前目录到Python路径
 
 def parse_sim_log(file_path):

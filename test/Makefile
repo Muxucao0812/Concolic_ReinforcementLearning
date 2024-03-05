@@ -2,6 +2,9 @@ OBJ_FLAT = flattened.v
 OBJ_INST = conquest_dut.v
 RANDOM_SIM = 3
 
+PYCFLAGS := $(shell $(CONDA_DIR)/bin/python3.8-config --cflags)
+PYLFLAGS := $(shell $(CONDA_DIR)/bin/python3.8-config --ldflags --embed)
+
 # FLATTEN_ROOT = /home/yangdi/tools/designplayer-shell/10APR2018
 
 .PHONY: all clean memcheck

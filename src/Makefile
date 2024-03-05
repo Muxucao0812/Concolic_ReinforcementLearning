@@ -10,10 +10,12 @@ IVERILOG_INC_DIR = $(IVERILOG_DIR)/include/iverilog
 
 # System Python configuration
 PYTHON_VERSION = 3.8
-CONDA_DIR = /home/meng/miniconda3
-PYTHON_INC = $(CONDA_DIR)/envs/concolic/include/python$(PYTHON_VERSION)
-PYTHON_LIBS = $(CONDA_DIR)/envs/concolic/lib  -lpython$(PYTHON_VERSION)
-
+CONDA_DIR = /home/meng/miniconda3/envs/concolic/
+PYLIBSO = $(CONDA_DIR)/libpython3.8.so
+PYTHON_INC = $(CONDA_DIR)/include/python$(PYTHON_VERSION)
+PYTHON_LIBS = $(CONDA_DIR)/lib  -L$(PYLIBSO) -lpython3.8
+PYCFLAGS := $(shell $(CONDA_DIR)/bin/python3.8-config --cflags)
+PYLFLAGS := $(shell $(CONDA_DIR)/bin/python3.8-config --ldflags --embed)
 
 # Target configuration
 TARGET = $(IVERILOG_LIB_DIR)/$(PROJ).tgt
@@ -34,13 +36,12 @@ clean:
 
 # Compilation of source files
 %.o: %.cpp $(HEADERS)
-	@g++ -Wall -ggdb3 -std=c++14 -c $< -o $@ -I../include -I$(IVERILOG_INC_DIR) -I$(PYTHON_INC) -L$(PYTHON_LIBS)  -fpic -L/home/meng/miniconda3/envs/concolic/lib/libpython3.8.so
-	@echo /home/meng/miniconda3/envs/concolic/lib/libpython3.8.so
+	@g++ -Wall -ggdb3 -std=c++14 -c $< -o $@ -I../include -I$(IVERILOG_INC_DIR) -fpic $(PYCFLAGS) $(PYLFLAGS)
 	@echo "Compiling $<..."
 
 # Linking to create the target
 $(TARGET): $(OBJECTS)
-	@g++ -Wall -ggdb3 -std=c++11 -o $@ $(OBJECTS) -fpic -shared -lyices -I$(PYTHON_INC) -L$(PYTHON_LIBS) -Wl,-rpath,/home/meng/miniconda3/envs/concolic/lib --enable-shared
+	@g++ -Wall -ggdb3 -std=c++11 -o $@ $(OBJECTS) -fpic -shared -lyices $(PYCFLAGS) $(PYLFLAGS)
 	@echo "Linking..."
 
 # Copying configuration files
