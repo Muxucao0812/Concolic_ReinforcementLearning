@@ -35,6 +35,8 @@ clean:
 	@rm -rf *.txt
 	@rm -rf *.vvp
 	@rm -rf *.log
+	@rm -rf *.pth
+	@rm -rf *.pkl
 	@echo "--------------CLEANED---------------"
 
 # 添加了一个新目标 memcheck 用于内存监控

@@ -1,10 +1,11 @@
-// Following code segment is generated from /home/meng/Code/concolic-testing/test/grammerTest/src/grammerTest.v:1
-module grammerTest(clk, reset, in, out, sig_display, __obs);
+// Following code segment is generated from ./src/grammerTest.v:1
+module grammerTest(clk, reset, in, count, register, out, __obs);
     input clk;
     input reset;
     input [31:0] in;
+    input [3:0] count;
+    input register;
     output [31:0] out;
-    input sig_display;
     input __obs;
 
     reg [1:0] addr = 2'b0;
@@ -13,7 +14,7 @@ module grammerTest(clk, reset, in, out, sig_display, __obs);
     reg [31:0] out = 32'b0;
     reg [31:0] temp = 32'b0;
 
-    // Following code segment is generated from /home/meng/Code/concolic-testing/test/grammerTest/src/grammerTest.v:14
+    // Following code segment is generated from ./src/grammerTest.v:15
     always @(posedge clk or negedge reset) begin
         if ((reset == 1'b1)) begin
             addr <= #1 2'b00; $display(";A 2");		//(assert (= addr    0b00)) ;2
@@ -25,9 +26,20 @@ module grammerTest(clk, reset, in, out, sig_display, __obs);
             temp <= #1 in; $display(";A 6");		//(assert (= temp    in )) ;6
             cnt <= #1 (cnt + 8'h01); $display(";A 7");		//(assert (= cnt    (bv-add cnt  0h01))) ;7
         end
+        // Displaying module variables
+        begin
+            $display(";R addr = %b", addr);
+            $display(";R cnt = %b", cnt);
+            $display(";R myArray[0] = %b", myArray[0]);
+            $display(";R myArray[1] = %b", myArray[1]);
+            $display(";R myArray[2] = %b", myArray[2]);
+            $display(";R myArray[3] = %b", myArray[3]);
+            $display(";R out = %b", out);
+            $display(";R temp = %b", temp);
+        end
     end
 
-    // Following code segment is generated from /home/meng/Code/concolic-testing/test/grammerTest/src/grammerTest.v:27
+    // Following code segment is generated from ./src/grammerTest.v:28
     always @(posedge clk) begin
         if ((cnt == 8'h00)) begin
             $display(";A 8");		//(assert (= (bv-comp cnt  0h00)   0b1)) ;8
@@ -138,16 +150,5 @@ module grammerTest(clk, reset, in, out, sig_display, __obs);
         out <= #1 myArray[addr]; $display(";A 46");		//(assert (= out    ( myArray addr ))) ;46
     end
 
-    // Displaying module variables
-    always @(posedge clk) begin
-      $display(";R addr = %b", addr);
-      $display(";R cnt = %b", cnt);
-      $display(";R myArray[0] = %b", myArray[0]);
-      $display(";R myArray[1] = %b", myArray[1]);
-      $display(";R myArray[2] = %b", myArray[2]);
-      $display(";R myArray[3] = %b", myArray[3]);
-      $display(";R out = %b", out);
-      $display(";R temp = %b", temp);
-    end
 endmodule
 

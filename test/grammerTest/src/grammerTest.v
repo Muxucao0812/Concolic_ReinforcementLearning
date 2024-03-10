@@ -2,8 +2,9 @@ module grammerTest(
     input   clk, 
     input   reset, 
     input   [31:0] in, 
-    output  reg [31:0] out,
-    input   sig_display
+    input   [3:0]  count,
+    input          register,
+    output  reg [31:0] out
 );
 
   reg [31:0] myArray [0:3]; // 4-element array of 8-bit elements

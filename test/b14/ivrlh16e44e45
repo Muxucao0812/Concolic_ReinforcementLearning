@@ -2,8 +2,8 @@ flag:tb=/home/meng/Code/concolic-testing/test/b14/conquest_tb.v
 flag:clk=clock
 flag:reset=reset
 flag:reset_edge=1
-flag:unroll= 100
-flag:step= 10
+flag:unroll=50
+flag:step=5
 flag:random_sim=3
 basedir:/usr/local/lib/ivl
 module:/usr/local/lib/ivl/system.vpi
@@ -27,4 +27,4 @@ ignore_missing_modules:false
 out: /home/meng/Code/concolic-testing/test/b14/conquest_dut.v
 iwidth:32
 widthcap:65536
-ivlpp:/usr/local/lib/ivl/ivlpp  -L -F"/tmp/ivrlg22cae4071" -P"/tmp/ivrli2cae4071"
+ivlpp:/usr/local/lib/ivl/ivlpp  -L -F"/tmp/ivrlg216e44e45" -P"/tmp/ivrli16e44e45"

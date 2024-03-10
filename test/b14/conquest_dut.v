@@ -1092,4 +1092,46 @@ module b14(clock, reset, datai, addr, datao, rd, wr, __obs);
                                                 2'b11 :
                                                     begin
                                                         $display(";A 450");		//(assert (= mf    0b11)) ;450
-                                                        m = (reg2 + {11'b00000000000, tail}); $display(";A 451");		//(assert (= m    (b
+                                                        m = (reg2 + {11'b00000000000, tail}); $display(";A 451");		//(assert (= m    (bv-add reg2  (bv-concat 0b00000000000 tail )))) ;451
+                                                    end
+                                            endcase
+                                            addr <= #1 m[19:0]; $display(";A 452");		//(assert (= addr    (bv-extract 19 0 m ))) ;452
+                                            wr <= #1 1'b1; $display(";A 453");		//(assert (= wr    0b1)) ;453
+                                            datao <= #1 rx; $display(";A 454");		//(assert (= datao    rx )) ;454
+                                        end
+                                        else begin
+                                            $display(";A 443");		//(assert (= (bv-comp df  0b111)   0b0)) ;443
+                                        end
+                                    end
+                                end
+                        endcase
+                        state <= #1 1'b0; $display(";A 455");		//(assert (= state    0b0)) ;455
+                    end
+            endcase
+        end
+        // Displaying module variables
+        begin
+            $display(";R B = %b", B);
+            $display(";R IR = %b", IR);
+            $display(";R addr = %b", addr);
+            $display(";R cf = %b", cf);
+            $display(";R d = %b", d);
+            $display(";R datao = %b", datao);
+            $display(";R df = %b", df);
+            $display(";R ff = %b", ff);
+            $display(";R m = %b", m);
+            $display(";R mf[0] = %b", mf[0]);
+            $display(";R reg0 = %b", reg0);
+            $display(";R reg1[0] = %b", reg1[0]);
+            $display(";R reg3 = %b", reg3);
+            $display(";R rx = %b", rx);
+            $display(";R s = %b", s);
+            $display(";R state = %b", state);
+            $display(";R t = %b", t);
+            $display(";R tail[0] = %b", tail[0]);
+            $display(";R wr = %b", wr);
+        end
+    end
+
+endmodule
+

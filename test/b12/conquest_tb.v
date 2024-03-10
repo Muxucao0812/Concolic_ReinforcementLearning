@@ -52,7 +52,7 @@ module conquest_tb();
         #2 clock = 1'b1;
         reset = 1'b1;
         #5 reset = 1'b0;
-        #1200 $finish;
+        #600 $finish;
     end
 
 endmodule

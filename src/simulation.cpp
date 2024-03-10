@@ -47,7 +47,7 @@ const bool		enable_error_check = false;
 const bool		enable_obs_padding = true;
 const bool		enable_sim_copy = false;
 const bool		enable_yices_debug = true;
-const uint 		iteration_limit = 1000;//for one branch, this is the maximum number of iterations
+const uint 		iteration_limit = 5;//for one branch, this is the maximum number of iterations
 const uint      total_limit = 10;
 const uint      learning_limit = 3;
 unordered_map<SMTBasicBlock*, uint> iter_count;
@@ -619,6 +619,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	
 	//create branches
 	uint idx = 0;
+	// skip the clock constraint with clock 0
 	while(constraints_stack[idx]->clock == 0){
 		idx++;
 	}
@@ -651,7 +652,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	//get the branches between begin and end
 	get_available_branches(branches, begin_clk+1, end_clk);
 
-	//choose mutated branch，sort by QLearning
+	// //choose mutated branch，sort by QLearning
 	// std::vector<unsigned int> actions;
 	// for(std::vector<br_cnst_t*>::size_type i = 0;i < branches.size();++i){
 	// 	actions.push_back(branches[i]->br->id);
@@ -661,27 +662,16 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	// sortBranches(branches,action_list);
 
 
-	// //choose mutated branch，sort by DQN
-	Py_Initialize();
-    // 设置Python搜索路径
-    // PyRun_SimpleString("import sys");
-    // PyRun_SimpleString("sys.path.append('/home/meng/Code/concolic-testing/src')");
-    // 导入Python模块
-	PyObject* obj = Py_BuildValue("s", "/home/meng/Code/concolic-testing/src/DQN.py");
-	FILE* file = _Py_fopen_obj(obj, "r+");
-	if (file != NULL)
-	{
-		// PyRun_SimpleFile(file, "/home/meng/Code/concolic-testing/src/DQN.py");
-		system("python3 /home/meng/Code/concolic-testing/src/DQN.py");
-	}
-	
+	//choose mutated branch，sort by DQN
+	system("python3 /home/meng/Code/concolic-testing/src/DQN_sort.py");
 	std::vector<unsigned int> action_list = readActionsFromFile("sorted_branch_list.txt");
 	sortBranches(branches,action_list);
+	
 
 	// // //sort by distance
-	// //sort(branches.begin(), branches.end(), compare_dist);
-	// //sort by probability
-	// //sort(branches.begin(), branches.end(), compare_prob);
+	// sort(branches.begin(), branches.end(), compare_dist);
+	//sort by probability
+	// sort(branches.begin(), branches.end(), compare_prob);
     
 	// // if(!user_select_branch)
 
@@ -692,7 +682,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			}
 		uint clock = it->cnst->clock;
 
-		yices_print_error(stdout);
+		// yices_print_error(stdout);
 
 		//reset context
 		yices_reset_context(yices_context);
@@ -707,6 +697,10 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 		}	
 		assert((*cnst)->type == CNST_CLK);
 		cnst++;
+
+		//  单步调试这里 
+		// 可以mutate的branch约束还没有进去
+		smt_yices_dump_error();
 		//restore version
 		SMTSigCore::restore_versions(clock);
 		const SMTProcess* target_process = it->cnst->obj->process;
@@ -719,15 +713,13 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			cnst++;
 		}
 
-
 		//add mutated branch
 		smt_yices_assert(yices_context, it->br->update_term(), it->br);
-		
+	
 		g_data_step.clear_input_vector();
 		g_data_step.intercept(path->data, 0, clock);
 		g_data_step.dump(g_data_mem_step);
 		
-		smt_yices_dump_error();
 
 		call_to_solver++;
 		check_satisfiability();
@@ -741,37 +733,39 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			}
 			g_sim_clk = clock;
 			simulate_build_stack();
+			smt_yices_dump_error();
+			// smt_yices_dump_error();
+			
+			// if(g_is_new_block){
+			// 	SMTBranch::increase_probability(selected_branch);
+			// }else{
+			// 	if(sim_num > iteration_limit){
+			// 		SMTBranch::decrease_probability(selected_branch);
+			// 	}
+			// }
 
-			// Give the reward
+			// //Give the reward
 			// // Update Qlearning reward 
 			// State newState("model.log"); // 获得新状态
 			// double reward = calculateReward(g_is_new_block); // 计算奖励
 			// updateQValue(q_table, currentState, newState,it, reward, alpha_qlearn, gamma_qlearn,1);//更新Q表
 
-			//// Update DQN reward 
+			// Update DQN reward 
 			double reward = calculateReward(g_is_new_block); // 计算奖励
 			unsigned int actionIndex = it->br->id;
 			SMTState::print_state_at_clock(g_data_state, g_sim_clk, reward, actionIndex);
-			//executePythonScript(dqn_update);
-			// FILE* file_update = fopen("DQN_update.py", "r");
-			// if (file_sort != NULL) {
-			// 	printf(" RUN DQN UPDATE\n");
-			// 	// PyRun_SimpleFile(file_update, "DQN_update.py");
-			// 	system("python3 /home/meng/Code/concolic-testing/src/DQN_update.py");
-			// 	fclose(file_update);
-			// } else {
-			// 	printf("NOT RUN DQN UPDATE\n");
-			// 	// Handle error opening file
+			system("python3 /home/meng/Code/concolic-testing/src/DQN_update.py");
+
+			// if(g_is_new_block){
+			// 	SMTBranch::increase_probability(selected_branch);
+			// }else{
+			// 	if(sim_num > prob_num){
+			// 		SMTBranch::decrease_probability(selected_branch);
+			// 	}
 			// }
 
-			if(g_is_new_block){
-				SMTBranch::increase_probability(selected_branch);
-			}else{
-				if(sim_num > prob_num){
-					SMTBranch::decrease_probability(selected_branch);
-				}
-			}
-			SMTBranch::print_probability();
+
+			// SMTBranch::print_probability();
 			selected_branch->k_permit_covered++;
 			// Xiangchen: Because we use the probability to sort the branches
 			// So we need not to consider the distance
@@ -779,7 +773,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			return true;
 		}
 	}	
-	Py_Finalize();
+	// Py_Finalize();
 	return false;
 }
 	// }else{

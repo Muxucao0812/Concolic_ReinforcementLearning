@@ -40,7 +40,6 @@ extern const char*      g_reset_sig_name;
 extern const char*      g_reset_edge_active;
 extern uint             g_random_sim_num;
 extern uint		        g_target_limit;
-extern uint             prob_num;
 extern bool             g_is_new_block;
 extern bool             g_distance_decrease;
 
@@ -70,9 +69,5 @@ extern double gamma_qlearn ; // 折扣因子
 extern std::unordered_map<std::string, std::vector<double>> q_table; //q_table
 
 
-//DQN code
-extern const char* dqn_structure;
-extern const char* dqn_init;
-extern const char* dqn_sort_branch;
-extern const char* dqn_update;
+
 

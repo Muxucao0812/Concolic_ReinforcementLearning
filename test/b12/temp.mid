@@ -271,9 +271,8 @@ module b12(
 	      begin
 		     if (start == 1'b1) //29
 			   gamma = 1;
-             else //30
+			else
 			   gamma = gamma;
-               
 		     case (gamma)
 		       
 			   0: //31

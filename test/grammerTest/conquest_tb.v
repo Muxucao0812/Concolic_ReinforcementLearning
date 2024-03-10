@@ -4,8 +4,9 @@ module conquest_tb();
     reg  clk;
     reg  reset;
     reg  [31:0] in = 32'b0;
+    reg  [3:0] count = 4'b0;
+    reg  register = 1'b0;
     wire [31:0] out;
-    reg  sig_display = 1'b0;
     reg  __obs;
 
     // Generated top module instance
@@ -13,14 +14,15 @@ module conquest_tb();
             .clk       ( clk ),
             .reset     ( reset ),
             .in        ( in ),
+            .count     ( count ),
+            .register  ( register ),
             .out       ( out ),
-            .sig_display( sig_display ),
             .__obs     ( __obs ));
 
     // Generated internal use signals
     reg  [31:0] _conc_pc;
-    reg  [33:0] _conc_opcode;
-    reg  [33:0] _conc_ram[0:1000];
+    reg  [37:0] _conc_opcode;
+    reg  [37:0] _conc_ram[0:0];
 
 
     // Generated clock pulse
@@ -31,11 +33,13 @@ module conquest_tb();
     // Generated program counter
     always @(posedge clk) begin
         _conc_opcode = _conc_ram[_conc_pc];
-        __obs <= #5 _conc_opcode[33];
+        __obs <= #5 _conc_opcode[37];
+        count <= #5 _conc_opcode[35:32];
         in <= #5 _conc_opcode[31:0];
-        sig_display <= #5 _conc_opcode[32];
+        register <= #5 _conc_opcode[36];
         _conc_pc = _conc_pc + 32'b1;
         $strobe(";_C %d", _conc_pc);
+        $strobe(";_Input %b", _conc_opcode);
     end
 
     // Generated initial block
@@ -47,7 +51,7 @@ module conquest_tb();
         #2 clk = 1'b1;
         reset = 1'b1;
         #5 reset = 1'b0;
-        #10000 $finish;
+        #120 $finish;
     end
 
 endmodule

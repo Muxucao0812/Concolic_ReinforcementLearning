@@ -54,14 +54,14 @@ public:
     //clear all data
     void clear_input_vector();
 
-
+    std::vector<std::string> input_vector;			 //structure for holding data    
 private:
     //modify a range of bits
 	void modify(uint clock, const sig_pos* sig, const std::string &value);
     //Read src_file (output of constraint solver) and update variables
 	bool update_input_vectors(const char* src_file, uint clock_limitation);
 
-    std::vector<std::string> input_vector;			 //structure for holding data    
+
     uint width;
     uint clk;
     uint step;

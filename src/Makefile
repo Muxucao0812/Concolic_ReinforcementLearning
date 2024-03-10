@@ -41,10 +41,13 @@ clean:
 
 # Linking to create the target
 $(TARGET): $(OBJECTS)
-	@g++ -Wall -ggdb3 -std=c++11 -o $@ $(OBJECTS) -fpic -shared -lyices $(PYCFLAGS) $(PYLFLAGS)
+	@g++ -Wall -ggdb3 -std=c++14 -o $@ $(OBJECTS) -fpic -shared -lyices $(PYCFLAGS) $(PYLFLAGS)
 	@echo "Linking..."
 
 # Copying configuration files
 $(CONFIG_TARGETS): $(CONFIG_FILES)
 	@cp -f $(CONFIG_FILES) $(IVERILOG_LIB_DIR)
 	@echo "Copying config file..."
+
+
+

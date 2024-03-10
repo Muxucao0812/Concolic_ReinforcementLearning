@@ -264,18 +264,6 @@ static SMTSignal* emit_stmt_lval(ivl_scope_t scope, ivl_statement_t stmt, SMTArr
 	
 	if (count > 1) {
 		error("TODO: split into multiple assignments");
-		/*ivl_lval_t lval;
-		fprintf(g_out, "{");
-		for (uint idx = count - 1; idx > 0; idx -= 1) {
-			lval = ivl_stmt_lval(stmt, idx);
-			wid += ivl_lval_width(lval);
-			smt_assign->lval->add(emit_stmt_lval_piece(scope, lval));
-			fprintf(g_out, ", ");
-		}
-		lval = ivl_stmt_lval(stmt, 0);
-		wid += ivl_lval_width(lval);
-		smt_assign->lval->add(emit_stmt_lval_piece(scope, lval));
-		fprintf(g_out, "}");*/
 	} else {
 		ivl_lval_t lval = ivl_stmt_lval(stmt, 0);
 		sig = emit_stmt_lval_piece(scope, lval, array);
