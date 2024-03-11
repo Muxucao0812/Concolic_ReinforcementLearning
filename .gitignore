@@ -1,0 +1,5 @@
+.vscode
+.github
+src/Makefile
+Makefile
+test/Makefile
