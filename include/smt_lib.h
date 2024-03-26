@@ -542,6 +542,7 @@ public:
     void update_distance();
 	void update_path(SMTPath* path, const std::vector<constraint_t*> &constraints_stack);
 	void update_distance_from_adjacency_list();
+	void print_distance();
 	void update_edge();
     
 	static void print_cover_result();
@@ -568,6 +569,12 @@ public:
 	uint* adjacency_list;
 	uint closest_path_distance = 0xFFFFFFF;
 	uint closest_path_clock = 0xFFFFFFF;
+	static const std::vector<SMTBasicBlock*>& getBlockList() {
+        return block_list;
+    }
+	static const std::list<SMTBasicBlock*>& getTargetList() {
+		return target_list;
+	}
 	
 private:
     void print_assigns(std::ofstream &out);

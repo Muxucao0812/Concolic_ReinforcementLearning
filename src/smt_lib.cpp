@@ -959,8 +959,7 @@ uint SMTBranch::target_count;
 uint SMTBranch::saved_total_branch;
 uint SMTBranch::saved_covered_branch;
 vector<SMTBranch*> SMTBranch::all_branches_list;
-SMTBranch::SMTBranch(SMTBranchNode* _parent_node, SMTBranchType type, 
-			SMTExpr* lval, SMTExpr* rval) :
+SMTBranch::SMTBranch(SMTBranchNode* _parent_node, SMTBranchType type, SMTExpr* lval, SMTExpr* rval) :
 		SMTAssign(SMT_CLK_CURR, SMT_ASSIGN_BRANCH, lval, rval, false), 
         type(type),
 		list_idx(_parent_node->branch_list.size()),
@@ -1005,7 +1004,8 @@ void SMTBranch::clear_covered_clk(uint clock) {
     block->update_distance();
 }*/
 
-void SMTBranch::get_state_variables(std::set<SMTSigCore*> &sigs, SMTExpr* expr) {
+void SMTBranch::
+get_state_variables(std::set<SMTSigCore*> &sigs, SMTExpr* expr) {
 	SMTSignal* sig = dynamic_cast<SMTSignal*>(expr);
 	if(sig){
 		if(sig->parent->is_state_variable){
@@ -1036,10 +1036,10 @@ void SMTBranch::update_edge() {
 				a_sig->commit();
 				term_t cond_term = update_expanded_term();
 				yices_reset_context(yices_context);
+				// yices_pp_term(stdout, yices_and3(not_cond_term, assign_term, cond_term), 1000, 1, 0);
 				yices_assert_formula(yices_context, yices_and3(not_cond_term, assign_term, cond_term));
 				a_sig->restore_versions(0);
 				if(yices_check_context(yices_context, NULL) == STATUS_SAT){
-			
 					if(only_edge){
 						only_edge = false;
 						//delete all predecessor edges
@@ -1338,6 +1338,8 @@ SMTSigCore::SMTSigCore(ivl_signal_t sig){
     name = ivl_signal_basename(sig);
     width = ivl_signal_width(sig);
     zeros = smt_zeros(width);
+
+
 	is_hamming = true;
 	sig_to_core_map[sig] = this;
     int msb;
@@ -1772,14 +1774,19 @@ void SMTBasicBlock::print(ofstream &out) {
 void SMTBasicBlock::update_distance() {
 	SMTBasicBlock::reset_flags();	//reset distances of all blocks
 	distance = 0;
+
 	queue<SMTBasicBlock*> bb_queue;
 	bb_queue.push(this);
+
 	while(!bb_queue.empty()){
+
 		SMTBasicBlock* top_bb = bb_queue.front();
 		//printf("topbb: %u, precess: %lu, dist: %u\n", top_bb->id, top_bb->predecessors.size(), top_bb->distance);
 		bb_queue.pop();
+
 		const uint curr_dist = top_bb->distance;
 		uint updated = curr_dist + top_bb->weight;
+
 		for(auto it:top_bb->predecessors){
 			//Yangdi: If the number of pre is small, they are important
 			if(updated < it->distance){
@@ -1799,6 +1806,7 @@ void SMTBasicBlock::update_distance() {
 }
 
 
+
 // update path
 void SMTBasicBlock::update_path(SMTPath* path, const vector<constraint_t*> &constraints_stack) {
 	SMTBasicBlock::reset_flags();	//reset distances of all blocks
@@ -1808,7 +1816,11 @@ void SMTBasicBlock::update_path(SMTPath* path, const vector<constraint_t*> &cons
 	closest_path_clock = dist_clock.second;
 }
 
-
+void SMTBasicBlock::print_distance() {
+	for(auto it:block_list){
+		printf("Block %u: %u\n", it->id, it->distance);
+	}
+}
 
 // update distance of all blocks from adjacent list
 void SMTBasicBlock::update_distance_from_adjacency_list() {

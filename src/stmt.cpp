@@ -482,9 +482,11 @@ static void emit_stmt_case(ivl_scope_t scope, ivl_statement_t stmt) {
 		single_indent = 0;
 		branch_stack.push(smt_br);
         SMTProcess::curr_proc->top_bb = smt_bb;
+
 		emit_blocked_stmt_inst(scope, ivl_stmt_case_stmt(stmt, idx));
 		branch_stack.pop();
 		g_ind -= g_ind_incr;
+		
         exit_bb->predecessors.insert(SMTProcess::curr_proc->top_bb);
         SMTProcess::curr_proc->top_bb->successors.insert(exit_bb);
 	}
@@ -530,12 +532,17 @@ static void emit_stmt_condit(ivl_scope_t scope, ivl_statement_t stmt) {
 	ivl_statement_t true_stmt = ivl_stmt_cond_true(stmt);
 	ivl_statement_t false_stmt = ivl_stmt_cond_false(stmt);
 	ivl_expr_t cond_expr = ivl_stmt_cond_expr(stmt);
+
 	fprintf(g_out, "%*cif (", get_indent(), ' ');
 	branch_node->cond = emit_expr(scope, cond_expr);
     branch_node->cond_width = ivl_expr_width(cond_expr);
 	fprintf(g_out, ")");
+
     SMTBranch* true_br = SMTBranch::create_true_branch(branch_node);
-    SMTBranch* false_br = SMTBranch::create_false_branch(branch_node);
+    yices_pp_term(stdout, true_br->rval->yices_term, 1000, 1, 0);
+	yices_pp_term(stdout, true_br->lval->yices_term, 1000, 1, 0);
+	
+	SMTBranch* false_br = SMTBranch::create_false_branch(branch_node);
     
     SMTBasicBlock* true_bb = new SMTBasicBlock();
     SMTBasicBlock* false_bb = new SMTBasicBlock();
@@ -544,14 +551,18 @@ static void emit_stmt_condit(ivl_scope_t scope, ivl_statement_t stmt) {
 	//SMTProcess::curr_proc->top_bb->weight = 1;
 	true_br->block = true_bb;
 	false_br->block = false_bb;
+
 	true_bb->idom = SMTProcess::curr_proc->top_bb;
 	false_bb->idom = SMTProcess::curr_proc->top_bb;
     true_bb->predecessors.insert(SMTProcess::curr_proc->top_bb);
     false_bb->predecessors.insert(SMTProcess::curr_proc->top_bb);
+
     SMTProcess::curr_proc->top_bb->successors.insert(true_bb);
     SMTProcess::curr_proc->top_bb->successors.insert(false_bb);
+
     true_bb->assign_list.push_back(true_br);
     false_bb->assign_list.push_back(false_br);
+	
     SMTBasicBlock* exit_bb = new SMTBasicBlock();
     exit_bb->idom = SMTProcess::curr_proc->top_bb;;
 	

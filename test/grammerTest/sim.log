@@ -1,5 +1,19 @@
 ;_C          0
-WARNING: conquest_tb.v:50: $readmemb(data.mem): Not enough words in the file for the requested range [0:0].
+WARNING: conquest_tb.v:55: $readmemb(data.mem): Not enough words in the file for the requested range [0:0].
+;A 11
+;A 13
+;A 14
+;A 15
+;R addr = 00
+;R cnt = 00000000
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = 00000000000000000000000000000000
+;R temp1 = 00000000000000000000000000000000
 ;A 5
 ;A 6
 ;A 7
@@ -10,129 +24,256 @@ WARNING: conquest_tb.v:50: $readmemb(data.mem): Not enough words in the file for
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = 00000000000000000000000000000000
+;R temp1 = 00000000000000000000000000000000
 ;A 2
-;A 3
-;A 4
-;R addr = 01
-;R cnt = 00000001
+;R addr = 00
+;R cnt = 00000000
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = 00000000000000000000000000000000
-;A 9
-;A 18
-;A 22
-;A 23
-;A 46
+;R temp1 = 00000000000000000000000000000000
 ;_C          1
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R addr = 00
 ;R cnt = 00000000
-;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R myArray[1] = 00000000000000000000000000000000
-;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R temp = 00000000000000000000000000000000
-;A 5
-;A 6
-;A 7
-;R addr = 01
-;R cnt = 00000001
-;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R myArray[1] = 00000000000000000000000000000000
-;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R temp = 00000000000000000000000000000000
-;A 9
-;A 18
-;A 22
-;A 23
-;A 46
-;_C          2
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
-;R addr = 10
-;R cnt = 00000010
-;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R myArray[1] = 00000000000000000000000000000000
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R out = 00000000000000000000000000000000
-;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out1 = 00000000000000000000000000000000
+;R temp = 00000000000000000000000000000000
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 24
-;A 25
-;A 46
-;_C          3
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
-;R addr = 11
-;R cnt = 00000011
-;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R myArray[1] = 00000000000000000000000000000000
+;A 10
+;R addr = 00
+;R cnt = 00000000
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 9
-;A 18
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = 00000000000000000000000000000000
+;R temp1 = 00000000000000000000000000000000
+;A 11
+;A 13
+;A 14
+;A 15
+;R addr = 00
+;R cnt = 00000000
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = 00000000000000000000000000000000
+;R temp1 = 00000000000000000000000000000000
+;_C          2
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;A 12
+;A 22
 ;A 26
 ;A 27
-;A 46
-;_C          4
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
-;R addr = 00
-;R cnt = 00000100
-;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R myArray[1] = 00000000000000000000000000000000
+;R addr = 01
+;R cnt = 00000001
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 20
-;A 21
-;A 46
+;A 10
+;R addr = 01
+;R cnt = 00000001
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;R addr = 01
+;R cnt = 00000001
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C          3
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R addr = 10
+;R cnt = 00000010
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
+;A 9
+;A 10
+;R addr = 10
+;R cnt = 00000010
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 12
+;A 22
+;A 28
+;A 29
+;R addr = 10
+;R cnt = 00000010
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C          4
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;A 12
+;A 22
+;A 30
+;A 31
+;R addr = 11
+;R cnt = 00000011
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
+;A 9
+;A 10
+;R addr = 11
+;R cnt = 00000011
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;R addr = 11
+;R cnt = 00000011
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
 ;_C          5
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R addr = 00
+;R cnt = 00000100
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
+;A 9
+;A 10
+;R addr = 00
+;R cnt = 00000100
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 12
+;A 22
+;A 24
+;A 25
+;R addr = 00
+;R cnt = 00000100
+;R myArray[0] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C          6
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;A 12
+;A 22
+;A 26
+;A 27
 ;R addr = 01
 ;R cnt = 00000101
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R myArray[1] = 00000000000000000000000000000000
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 22
-;A 23
-;A 46
-;_C          6
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
+;A 10
+;R addr = 01
+;R cnt = 00000101
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;R addr = 01
+;R cnt = 00000101
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C          7
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R addr = 10
 ;R cnt = 00000110
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -140,120 +281,231 @@ WARNING: conquest_tb.v:50: $readmemb(data.mem): Not enough words in the file for
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 24
-;A 25
-;A 46
-;_C          7
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
+;A 10
+;R addr = 10
+;R cnt = 00000110
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 12
+;A 22
+;A 28
+;A 29
+;R addr = 10
+;R cnt = 00000110
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C          8
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;A 12
+;A 22
+;A 30
+;A 31
 ;R addr = 11
 ;R cnt = 00000111
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 26
-;A 27
-;A 46
-;_C          8
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
+;A 10
+;R addr = 11
+;R cnt = 00000111
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;R addr = 11
+;R cnt = 00000111
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C          9
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R addr = 00
 ;R cnt = 00001000
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 20
-;A 21
-;A 46
-;_C          9
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
+;A 10
+;R addr = 00
+;R cnt = 00001000
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 12
+;A 22
+;A 24
+;A 25
+;R addr = 00
+;R cnt = 00001000
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C         10
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;A 12
+;A 22
+;A 26
+;A 27
 ;R addr = 01
 ;R cnt = 00001001
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 22
-;A 23
-;A 46
-;_C         10
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
+;A 10
+;R addr = 01
+;R cnt = 00001001
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;R addr = 01
+;R cnt = 00001001
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C         11
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R addr = 10
 ;R cnt = 00001010
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 24
-;A 25
-;A 46
-;_C         11
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
+;A 10
+;R addr = 10
+;R cnt = 00001010
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 12
+;A 22
+;A 28
+;A 29
+;R addr = 10
+;R cnt = 00001010
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;_C         12
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;A 12
+;A 22
+;A 30
+;A 31
 ;R addr = 11
 ;R cnt = 00001011
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
+;A 8
 ;A 9
-;A 18
-;A 26
-;A 27
-;A 46
-;_C         12
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 5
-;A 6
-;A 7
-;R addr = 00
-;R cnt = 00001100
+;A 10
+;R addr = 11
+;R cnt = 00001011
 ;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;R out = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
 ;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;A 9
-;A 18
-;A 20
-;A 21
-;A 46
+;R temp1 = 00000000000000000000000000000000
+;R addr = 11
+;R cnt = 00001011
+;R myArray[0] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[1] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[2] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R myArray[3] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R out = 00000000000000000000000000000000
+;R out1 = 00000000000000000000000000000000
+;R temp = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;R temp1 = 00000000000000000000000000000000
 ;_C         13
-;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-conquest_tb.v:54: $finish called at 127 (1s)
+;_Input xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+conquest_tb.v:59: $finish called at 127 (1s)

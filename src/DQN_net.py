@@ -1,9 +1,12 @@
 import torch
+import re
 import numpy as np
 import random
 import collections
 import pickle
 import os
+import collections
+import random
 from torch.nn import functional as F
 
 #单周期数据处理
@@ -31,7 +34,11 @@ def get_state(file_path):
     cycles_data = parse_sim_log(file_path)
     states_list = list(cycles_data.items())
     state_dict = dict(states_list[2:])
-    return convert_values_to_int(state_dict)
+    state = convert_values_to_int(state_dict)
+    state_array = np.array(list(state.values())) 
+    np.savetxt('state_now.txt', state_array, fmt='%d')
+    return state_array
+
 
 def get_action(file_path):
     cycles_data = parse_sim_log(file_path)
@@ -45,37 +52,24 @@ def shuffle_and_return(lst):
     # 复制列表以避免修改原始数据
     shuffled_list = lst.copy()
     random.shuffle(shuffled_list)
+    # print(f"Random list:{shuffled_list}")
     return shuffled_list
 
-class ReplayBuffer:
-    ''' 经验回放池 '''
-    def __init__(self, capacity):
-        self.buffer = collections.deque(maxlen=capacity)  # 队列,先进先出
 
-    def add(self, state, action, reward, next_state, done):  # 将数据加入buffer
-        self.buffer.append((state, action, reward, next_state, done))
-
-    def sample(self, batch_size):  # 从buffer中采样数据,数量为batch_size
-        transitions = random.sample(self.buffer, batch_size)
-        state, action, reward, next_state, done = zip(*transitions)
-        return np.array(state), action, reward, np.array(next_state), done
-
-    def size(self):  # 目前buffer中数据的数量
-        return len(self.buffer)
     
 class Qnet(torch.nn.Module):
     def __init__(self, state_dim, hidden_dim, action_dim):
         super(Qnet, self).__init__()
-        # 定义四个全连接层
-        self.fc1 = torch.nn.Linear(state_dim, 16)
-        self.fc2 = torch.nn.Linear(16, 8)
-        self.fc3 = torch.nn.Linear(8, action_dim)
+        self.fc1 = torch.nn.Linear(state_dim, 512)
+        self.fc2 = torch.nn.Linear(512, 256)  
+        self.fc3 = torch.nn.Linear(256, action_dim)
+
     
     def forward(self, x):
         x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return F.softmax(x, dim=1)  # 使用softmax输出每个动作的概率
+        x = F.relu(self.fc2(x))  
+        x = F.relu(self.fc3(x))  
+        return torch.sigmoid(x)  
     
 class DQN:
     ''' DQN算法 '''
@@ -111,34 +105,34 @@ class DQN:
         sorted_indices = np.argsort(action_probs[0])[::-1]
         # 根据排序后的索引获取对应的branch_list
         sorted_branch_list = [branch_list[i] for i in sorted_indices]
-
+        # print(f"Q learn sorted_branch_list:{sorted_branch_list}")
         return sorted_branch_list
 
 
+    def update(self, state, action, reward, next_state, done):
+        # 转换为适合网络处理的格式
+        state_tensor = torch.tensor([state], dtype=torch.float).to(self.device)
+        action_tensor = torch.tensor([action], dtype=torch.int64).view(-1, 1).to(self.device)
+        reward_tensor = torch.tensor([reward], dtype=torch.float).view(-1, 1).to(self.device)
+        next_state_tensor = torch.tensor([next_state], dtype=torch.float).to(self.device)
+        done_tensor = torch.tensor([done], dtype=torch.float).view(-1, 1).to(self.device)
 
-    def update(self, transition_dict):
-        states = torch.tensor(transition_dict['states'],dtype=torch.float).to(self.device)
-#         print(f"state: {state}")
-        actions = torch.tensor(transition_dict['actions']).view(-1, 1).to(self.device)
-#         print(f"action: {action}")
-        rewards = torch.tensor(transition_dict['rewards'],dtype=torch.float).view(-1, 1).to(self.device)
-#         print(f"rewards: {rewards}")
-        next_states = torch.tensor(transition_dict['next_states'],dtype=torch.float).to(self.device)
-#         print(f"next_State: {next_states}")
-        dones = torch.tensor(transition_dict['dones'],dtype=torch.float).view(-1, 1).to(self.device)
-        
-        q_values = self.q_net(states).gather(1, actions)  # Q值
-        # 下个状态的最大Q值
-        max_next_q_values = self.target_q_net(next_states).max(1)[0].view(
-            -1, 1)
-        q_targets = rewards + self.gamma * max_next_q_values * (1 - dones
-                                                                )  # TD误差目标
-        dqn_loss = torch.mean(F.mse_loss(q_values, q_targets))  # 均方误差损失函数
-        self.optimizer.zero_grad()  # PyTorch中默认梯度会累积,这里需要显式将梯度置为0
-        dqn_loss.backward()  # 反向传播更新参数
+        # 计算当前状态的Q值
+        q_values = self.q_net(state_tensor).gather(1, action_tensor)
+        # 计算下一个状态的最大Q值
+        max_next_q_values = self.target_q_net(next_state_tensor).max(1)[0].view(-1, 1)
+        # 计算目标Q值
+        q_targets = reward_tensor + self.gamma * max_next_q_values * (1 - done_tensor)
+
+        # 计算损失
+        dqn_loss = torch.mean(F.mse_loss(q_values, q_targets))
+
+        # 梯度下降更新网络参数
+        self.optimizer.zero_grad()
+        dqn_loss.backward()
         self.optimizer.step()
 
+        # 更新目标网络
         if self.count % self.target_update == 0:
-            self.target_q_net.load_state_dict(
-                self.q_net.state_dict())  # 更新目标网络
-        self.count += 16
+            self.target_q_net.load_state_dict(self.q_net.state_dict())
+        self.count += 1

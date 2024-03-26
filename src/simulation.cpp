@@ -67,30 +67,7 @@ static uint selected_clock;
 
 static void check_satisfiability();
 
-// 选择动作 best_ation
-// std::string chooseAction(const State& state, const std::unordered_map<std::string, std::vector<double>>& q_table, double epsilon, const std::vector<std::string>& actions) {
-//     std::string stateKey = state.toString();
 
-//     // ε-贪婪策略
-//     std::random_device rd;
-//     std::mt19937 gen(rd());
-//     std::uniform_real_distribution<> dis(0, 1);
-//     if (dis(gen) < epsilon) {
-//         std::uniform_int_distribution<> actionDis(0, actions.size() - 1);
-//         std::cout << "Chosen Action: " << actions[actionDis(gen)] << " - Reason: Exploration (random choice)" << std::endl;
-//         return actions[actionDis(gen)]; // 探索
-//     } else {
-//         auto it = std::find_if(q_table.begin(), q_table.end(), [&](const auto& pair) {
-//             return pair.first == stateKey;
-//         });
-//         if (it != q_table.end()) {
-//             auto maxIt = std::max_element(it->second.begin(), it->second.end());
-//             std::cout << "Chosen Action: " << actions[std::distance(it->second.begin(), maxIt)] << " - Reason: Exploitation (best current option)" << std::endl;
-//             return actions[std::distance(it->second.begin(), maxIt)]; // 利用
-//         }
-//         return actions[0]; // 默认动作
-//     }
-// }
 
 void executePythonScript(const char* code) {
     // 执行Python代码
@@ -160,15 +137,20 @@ void updateQValue(std::unordered_map<std::string, std::vector<double>>& q_table,
 }
 
 
-
-double calculateReward(bool foundNewNode) {
+double calculateReward(bool foundNewNode, unsigned int distance) {
     double reward = 0.0;
     // 如果发现了新的节点，给予奖励
     if (foundNewNode) {
-        reward = 1.0; 
+        reward = 10; 
     }
 	else{
-		reward = - 0.1;
+		if(distance <= 3)
+			reward = 0.1;
+		else{
+			if(distance >= 5){
+				reward = -0.1;
+		}
+		}
 	}
 
     return reward;
@@ -176,40 +158,56 @@ double calculateReward(bool foundNewNode) {
 
 
 void sortBranches(std::vector<br_cnst_t*>& branches, const std::vector<unsigned int>& action_list) {
-    // 首先，创建一个动作ID到排序索引的映射
-    std::unordered_map<unsigned int, size_t> action_order;
-    for (size_t i = 0; i < action_list.size(); ++i) {
-        action_order[action_list[i]] = i;
+    vector<br_cnst_t*>  sorted_branches;
+
+    for (auto id : action_list) {
+        for (auto it : branches) {
+            if (it->br->id == id) {
+                sorted_branches.push_back(it);
+            }
+        }
     }
+    branches = sorted_branches;
 
-    // 使用自定义的比较函数进行排序
-    std::sort(branches.begin(), branches.end(),
-              [&action_order](const br_cnst_t* a, const br_cnst_t* b) -> bool {
-                  // 获取两个分支的动作ID
-                  unsigned int actionA = a->br->id;
-                  unsigned int actionB = b->br->id;
-
-                  // 比较它们在action_list中的位置
-                  return action_order[actionA] < action_order[actionB];
-              });
 }
+// void sortBranches(std::vector<br_cnst_t*>& branches, const std::vector<unsigned int>& action_list) {
+//     std::unordered_map<unsigned int, size_t> action_order;
+//     for (size_t i = 0; i < action_list.size(); ++i) {
+//         action_order[action_list[i]] = i;
+//     }
 
-// 从指定的文件中读取动作列表，并返回一个包含这些动作的向量
+//     // 使用自定义的比较函数进行排序
+//     std::sort(branches.begin(), branches.end(),
+//               [&action_order](const br_cnst_t* a, const br_cnst_t* b) -> bool {
+//                   // 获取两个分支的动作ID
+//                   unsigned int actionA = a->br->id;
+//                   unsigned int actionB = b->br->id;
+
+//                   // 比较它们在action_list中的位置
+//                   return action_order[actionA] < action_order[actionB];
+//               });
+// }
+
 std::vector<unsigned int> readActionsFromFile(const std::string& filename) {
-    std::ifstream file(filename);
     std::vector<unsigned int> action_list;
-    if (!file.is_open()) {
-        std::cerr << "Error opening file: " + filename << std::endl;
-        return action_list; // 返回一个空的向量
+    std::ifstream file(filename);
+    std::string line;
+    if (file.is_open()) {
+        std::getline(file, line);
+        std::istringstream iss(line);
+        unsigned int number;
+        while (iss >> number) {
+            action_list.push_back(number);
+            if (iss.peek() == ',') {
+                iss.ignore();
+            }
+        }
+        file.close();
+    } else {
+        std::cerr << "Unable to open file" << std::endl;
     }
-    unsigned int action;
-    while (file >> action) {
-        action_list.push_back(action);
-    }
-    file.close(); // 关闭文件
     return action_list;
 }
-
 void writeLastFContentToFile(const std::string& inputFileName, FILE* outputFile) {
     std::ifstream inputFile(inputFileName);
     std::string line;
@@ -652,6 +650,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 	//get the branches between begin and end
 	get_available_branches(branches, begin_clk+1, end_clk);
 
+
 	// //choose mutated branch，sort by QLearning
 	// std::vector<unsigned int> actions;
 	// for(std::vector<br_cnst_t*>::size_type i = 0;i < branches.size();++i){
@@ -663,13 +662,14 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 
 
 	//choose mutated branch，sort by DQN
-	system("python3 /home/meng/Code/concolic-testing/src/DQN_sort.py");
-	std::vector<unsigned int> action_list = readActionsFromFile("sorted_branch_list.txt");
-	sortBranches(branches,action_list);
-	
 
-	// // //sort by distance
-	// sort(branches.begin(), branches.end(), compare_dist);
+	system("python3 /home/meng/Code/concolic-testing/src/DQN_sort.py");
+	std::vector<unsigned int> action_list = readActionsFromFile("/home/meng/Code/concolic-testing/test/b12/sorted_branch_list.txt");
+	sortBranches(branches,action_list);
+
+
+	// sort by distance
+	sort(branches.begin(), branches.end(), compare_dist);
 	//sort by probability
 	// sort(branches.begin(), branches.end(), compare_prob);
     
@@ -681,7 +681,7 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			continue; // Skip this iteration
 			}
 		uint clock = it->cnst->clock;
-
+		
 		// yices_print_error(stdout);
 
 		//reset context
@@ -703,7 +703,10 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 		smt_yices_dump_error();
 		//restore version
 		SMTSigCore::restore_versions(clock);
+
+
 		const SMTProcess* target_process = it->cnst->obj->process;
+
 		while(*cnst != it->cnst){
 			const SMTProcess* process = (*cnst)->obj->process;
 			if(!process->is_edge_triggered || (process == target_process)){
@@ -751,11 +754,11 @@ static bool find_next_cfg(SMTPath* path, uint init_clk, uint curr_clk) {
 			// updateQValue(q_table, currentState, newState,it, reward, alpha_qlearn, gamma_qlearn,1);//更新Q表
 
 			// Update DQN reward 
-			double reward = calculateReward(g_is_new_block); // 计算奖励
+			double reward = calculateReward(g_is_new_block,it->br->block->distance); // 计算奖励
 			unsigned int actionIndex = it->br->id;
 			SMTState::print_state_at_clock(g_data_state, g_sim_clk, reward, actionIndex);
 			system("python3 /home/meng/Code/concolic-testing/src/DQN_update.py");
-
+			std::cout << "Choosing branch:"<< it->br->id<<"  Choosing clock: "<<clock<<"  Reward: "<<reward<<std::endl ;
 			// if(g_is_new_block){
 			// 	SMTBranch::increase_probability(selected_branch);
 			// }else{
@@ -958,11 +961,22 @@ void step_coverage() {
 		SMTBasicBlock::update_all_closest_paths(path, constraints_stack);
 	}
 
+	// vector<SMTBasicBlock*> a = SMTBasicBlock::getBlockList();
+	// list<SMTBasicBlock*> b = SMTBasicBlock::getTargetList();
+
+	// uint idx = 0;
+	// while(!b.empty()){
+
+	// 	SMTBasicBlock* target = b.front();
+	// 	b.pop_front();
+	// 	for(auto a_block: a){
+	// 		printf("[idx %d] distance from %d to %d: %u\n", idx, a_block->id, target->id, target->adjacency_list[a_block->id]);
+	// 	}
+	// 	idx++;
+	// }
+
 	// remove covered
 	SMTBasicBlock::remove_covered_targets(path->data.get_clk());
-
-	// uint start_iteration = sim_num;
-	
 	//For every branch, it will give every branch a probability randomly
 	SMTBranch::random_probability();
 

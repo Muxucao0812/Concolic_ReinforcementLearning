@@ -1,0 +1,11 @@
+Uncovered targets:
+Total uncovered targets number: 0
+Covered targets:
+0
+1
+5
+8
+11
+4
+7
+Total covered targets number: 7

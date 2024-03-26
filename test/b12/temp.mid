@@ -196,36 +196,36 @@ module b12(
 		     //for (mar = 0; mar <= SIZE_MEM - 1; mar = mar + 1)
 		     	memory[0] = 0;
 		     	memory[1] = 0;
-			memory[2] = 0;
-			memory[3] = 0;
-			memory[4] = 0;
-			memory[5] = 0;
-			memory[6] = 0;
-			memory[7] = 0;
-			memory[8] = 0;
-		     	memory[9] = 0;
-			memory[10] = 0;
-			memory[11] = 0;
-			memory[12] = 0;
-			memory[13] = 0;
-			memory[14] = 0;
-			memory[15] = 0;
-			memory[16] = 0;
-		     	memory[17] = 0;
-			memory[18] = 0;
-			memory[19] = 0;
-			memory[20] = 0;
-			memory[21] = 0;
-			memory[22] = 0;
-			memory[23] = 0;
-			memory[24] = 0;
-		     	memory[25] = 0;
-			memory[26] = 0;
-			memory[27] = 0;
-			memory[28] = 0;
-			memory[29] = 0;
-			memory[30] = 0;
-			memory[31] = 0;
+				memory[2] = 0;
+				memory[3] = 0;
+				memory[4] = 0;
+				memory[5] = 0;
+				memory[6] = 0;
+				memory[7] = 0;
+				memory[8] = 0;
+				memory[9] = 0;
+				memory[10] = 0;
+				memory[11] = 0;
+				memory[12] = 0;
+				memory[13] = 0;
+				memory[14] = 0;
+				memory[15] = 0;
+				memory[16] = 0;
+				memory[17] = 0;
+				memory[18] = 0;
+				memory[19] = 0;
+				memory[20] = 0;
+				memory[21] = 0;
+				memory[22] = 0;
+				memory[23] = 0;
+				memory[24] = 0;
+				memory[25] = 0;
+				memory[26] = 0;
+				memory[27] = 0;
+				memory[28] = 0;
+				memory[29] = 0;
+				memory[30] = 0;
+				memory[31] = 0;
 //		       memory[mar] <= 0;
 	      end
 	    else //27
@@ -271,8 +271,8 @@ module b12(
 	      begin
 		     if (start == 1'b1) //29
 			   gamma = 1;
-			else
-			   gamma = gamma;
+			else 
+				gamma = gamma;
 		     case (gamma)
 		       
 			   0: //31

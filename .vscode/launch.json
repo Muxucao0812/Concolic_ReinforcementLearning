@@ -326,7 +326,7 @@
             "request": "launch",
             "program": "/usr/local/lib/ivl/ivl",
             "args": ["/home/meng/Code/concolic-testing/test/b12/temp.mid",
-            "-C","/home/meng/Code/concolic-testing/test/b12/ivrlh1586f17e",
+            "-C","/home/meng/Code/concolic-testing/test/b12/ivrlh70dd350d",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
             "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/b12",
@@ -398,6 +398,62 @@
                 }
             ]
         },
+        // b12 Test
+        {
+            "name": "concolic-testcase",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/bin/iverilog",
+            "args":[
+                "/home/meng/Code/concolic-testing/test/testcase/src/testcase.v","-v",
+                "-o /home/meng/Code/concolic-testing/test/testcase/conquest_dut.v",
+                "-t","conquestMulti",
+                "-ptb=/home/meng/Code/concolic-testing/test/testcase/conquest_tb.v",
+                "-pclk=clock",
+                "-preset=reset",
+                "-preset_edge=1",
+                "-punroll=1000",
+                "-pstep=10",
+                "-prandom_sim=3"],
+            "stopAtEntry": true,
+            "cwd": "/home/meng/Code/concolic-testing/test/testcase",
+            "environment": [
+                {
+                    "name": "TGT",
+                    "value": "/usr/local/lib/ivl"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],   
+        },
+        {
+            "name": "debug-testcase",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/lib/ivl/ivl",
+            "args": ["/home/meng/Code/concolic-testing/test/testcase/temp.mid",
+            "-C","/home/meng/Code/concolic-testing/test/testcase/ivrlh20d2da1",
+            "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
+            "stopAtEntry": false,
+            "cwd": "/home/meng/Code/concolic-testing/test/testcase",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb debug",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
 
         // grammer Test
         {
@@ -439,7 +495,7 @@
             "request": "launch",
             "program": "/usr/local/lib/ivl/ivl",
             "args": ["/home/meng/Code/concolic-testing/test/grammerTest/temp.mid",
-            "-C","/home/meng/Code/concolic-testing/test/grammerTest/ivrlh446da208",
+            "-C","/home/meng/Code/concolic-testing/test/grammerTest/ivrlh240c433e",
             "-C","/usr/local/lib/ivl/conquestMulti.conf","--"],
             "stopAtEntry": false,
             "cwd": "/home/meng/Code/concolic-testing/test/grammerTest",
